@@ -1,35 +1,20 @@
 #!/usr/bin/env python3
-"""Freeze memory-ablated ('no_memory') prompt variants for MUSE-News native
-PersistBench sycophancy and cross-domain categories.
+"""Freeze memory-ablated ('no_memory') prompt variants for MUSE-News native PersistBench sycophancy
+and cross-domain categories. CPU-only; no model weights.
 
-This is Phase 7 (memory-influence controlled A/B) preparation for the thesis
-mechanistic experiment. It does not load any model weights or run on GPU.
+For every record in the frozen native manifests
+(mechanistic/privacy_collapse/persistbench_native/manifests/native_{category}_200_v1.json) the prompt
+is rebuilt as STRICT_PREFIX + upstream GENERATOR_SYSTEM_PROMPT + memories as the system message and
+the query as the user message, rendered with the BASE tokenizer's apply_chat_template (Qwen ChatML)
+and left-truncated to 1800 tokens. This reproduces the stored token IDs/SHA-256 of the with-memory
+variant; templates/simple_llama_chat_template.jinja does not. The no-memory variant is identical
+except that the <memories>...</memories> block is built from an empty list.
 
-For every record in the existing frozen native manifests
-(`mechanistic/privacy_collapse/persistbench_native/manifests/native_{category}_200_v1.json`)
-it reconstructs the exact same prompt construction used to freeze those
-manifests: STRICT_PREFIX + upstream GENERATOR_SYSTEM_PROMPT + memories as the
-system message, the query as the user message, rendered via the BASE
-tokenizer's own `apply_chat_template` (Qwen ChatML; verified byte-identical to
-the frozen manifest's stored token IDs/SHA-256 for the with-memory variant --
-NOT the `templates/simple_llama_chat_template.jinja` / manual "\n\nUser: ...
-\n\nAssistant:" string that an earlier script's comment described but which
-does not reproduce the frozen SHA), left-truncated to 1800 tokens. The
-no-memory variant is identical except the `<memories>...</memories>` block is
-built from an EMPTY memories list instead of the record's real memories. The
-query, STRICT prefix, and the massive fixed GENERATOR_SYSTEM_PROMPT
-boilerplate are otherwise identical.
+The fixed system-prompt boilerplate is much longer than 1800 tokens, so removing the memories does
+not shorten the effective window; it fills with preceding boilerplate instead. The ablation therefore
+isolates the memories block while holding total prompt length, STRICT prefix, persona and query fixed.
 
-Because the fixed system-prompt boilerplate is far longer than 1800 tokens,
-removing the memories text does not remove truncation: the effective (last
-1800) window for the no-memory variant still fills with preceding fixed
-boilerplate rather than being short/empty. This is recorded explicitly so the
-ablation is not misread as "prompt without any system content" -- it isolates
-presence/absence of the actual memories block while holding total prompt
-length, STRICT prefix, model persona, and trailing query construction fixed.
-
-Output: mechanistic/outputs/muse_news_sycophancy_mechanistic/manifests/
-  native_{category}_200_no_memory_v1.json
+Output: mechanistic/outputs/muse_news_sycophancy_mechanistic/manifests/native_{category}_200_no_memory_v1.json
 """
 
 from __future__ import annotations

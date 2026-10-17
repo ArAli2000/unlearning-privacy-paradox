@@ -1,43 +1,33 @@
 #!/usr/bin/env python3
-"""Phase 9: coarse-layer-range activation patching for MUSE-News native
-PersistBench sycophancy (+ a handful of cross-domain) SAFE_TO_FAILURE cases.
+"""Coarse layer-range activation patching for MUSE-News native PersistBench sycophancy
+(plus a few cross-domain) SAFE_TO_FAILURE cases.
 
-Primary intervention: run the UNLEARNED model's own autoregressive decoding,
-but at every generation step, replace its residual-stream output at a chosen
-contiguous band of decoder layers (at the position about to be predicted)
-with the corresponding activation the BASE model produces for the identical
-running sequence. This is done step-by-step (no KV cache, matching this
-repo's other extraction scripts) so BASE always sees exactly the sequence the
-UNLEARNED model has generated so far -- the intervention is applied causally,
-online, not just once on the original prompt.
+Primary intervention: run the unlearned model's own autoregressive decoding, but at every step
+replace its residual-stream output at a contiguous band of decoder layers (at the position about to
+be predicted) with the activation BASE produces for the same running sequence. The loop is
+step-by-step without a KV cache, as in the other extraction scripts, so BASE always sees exactly
+what the unlearned model has generated so far.
 
-Reverse patch (--reverse): same mechanism with BASE as the primary decoding
-model and the unlearned method supplying the donor activations.
+--reverse: BASE decodes and the unlearned method supplies the donor activations.
 
-Layer indexing matches the rest of `mechanistic/`: index 1..28 refers to the
-output of `model.model.layers[index-1]` (i.e. "L1".."L28" in the hidden_states
-tuple convention, where hidden_states[0] is the embedding output).
+Layer indexing: 1..28 refers to the output of model.model.layers[index-1] (hidden_states[0] is the
+embedding output).
 
-Decoding: greedy (temperature 0) with a simple repetition penalty (1.05,
-applied over the full running sequence, HF-style) to approximate the original
-PersistBench generation settings (temperature 0, repetition_penalty 1.05,
+Decoding: greedy (temperature 0) with a repetition penalty of 1.05 over the full running sequence
+(HF-style), approximating the original PersistBench settings (temperature 0, repetition_penalty 1.05,
 max_tokens 96) without vLLM.
 
-Case selection: the strongest (largest judge-score jump) SAFE_TO_FAILURE rows
-from `continuation_cases_v1.json`'s FAILURE group, capped per method/category
-to keep this a "manageable subset" for a first coarse pass, per the thesis
-plan. Selection is fixed before any patched generation is inspected.
+Cases: the SAFE_TO_FAILURE rows with the largest judge-score jump from continuation_cases_v1.json,
+capped per method/category. Selection was fixed before any patched generation was inspected.
 
-Rescoring: a simplified local-judge pass (same JUDGE_SYSTEM_PROMPT_SINGLE_*
-rubric and build_judge_prompt as the original benchmark, run directly via
-transformers.generate on the locally cached Qwen/Qwen2.5-7B-Instruct judge,
-with a JSON-repair retry) is applied afterward to every generated
-continuation. This is NOT the original vLLM guided_json judge pipeline and is
-explicitly labeled as an approximation.
+Rescoring: a simplified local judge pass (same JUDGE_SYSTEM_PROMPT_SINGLE_* rubric and
+build_judge_prompt as the original benchmark, run with transformers.generate on the cached
+Qwen/Qwen2.5-7B-Instruct, with a JSON-repair retry) is applied to every generated continuation.
+It approximates the original vLLM guided_json judge.
 
 Output: mechanistic/outputs/muse_news_sycophancy_mechanistic/patching/
-  patched_generations.json  (every generation, patched and unpatched)
-  patched_generations_judged.json  (+ simplified local-judge rescoring)
+  patched_generations.json
+  patched_generations_judged.json
   patching_metadata.json
 """
 

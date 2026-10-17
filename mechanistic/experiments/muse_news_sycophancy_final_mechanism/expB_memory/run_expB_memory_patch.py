@@ -1,55 +1,27 @@
 #!/usr/bin/env python3
-"""Experiment B: does the SAME unlearned model's WITH_MEMORY vs NO_MEMORY
-internal state at the prompt-end position causally shift the model's
-teacher-forced preference between the safe (BASE-authored) and sycophantic
-(manually verified unlearned failure) continuations?
+"""Experiment B: does the same unlearned model's WITH_MEMORY vs NO_MEMORY state at the
+prompt-end position shift its teacher-forced preference between the safe (BASE-authored)
+and sycophantic (verified unlearned failure) continuation?
 
-This is a WITHIN-MODEL comparison (unlike Experiment 1/Phase-9, which
-compared BASE vs unlearned). Recipient and donor are the SAME model weights;
-only the PROMPT differs (memory present vs removed).
+Recipient and donor are the same weights; only the prompt differs. The readout is the
+teacher-forced mean-logprob contrast (`mean_logprob`) from
+analysis/activation_patching_clean_audit/run_activation_patching_clean.py. No free generation.
 
-Primary readout: the same teacher-forced mean-logprob safe-vs-sycophantic
-contrast already established in `run_activation_patching_clean.py`
-(`analysis/activation_patching_clean_audit/`), reused unmodified
-(`mean_logprob`). Free generation is NOT used here (per task instruction --
-free generation is unstable/run-sensitive, established separately).
-
-Alignment: WITH_MEMORY and NO_MEMORY prompts have different lengths (the
-memory block changes prompt length), so raw full-sequence position-wise
-patching (as used for BASE-vs-unlearned, where both sequences are identical)
-is invalid here. Instead this patches ONLY the single prompt-end position
-(the last token of each condition's own effective prompt, immediately before
-generation/continuation) -- reusing the exact same semantic position already
-extracted by the repo's own no-memory alignment infrastructure
-(`extract_no_memory_prompt_end.py`: "last token of the memory-ablated
-(no-memory) effective prompt"). Donor values are the ALREADY-EXTRACTED
-prompt-end hidden states (no live donor forward pass needed):
-  WITH_MEMORY: mechanistic/privacy_collapse/persistbench_native/representations/
-               sycophancy/{base,satimp,simnpo}_prompt_end.pt  (200, 29, 3584)
-  NO_MEMORY:   mechanistic/experiments/muse_news_sycophancy_paradox/representations/
-               {base,satimp,simnpo}_prompt_end_no_memory.pt   (200, 29, 3584)
-Row order verified identical (same 200 persistbench_ids, same order) between
-both manifests before this script was written.
+The two prompts differ in length, so full-sequence patching is not possible. Only the
+prompt-end position is patched, using hidden states that were already extracted:
+  WITH_MEMORY: mechanistic/privacy_collapse/persistbench_native/representations/sycophancy/{base,satimp,simnpo}_prompt_end.pt  (200, 29, 3584)
+  NO_MEMORY:   mechanistic/experiments/muse_news_sycophancy_paradox/representations/{base,satimp,simnpo}_prompt_end_no_memory.pt  (200, 29, 3584)
+Both manifests have the same 200 persistbench_ids in the same order.
 
 Conditions per (persistbench_id, model):
   A. WITH_MEMORY unpatched
-  B. WITH_MEMORY patched with NO_MEMORY donor state (forward direction --
-     "does removing memory's internal effect shift toward the safe
-     continuation?")
+  B. WITH_MEMORY patched with the NO_MEMORY state (forward)
   C. NO_MEMORY unpatched
-  D. NO_MEMORY patched with WITH_MEMORY donor state (reverse direction --
-     "does injecting the memory-conditioned state shift toward the
-     sycophantic continuation?")
-Layer ranges: L14-20, L21-27 (0-indexed), per task instruction (no L0-6/L7-13
-here, no head/neuron/SAE analysis).
+  D. NO_MEMORY patched with the WITH_MEMORY state (reverse)
+Layer ranges: L14-20 and L21-27 (0-indexed). Models: SatImp and SimNPO, plus BASE as a control.
+Cases: the 10 treatment cases in clean_selection.json.
 
-Models: SatImp, SimNPO (primary) + BASE (optional control, included here
-since it reuses the same already-extracted tensors at negligible extra
-cost). Clean HIGH_CONFIDENCE_FAILURE examples only (10 treatment cases from
-clean_selection.json) -- no controls, no new example selection.
-
-Output: expB_memory/expB_scores.csv (per example/model/direction/range),
-        expB_memory/expB_provenance.json
+Output: expB_memory/expB_scores.csv, expB_memory/expB_provenance.json
 """
 from __future__ import annotations
 
@@ -112,11 +84,10 @@ def load_treatment_cases() -> list[dict]:
 
 
 class SinglePositionPatch:
-    """Replaces the hidden state at ONE sequence position (not the whole
-    tensor) at each of the given decoder layers, leaving every other
-    position untouched. Required because donor (different-length prompt) and
-    recipient sequences are not the same length here, unlike the
-    BASE-vs-unlearned full-sequence patch used elsewhere in this repo."""
+    """Replace the hidden state at one sequence position at the given decoder layers.
+
+    Needed because the donor and recipient prompts have different lengths.
+    """
 
     def __init__(self, model, position: int, donor_vectors: dict[int, torch.Tensor]):
         self.model = model

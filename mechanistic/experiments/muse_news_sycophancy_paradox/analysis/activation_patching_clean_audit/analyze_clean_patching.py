@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
-"""CPU-only analysis of the cleaned Phase-9 rerun: per-example shifts, bootstrap CIs,
-medians, fraction-in-predicted-direction, per-example plots, and an old-vs-clean
-comparison table. Reads only the clean CSVs written by run_activation_patching_clean.py
-plus the ORIGINAL (unmodified) analysis/activation_patching_shift_from_unpatched.csv for
-the comparison table. Writes only into this directory.
+"""CPU-only analysis of the clean patching rerun: per-example shifts, bootstrap CIs, medians,
+fraction in the predicted direction, per-example plots, and an old-vs-clean comparison table.
+Reads the CSVs from run_activation_patching_clean.py and the original
+analysis/activation_patching_shift_from_unpatched.csv; writes only into this directory.
 """
 from __future__ import annotations
 
@@ -67,7 +66,7 @@ def main() -> None:
     shifts = per_example_shift_table(df_all)
     shifts.to_csv(HERE / "clean_per_example_shifts.csv", index=False)
 
-    # --- A. Clean aggregate results with bootstrap CIs, medians, fraction-in-predicted-direction ---
+    # A. Clean aggregate results with bootstrap CIs, medians, fraction-in-predicted-direction
     summary_rows = []
     for direction in ["unlearned_recipient", "base_recipient"]:
         # predicted sign: forward (donor=BASE) -> positive shift = more safe (expected +).
@@ -96,7 +95,7 @@ def main() -> None:
     summary = pd.DataFrame(summary_rows)
     summary.to_csv(HERE / "clean_activation_patching_summary.csv", index=False)
 
-    # --- Old vs clean comparison (HIGH_CONFIDENCE_FAILURE / clean vs SAFE_TO_FAILURE / old-noisy) ---
+    # Old vs clean comparison (HIGH_CONFIDENCE_FAILURE / clean vs SAFE_TO_FAILURE / old-noisy)
     old = pd.read_csv(ORIGINAL_SHIFT_CSV)
     old = old[old.group == "SAFE_TO_FAILURE"].copy()
     old["layer_range"] = old["condition"].map(LABELS)
@@ -119,7 +118,7 @@ def main() -> None:
     comparison = pd.DataFrame(comp_rows)
     comparison.to_csv(HERE / "old_vs_clean_comparison.csv", index=False)
 
-    # --- Per-example plots (points, not just means) ---
+    # Per-example plots (points, not just means)
     fig, axes = plt.subplots(2, 2, figsize=(13, 9), sharex=True)
     for row, direction in enumerate(["unlearned_recipient", "base_recipient"]):
         for col, method in enumerate(sorted(shifts.method.unique())):
@@ -157,7 +156,7 @@ def main() -> None:
     fig.savefig(PLOT_DIR / "clean_per_example_shifts.png", dpi=150)
     print(f"Wrote {PLOT_DIR / 'clean_per_example_shifts.png'}")
 
-    # --- Old vs clean comparison plot ---
+    # Old vs clean comparison plot
     fig2, axes2 = plt.subplots(1, 2, figsize=(12, 5), sharey=True)
     for ax, direction in zip(axes2, ["unlearned_recipient", "base_recipient"]):
         d = comparison[comparison.direction == direction]

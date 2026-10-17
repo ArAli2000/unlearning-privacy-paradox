@@ -26,12 +26,7 @@ echo "HOSTNAME: $(hostname)"
 echo "JOB ID: ${SLURM_JOB_ID}"
 nvidia-smi
 
-# Smoke test (job 444457, 2026-09-23) validated correctness (BASE-donor
-# forward patch qualitatively reproduces BASE's non-sycophantic framing;
-# unlearned-donor reverse patch introduces sycophantic language into BASE's
-# otherwise-safe response) and timed ~200s/case across all 8 conditions
-# (A, B, C x 3 ranges, D x 3 ranges). 20 cases total -> ~70 min expected;
-# 3h budget leaves generous margin. Checkpointed after every case, so a
-# walltime kill loses at most one in-flight case and can be resumed by
-# resubmitting this same script (it skips already-completed cases).
+# The smoke test (job 444457) took ~200 s/case over all 8 conditions, so
+# 20 cases need ~70 min; the 3 h limit leaves margin. Results are saved after
+# every case; resubmit this script to resume after a walltime kill.
 python mechanistic/experiments/muse_news_sycophancy_final_mechanism/run_exp1_generate.py

@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Recompute the appendix behavioural tables from EXISTING PersistBench outputs (read-only).
+"""Recompute the appendix behavioural tables from existing PersistBench outputs (read-only).
 
 Run:  PYTHONDONTWRITEBYTECODE=1 python3 -B compute_tables.py [OUT_DIR]
 Reads : external/PersistBench/outputs*/..., thesis/scripts/validation/create_persistbench_validity_summary_with_muse.py
-        (only the part before "rows = []" is exec'd, so that script's TSV-writing body never runs), stored result tables for cross-checks.
-Writes: only <OUT_DIR>/*.tsv (default: thesis/appendix_material/tables). No model is loaded, no job is launched, no source artifact is modified.
+        (only the part before "rows = []" is exec'd), stored result tables for cross-checks.
+Writes: <OUT_DIR>/*.tsv (default: thesis/appendix_material/tables). No model is loaded.
 """
 import csv, json, os, re, sys
 from collections import Counter
@@ -104,7 +104,7 @@ def fmt(x):
     return 'NA' if x is None else f'{x:.2f}'
 
 
-# ---------------------------------------------------------------------------------- stored tables for cross-checks
+# stored tables for cross-checks
 def stored():
     S = {}  # (dataset, model, cond, cat, variant) -> ({k: value}, source)
     csvp = 'presentation_figures_final/persistbench_all_methods_all_corpora.csv'
@@ -156,7 +156,7 @@ for ds_, model, cond, path in DATASETS:
     res[(ds_, model, cond)] = row
 
 
-# ---------------------------------------------------------------------------------- persistbench_frk_complete.tsv
+# persistbench_frk_complete.tsv
 def prov(key, variant, vals):
     s = STORED.get(key[:4] + (variant,))
     if not s:
@@ -195,7 +195,7 @@ for (d, m, c), row in res.items():
                          src_art, p, '; '.join(notes) + (('; ' + extra) if 'differs' in extra else '')])
 tsv('persistbench_frk_complete.tsv', FH, rows)
 
-# ---------------------------------------------------------------------------------- generation_validity_complete.tsv
+# generation_validity_complete.tsv
 VH = ['Dataset', 'Model', 'Condition', 'Category', 'Total generations', 'Valid generations', 'Validity %', 'Empty', 'Generation collapse', 'Web contamination',
       'Tool schema output', 'Zero-valid scenarios', 'Source artifact', 'Notes']
 rows = []
@@ -219,7 +219,7 @@ for (d, m, c), row in res.items():
                      '; '.join(notes)])
 tsv('generation_validity_complete.tsv', VH, rows)
 
-# ---------------------------------------------------------------------------------- fullprompt_robustness.tsv
+# fullprompt_robustness.tsv
 FP = {'sycophancy': (PB + 'muse_news_qwen25_fullprompt_robustness/muse_news_qwen25_%s_fullprompt.json', PB + 'muse_news_qwen25_fullprompt_robustness/analysis_results.json'),
       'cross_domain': (PB + 'muse_news_qwen25_fullprompt_robustness_crossdomain/muse_news_qwen25_%s_fullprompt_crossdomain.json', PB + 'muse_news_qwen25_fullprompt_robustness_crossdomain/analysis_results.json')}
 CONDK = [('Target', 'before'), ('RMU', 'rmu'), ('SatImp', 'satimp'), ('SimNPO', 'simnpo')]
@@ -291,7 +291,7 @@ for cat, (pat, ar) in FP.items():
                      to['S->F'], to['F->S'], to['S->S'], to['F->F'], npair_o, f'{po_:.4f}', f'{pat % k}; {ar}', pv, '; '.join(notes)])
 tsv('fullprompt_robustness.tsv', RH, rows)
 
-# ---------------------------------------------------------------------------------- judge_robustness.tsv (stored FR@K of both judges)
+# judge_robustness.tsv (stored FR@K of both judges)
 j = json.load(open(R / 'thesis/analysis/judge_robustness/qwen_vs_gemma_frk.json'))
 rows = []
 for t, td in j.items():
@@ -307,7 +307,7 @@ for t, td in j.items():
 tsv('judge_robustness.tsv', ['Scope', 'Judge', 'Category', 'Condition', 'FR@1', 'FR@2', 'FR@3', 'Validity aware?', 'Source artifact', 'Notes'], rows)
 
 
-# ---------------------------------------------------------------------------------- judge_agreement.tsv
+# judge_agreement.tsv
 def kappa(pairs):
     vals = sorted({v for p in pairs for v in p})
     n = len(pairs)

@@ -10,11 +10,10 @@
 #SBATCH --output=logs/%x_%j.out
 #SBATCH --error=logs/%x_%j.err
 #
-# Second-judge (Gemma-3-12b-it) pass for Experiment 1's free-generation
-# patching outputs. Reuses the proven vLLM-server + gemma_judge.py pipeline
-# from thesis/analysis/judge_robustness/run_gemma3_judge_full.sbatch
-# unmodified, scoped to this experiment's single generation file instead of
-# the 15 canonical PersistBench files that script judges.
+# Second-judge (Gemma-3-12b-it) pass over the Experiment 1 generations. Same
+# vLLM server + gemma_judge.py setup as
+# thesis/analysis/judge_robustness/run_gemma3_judge_full.sbatch, but on this
+# experiment's single generation file.
 
 set -euo pipefail
 

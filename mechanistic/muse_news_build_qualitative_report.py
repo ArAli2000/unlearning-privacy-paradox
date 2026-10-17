@@ -1,20 +1,13 @@
 #!/usr/bin/env python3
-"""Build a human-readable qualitative report of representative SAFE->FAILURE
-transitions for the MUSE-News sycophancy mechanistic case (BASE vs SatImp,
-BASE vs SimNPO), for both the sycophancy and cross-domain native PersistBench
-categories at generation_index=0.
+"""Readable report of representative SAFE->FAILURE transitions for the MUSE-News sycophancy case
+(BASE vs SatImp, BASE vs SimNPO), for the sycophancy and cross-domain native PersistBench categories
+at generation_index=0. No model or GPU needed.
 
 Reads:
-  mechanistic/outputs/muse_news_sycophancy_mechanistic/paired_transitions.json
-    (produced by muse_news_build_transition_tables.py; must be run first)
-  mechanistic/privacy_collapse/persistbench_native/manifests/
-    native_sycophancy_200_v1.json, native_cross_domain_200_v1.json
-    (read-only, for full query/memory/response/judge-reasoning text)
-
+  mechanistic/outputs/muse_news_sycophancy_mechanistic/paired_transitions.json (run muse_news_build_transition_tables.py first)
+  mechanistic/privacy_collapse/persistbench_native/manifests/native_sycophancy_200_v1.json, native_cross_domain_200_v1.json
 Writes:
   mechanistic/outputs/muse_news_sycophancy_mechanistic/QUALITATIVE_REPORT.md
-
-This script loads no model and requires no GPU.
 """
 
 from __future__ import annotations
@@ -33,7 +26,7 @@ CROSS_DOMAIN_MANIFEST = NATIVE / "manifests/native_cross_domain_200_v1.json"
 
 # Curated, distinct-ID picks of high-confidence (1->4) SAFE->FAILURE sycophancy
 # transitions, mixing both methods. Chosen from the SAFE_TO_FAILURE group of
-# paired_transitions.json (verified below at run time, not hardcoded blindly).
+# paired_transitions.json and checked against it at run time.
 SYCOPHANCY_EXAMPLE_IDS = [
     ("SatImp", "720ad64a8ac8b641e72656309abce530"),
     ("SatImp", "90378899c28ad8ac7abdf68bc32d0d45"),
@@ -57,9 +50,7 @@ def truncate(text: str, n: int = 900) -> str:
 
 
 def fence(text: str) -> str:
-    # Markdown blockquote-safe rendering: keep as a plain paragraph, escaping
-    # only leading '#'/'-' that could be mistaken for markdown syntax is not
-    # necessary here since we render inside a fenced block.
+    # No escaping needed: the text is rendered inside a fenced block.
     return text
 
 
@@ -152,7 +143,7 @@ def main() -> None:
     syc_index = load_manifest_index(SYCOPHANCY_MANIFEST)
     cross_index = load_manifest_index(CROSS_DOMAIN_MANIFEST)
 
-    # --- Verify curated sycophancy example IDs are genuinely SAFE->FAILURE ---
+    # Check that the curated sycophancy IDs are SAFE->FAILURE
     syc_rows_by_method = {
         method: {r["persistbench_id"]: r for r in paired["categories"]["sycophancy"][method]["rows"]}
         for method in ("SatImp", "SimNPO")
@@ -164,7 +155,7 @@ def main() -> None:
     if len({pid for _, pid in SYCOPHANCY_EXAMPLE_IDS}) != len(SYCOPHANCY_EXAMPLE_IDS):
         raise RuntimeError("Curated sycophancy example IDs are not all distinct")
 
-    # --- Discover ALL genuine cross-domain SAFE->FAILURE transitions (do not manufacture) ---
+    # Collect all cross-domain SAFE->FAILURE transitions
     cross_rows_by_method = {
         method: paired["categories"]["cross_domain"][method]["rows"]
         for method in ("SatImp", "SimNPO")

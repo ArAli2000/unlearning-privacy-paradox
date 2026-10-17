@@ -1,45 +1,32 @@
 #!/usr/bin/env python3
-"""Experiment 1: does BASE<->unlearned activation patching change actual
-FREE-GENERATION sycophancy behavior on the CLEANED HIGH_CONFIDENCE_FAILURE set?
+"""Experiment 1: does BASE<->unlearned activation patching change free-generation
+sycophancy on the cleaned HIGH_CONFIDENCE_FAILURE set?
 
-The existing clean Phase-9 result (`analysis/activation_patching_clean_audit/
-CLEAN_RERUN_REPORT.md`) is a teacher-forced, fixed-continuation likelihood
-contrast. This script tests the same causal intervention under actual
-autoregressive generation, on the identical clean example set.
+The clean teacher-forced patching result (analysis/activation_patching_clean_audit/CLEAN_RERUN_REPORT.md)
+is a fixed-continuation likelihood contrast. This script applies the same intervention
+under autoregressive generation on the same examples.
 
-Case list: `analysis/activation_patching_clean_audit/clean_selection.json`
-(10 HIGH_CONFIDENCE_FAILURE treatment + 10 matched SAFE_TO_SAFE controls,
-manually audited -- NOT the old noisy `continuation_cases_v1.json`
-selection). See ../EXPERIMENT_PLAN.md for full provenance.
+Cases: analysis/activation_patching_clean_audit/clean_selection.json (10 HIGH_CONFIDENCE_FAILURE
+treatment + 10 matched SAFE_TO_SAFE controls). See ../EXPERIMENT_PLAN.md.
 
-Patching mechanism: reused UNMODIFIED (via dynamic import) from
-`mechanistic/muse_news_activation_patching.py`'s `ActivationDonor`/`generate`.
-At every decoding step the donor model is rerun from scratch on the
-recipient's actual generated-so-far sequence and only its last-position
-activation is spliced in -- this already solves the growing-sequence
-donor/recipient alignment problem (no stale full-sequence donor tensor from a
-diverged trajectory), so no new patching machinery is introduced here.
+Patching reuses ActivationDonor/generate from mechanistic/muse_news_activation_patching.py
+(dynamic import). At each decoding step the donor is rerun on the recipient's generated-so-far
+sequence and only its last-position activation is spliced in, so no stale donor tensor is needed.
 
-Layer ranges (0-indexed, matching the clean teacher-forced script's
-convention, translated to the reused `generate()`'s 1-indexed
-`layers[i-1]` convention):
-  early_L0-6       -- negative/localization control (per task instruction)
-  mid_late_L14-20  -- primary causal range
-  late_L21-27      -- primary causal range
+Layer ranges (0-indexed; translated to the 1-indexed `layers[i-1]` convention of generate()):
+  early_L0-6       localization control
+  mid_late_L14-20  primary range
+  late_L21-27      primary range
 
 Conditions per case:
-  A_base_unpatched            -- unpatched BASE generation
-  B_unlearned_unpatched       -- unpatched SatImp/SimNPO generation
-  C_forward_patch_<range>     -- recipient=unlearned, donor=BASE
-  D_reverse_patch_<range>     -- recipient=BASE, donor=unlearned
+  A_base_unpatched
+  B_unlearned_unpatched
+  C_forward_patch_<range>   recipient=unlearned, donor=BASE
+  D_reverse_patch_<range>   recipient=BASE, donor=unlearned
 
-Judging is intentionally NOT done here (separate scripts/jobs), so a judge
-bug can never force re-running this expensive generation pass.
-
-Checkpointing: results are written to disk after every case (not held in
-memory until the end) and already-completed (persistbench_id, method, group)
-triples are skipped on restart, so a walltime kill loses at most one
-in-flight case.
+Judging is done in separate scripts so a judge bug does not force a rerun of generation.
+Results are written after every case and completed (persistbench_id, method, group)
+triples are skipped on restart.
 
 Output: exp1_generation/exp1_generations.json, exp1_generation_metadata.json
 """
@@ -66,14 +53,14 @@ CLEAN_AUDIT_DIR = (
 CLEAN_SELECTION = CLEAN_AUDIT_DIR / "clean_selection.json"
 NATIVE_MANIFEST = ROOT / "mechanistic/privacy_collapse/persistbench_native/manifests/native_sycophancy_200_v1.json"
 
-# Reuse the existing, already-correct autoregressive patching mechanism unmodified.
+# Reuse the autoregressive patching code as is.
 _spec = importlib.util.spec_from_file_location(
     "muse_news_activation_patching", ROOT / "mechanistic/muse_news_activation_patching.py"
 )
 apatch = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(apatch)
 
-MODEL_PATHS = apatch.MODEL_PATHS  # BASE / SatImp / SimNPO -- verified on disk, see EXPERIMENT_PLAN.md
+MODEL_PATHS = apatch.MODEL_PATHS  # BASE / SatImp / SimNPO, see EXPERIMENT_PLAN.md
 MAX_NEW_TOKENS = apatch.MAX_NEW_TOKENS  # 96, matches original PersistBench generation settings
 
 # Translated from 0-indexed labels to apatch's 1-indexed `layers[i-1]` convention.

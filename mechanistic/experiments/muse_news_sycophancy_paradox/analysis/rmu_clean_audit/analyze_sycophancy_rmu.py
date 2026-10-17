@@ -1,18 +1,14 @@
 #!/usr/bin/env python3
-"""RMU replication of the descriptive sycophancy-failure-contrast analysis.
+"""RMU replication of the sycophancy failure-contrast analysis.
 
-Same token position, residual-stream states, bootstrap CI method (1000 reps, basic
-bootstrap for norms, percentile for cosines/means) as
-`../../../../privacy_collapse/persistbench_native/analyze_sycophancy.py`. Deliberate
-protocol note: the canonical SatImp/SimNPO version used ALL raw (unaudited) BASE-SAFE ->
-method-FAILURE transitions as the "failure" group (15 for SatImp, 12 for SimNPO). Per the
-user's explicit request, this RMU run uses only the 8 manually-audited
-HIGH_CONFIDENCE_FAILURE cases as the failure group (stable group is still the full raw
-SAFE->SAFE population, n=168, matching the canonical protocol for that side, since there is
-no equivalent audit step for stable cases in either version). This is a deliberate,
-disclosed deviation, not an oversight -- see RMU_MECHANISTIC report section D/J for why this
-makes the RMU number a slightly stricter (higher-precision, smaller-n) estimate than
-SatImp/SimNPO's.
+Same token position, residual-stream states and bootstrap methods (1000 reps; basic bootstrap
+for norms, percentile for cosines/means) as
+../../../../privacy_collapse/persistbench_native/analyze_sycophancy.py.
+
+One deliberate difference: the SatImp/SimNPO version used all raw BASE-SAFE -> method-FAILURE
+transitions as the failure group (15 and 12), whereas here only the 8 manually audited
+HIGH_CONFIDENCE_FAILURE cases are used. The stable group is still the full raw SAFE->SAFE
+population (n=168). The RMU estimate is therefore stricter and has smaller n.
 """
 from __future__ import annotations
 

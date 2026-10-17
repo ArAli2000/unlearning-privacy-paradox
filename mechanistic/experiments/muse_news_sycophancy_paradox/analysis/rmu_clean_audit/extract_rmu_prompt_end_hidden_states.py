@@ -1,12 +1,8 @@
 #!/usr/bin/env python3
-"""Extract prompt-end hidden states for RMU, identical protocol to the canonical
-SatImp/SimNPO extraction (mechanistic/privacy_collapse/persistbench_native/extract_prompt_end_hidden_states.py),
-kept as a standalone script so the canonical script and its outputs are never touched.
-
-Same manifest, same token position (last token of the effective prompt, pre-generation),
-same residual-stream extraction (all 29 hidden states via output_hidden_states=True),
-same dtype/attention/validation conventions. Only difference: single model (RMU), separate
-output directory.
+"""Extract prompt-end hidden states for RMU, with the same protocol as
+privacy_collapse/persistbench_native/extract_prompt_end_hidden_states.py (same manifest, last
+prompt token, all 29 hidden states, same dtype/attention/validation). Kept as a separate
+script with its own output directory so the SatImp/SimNPO outputs are not touched.
 """
 from __future__ import annotations
 

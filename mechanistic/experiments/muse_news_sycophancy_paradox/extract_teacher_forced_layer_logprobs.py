@@ -1,25 +1,17 @@
 #!/usr/bin/env python3
-"""Phase 8 (GPU): layer-wise teacher-forced preference between the actual BASE-safe
-response and the actual unlearned-model response, for the MUSE-News sycophancy
-SAFE_TO_FAILURE group (primary) and the full SAFE_TO_SAFE group (control).
+"""GPU extraction of layer-wise teacher-forced preference between the BASE-safe response and the
+unlearned model's response, for the SAFE_TO_FAILURE group (primary) and SAFE_TO_SAFE (control).
 
-For each example and each evaluating model M in {BASE, method}, and each candidate
-continuation C in {text_safe := BASE's own generation-0 response, text_alt := the
-method's own generation-0 response for the same row}, this computes a per-layer
-logit-lens estimate of mean log P_M(C's tokens | prompt, previous C tokens) by teacher
-forcing prompt_tokens + C_tokens through model M once, taking hidden_states at every
-layer, applying M's own final norm (except the already-normed last hidden-state entry,
-per this repo's established logit-lens convention -- see
-mechanistic/privacy_collapse/persistbench_sycophancy_mcq/extract.py) and M's own
-lm_head, then log_softmax and gathering the actual next-token log-probability at each
-response position.
+For each example, each evaluating model M in {BASE, method}, and each candidate C in
+{text_safe := BASE's generation-0 response, text_alt := the method's generation-0 response for the
+same row}, prompt + C is teacher-forced through M once and hidden_states are taken at every layer.
+Intermediate states go through M's final norm (the last state is already normed; see
+privacy_collapse/persistbench_sycophancy_mcq/extract.py) and M's lm_head, and the log-prob of each
+actual next token is gathered.
 
 score_M(layer) = mean_logprob_M(text_safe, layer) - mean_logprob_M(text_alt, layer)
 
-This is the sound multi-token alternative to a single "safe vs failing continuation"
-log-prob ratio requested for Phase 8: it does not require the two continuations to have
-equal length or shared tokens, and it uses each model's own weights throughout (no
-cross-model tying).
+This works for continuations of different length and tokens, and each model uses its own weights.
 """
 from __future__ import annotations
 

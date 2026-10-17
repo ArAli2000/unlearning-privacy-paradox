@@ -1,14 +1,10 @@
 #!/usr/bin/env python3
-"""Phase 7 analysis (CPU-only): memory-influence vectors and the SAFE_TO_FAILURE vs
-SAFE_TO_SAFE contrast, with a generic-unlearning-drift control (Phase 11).
+"""CPU-only memory-influence analysis: SAFE_TO_FAILURE vs SAFE_TO_SAFE contrast, with a control for generic unlearning drift.
 
 delta_memory_M(i, layer) = h_with_memory_M(i, layer) - h_no_memory_M(i, layer)
 
-for model M in {BASE, method}, example i, at the prompt-end position. Compared across
-SAFE_TO_SAFE vs SAFE_TO_FAILURE groups and against the generic drift vector
-h_with_memory_method(i, layer) - h_with_memory_BASE(i, layer) (does not depend on memory
-removal at all -- this is the "how much did unlearning move this example's
-representation overall" control).
+for model M in {BASE, method} and example i, at the prompt-end position. The generic-drift control
+is h_with_memory_method(i, layer) - h_with_memory_BASE(i, layer), which does not depend on memory removal.
 """
 from __future__ import annotations
 

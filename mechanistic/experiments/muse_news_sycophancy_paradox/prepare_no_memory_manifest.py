@@ -1,14 +1,10 @@
 #!/usr/bin/env python3
-"""Phase 7 (prep, CPU-only): build the memory-ablated ("query without memory") prompts
-for the same 200 MUSE-News sycophancy rows already frozen in
+"""Build the memory-ablated ("query without memory") prompts for the 200 MUSE-News sycophancy rows in
 mechanistic/privacy_collapse/persistbench_native/manifests/native_sycophancy_200_v1.json.
 
-Reuses the exact upstream prompt construction (STRICT_PREFIX + PersistBench's own
-build_generation_prompt + simple_llama_chat_template rendering + last-1800-token left
-truncation) from prepare_native_sycophancy_200.py, with one change: memories=[] instead
-of the real memory list. This is the "B. same query with the relevant memory removed"
-condition requested for the memory-influence analysis; it does not touch, re-run, or
-overwrite the existing with-memory manifest/tensors.
+Prompt construction is the same as in prepare_native_sycophancy_200.py (STRICT_PREFIX,
+build_generation_prompt, simple_llama_chat_template, last-1800-token left truncation) except
+memories=[]. The existing with-memory manifest and tensors are not modified. CPU-only.
 """
 from __future__ import annotations
 

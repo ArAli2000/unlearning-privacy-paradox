@@ -55,9 +55,7 @@ def main():
             weights_only=True,
         )
 
-    # ------------------------------------------------------------------
     # Prompt representation drift
-    # ------------------------------------------------------------------
 
     selected_positions = sorted(
         {
@@ -129,9 +127,7 @@ def main():
         index=False,
     )
 
-    # ------------------------------------------------------------------
     # Shared target-response hidden-state trajectory
-    # ------------------------------------------------------------------
 
     inj = meta["injection"]
     lo = int(inj["window_generated_token_start"])
@@ -170,9 +166,7 @@ def main():
         index=False,
     )
 
-    # ------------------------------------------------------------------
     # First injected token: target-vs-BASE logit-lens difference
-    # ------------------------------------------------------------------
 
     first_lens = lens[
         lens["generated_token_index"] == first
@@ -229,9 +223,7 @@ def main():
         index=False,
     )
 
-    # ------------------------------------------------------------------
     # Compact findings
-    # ------------------------------------------------------------------
 
     print("\n" + "=" * 80)
     print("PROMPT REPRESENTATION DRIFT")

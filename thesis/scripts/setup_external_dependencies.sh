@@ -1,21 +1,10 @@
 #!/usr/bin/env bash
-# Clone/pin/patch the vendored external tool dependencies documented in
+# Clone/pin/patch the external dependencies listed in
 # thesis/manifests/external_dependencies/external_dependencies.tsv.
-#
-# This script is safe to run on a fresh clone of this repository (where
-# external/PersistBench and external/privacy-collapse do not yet exist) and
-# is idempotent: if a target already exists, it is inspected and left alone
-# rather than overwritten, unless it is already correctly set up (in which
-# case the script reports that and exits cleanly).
-#
-# It performs NO destructive operations on an existing checkout: it never
-# runs `git reset --hard`, `git clean`, or deletes an existing directory.
+# Idempotent; never resets, cleans or deletes an existing checkout.
 set -euo pipefail
 
-# --- 1. Determine repository root dynamically -------------------------------
-# Prefer `git rev-parse --show-toplevel` (works regardless of where this
-# script physically lives); fall back to a path relative to this script's own
-# location only if that fails (e.g. run outside of a git checkout).
+# Repo root: git first, else relative to this script.
 if REPO_ROOT="$(git rev-parse --show-toplevel 2>/dev/null)"; then
   :
 else
@@ -36,8 +25,7 @@ echo
 
 STATUS=0
 
-# --- 2-4. Process each row of the manifest ----------------------------------
-# Skip the header line; tab-separated: name, repository_url, commit,
+# Manifest columns (tab-separated, header skipped): name, repository_url, commit,
 # local_path, modified_for_thesis, patch_file, notes
 while IFS=$'\t' read -r NAME REPO_URL COMMIT LOCAL_PATH MODIFIED PATCH_FILE NOTES; do
   [ -z "${NAME:-}" ] && continue

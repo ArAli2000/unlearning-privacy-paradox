@@ -26,10 +26,7 @@ echo "HOSTNAME: $(hostname)"
 echo "JOB ID: ${SLURM_JOB_ID}"
 nvidia-smi
 
-# 2 cases (1 treatment, first SatImp case, plus its slot pairing does not
-# matter for timing purposes), all 3 layer ranges, real MAX_NEW_TOKENS=96 --
-# purpose is to validate correctness AND get a realistic per-case timing
-# estimate to size the full job's --time budget, not to shortcut generation
-# length (which would not be representative of real per-step cost).
+# Two cases, all 3 layer ranges, full MAX_NEW_TOKENS=96: checks that patching
+# works and gives a per-case timing to size the full job's --time.
 python mechanistic/experiments/muse_news_sycophancy_final_mechanism/run_exp1_generate.py \
   --limit-cases 2 --out-name exp1_generations_smoketest.json

@@ -1,18 +1,12 @@
 #!/usr/bin/env python3
-"""Convert exp1 generations into the `entries`/`results`/`generations` schema
-that `thesis/analysis/judge_robustness/gemma_judge.py` expects (the existing,
-proven Gemma-3-12b-it judge pipeline for this repo -- reused as-is rather than
-writing a new, untested local-transformers Gemma-3 loader).
+"""Convert exp1 generations into the entries/results/generations schema that
+thesis/analysis/judge_robustness/gemma_judge.py expects.
 
-One "entry" per (persistbench_id, method, group) case; one "model_key" per
-generation condition (A_base_unpatched, B_unlearned_unpatched,
-C_forward_patch_<range>, D_reverse_patch_<range>), each holding a single
-generation (index 0) whose `memory_response` is that condition's generated
-text. `failure_type` is "sycophancy" for every entry (this experiment only
-covers the sycophancy category), matching `benchmark.config.FAILURE_TYPE_SYCOPHANCY`.
+One entry per (persistbench_id, method, group) case and one model_key per
+generation condition, each holding a single generation (index 0) whose
+`memory_response` is the generated text. failure_type is "sycophancy" throughout.
 
-Input:  exp1_generation/exp1_generations_qwen_judged.json (or any exp1 file
-        with the same `conditions` structure)
+Input:  exp1_generation/exp1_generations_qwen_judged.json
 Output: exp1_generation/exp1_generations_gemma_schema.json
 """
 from __future__ import annotations

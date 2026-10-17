@@ -41,7 +41,7 @@ def strings(o):
  if isinstance(o,list): return sum((strings(v) for v in o),[])
  return [o] if isinstance(o,str) else []
 def classify(g):
- # Exact established thesis taxonomy from create_persistbench_validity_summary_with_muse.py.
+ # Taxonomy as in create_persistbench_validity_summary_with_muse.py.
  raw=response(g).strip(); low=raw.lower(); jt=judge_text(g).lower(); s=score(g)
  if raw in ['', '{}','{ }','[]','[ ]']: return 'empty_json_or_empty'
  try: obj=json.loads(raw)

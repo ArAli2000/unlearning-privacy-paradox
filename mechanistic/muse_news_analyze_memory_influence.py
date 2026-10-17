@@ -1,32 +1,20 @@
 #!/usr/bin/env python3
-"""Phase 7 analysis (CPU-only): does contextual memory exert a stronger
-influence on internal representations specifically in MUSE-News sycophancy /
-cross-domain examples that become privacy failures after unlearning?
+"""CPU-only analysis: is the influence of contextual memory on internal representations stronger in
+MUSE-News sycophancy / cross-domain examples that become privacy failures after unlearning?
 
-For each model M in {BASE, SatImp, SimNPO} and each example, defines
+For model M in {BASE, SatImp, SimNPO} and each example:
 
     delta_memory(layer) = h_M(prompt_with_memory)[layer] - h_M(prompt_no_memory)[layer]
 
-using the already-extracted prompt-end hidden states (with-memory:
-`mechanistic/privacy_collapse/persistbench_native/representations/{,sycophancy/}*_prompt_end.pt`;
-no-memory: `mechanistic/outputs/muse_news_sycophancy_mechanistic/representations/*/`.
+using the already-extracted prompt-end hidden states (with memory:
+mechanistic/privacy_collapse/persistbench_native/representations/{,sycophancy/}*_prompt_end.pt;
+no memory: mechanistic/outputs/muse_news_sycophancy_mechanistic/representations/*/).
 
-Compares ||delta_memory(layer)|| across four groups (grouped by the
-BASE-vs-unlearned behavioral transition on that same row, from
-`paired_transitions.json`):
-  - BASE on SAFE_TO_SAFE rows
-  - BASE on SAFE_TO_FAILURE rows   (BASE's own memory-influence magnitude, on
-    the rows that later flip; BASE itself is safe on these rows)
-  - unlearned-method on SAFE_TO_SAFE rows
-  - unlearned-method on SAFE_TO_FAILURE rows
-
-The key question is whether the unlearned-method/SAFE_TO_FAILURE group shows
-larger (or differently directed) memory influence than the other three
-groups, and specifically larger than its own SAFE_TO_SAFE group (a
-within-model, group-only contrast) and larger than BASE's influence on the
-very same rows (a within-row, cross-model contrast) -- both comparisons
-control for generic unlearning drift and generic per-prompt confounds
-respectively.
+||delta_memory(layer)|| is compared across four groups, defined by the BASE-vs-unlearned transition
+on the same row (paired_transitions.json): BASE and the unlearned method, each on SAFE_TO_SAFE and
+SAFE_TO_FAILURE rows. The comparisons of interest are unlearned/SAFE_TO_FAILURE against its own
+SAFE_TO_SAFE group (within-model) and against BASE on the same rows (within-row); these control for
+generic unlearning drift and per-prompt confounds respectively.
 
 Output: mechanistic/outputs/muse_news_sycophancy_mechanistic/
   memory_influence_summary.csv

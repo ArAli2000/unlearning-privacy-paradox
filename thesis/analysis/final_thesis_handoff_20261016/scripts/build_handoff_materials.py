@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
-"""Final thesis data handoff, part 2: prompt inventory + copies, generation configs, checkpoints, LaTeX tables, THESIS_FACTS.md, integrity file.
-READ-ONLY on every experimental artifact. Writes only into thesis/analysis/final_thesis_handoff_20261016/ and (copies) thesis/final_appendix_material/prompts/.
-Run build_handoff_data.py first (it writes scripts/_state.pkl)."""
+"""Final thesis data handoff, part 2: prompt inventory and copies, generation configs, checkpoints, LaTeX tables, THESIS_FACTS.md, integrity file.
+Read-only on experimental artifacts; writes into thesis/analysis/final_thesis_handoff_20261016/ and copies to thesis/final_appendix_material/prompts/.
+Run build_handoff_data.py first (it writes scripts/_state.pkl).
+"""
 import ast, csv, hashlib, json, os, pickle, re, shutil, statistics, sys
 from collections import Counter
 from fractions import Fraction
@@ -35,7 +36,7 @@ def pp(x): return 'NA' if x is None else ('0.00' if abs(float(x)) < 5e-13 else f
 def pfmt(p): return '< 0.0001' if p < 1e-4 else f'{p:.4f}'
 
 
-# =================================================================================================== 6. prompt inventory + copies
+# 6. prompt inventory + copies
 SRC = AM / 'prompts'; DST = R / 'thesis/final_appendix_material/prompts'
 DST.mkdir(parents=True, exist_ok=True)
 INVENT = [
@@ -73,11 +74,11 @@ tsv(H / 'prompt_inventory.tsv', ['filename', 'source_path', 'copied_path', 'exac
 chk('prompt inventory: 8 files copied, source and copy SHA-256 identical', len(rows) == 8 and allid and len(list(DST.iterdir())) == 8)
 chk('exact prompt files verified verbatim against source constants', all(r[7].startswith('verified') for r in rows if r[3] == 'exact'), '; '.join(f'{r[0]}: {r[7][:9]}' for r in rows if r[3] == 'exact'))
 
-# =================================================================================================== 7. configuration inventory
+# 7. configuration inventory
 EXP, INH, INF = 'explicitly configured', 'inherited/default', 'inferred from runtime artifacts'
 CFG = []
 def add(setting, param, value, status, evidence): CFG.append([setting, param, value, status, evidence])
-# ---- PrivacyLens
+# PrivacyLens
 PL = 'PrivacyLens (493 items; all MUSE and TOFU behavioural models)'
 EV = 'thesis/scripts/privacylens/eval_privacylens_mcq_local.py; thesis/appendix_material/configs/privacylens_configuration.tsv'
 add(PL, 'decoding', 'sampling (do_sample=True)', EXP, EV + ' (model.generate(..., do_sample=True))')
@@ -91,7 +92,7 @@ add(PL, 'prompt variant', 'naive', EXP, 'meta.prompt_type == naive in all 70 sto
 add(PL, 'top_p / top_k / repetition_penalty (Qwen2.5-7B-Instruct checkpoints)', '0.8 / 20 / 1.05', INH, 'checkpoint generation_config.json merged by HF generate (files read after the runs, not archived per run)')
 add(PL, 'top_p / top_k / repetition_penalty (Llama-3.1-8B-Instruct, TOFU)', 'top_p 0.9 (generation_config.json); top_k 50 and repetition_penalty 1.0 (library defaults)', INF, 'generation_config.json {temperature 0.6, top_p 0.9}; HF GenerationConfig defaults')
 add(PL, 'top_p / top_k / repetition_penalty (Llama-2-7b, MUSE-Books)', '1.0 / 50 / 1.0 (library defaults)', INF, 'generation_config.json contains only bos/eos; HF defaults')
-# ---- MUSE original truncated Qwen
+# MUSE original truncated Qwen
 def muse_rows(setting, model_note, hw, ctx_note, gc_status, gc_val, ev):
     add(setting, 'hardware', hw, EXP if 'requested' in hw else INF, ev)
 add_s = 'MUSE original, truncated (Qwen2.5-7B-Instruct, News + Books; Track B)'
@@ -106,7 +107,7 @@ add(add_s, 'explicit generation seed', 'none (no request seed, no --seed flag); 
 add(add_s, 'top_p / top_k / repetition_penalty', '0.8 / 20 / 1.05 (effective; moot at temperature 0 for top_p/top_k, active for repetition_penalty)', INH, "checkpoint generation_config.json; confirmed by the vLLM log line 'Default vLLM sampling parameters have been overridden by the model's generation_config.json'")
 add(add_s, 'served-model alias in the prompt', 'muse_{news,books}_qwen25_<condition> (condition-specific; located in the head of the prompt that the truncation removed)', EXP, 'launcher --served-model-name; prompts/persistbench_generator_exact.txt')
 add(add_s, 'hardware', 'NVIDIA A100 80GB (gres a180); News job 408558_0 (node penelope), Books job 409517_0 (node rubeus); vLLM 0.23.0', INF, 'thesis/analysis/truncated_replication_20261016/configuration_audit.tsv (SLURM accounting + vLLM log)')
-# ---- MUSE replicated truncated
+# MUSE replicated truncated
 add_s = 'MUSE truncated replication (Qwen2.5-7B-Instruct, News + Books)'
 EVR = 'thesis/analysis/truncated_replication_20261016/{configuration_audit,replication_config_verification,job_summary}.tsv; external/PersistBench/outputs/truncated_replication_20261016/'
 for p_, v_ in (('temperature', '0.0'), ('max new tokens', '96'), ('context length (vLLM --max-model-len)', '2048'), ('prompt truncation', 'left truncation to the last 1800 prompt tokens (truncate_prompt_tokens=1800)'),
@@ -116,7 +117,7 @@ add(add_s, 'generations per scenario (cross_domain / sycophancy / beneficial mem
 add(add_s, 'explicit generation seed', 'none; vLLM engine default seed=0', INH, EVR)
 add(add_s, 'top_p / top_k / repetition_penalty', '0.8 / 20 / 1.05', INH, EVR + ' (override line identical to original)')
 add(add_s, 'hardware', 'NVIDIA H200 NVL (gres h200nvl); News job 466261 (node lenny), Books job 466262 (node nelson); vLLM 0.23.0', INF, 'thesis/analysis/truncated_replication_20261016/job_summary.tsv (SLURM accounting + nvidia-smi)')
-# ---- MUSE full prompt Qwen
+# MUSE full prompt Qwen
 add_s = 'MUSE full prompt (Qwen2.5-7B-Instruct, News + Books, complete matrix)'
 EVF = 'thesis/analysis/muse_qwen_fullprompt_complete_20261016/generation_config.tsv; thesis/scripts/persistbench_fullprompt_{robustness,complete}/; stored output metadata'
 add(add_s, 'temperature', '0.0', EXP, EVF + ' (api_params)')
@@ -130,7 +131,7 @@ add(add_s, 'top_p / top_k / repetition_penalty', '0.8 / 20 / 1.05', INH, 'checkp
 add(add_s, 'served-model alias in the prompt', 'muse_news_qwen25 (News) / muse_books_qwen25 (Books): one neutral alias shared by all five conditions of a dataset', EXP, EVF)
 add(add_s, 'judge', 'Qwen/Qwen2.5-7B-Instruct served as local-judge (temperature 0; identical rubric/code to all other PersistBench judging)', EXP, 'stored metadata.judge_model = local-judge; launcher')
 add(add_s, 'hardware', 'NVIDIA H200 NVL (gres h200nvl) for all 30 cells: reused News cross-domain/sycophancy cells jobs 466206/466200 (node lenny); new cells jobs 466336-466339 (node nelson); vLLM 0.23.0, torch 2.11.0+cu130, transformers 5.12.1, CUDA 12.2', INF, 'SLURM accounting (sacct) + _meta/env_*.txt')
-# ---- MUSE Llama-2
+# MUSE Llama-2
 add_s = 'MUSE original, truncated (Llama-2-7b, News [Track A] + Books)'
 EVL = 'external/PersistBench/outputs/muse_{news_selected,books_llama2_selected}_full/*.json; logs/vllm_muse_*llama2*; thesis/appendix_material/configs/generation_configurations.tsv'
 for p_, v_ in (('temperature', '0.0'), ('max new tokens', '96'), ('context length (vLLM --max-model-len)', '2048'), ('prompt truncation', 'left truncation to the last 1800 prompt tokens'), ('chat template', 'templates/simple_llama_chat_template.jinja')):
@@ -139,7 +140,7 @@ add(add_s, 'generations per scenario (cross_domain / sycophancy / beneficial mem
 add(add_s, 'explicit generation seed', 'none; vLLM engine default seed=0', INH, 'vLLM startup logs')
 add(add_s, 'top_p / top_k / repetition_penalty', '1.0 / disabled (-1) / 1.0 (vLLM defaults)', INF, 'no vLLM override line in the logs and no local generation_config.json for the official target (absence of evidence)')
 add(add_s, 'hardware', 'A100-class (a180), vLLM 0.23.0 (see source table)', INF, EVL)
-# ---- TOFU
+# TOFU
 for nm, tpl, tp, tk, rp, st_tp, st_other, ev_ in (
         ('TOFU Qwen2.5-7B-Instruct (PersistBench)', 'native Qwen2.5 ChatML template (no --chat-template flag)', '0.8', '20', '1.05', INH, INH, 'external/PersistBench/outputs/final_tofu_persistbench_localjudge/qwen25_7b_*_localjudge.json; logs/vllm_qwen25_7b_*_from_tofufull_*.log'),
         ('TOFU Llama-3.1-8B-Instruct (PersistBench)', 'native Llama-3.1 header template (no --chat-template flag)', '0.9', 'not set (disabled)', '1.0', INH, INF, 'external/PersistBench/outputs/final_tofu_persistbench_localjudge/llama31_8b_*_localjudge.json; logs/vllm_llama31_8b_*_404164_*.log')):
@@ -157,7 +158,7 @@ for nm, tpl, tp, tk, rp, st_tp, st_other, ev_ in (
 tsv(H / 'final_generation_configs.tsv', ['setting', 'parameter', 'value', 'status', 'evidence'], CFG)
 chk('config inventory: every row carries one of the three status labels', all(r[3] in (EXP, INH, INF) for r in CFG), f'{len(CFG)} rows')
 
-# =================================================================================================== 8. checkpoints
+# 8. checkpoints
 mc = rtsv(AM / 'reproducibility/model_checkpoints.tsv'); HFC = Path('/storage/ukp/work/elshashay/.cache/huggingface/hub')
 def exists(path):
     if path.startswith('n/a'): return None
@@ -197,7 +198,7 @@ tsv(H / 'final_model_checkpoints.tsv', ['benchmark', 'model', 'condition', 'chec
 chk('checkpoints: derived from audited model_checkpoints.tsv (no selection change); every path exists now', all(r[6] != 'NO' for r in rows), f'{len(rows)} rows; missing: {[r[:3] for r in rows if r[6] == "NO"]}')
 chk('checkpoints: MUSE Qwen (News, Books) and Llama-2 Books selections equal the persistbench model-list manifests', not mism, str(mism))
 
-# =================================================================================================== 9. LaTeX tables
+# 9. LaTeX tables
 def esc(s): return str(s).replace('\\', r'\textbackslash{}').replace('_', r'\_').replace('%', r'\%').replace('&', r'\&').replace('#', r'\#')
 def dtex(x): return '--' if x is None else ('0.00' if abs(float(x)) < 5e-13 else (f'+{float(x):.2f}' if x > 0 else f'$-${abs(float(x)):.2f}'))
 def ptex(p): return '$<0.0001$' if p < 1e-4 else f'{p:.4f}'
@@ -274,7 +275,7 @@ for k, v in LX.items():
     if not (beg and tb and v.count('{') == v.count('}')): bad.append((k, 'unbalanced'))
 chk('LaTeX snippets: balanced environments/braces and consistent column counts (7 tables)', not bad and len(LX) == 7, str(bad))
 
-# =================================================================================================== 10. THESIS_FACTS.md
+# 10. THESIS_FACTS.md
 man = rtsv(FA / 'fullprompt_manifest.tsv'); gcfg = rtsv(FA / 'generation_config.tsv'); pla = rtsv(FA / 'prompt_length_audit.tsv')
 envtxt = '; '.join(sorted({l.strip() for f in (R / 'external/PersistBench/outputs/muse_qwen_fullprompt_complete_20261016/_meta').rglob('env_*.txt') for l in f.read_text().splitlines() if l.startswith(('vllm=', 'CUDA_HOME'))}))
 jobs = rtsv(R / 'external/PersistBench/outputs/muse_qwen_fullprompt_complete_20261016/job_plan_submissions.tsv')
@@ -347,7 +348,7 @@ A('- TOFU behavioural evaluations loaded each run directory\'s top-level weights
 A('- MUSE-News Llama-2 is the official-target "Track A" setting, labelled SUPERSEDED in `thesis/appendix_material/README.md`; it was nevertheless included in the truncated replication as setting C (`research_history/04_muse_track_a/manifests/muse_news_persistbench_models.tsv`).')
 (H / 'THESIS_FACTS.md').write_text('\n'.join(LF) + '\n')
 
-# =================================================================================================== 11. final integrity checks (v1 contamination etc.)
+# 11. final integrity checks (v1 contamination etc.)
 v1 = rtsv(AM / 'tables/fullprompt_robustness.tsv'); diffs = []
 for r in v1:
     if not r['Prompt regime tested'].startswith('full prompt'): continue

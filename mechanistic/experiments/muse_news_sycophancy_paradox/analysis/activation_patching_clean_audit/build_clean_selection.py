@@ -1,19 +1,16 @@
 #!/usr/bin/env python3
-"""Corrective-validation example selection for the cleaned Phase-9 rerun.
+"""Example selection for the clean patching rerun.
 
-Treatment set: ALL examples classified HIGH_CONFIDENCE_FAILURE in the manual audit
-(`audit/manual_transition_audit.csv`) -- SatImp 6, SimNPO 4. AMBIGUOUS and
-LIKELY_JUDGE_NOISE examples are excluded entirely, per the user's explicit instruction.
+Treatment: all examples marked HIGH_CONFIDENCE_FAILURE in the manual audit
+(audit/manual_transition_audit.csv): SatImp 6, SimNPO 4. AMBIGUOUS and LIKELY_JUDGE_NOISE
+examples are excluded.
 
-Control set: SAFE_TO_SAFE examples matched 1:1 (greedy nearest-neighbor, no replacement)
-to each treatment example on, in priority order: (1) BASE judge score (exact match
-required), (2) BASE response character length, (3) memory-block character length
-(sum of memory strings, proxy for memory length), (4) prompt token length (from the
-frozen native manifest's effective_prompt_token_ids, exact tokenized prompt length).
-Approximately the same number of controls as treatments per method (6 SatImp, 4 SimNPO).
+Controls: SAFE_TO_SAFE examples matched 1:1 (greedy nearest neighbor, no replacement) to each
+treatment example on, in priority order: BASE judge score (exact), BASE response length in
+characters, total memory-string length in characters, and prompt token length (from the native
+manifest's effective_prompt_token_ids).
 
-This script only reads frozen, existing files and writes new ones under this directory.
-It does not modify `manifests/sycophancy_transition_groups.json` or the manual audit.
+Reads frozen files only; does not modify manifests/sycophancy_transition_groups.json.
 """
 from __future__ import annotations
 

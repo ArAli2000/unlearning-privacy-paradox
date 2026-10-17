@@ -1,12 +1,10 @@
 #!/usr/bin/env python3
-"""Merge Gemma-3-12b-it judgments (produced by
-`thesis/analysis/judge_robustness/gemma_judge.py` on the file written by
-`exp1_to_gemma_schema.py`) back into the main exp1 generation records as a
-`judge_gemma` field per condition, alongside the existing `judge_qwen` field.
-Never overwrites `judge_qwen`.
+"""Merge Gemma-3-12b-it judgments (from thesis/analysis/judge_robustness/gemma_judge.py,
+run on the file written by exp1_to_gemma_schema.py) into the exp1 generation records as a
+`judge_gemma` field per condition. `judge_qwen` is left untouched.
 
-Input:  exp1_generation/exp1_generations_qwen_judged.json (base records)
-        exp1_generation/exp1_generations_gemma_schema.gemma3.json (gemma_judge.py output)
+Input:  exp1_generation/exp1_generations_qwen_judged.json
+        exp1_generation/exp1_generations_gemma_schema.gemma3.json
 Output: exp1_generation/exp1_generations_fully_judged.json
 """
 from __future__ import annotations

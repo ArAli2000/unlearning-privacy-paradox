@@ -1,14 +1,10 @@
 #!/usr/bin/env python3
-"""Cleaned, corrective-validation rerun of Phase 9 activation patching.
+"""Clean rerun of the activation patching experiment.
 
-Differs from `run_activation_patching.py` ONLY in example selection: examples come from
-`clean_selection.json` (HIGH_CONFIDENCE_FAILURE treatment + matched SAFE_TO_SAFE controls,
-per the manual audit), not from a judge-score-jump ranking. Layer ranges, capture/patch
-mechanism, and the teacher-forced mean-logprob scoring are unchanged from the original
-script (same design, so old-vs-clean is a controlled comparison of selection only).
-
-Writes to this directory (`analysis/activation_patching_clean_audit/`), never touches the
-original `analysis/activation_patching_*.csv` outputs.
+Differs from run_activation_patching.py only in example selection: examples come from
+clean_selection.json (HIGH_CONFIDENCE_FAILURE treatment + matched SAFE_TO_SAFE controls)
+instead of a judge-score-jump ranking. Layer ranges, patching mechanism and teacher-forced
+mean-logprob scoring are unchanged. Writes only to this directory.
 """
 from __future__ import annotations
 

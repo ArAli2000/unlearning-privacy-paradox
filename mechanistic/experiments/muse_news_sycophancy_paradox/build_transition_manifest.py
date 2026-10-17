@@ -1,18 +1,12 @@
 #!/usr/bin/env python3
-"""Phase 3: paired SAFE/FAILURE transition groups for the MUSE-News sycophancy case.
+"""Paired SAFE/FAILURE transition groups for the MUSE-News sycophancy case.
 
-Reuses the frozen native prompt-end population manifest
-(mechanistic/privacy_collapse/persistbench_native/manifests/native_sycophancy_200_v1.json),
-which already carries, per PersistBench row and per model (BASE/SatImp/SimNPO): the
-generation-0 response text, the legacy-local-Qwen judge score, and the recovered
-generation-validity mode. This script does NOT regenerate or rejudge anything; it only
-re-derives the paired transition classification (official metric: failure = score >= 3)
-and writes it as a clean, self-contained manifest + human-readable report for the
-selected mechanistic case (MUSE-News, sycophancy, BASE vs SatImp/SimNPO).
-
-Invalid generations (per the existing recovered validator) are excluded from every
-transition group; this repository's own validation found 0/200 excluded for this
-population, but the exclusion check is kept explicit and enforced here regardless.
+Reads the frozen native prompt-end manifest
+(mechanistic/privacy_collapse/persistbench_native/manifests/native_sycophancy_200_v1.json), which holds
+per row and model (BASE/SatImp/SimNPO) the generation-0 response, the legacy local Qwen judge score and
+the generation-validity mode. Nothing is regenerated or rejudged; the transition classification
+(failure = score >= 3) is re-derived and written as a manifest plus a readable report.
+Invalid generations are excluded from every group (none are invalid for this population).
 """
 from __future__ import annotations
 

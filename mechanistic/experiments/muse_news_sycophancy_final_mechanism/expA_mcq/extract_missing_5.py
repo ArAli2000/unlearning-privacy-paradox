@@ -1,26 +1,18 @@
 #!/usr/bin/env python3
-"""Experiment A: construct + extract MCQ logit-margin readouts for the 5
-HIGH_CONFIDENCE_FAILURE persistbench_ids NOT already covered by the existing
-curated 50-example MCQ manifest
-(`mechanistic/privacy_collapse/persistbench_sycophancy_mcq/manifests/
-persistbench_sycophancy_mcq_clear_no_50_v1.json`).
+"""Experiment A: MCQ logit-margin readouts for the 5 HIGH_CONFIDENCE_FAILURE persistbench_ids
+that are not in the curated 50-example MCQ manifest
+(persistbench_sycophancy_mcq/manifests/persistbench_sycophancy_mcq_clear_no_50_v1.json).
 
-Reuses the existing MCQ construction and extraction code UNCHANGED (imported
-directly from `persistbench_sycophancy_mcq/common.py` and the same
-`projections`/`endpoint` logit-lens logic as `extract.py`) -- no new probe
-design, no new prompt template. The only difference from the original 50 is
-which persistbench_ids are included; memories/query come straight from the
-clean HIGH_CONFIDENCE_FAILURE audit
-(`analysis/activation_patching_clean_audit/clean_selection.json`).
+MCQ construction and extraction reuse persistbench_sycophancy_mcq/common.py and the same
+logit-lens logic as extract.py. Memories and query come from
+analysis/activation_patching_clean_audit/clean_selection.json.
 
-Covered (from the existing 50-example manifest, reused, not recomputed):
-  aa71a70f (SatImp, SimNPO), 3c6606c5 (SatImp), 2740209d (SimNPO)
-Missing (constructed + extracted here):
-  3ccf8e85 (SatImp), b934289e (SatImp), 7b1e0198 (SatImp),
-  7079a34e (SatImp, SimNPO), e549f564 (SimNPO)
+In the 50-example manifest: aa71a70f (SatImp, SimNPO), 3c6606c5 (SatImp), 2740209d (SimNPO)
+Extracted here: 3ccf8e85 (SatImp), b934289e (SatImp), 7b1e0198 (SatImp),
+                7079a34e (SatImp, SimNPO), e549f564 (SimNPO)
 
-Output: expA_mcq/missing5_readout.csv (same schema as the existing
-mcq_readout_per_example.csv), expA_mcq/missing5_prepared.json (provenance).
+Output: expA_mcq/missing5_readout.csv (same schema as mcq_readout_per_example.csv),
+        expA_mcq/missing5_prepared.json
 """
 from __future__ import annotations
 

@@ -1,26 +1,19 @@
 #!/usr/bin/env python3
-"""Phase 9 (GPU): causal activation patching between BASE and the unlearned model on
-strong MUSE-News sycophancy SAFE_TO_FAILURE examples (plus SAFE_TO_SAFE controls).
+"""GPU activation patching between BASE and the unlearned model on MUSE-News sycophancy
+SAFE_TO_FAILURE examples (plus SAFE_TO_SAFE controls).
 
-For a chosen contiguous decoder-layer range [L_start, L_end] (0-indexed layer modules,
-0..27), this captures the DONOR model's raw layer outputs (via forward hooks on
-model.model.layers[j]) while teacher-forcing prompt+response tokens, then re-runs the
-RECIPIENT model on the identical token sequence with those same layers' outputs
-overwritten by the donor's captured values. Everything outside [L_start, L_end] uses the
-recipient's own weights throughout (including the final norm + lm_head), so the readout
-is the recipient's own standard causal-LM logits, unaffected by any manual logit-lens
-convention.
+For a contiguous decoder-layer range [L_start, L_end] (0-indexed, 0..27), the donor model's layer
+outputs are captured with forward hooks on model.model.layers[j] while teacher-forcing prompt+response.
+The recipient then runs on the same tokens with those layers' outputs overwritten by the donor's.
+Everything else, including the final norm and lm_head, is the recipient's own, so the readout is its
+standard causal-LM logits.
 
-score(condition) = mean_logprob(text_safe) - mean_logprob(text_alt), under the recipient
-model in that condition (unpatched baseline, or patched with a given layer range).
-A shift in this score toward "more BASE-like" under patching is the causal evidence
-requested for Phase 9.
+score(condition) = mean_logprob(text_safe) - mean_logprob(text_alt) under the recipient. A shift
+toward "more BASE-like" under patching is the causal evidence.
 
-Two directions:
-  --direction unlearned_recipient : donor=BASE,   recipient=method   (primary; "restores
-      safe behavior when given BASE's activations?")
-  --direction base_recipient      : donor=method, recipient=BASE     (reverse check;
-      "does injecting the unlearned model's activations make BASE more sycophantic?")
+Directions:
+  --direction unlearned_recipient : donor=BASE, recipient=method (does BASE's activation restore safe behavior?)
+  --direction base_recipient      : donor=method, recipient=BASE (does the method's activation make BASE more sycophantic?)
 """
 from __future__ import annotations
 

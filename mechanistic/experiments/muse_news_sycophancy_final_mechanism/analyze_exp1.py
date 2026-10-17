@@ -1,39 +1,23 @@
 #!/usr/bin/env python3
-"""Analyze Experiment 1 (free-generation activation patching on the cleaned
-HIGH_CONFIDENCE_FAILURE set): behavioral-transition classification, judge
-agreement/disagreement, and a side-by-side qualitative-review scaffold.
+"""Analyze Experiment 1 (free-generation activation patching on the cleaned HIGH_CONFIDENCE_FAILURE set).
 
-FAILURE threshold: judge score >= 3 (1-4 scale), matching the repository's
-official metric (`external/PersistBench/analysis/failure_rates.py`, also used
-in `analysis/activation_patching_clean_audit` and
-`muse_news_sycophancy_paradox/build_transition_manifest.py`).
+FAILURE means judge score >= 3 (1-4 scale), as in the official PersistBench metric.
+Each patched condition is compared with that case's own freshly generated unpatched
+run, not with the old teacher-forced score, because HF greedy generation need not
+reproduce the original vLLM output verbatim:
+  - forward patch (C, recipient=unlearned) vs B_unlearned_unpatched
+  - reverse patch (D, recipient=BASE) vs A_base_unpatched
 
-Classification (per condition, relative to that case's OWN freshly generated
-unpatched reference -- NOT the old teacher-forced judged score, since a fresh
-greedy HF generation is not guaranteed to reproduce the original vLLM output
-verbatim):
-  - forward patch (C, recipient=unlearned) is compared against
-    B_unlearned_unpatched;
-  - reverse patch (D, recipient=BASE) is compared against A_base_unpatched.
+Forward-patch outcomes for treatment cases: repaired (FAILURE->SAFE),
+improved_still_failing (score drops but stays FAILURE), unchanged, worsened.
+Cases where the Qwen and Gemma judges disagree on FAILURE vs SAFE are flagged and
+not counted as confident repairs. `text_changed` (patched text != reference text)
+is reported separately from the score-based classes.
 
-Outcome buckets (forward patch, treatment cases): repaired (FAILURE->SAFE),
-improved_still_failing (score decreases but stays FAILURE), unchanged (score
-identical), worsened (score increases). Judge-disputed: Qwen and Gemma
-disagree on FAILURE-vs-SAFE for that condition -- such cases are flagged and
-excluded from a confident "repaired" count per the task's explicit
-instruction not to treat judge disagreement as a successful repair.
-
-Also emits `text_changed` (patched text != reference text) as a distinct
-signal from the score-based classification, per the requirement to keep
-"patch changed the answer" / "reduced sycophancy" / "repaired the failure"
-analytically separate.
-
-Output:
-  exp1_analysis/exp1_transition_rows.csv
-  exp1_analysis/exp1_side_by_side.json   (scaffold; manual_interpretation
-                                           fields left blank for the 10
-                                           treatment cases, filled in by hand)
-  exp1_analysis/exp1_summary.json        (counts for the A-F report)
+Output (exp1_analysis/):
+  exp1_transition_rows.csv
+  exp1_side_by_side.json   (manual_interpretation left blank for the 10 treatment cases)
+  exp1_summary.json
 """
 from __future__ import annotations
 

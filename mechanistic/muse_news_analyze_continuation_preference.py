@@ -1,18 +1,13 @@
 #!/usr/bin/env python3
-"""Phase 8 analysis (CPU-only): layer-wise safe-vs-failure continuation
-preference for MUSE-News sycophancy/cross-domain SAFE_TO_FAILURE cases versus
-matched SAFE_TO_SAFE controls.
+"""CPU-only analysis of layer-wise safe-vs-failure continuation preference for MUSE-News
+sycophancy/cross-domain SAFE_TO_FAILURE cases versus matched SAFE_TO_SAFE controls.
 
-score(layer) = mean_token_logprob(candidate_A=BASE response)
-             - mean_token_logprob(candidate_B=unlearned-method response)
-under the ordinary logit lens of the case's OWN unlearned method (or BASE, as
-a separate control-model comparison), teacher-forced on the identical prompt.
-Positive = the layer still favors the safe/reference continuation; negative =
-it already favors the alternative (privacy-failing, for FAILURE cases; the
-method's own different-but-safe text, for CONTROL cases).
+score(layer) = mean_token_logprob(candidate_A=BASE response) - mean_token_logprob(candidate_B=unlearned-method response)
+under the ordinary logit lens of the case's own unlearned method (or of BASE as a control model),
+teacher-forced on the same prompt. Positive: the layer still favors the safe/reference continuation.
+Negative: it favors the alternative.
 
-Bootstrap: 2,000 resamples over cases (not over layers), percentile 95% CI,
-seed 20260919.
+Bootstrap: 2,000 resamples over cases, percentile 95% CI, seed 20260919.
 
 Output: mechanistic/outputs/muse_news_sycophancy_mechanistic/
   continuation_preference_summary.csv

@@ -1,27 +1,16 @@
 #!/usr/bin/env python3
-"""Freeze teacher-forced continuation cases for Phase 8 (layer-wise safe-vs-
-failure continuation preference) of the MUSE-News sycophancy/cross-domain
-mechanistic experiment. CPU-only; loads only the BASE tokenizer, no model
-weights.
+"""Freeze teacher-forced continuation cases for the layer-wise safe-vs-failure continuation
+preference analysis. CPU-only; loads only the BASE tokenizer.
 
-For every SAFE_TO_FAILURE row (per category/method) in
-`paired_transitions.json`, and a reproducibly-sampled, size-matched control
-set of SAFE_TO_SAFE rows, this freezes two teacher-forced candidate
-continuations sharing the identical (with-memory) prompt:
+For every SAFE_TO_FAILURE row (per category/method) in paired_transitions.json, and a size-matched
+random control set of SAFE_TO_SAFE rows, two candidate continuations share the same with-memory prompt:
+- candidate_A: BASE's stored generation-0 response (the safe reference).
+- candidate_B: the unlearned method's stored generation-0 response. For FAILURE cases this is the
+  privacy-failing text; for CONTROL cases it is the unlearned model's own safe text.
 
-- candidate_A: BASE's own stored generation-0 response (always the "safe"
-  reference text).
-- candidate_B: the unlearned method's own stored generation-0 response. For
-  the FAILURE group this is the actual privacy-failing continuation; for the
-  CONTROL group it is the unlearned model's own different-but-still-safe
-  continuation, giving a same-machinery safe-vs-safe baseline.
+Rows are chosen from the transition labels alone, before any activations are inspected.
 
-Selection (which rows go in FAILURE/CONTROL) is fixed by the already-computed
-transition labels in paired_transitions.json; it is not re-derived here, and
-no case is chosen after inspecting activations.
-
-Output: mechanistic/outputs/muse_news_sycophancy_mechanistic/manifests/
-  continuation_cases_v1.json
+Output: mechanistic/outputs/muse_news_sycophancy_mechanistic/manifests/continuation_cases_v1.json
 """
 
 from __future__ import annotations

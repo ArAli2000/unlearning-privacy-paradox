@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
-"""Read-only SHA-256 hashing of the regular files directly inside the given directories (no recursion, so evals/logs/.hydra are skipped).
-usage: tofu_hash_dirs.py OUT.json DIR [DIR ...]   Incremental: entries whose size+mtime match an existing record are not re-hashed."""
+"""SHA-256 hashing of the regular files directly inside the given directories (no recursion, so evals/logs/.hydra are skipped).
+usage: tofu_hash_dirs.py OUT.json DIR [DIR ...]   Incremental: entries whose size+mtime match an existing record are not re-hashed.
+"""
 import hashlib, json, os, sys, time
 from concurrent.futures import ThreadPoolExecutor
 sys.dont_write_bytecode = True

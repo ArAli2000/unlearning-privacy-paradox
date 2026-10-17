@@ -1,16 +1,13 @@
 #!/usr/bin/env python3
-"""Phase 8 analysis (CPU-only): layer-wise BASE-vs-unlearned divergence in the
-teacher-forced preference for the actual "safe" (BASE) response over the actual
-"alt" (method) response, on SAFE_TO_FAILURE rows vs SAFE_TO_SAFE controls.
+"""CPU-only analysis of layer-wise BASE-vs-unlearned divergence in the teacher-forced preference for the
+"safe" (BASE) over the "alt" (method) response, on SAFE_TO_FAILURE rows vs SAFE_TO_SAFE controls.
 
 score_M(example, layer) = mean_logprob_M(text_safe, layer) - mean_logprob_M(text_alt, layer)
 divergence(example, layer) = score_BASE(example, layer) - score_method(example, layer)
 
-A positive divergence means BASE prefers its own ("safe") text over the method's text,
-by more than the method itself prefers BASE's text over its own -- i.e. the two models'
-internal layer-wise preferences have pulled apart. The key question (Phase 8/11): is
-divergence, and the layer at which it becomes large, bigger for SAFE_TO_FAILURE rows
-than for SAFE_TO_SAFE rows?
+A positive divergence means BASE prefers its own text over the method's text by more than the method
+prefers BASE's text over its own. The question is whether divergence, and the layer where it becomes
+large, is bigger for SAFE_TO_FAILURE than for SAFE_TO_SAFE rows.
 """
 from __future__ import annotations
 

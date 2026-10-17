@@ -292,13 +292,7 @@ def prepare_case(cfg, tokenizer):
 
 
 def project_hidden_to_logits(model, h, layer_index, last_index):
-    """
-    Qwen correction used in our previous logit-lens analysis:
-
-    intermediate hidden states -> final RMS norm -> lm_head
-
-    final saved hidden state is already normalized.
-    """
+    """Intermediate hidden states -> final RMS norm -> lm_head. The final saved hidden state is already normalized."""
 
     if layer_index == last_index:
         projected = h
@@ -330,13 +324,8 @@ def score_first_branch_across_layers(
     prepared,
     device,
 ):
-    """
-    Same exact context for PRIVATE and SAFE.
-
-    At every hidden layer:
-        score(private first token) - score(safe first token)
-
-    This is the cleanest branch-point test.
+    """Same context for PRIVATE and SAFE; at every hidden layer compute
+        score(private first token) - score(safe first token). This is the branch-point test.
     """
 
     ids = (
@@ -700,11 +689,9 @@ def main():
                 f"\n{model_name} | {case['case']}"
             )
 
-            # ---------------------------------------------------------
             # A) Most important analysis:
             #    the first real private-vs-safe branch token
             #    across all 29 hidden-state stages.
-            # ---------------------------------------------------------
 
             layer_result = (
                 score_first_branch_across_layers(
@@ -726,9 +713,7 @@ def main():
                     }
                 )
 
-            # ---------------------------------------------------------
             # B) Full continuation score
-            # ---------------------------------------------------------
 
             branch_results = {}
 
@@ -793,9 +778,7 @@ def main():
     sequence_df = pd.DataFrame(sequence_rows)
     token_df = pd.DataFrame(token_rows)
 
-    # -------------------------------------------------------------
     # Compact preference table
-    # -------------------------------------------------------------
 
     preference_rows = []
 
@@ -843,7 +826,7 @@ def main():
                         ]
                     ),
 
-                    # CLEANEST local branch test
+                    # Local branch test
                     "first_token_private_minus_safe": float(
                         final_layer[
                             "private_minus_safe"
@@ -888,7 +871,7 @@ def main():
                         )
                     ),
 
-                    # Also save raw totals, but do NOT use these as
+                    # Also save raw totals, but do not use these as
                     # the main comparison when lengths differ.
                     "private_sum_log_probability": float(
                         private[

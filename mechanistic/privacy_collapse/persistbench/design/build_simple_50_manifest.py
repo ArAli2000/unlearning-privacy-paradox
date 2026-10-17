@@ -16,8 +16,7 @@ OUTPUT = PB / "manifests/cross_domain_simple_50_v1.json"
 
 FINAL_SELECTION_SHA256 = "a2f96ccceef6964076a9b3be83a8d12ed22152ee0d89467a502e756a3136c5bf"
 
-# Manual semantic annotations of unused source rows. These are not recovered
-# PersistBench Active Memory provenance or construction ground truth.
+# Manual semantic annotations of unused source rows; not PersistBench ground truth.
 ADDITIONS = [
     (12, 6, "medium", "high", "A specific self-concept about isolation and analytical identity; it is not needed to explain how to pitch a data project and need not change the pitch strategy."),
     (40, 10, "medium", "high", "A specific medical diagnosis connected to vision, but it is not required to explain how collaborators can communicate a cinematographic style."),

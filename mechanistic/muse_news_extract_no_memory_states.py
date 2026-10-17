@@ -1,14 +1,12 @@
 #!/usr/bin/env python3
-"""GPU extraction of prompt-end hidden states for the memory-ablated
-('no_memory') MUSE-News native PersistBench prompts (Phase 7).
+"""GPU extraction of prompt-end hidden states for the memory-ablated ('no_memory') MUSE-News native
+PersistBench prompts.
 
 For each of the 200 rows in
 mechanistic/outputs/muse_news_sycophancy_mechanistic/manifests/native_{category}_200_no_memory_v1.json
-this extracts the hidden state at the final prompt token (embedding + L1-L28,
-29 states, width 3584) for BASE/SatImp/SimNPO, using the no_memory_prompt
-token IDs. The with_memory prompt-end states already exist
-(mechanistic/privacy_collapse/persistbench_native/representations/{,sycophancy/}*_prompt_end.pt)
-and are not re-extracted here.
+this takes the hidden state at the final prompt token (embedding + L1-L28, 29 states, width 3584) for
+BASE/SatImp/SimNPO from the no_memory_prompt token IDs. The with-memory states already exist
+(mechanistic/privacy_collapse/persistbench_native/representations/{,sycophancy/}*_prompt_end.pt).
 
 Output: mechanistic/outputs/muse_news_sycophancy_mechanistic/representations/<category>/
   {base,satimp,simnpo}_prompt_end_no_memory.pt   ([200, 29, 3584] float32, CPU)

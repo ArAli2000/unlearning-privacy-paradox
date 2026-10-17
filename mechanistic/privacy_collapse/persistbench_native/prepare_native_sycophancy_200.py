@@ -123,7 +123,7 @@ def load_prompt_builder():
 
 
 def load_prior_validator():
-    """Load the exact recovered July-22 classifier without executing its output scan."""
+    """Load the earlier validator's classifier without executing its output scan."""
     source = VALIDATOR.read_text(encoding="utf-8")
     prefix, marker, _ = source.partition("\nrows = []\n")
     if not marker:
@@ -237,13 +237,10 @@ def main() -> None:
                 "generation_index": GENERATION_INDEX,
                 "generated_response": generation["memory_response"],
                 "generation_settings": {
-                    # Corrected 2026-09-14: these three values were not measured from the actual
-                    # generation run and did not match it (see
-                    # thesis/manifests/provenance/persistbench_generation_corrections.json). The
-                    # vLLM server log for the actual job confirms repetition_penalty=1.05,
-                    # top_p=0.8 (both from the Qwen checkpoints' own generation_config.json,
-                    # applied because the request did not override them), and no seed was set
-                    # (temperature=0.0 makes decoding greedy/deterministic regardless of seed).
+                    # From the vLLM server log of the actual job (see
+                    # thesis/manifests/provenance/persistbench_generation_corrections.json):
+                    # repetition_penalty=1.05 and top_p=0.8 come from the Qwen checkpoints'
+                    # generation_config.json; no seed was set (temperature=0.0 is greedy).
                     "temperature": 0.0,
                     "top_p": 0.8,
                     "max_tokens": 96,

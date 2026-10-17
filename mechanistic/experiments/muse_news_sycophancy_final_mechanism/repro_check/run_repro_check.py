@@ -1,34 +1,21 @@
 #!/usr/bin/env python3
-"""Reproducibility check requested before Experiment 2: for the 10
-HIGH_CONFIDENCE_FAILURE cases, regenerate the UNPATCHED BASE/unlearned
-responses using vLLM with the SAME settings as the original canonical
-PersistBench generation run (job 408558,
-`thesis/scripts/persistbench/run_persistbench_muse_news_qwen25_selected.sh`),
-3 separate sequential calls per (model, prompt) to mirror how the original
-3-generations-per-example data was actually produced (NOT a single batched
-n=3 call, which would not exercise the same call-to-call engine variance).
+"""Reproducibility check: regenerate the unpatched BASE/unlearned responses for the 10
+HIGH_CONFIDENCE_FAILURE cases with vLLM, using the settings of the original PersistBench
+generation run (job 408558, thesis/scripts/persistbench/run_persistbench_muse_news_qwen25_selected.sh).
 
-Verified original settings (from the real vLLM server startup log
-`logs/vllm_muse_news_qwen25_before_408558_0.log`, NOT from the native
-manifest's self-reported `generation_settings` field, which turned out to
-incorrectly say repetition_penalty=1.08/top_p=1.0 -- the log shows vLLM's
-"Default vLLM sampling parameters have been overridden by the model's
-generation_config.json": repetition_penalty=1.05, temperature=0.7, top_k=20,
-top_p=0.8. The client only explicitly overrides temperature->0.0 and
-max_tokens->96; repetition_penalty/top_k/top_p are left to inherit from the
-checkpoint's own generation_config.json, which is exactly what happens by
-default if we do NOT pass those fields to SamplingParams either.):
-  temperature=0.0 (explicit override, everything else inherited)
-  max_tokens=96
-  dtype=bfloat16, max_model_len=2048 (server flags)
-  chat_template=templates/simple_llama_chat_template.jinja (server flag --
-    irrelevant here since we bypass templating entirely, see below)
+Each (model, prompt) gets 3 separate sequential calls, as in the original run, rather than
+one batched n=3 call, so call-to-call engine variance is exercised.
 
-To isolate this check to ENGINE/DECODING differences only (not prompt
-construction), we bypass chat-template reconstruction and feed the EXACT
-`effective_prompt_token_ids` already extracted in
-`native_sycophancy_200_v1.json` (the same ids Experiment 1 used) directly as
-`prompt_token_ids` to vLLM.
+Settings are taken from the vLLM server log (logs/vllm_muse_news_qwen25_before_408558_0.log),
+not from the native manifest's `generation_settings` field, which wrongly says
+repetition_penalty=1.08 / top_p=1.0. The log shows the checkpoint's generation_config.json
+defaults were applied (repetition_penalty=1.05, top_k=20, top_p=0.8); the client only
+overrode temperature (0.0) and max_tokens (96). So only those two are passed to SamplingParams.
+Server flags: dtype=bfloat16, max_model_len=2048.
+
+To isolate engine/decoding differences, the exact `effective_prompt_token_ids` from
+native_sycophancy_200_v1.json (the ids Experiment 1 used) are passed as prompt_token_ids,
+bypassing the chat template.
 
 Output: repro_check/repro_check_raw.json
 """
@@ -105,9 +92,8 @@ def main() -> None:
             gpu_memory_utilization=0.90,
         )
         sampling_params = SamplingParams(temperature=0.0, max_tokens=MAX_TOKENS)
-        # NOT setting repetition_penalty/top_k/top_p -- left unset so vLLM inherits
-        # the checkpoint's own generation_config.json values, exactly matching the
-        # original run's effective (not self-reported) settings.
+        # repetition_penalty/top_k/top_p are left unset so vLLM inherits them from
+        # the checkpoint's generation_config.json, as in the original run.
 
         for rep in range(N_REPS):
             t0 = time.time()

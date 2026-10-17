@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Phase 3 (human-readable half): representative SAFE->FAILURE / SAFE->SAFE examples."""
+"""Representative SAFE->FAILURE and SAFE->SAFE examples as a readable report."""
 from __future__ import annotations
 
 import json

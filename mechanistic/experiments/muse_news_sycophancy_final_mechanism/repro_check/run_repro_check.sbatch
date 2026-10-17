@@ -10,13 +10,10 @@
 #SBATCH --output=logs/%x_%j.out
 #SBATCH --error=logs/%x_%j.err
 #
-# Reproducibility check requested before Experiment 2: regenerate the 10
-# HIGH_CONFIDENCE_FAILURE cases' unpatched BASE/unlearned responses with
-# vLLM (offline engine), 3 separate sequential calls per prompt, using the
-# verified effective original settings (temperature=0.0, everything else
-# inherited from the checkpoint's own generation_config.json -- see
-# run_repro_check.py docstring for why this, not the native manifest's
-# self-reported generation_settings field, is trusted).
+# Regenerates the unpatched BASE/unlearned responses of the 10
+# HIGH_CONFIDENCE_FAILURE cases with offline vLLM, 3 sequential calls per prompt
+# (temperature=0.0, other settings from the checkpoint's generation_config.json).
+# See run_repro_check.py for why these settings.
 
 set -euo pipefail
 

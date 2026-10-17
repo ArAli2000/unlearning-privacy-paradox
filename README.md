@@ -1,3 +1,60 @@
+# Thesis code
+
+This repository is the code accompanying a master's thesis on LLM unlearning evaluated on MUSE-News and MUSE-Books. It is a fork of [OpenUnlearning](https://github.com/locuslab/open-unlearning); the upstream README is reproduced unchanged below this section. The thesis adds a checkpoint-selection patch to the trainer, launcher scripts for the behavioral benchmarks (PrivacyLens, PersistBench), a mechanistic analysis of hidden states, and the manifests and appendix material needed to trace the reported numbers.
+
+## Where things are
+
+| Path | Contents |
+|---|---|
+| `src/trainer/base.py` | The only modified framework file. Adds the `best_agg` checkpoint-selection metric (harmonic mean of a utility proxy and a forgetting proxy), used with `metric_for_best_model=best_agg`. Description: `thesis/docs/trainer_patch.md`. |
+| `thesis/scripts/` | Launchers by benchmark: `muse_news/`, `muse_books/` (finetune and unlearn), `privacylens/`, `persistbench/` (generation and local judging), `persistbench_fullprompt_robustness/` and `persistbench_fullprompt_complete/` (full-prompt robustness check), `validation/` (generation-validity summaries). `common.sh` provides repository-root detection and conda activation; `setup_external_dependencies.sh` sets up `external/`. |
+| `mechanistic/` | Hidden-state and activation-patching analyses (PrivacyLens, PersistBench native, controlled MCQ probes, sycophancy experiments). Per-directory notes are in `mechanistic/README.md` and `mechanistic/privacy_collapse/README.md`. |
+| `thesis/manifests/` | Small frozen records: selected checkpoint paths per benchmark, trainer states, model lists used by the launchers, environment snapshot, external dependency pins, generation-setting corrections. |
+| `thesis/appendix_material/` | Exact prompts, configuration tables, FR@K/validity/robustness/judge tables and LaTeX snippets for the thesis appendix. |
+| `thesis/docs/` | Notes on the trainer patch, the PersistBench patch, generation provenance and the experiment history. |
+| `thesis/patches/persistbench.patch` | Thesis modifications to PersistBench (local judge routing and generation controls). |
+| `thesis/analysis/` | Final analysis tables (`final_thesis_handoff_20261016/`). |
+| `external/` | `PersistBench` and `privacy-collapse`, included as git submodules. |
+
+`thesis/README.md` is the detailed guide: final datasets and methods, canonical checkpoints, generation settings, and known caveats.
+
+## Getting the external dependencies
+
+Clone with submodules:
+
+```bash
+git clone --recurse-submodules <this-repo-url>
+# or, in an existing clone:
+git submodule update --init
+```
+
+The submodules are pinned to the commits recorded in `thesis/manifests/external_dependencies/external_dependencies.tsv`. `external/privacy-collapse` is used unmodified. PersistBench was modified for the thesis (local judge routing, generation controls); these changes are not in the submodule and are applied from the patch:
+
+```bash
+git -C external/PersistBench apply ../../thesis/patches/persistbench.patch
+```
+
+Alternatively, if `external/PersistBench` and `external/privacy-collapse` do not exist, `bash thesis/scripts/setup_external_dependencies.sh` clones each at its pinned commit and applies the patch. The script never overwrites an existing checkout and skips one that is already present.
+
+## Reproducing the results
+
+1. Install the framework as described in the upstream README below. The environment used for training is recorded in `thesis/manifests/environment/conda_unlearning.yml`.
+2. Fine-tune the targets and unlearn with the launchers in `thesis/scripts/muse_news/` and `thesis/scripts/muse_books/`. Checkpoints are selected during training by `best_agg`. The selected checkpoints are listed in `thesis/manifests/selection/`.
+3. Evaluate with `thesis/scripts/privacylens/` and `thesis/scripts/persistbench/` (the latter serves checkpoints with vLLM and judges with a locally served Qwen2.5-7B-Instruct). The launchers are SLURM scripts and call `thesis/scripts/common.sh`; the conda environment is set through `UNLEARNING_CONDA_ACTIVATE` and `UNLEARNING_CONDA_ENV`.
+4. Run the analyses in `mechanistic/` and the validity summaries in `thesis/scripts/validation/`. Entry points for each analysis are listed in `thesis/appendix_material/reproducibility/script_map.tsv`.
+
+Some launchers still export cluster-specific paths (`HF_HOME`, `CUDA_HOME`) that must be adapted. Model generation is not bitwise reproducible even with identical settings (see `thesis/README.md`), so the frozen result files, not regenerated outputs, are the reference for reported numbers.
+
+## Not included
+
+Model checkpoints (`saves/`), generations and judgments (`external/PersistBench/outputs/`, `outputs/`), extracted hidden-state tensors, and logs are not part of the repository. They are large and are excluded by `.gitignore`.
+
+## Development history
+
+`thesis_archive.zip` (repository root, not tracked by git) holds the development history that was removed from the submission tree: earlier research phases (`research_history/`), the cleanup and audit notes, bulk analysis outputs, and `MASTER_THESIS_MAP.md`.
+
+---
+
 <div align="center">
 
 ![*Open*Unlearning](assets/banner.png)

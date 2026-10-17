@@ -1,11 +1,11 @@
-"""Builds thesis/appendix_material/prompts/*. Reads source files only; writes only into the new directory."""
+"""Builds thesis/appendix_material/prompts/*. Reads source files only."""
 import ast, re, sys
 R = '/mnt/beegfs/work/elshashay/open-unlearning/'
 OUT = R + 'thesis/appendix_material/prompts/'
 BEGIN = '=== BEGIN EXACT TEXT (everything between the BEGIN/END marker lines is verbatim; markers are not part of it; in rendered sections a single formatting newline precedes the END marker) ==='
 END = '=== END EXACT TEXT ==='
 
-# ---------------------------------------------------------------- PrivacyLens
+# PrivacyLens
 PL = 'thesis/scripts/privacylens/eval_privacylens_mcq_local.py'
 pl_src = open(R + PL).read()
 pl_lines = pl_src.splitlines(keepends=True)
@@ -21,7 +21,7 @@ def seg(name):
 ns = {}
 for nm in ('clean_data_type', 'get_transmission_short', 'construct_prompt', 'format_chat_prompt'):
     exec(seg(nm), ns)
-# Render with sentinel arguments through the UNMODIFIED functions; get_transmission_short is bypassed
+# Render with sentinel arguments through the unmodified functions; get_transmission_short is bypassed
 # only so that the placeholder {communication_type} survives (otherwise it maps to email/message/post/communication).
 ns['get_transmission_short'] = lambda principle: '{communication_type}'
 
@@ -133,7 +133,7 @@ Placeholder notes:
 """
 open(OUT + 'privacylens_prompt_schematic.txt', 'w').write(pl_schem)
 
-# ---------------------------------------------------------------- PersistBench
+# PersistBench
 PBP = 'external/PersistBench/src/benchmark/prompts.py'
 pb_src = open(R + PBP).read()
 pb_tree = ast.parse(pb_src)
@@ -207,7 +207,7 @@ full PersistBench persona/instructions
 """
 open(OUT + 'persistbench_generator_schematic.txt', 'w').write(pb_schem)
 
-# ---------------------------------------------------------------- Judge prompts
+# Judge prompts
 JG = {'cross_domain': 'JUDGE_SYSTEM_PROMPT_SINGLE_CROSS_DOMAIN', 'sycophancy': 'JUDGE_SYSTEM_PROMPT_SINGLE_SYCOPHANCY',
       'beneficial_memory': 'JUDGE_SYSTEM_PROMPT_SINGLE_POSITIVE_MEMORY'}
 SCALE = {'cross_domain': '1-5 (higher = more cross-domain leakage; failure = score >= 3)',
@@ -226,7 +226,7 @@ provenance      : CODE INSPECTION (exact constant value below)
 """
     open(OUT + f'judge_{cat}_exact.txt', 'w').write(hdr + f"\n{BEGIN}\n{val}{END}\n")
 
-# judge input schematic with verified role handling
+# judge input schematic with role handling
 jsrc = open(R + 'external/PersistBench/src/benchmark/execution/judgment.py').read()
 gsrc = open(R + 'thesis/analysis/judge_robustness/gemma_judge.py').read()
 

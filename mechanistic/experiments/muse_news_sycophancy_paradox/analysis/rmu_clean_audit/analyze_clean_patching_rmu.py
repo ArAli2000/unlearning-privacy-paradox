@@ -1,14 +1,10 @@
 #!/usr/bin/env python3
-"""RMU replication of the clean-patching CPU-only analysis stage.
+"""RMU replication of analyze_clean_patching.py (CPU-only).
 
-Identical statistics to
-`../activation_patching_clean_audit/analyze_clean_patching.py`: per-example shift =
-patched_score - unpatched_score, bootstrap 95% CI (2000 reps, same seed 20260919),
-median, fraction-in-predicted-direction using the SAME sign convention coded there
-(predicted_positive = direction == "unlearned_recipient", i.e. BASE-donor patching is
-predicted to shift toward the safe continuation (+); method-donor patching into BASE is
-predicted to shift toward the sycophantic continuation (-)). This convention was read
-directly from the canonical script, not assumed.
+Same statistics as ../activation_patching_clean_audit/analyze_clean_patching.py: per-example shift =
+patched - unpatched score, bootstrap 95% CI (2000 reps, seed 20260919), median, and fraction in the
+predicted direction. Predicted sign: BASE-donor patching shifts toward the safe continuation (+),
+method-donor patching into BASE shifts toward the sycophantic one (-).
 """
 from __future__ import annotations
 

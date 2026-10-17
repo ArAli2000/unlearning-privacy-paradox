@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
-"""Judge the fresh vLLM reproducibility-check generations
-(repro_check_raw.json) with the same legacy local Qwen judge used everywhere
-else in this experiment, for direct comparability with the original
-pipeline's stored judge scores and Experiment 1's HF-greedy judge scores.
+"""Judge the vLLM reproducibility-check generations (repro_check_raw.json) with the same
+legacy local Qwen judge used in the rest of this experiment.
 
 Output: repro_check_judged.json  {pid: {model_label: [score0, score1, score2]}}
 """

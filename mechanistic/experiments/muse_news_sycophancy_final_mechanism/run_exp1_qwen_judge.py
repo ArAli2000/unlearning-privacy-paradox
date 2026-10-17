@@ -1,13 +1,8 @@
 #!/usr/bin/env python3
-"""Judge every generation produced by `run_exp1_generate.py` with the legacy
-local Qwen2.5-7B-Instruct PersistBench sycophancy judge -- the SAME judge
-(`simplified_local_judge_score`, reused unmodified via dynamic import) used
-throughout the clean audit, for direct comparability. This never reuses old
-judgments: every condition (A/B/C/D x layer range) of the newly generated
-text is scored fresh here.
-
-Checkpointing: writes after every case; already-judged cases are skipped on
-restart.
+"""Judge every generation from run_exp1_generate.py with the legacy local Qwen2.5-7B-Instruct
+PersistBench sycophancy judge (`simplified_local_judge_score`, imported dynamically), the same
+judge as in the clean audit. All conditions are scored fresh. Results are written after every
+case and already-judged cases are skipped on restart.
 
 Input:  exp1_generation/exp1_generations.json
 Output: exp1_generation/exp1_generations_qwen_judged.json

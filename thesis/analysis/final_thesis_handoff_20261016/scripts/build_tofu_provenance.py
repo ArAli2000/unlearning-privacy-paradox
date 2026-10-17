@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
-"""TOFU weight provenance: compare the weights the behavioural evaluations loaded (top-level run directory) with the selected checkpoint-N.
-READ-ONLY: only reads the hash database written by tofu_hash_dirs.py and existing logs/metadata; writes only into thesis/analysis/final_thesis_handoff_20261016/."""
+"""TOFU weight provenance: compare the weights loaded by the behavioural evaluations (top-level run directory) with the selected checkpoint-N.
+Reads the hash database from tofu_hash_dirs.py and existing logs/metadata; writes only into thesis/analysis/final_thesis_handoff_20261016/.
+"""
 import csv, glob, json, os, re, sys
 from pathlib import Path
 
@@ -62,7 +63,7 @@ for fam, model, m, run, step in RUNS:
     FACTS.append(dict(model=model, fam=fam, m=m, run=run, step=step, cmp=cmpr, ts_best=ts.get('best_model_checkpoint'), ts_step=ts.get('global_step'), ts_best_step=ts.get('best_global_step'), best_txt=best, others=others, pb=(pbn, pbp), pl=(pln, plp),
                       mtimes=(rec(top, 'model-00001-of-00004.safetensors') or {}).get('mtime'), ck_mtime=(rec(ck, 'model-00001-of-00004.safetensors') or {}).get('mtime')))
 
-# ---- table rows: one row per (benchmark, condition)
+# table rows: one row per (benchmark, condition)
 def loaded_kind(p, top, ck):
     q = str((R / p).resolve()) if not p.startswith('/') else str(Path(p).resolve())
     return 'top-level run directory' if q == str(top.resolve()) else ('selected checkpoint directory' if q == str(ck.resolve()) else 'other: ' + q)

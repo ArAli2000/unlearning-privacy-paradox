@@ -37,9 +37,8 @@ def _get_metric(metrics, key):
 
 
 def _set_proxy_metric(metrics, key, value):
-    # Store both names to be safe:
-    # - Agg_proxy appears clearly in trainer_state.json
-    # - eval_Agg_proxy works reliably with metric_for_best_model
+    # Both names are stored: the bare key shows up in trainer_state.json,
+    # the eval_ key is what metric_for_best_model looks up.
     metrics[key] = value
     metrics[f"eval_{key}"] = value
 
@@ -160,9 +159,8 @@ class FinetuneTrainer(Trainer):
                     "tokenizer": self.processing_class,
                 }
                 eval_metrics.update(evaluator.evaluate(**eval_args))
-            # BEST_AGG_MUSE_SELECTION_PATCH
-            # Add an aggregate checkpoint-selection metric for MUSE-style runs.
-            # Higher is better. This lets HF Trainer keep the best checkpoint.
+            # Aggregate checkpoint-selection metric for MUSE runs (higher is better),
+            # so the HF Trainer can keep the best checkpoint.
             def _bestagg_float_metric(_name, _default=None):
                 _v = eval_metrics.get(_name, eval_metrics.get(f"eval_{_name}", _default))
                 try:

@@ -55,7 +55,7 @@ rows = [
 ]
 w('configs/generation_configurations.tsv', H, rows)
 
-# ------------------------------------------------------------------ PrivacyLens
+# PrivacyLens
 PH = ['Parameter', 'Value', 'Applies to', 'Provenance', 'Evidence source', 'Confidence / note']
 SRC = 'thesis/scripts/privacylens/eval_privacylens_mcq_local.py'
 pl = [

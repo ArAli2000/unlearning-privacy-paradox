@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
-"""Phase 7 (GPU): extract prompt-end hidden states for the memory-ablated ("no memory")
-sycophancy prompts, for BASE/SatImp/SimNPO. Mirrors
-mechanistic/privacy_collapse/persistbench_native/extract_prompt_end_hidden_states.py
-exactly (same loading/dtype/extraction convention) so the resulting tensors are directly
-comparable, layer-for-layer and row-for-row, to the existing with-memory tensors at
+"""GPU extraction of prompt-end hidden states for the memory-ablated sycophancy prompts, for
+BASE/SatImp/SimNPO. Same loading, dtype and extraction as
+mechanistic/privacy_collapse/persistbench_native/extract_prompt_end_hidden_states.py, so the tensors
+are comparable layer-for-layer and row-for-row with the with-memory tensors in
 mechanistic/privacy_collapse/persistbench_native/representations/sycophancy/*.pt
 """
 from __future__ import annotations

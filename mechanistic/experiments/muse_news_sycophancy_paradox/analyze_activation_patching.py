@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
-"""Phase 9 analysis/plot (CPU-only): summarize + plot the activation-patching CSVs
-produced by run_activation_patching.py for both directions.
-"""
+"""CPU-only summary and plots of the activation-patching CSVs from run_activation_patching.py, both directions."""
 from __future__ import annotations
 
 from pathlib import Path

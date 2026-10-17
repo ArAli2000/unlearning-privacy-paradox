@@ -9,31 +9,11 @@
 #SBATCH --output=logs/%x_%j.out
 #SBATCH --error=logs/%x_%j.err
 
-# FULL-PROMPT ROBUSTNESS RUN (MUSE-News, Qwen2.5-7B-Instruct, PersistBench sycophancy only)
-#
-# Derived from thesis/scripts/persistbench/run_persistbench_muse_news_qwen25_selected.sh
-# (generation) and run_persistbench_muse_news_qwen25_judge_like_tofu.sh +
-# run_local_judge_server_penelope.sh (judging).
-#
-# Intended differences vs. the original run (and ONLY these):
-#   1. vllm serve --max-model-len 8192   (original: 2048)
-#   2. no truncate_prompt_tokens         (original: 1800, left truncation)
-# Additional, deliberate and reported deviations:
-#   3. served-model alias is the same neutral string for all 4 conditions
-#      ("muse_news_qwen25") instead of muse_news_qwen25_<condition>. PersistBench puts the
-#      alias into the persona prompt ("You are {model_name}"); in the original run that text
-#      was truncated away, but with the full prompt it would leak the method name
-#      (before/rmu/satimp/simnpo) into the input.
-#   4. store_raw_api_responses=true (storage only; lets us verify vLLM's prompt_tokens).
-#   5. the PersistBench package is the sandbox copy in ./pb_src whose utils.py is
-#      utils.py.bak_before_vllm_truncation (identical to the generation-time utils.py minus the
-#      forced truncate_prompt_tokens=1800 lines; the STRICT_GENERATION_CONTROL block is absent,
-#      exactly as it was at original generation time). The original external/PersistBench/src
-#      is not modified.
-# Unchanged: temperature 0.0, max_tokens 96, 3 generations (PersistBench default for
-# sycophancy), simple_llama_chat_template.jinja, bf16, gpu-mem-util 0.90, concurrency 1,
-# same checkpoints/tokenizer, same persona prompt (prompts.py), same scenario order,
-# same judge (Qwen/Qwen2.5-7B-Instruct as local-judge, same server flags, same judge code).
+# Full-prompt robustness run (MUSE-News, Qwen2.5-7B-Instruct, PersistBench sycophancy).
+# Differences from persistbench/run_persistbench_muse_news_qwen25_selected.sh: --max-model-len 8192 (was 2048),
+# no truncate_prompt_tokens (was 1800), store_raw_api_responses=true, and a neutral served-model alias for all
+# conditions so the persona prompt ("You are {model_name}") does not leak the method name. Uses the pb_src copy of PersistBench
+# (no forced truncation). Everything else (temperature 0, max_tokens 96, judge) is unchanged.
 
 set -euo pipefail
 
@@ -63,8 +43,7 @@ export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
 export NVCC_PREPEND_FLAGS="-allow-unsupported-compiler ${NVCC_PREPEND_FLAGS:-}"
 export VLLM_USE_FLASHINFER_SAMPLER=0
 
-# Sandbox PersistBench package (see header, item 5). PB_* strict-generation variables are
-# intentionally NOT set.
+# Sandbox PersistBench package; PB_* strict-generation variables are left unset.
 SANDBOX="$REPO/thesis/scripts/persistbench_fullprompt_robustness/pb_src"
 export PYTHONPATH="$SANDBOX:${PYTHONPATH:-}"
 export PYTHONDONTWRITEBYTECODE=1
@@ -194,7 +173,7 @@ JSON
   echo "[$LABEL] generation complete: $(date)"
 done
 
-# ------------------------------------------------------------------ judging (same Qwen local judge)
+# judging
 echo "======================================"
 echo "Starting local judge server (identical flags to run_local_judge_server_penelope.sh): $(date)"
 vllm serve "Qwen/Qwen2.5-7B-Instruct" \

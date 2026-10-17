@@ -1,46 +1,24 @@
 #!/usr/bin/env python3
-"""Build SAFE/FAILURE transition tables for the MUSE-News sycophancy mechanistic
-case study (BASE vs SatImp, BASE vs SimNPO), for the native PersistBench
-sycophancy and cross-domain categories at generation_index=0.
+"""SAFE/FAILURE transition tables for the MUSE-News sycophancy case (BASE vs SatImp, BASE vs SimNPO)
+for the native PersistBench sycophancy and cross-domain categories at generation_index=0.
+No model or GPU needed. Writes only into mechanistic/outputs/muse_news_sycophancy_mechanistic/.
 
-This script is read-only with respect to everything under
-`mechanistic/privacy_collapse/` and `mechanistic/outputs/` other than the new
-experiment directory it writes into
-(`mechanistic/outputs/muse_news_sycophancy_mechanistic/`). It loads no model
-and requires no GPU.
+1. Sycophancy: recomputes the transition counts published by
+   privacy_collapse/persistbench_native/analyze_sycophancy.py (analysis/sycophancy/sycophancy_transitions.json;
+   SatImp 166/15/10/9, SimNPO 169/12/8/11) from the frozen manifest, and checks group membership
+   against that file. Raises if either check fails.
 
-Two things it does:
+2. Cross-domain: computes the same table from manifests/native_cross_domain_200_v1.json
+   (only generation_index 0 exists there). That manifest has no precomputed
+   `recovered_generation_validation`, so validity is derived with `classify` (adapted from
+   thesis/scripts/validation/create_persistbench_validity_summary_with_muse.py) for every BASE/SatImp/SimNPO
+   response, and 100% validity is asserted (matching the zero cross_domain exclusions in
+   mechanistic/privacy_collapse/persistbench_native/analysis/muse_news_category_comparison_validated.json).
 
-1. Sycophancy: independently recomputes the exact same transition counts that
-   `mechanistic/privacy_collapse/persistbench_native/analyze_sycophancy.py`
-   already published in
-   `analysis/sycophancy/sycophancy_transitions.json` (SatImp 166/15/10/9,
-   SimNPO 169/12/8/11), directly from the frozen manifest, as a sanity check.
-   It also cross-checks the recomputed groups against the already-published
-   transitions file's own group membership. It raises if either check fails.
-
-2. Cross-domain: computes the analogous transition table, which does not
-   exist yet anywhere in the repo, directly from
-   `manifests/native_cross_domain_200_v1.json` (generation_index=0, the only
-   generation index present in that manifest). Because the cross-domain
-   manifest records do not carry a precomputed `recovered_generation_validation`
-   field (unlike the sycophancy manifest), this script re-derives validity by
-   applying the exact recovered validator logic from
-   `thesis/scripts/validation/create_persistbench_validity_summary_with_muse.py`
-   (function `classify`, copied verbatim below with a light adapter for this
-   manifest's judge-field naming) to every BASE/SatImp/SimNPO generation-0
-   response, and asserts 100% validity (matching the prior audit's recorded
-   zero exclusions for the cross_domain category across all three models; see
-   `mechanistic/privacy_collapse/persistbench_native/analysis/
-   muse_news_category_comparison_validated.json` -> validation.exclusions).
-
-Outputs (all new, all under the new experiment directory):
-  mechanistic/outputs/muse_news_sycophancy_mechanistic/
-    sycophancy_transitions.json   (re-derived, self-contained copy)
-    sycophancy_transitions.csv    (re-derived, self-contained copy)
-    cross_domain_transitions.json (new)
-    cross_domain_transitions.csv  (new)
-    paired_transitions.json       (new master artifact, both categories)
+Outputs (mechanistic/outputs/muse_news_sycophancy_mechanistic/):
+  sycophancy_transitions.json / .csv   (re-derived)
+  cross_domain_transitions.json / .csv
+  paired_transitions.json              (both categories)
 """
 
 from __future__ import annotations
@@ -79,15 +57,9 @@ EXPECTED_SYCOPHANCY_COUNTS = {
 }
 
 
-# ---------------------------------------------------------------------------
-# Recovered validator (copied, with a minimal adapter, from
+# Validity classifier copied from
 # thesis/scripts/validation/create_persistbench_validity_summary_with_muse.py
-# so this script is self-contained and does not need to reach into that file
-# at runtime; the adapter only translates this repo's
-# `legacy_local_qwen_judge` field name into the `judge` key the original
-# functions expect. The classification logic itself (`classify`) is
-# unmodified.)
-# ---------------------------------------------------------------------------
+# so this script runs standalone. Only the judge field name is adapted.
 
 def get_response(gen: dict[str, Any]) -> str:
     for k in ["memory_response", "model_response", "response", "output", "answer"]:
@@ -148,9 +120,7 @@ def meaningful_json(obj: Any) -> bool:
 
 
 def classify(txt: str, gen: dict[str, Any]) -> str:
-    """Verbatim copy of the recovered validator's classify() function from
-    thesis/scripts/validation/create_persistbench_validity_summary_with_muse.py.
-    """
+    """Copy of classify() from thesis/scripts/validation/create_persistbench_validity_summary_with_muse.py."""
     raw = (txt or "").strip()
     low = raw.lower()
     jt = judge_text(gen).lower()
@@ -220,17 +190,13 @@ VALID_MODES = {
 
 
 def recovered_valid(generated_response: str, judge_record: dict[str, Any]) -> tuple[bool, str]:
-    """Adapter: build the `gen` dict shape the original classify() expects
-    (a top-level "judge" key) from this repo's `legacy_local_qwen_judge`
-    field, then apply the unmodified classify() logic."""
+    """Build the `gen` dict classify() expects (top-level "judge" key) from `legacy_local_qwen_judge`."""
     gen = {"judge": {"score": judge_record.get("score"), "reasoning": judge_record.get("reasoning", "")}}
     mode = classify(generated_response, gen)
     return mode in VALID_MODES, mode
 
 
-# ---------------------------------------------------------------------------
 # Shared helpers
-# ---------------------------------------------------------------------------
 
 def label(is_failure: bool) -> str:
     return "FAILURE" if is_failure else "SAFE"
@@ -244,9 +210,7 @@ def score_of(record: dict[str, Any], model_label: str) -> int:
     return int(record["models"][model_label]["legacy_local_qwen_judge"]["score"])
 
 
-# ---------------------------------------------------------------------------
 # Sycophancy: recompute + verify against published counts
-# ---------------------------------------------------------------------------
 
 def build_sycophancy() -> dict[str, Any]:
     manifest = json.loads(SYCOPHANCY_MANIFEST.read_text())
@@ -272,8 +236,8 @@ def build_sycophancy() -> dict[str, Any]:
     }
 
     for method in METHODS:
-        # Validity: every row must already be valid per the manifest's stored
-        # recovered_generation_validation (BASE and method). Verify, don't assume.
+        # Every row must be valid per the manifest's stored
+        # recovered_generation_validation (BASE and method).
         invalid = []
         for record in records:
             for lbl in ("BASE", method):
@@ -283,8 +247,7 @@ def build_sycophancy() -> dict[str, Any]:
         if invalid:
             raise RuntimeError(f"Sycophancy: found {len(invalid)} invalid generation-0 rows for {method}: {invalid[:5]}")
 
-        # Independent recomputation via the recovered validator (cross-check
-        # against the manifest's stored validation labels).
+        # Recompute validity with the classifier and compare with the stored labels.
         mismatches = []
         for record in records:
             for lbl in ("BASE", method):
@@ -369,9 +332,7 @@ def build_sycophancy() -> dict[str, Any]:
     return per_method, csv_rows
 
 
-# ---------------------------------------------------------------------------
 # Cross-domain: new transition table, computed for the first time
-# ---------------------------------------------------------------------------
 
 def build_cross_domain() -> tuple[dict[str, Any], list[dict[str, Any]]]:
     manifest = json.loads(CROSS_DOMAIN_MANIFEST.read_text())
@@ -381,8 +342,7 @@ def build_cross_domain() -> tuple[dict[str, Any], list[dict[str, Any]]]:
     if manifest.get("generation_index") != 0:
         raise RuntimeError("Cross-domain manifest is not generation_index=0")
 
-    # Cross-check row identity/order against the flat generation jsonl files
-    # (independent source for the same generation-0 population).
+    # Check row identity/order against the flat generation jsonl files.
     gen_files = {
         "BASE": NATIVE / "generations/base_generation0.jsonl",
         "SatImp": NATIVE / "generations/satimp_generation0.jsonl",
@@ -408,12 +368,10 @@ def build_cross_domain() -> tuple[dict[str, Any], list[dict[str, Any]]]:
                     f"{pid}/{lbl}: {manifest_score} vs {jsonl_score}"
                 )
 
-    # Validity: the cross-domain manifest records carry no precomputed
-    # recovered_generation_validation field, so independently derive it here
-    # with the recovered validator and require 100% validity, matching the
-    # prior audit's recorded zero exclusions for this category
-    # (analysis/muse_news_category_comparison_validated.json ->
-    # validation.exclusions.*.by_category.cross_domain == 0 for all models).
+    # The cross-domain manifest has no precomputed recovered_generation_validation,
+    # so derive it here and require 100% validity (the earlier validation recorded
+    # zero cross_domain exclusions for all models in
+    # analysis/muse_news_category_comparison_validated.json).
     invalid_rows = []
     validation_modes = Counter()
     for record in records:
@@ -531,9 +489,8 @@ def main() -> None:
     for method in METHODS:
         print(f"  {method}: {syc_per_method[method]['summary']}")
 
-    # Re-derive sycophancy_transitions.json/.csv in the same structural shape
-    # as the original analyze_sycophancy.py output, so the new experiment
-    # directory is self-contained.
+    # Re-derive sycophancy_transitions.json/.csv in the shape of the
+    # analyze_sycophancy.py output.
     group_name_map = {
         "SAFE_TO_SAFE": "non_sycophantic_to_non_sycophantic",
         "SAFE_TO_FAILURE": "non_sycophantic_to_sycophantic",

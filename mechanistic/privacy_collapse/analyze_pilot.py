@@ -93,8 +93,7 @@ def main() -> None:
         axis.legend(); axis.grid(alpha=.25); fig.tight_layout()
         fig.savefig(OUTPUT_ROOT / f"{dataset}_direction_cosine.png", dpi=190); plt.close(fig)
 
-    # Presentation plots use explicit state names and corrected semantics while
-    # retaining the original figures above as provenance artifacts.
+    # Presentation plots use explicit state names; the original figures above are kept.
     selected = summary[summary.dataset == "privacy"]
     fig, axis = plt.subplots(figsize=(10, 5.5))
     for model in MODELS:

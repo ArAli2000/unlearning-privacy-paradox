@@ -1,20 +1,14 @@
 #!/usr/bin/env python3
-"""GPU extraction: layer-wise ordinary-logit-lens teacher-forced log
-probability of each candidate continuation, for Phase 8 (safe-vs-failure
-continuation preference across layers) of the MUSE-News sycophancy /
-cross-domain mechanistic experiment.
+"""GPU extraction of layer-wise ordinary-logit-lens teacher-forced log-probability of each candidate
+continuation (safe-vs-failure continuation preference across layers).
 
-For every case in `continuation_cases_v1.json`, and for BASE plus the case's
-own unlearned method, teacher-forces [prompt_token_ids + candidate_token_ids]
-and records, at every residual state L0..L28 (embedding + 28 transformer
-layers), the log-probability the evaluating model's own final RMSNorm +
-LM head assign to the actual observed candidate tokens (ordinary logit lens;
-L28 is already post-final-RMSNorm and is not re-normed, matching the
-convention established in `mechanistic/extract_single_persistbench_case.py`).
+For every case in continuation_cases_v1.json, and for BASE plus the case's own unlearned method,
+this teacher-forces [prompt_token_ids + candidate_token_ids] and records at every residual state
+L0..L28 (embedding + 28 layers) the log-probability that the evaluating model's final RMSNorm +
+LM head assign to the observed candidate tokens. L28 is already post-final-RMSNorm and is not
+re-normed (same convention as extract_single_persistbench_case.py).
 
-Each evaluating model is loaded once and used for every case that needs it
-(BASE evaluates all 60 cases; SatImp evaluates its 36 cases; SimNPO evaluates
-its 24 cases), to avoid repeated 7B loads.
+Each model is loaded once (BASE evaluates all 60 cases, SatImp its 36, SimNPO its 24).
 
 Output: mechanistic/outputs/muse_news_sycophancy_mechanistic/
   continuation_layer_logprobs.csv

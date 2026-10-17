@@ -1,26 +1,28 @@
-# PersistBench patches (vendored tool, modified in place)
+# PersistBench patch
 
-`external/PersistBench/` is a vendored external tool (its own git repository, `KEEP IN PLACE` — not reorganized by this migration). Four of its files are hand-patched relative to that repo's own tracked HEAD (`302ea2f`). Full diff analysis: `thesis_cleanup_audit/PERSISTBENCH_MODIFICATIONS.md`. Reference copies of the 6 `.bak_*`/`.before_*` pre-patch snapshots are kept at `thesis/docs/persistbench_patch_history/` for convenience; the originals remain, untouched, next to the live files inside `external/PersistBench/` (nothing under `external/PersistBench/` was moved).
+`external/PersistBench` is an external repository (submodule, pinned to commit `302ea2f`). Four of its files were modified for the thesis. The modifications are in `thesis/patches/persistbench.patch`; apply them with
 
-## What changed, and why
+```bash
+git -C external/PersistBench apply ../../thesis/patches/persistbench.patch
+```
 
-| File | Change | Why | Still needed? |
+(or let `thesis/scripts/setup_external_dependencies.sh` do it). Pre-patch snapshots of the modified files are in `thesis_archive.zip` under `thesis/docs/persistbench_patch_history/`.
+
+## Modified files
+
+| File | Change | Reason | Current use |
 |---|---|---|---|
-| `src/benchmark/config.py` | `JUDGE_MODEL_OPENROUTER` → `"local-judge"` | Route judging to a locally-served model instead of the hosted OpenRouter Kimi-K2 endpoint | Yes — every PersistBench judgment in this repo uses it |
-| `src/benchmark/providers/openrouter.py` | API key falls back to `OPENAI_API_KEY`/`"dummy"`; base URL overridable via `OPENAI_BASE_URL` | Plumbing that lets the local judge server be reached through the same code path | Not currently exercised by the MUSE-News/MUSE-Books pipeline (superseded by the `judgment.py` rewrite below); verify before removing in case another provider path still uses it |
-| `src/benchmark/execution/judgment.py` | `_judge_via_openrouter` fully rewritten: direct client to the local server, vLLM `guided_json` schema enforcement, a self-repair LLM call if the local judge omits the `score` field | A local Qwen2.5-7B-Instruct judge is not reliable at emitting clean JSON via free-text parsing; this rewrite is a robustness fix | Yes — this is the only reason local-Qwen judging produces parseable scores at all |
-| `src/benchmark/utils.py` | 3 incremental additions to `openai_compat_generate` (see below) | Generation-determinism controls | Partially — see caveat below |
+| `src/benchmark/config.py` | `JUDGE_MODEL_OPENROUTER` set to `"local-judge"` | Route judging to a locally served model instead of the hosted Kimi-K2 endpoint | Used by every PersistBench judgment in the thesis |
+| `src/benchmark/providers/openrouter.py` | API key falls back to `OPENAI_API_KEY` or `"dummy"`; base URL overridable with `OPENAI_BASE_URL` | Lets the local judge server be reached through the same code path | Not exercised by the MUSE pipeline, since the `judgment.py` rewrite below bypasses it |
+| `src/benchmark/execution/judgment.py` | `_judge_via_openrouter` rewritten: direct client to the local server, vLLM `guided_json` schema enforcement, a repair call if the judge omits `score` | The local Qwen2.5-7B-Instruct judge does not reliably emit clean JSON through free-text parsing | Required for local judging to produce parseable scores |
+| `src/benchmark/utils.py` | Three additions to `openai_compat_generate` (below) | Generation controls | Only the third is active |
 
-## `utils.py`'s three layers (chronological)
+## The three changes in `utils.py`
 
-1. **Local-judge max-tokens cap + json-force-on-localhost** (~2026-06-29). **Confirmed dead code**: `judgment.py`'s rewrite bypasses this function entirely for judging, and no generation script ever sets the `OPENAI_BASE_URL` env var this block checks for.
-2. **`FORCE_VLLM_TRUNCATE_PROMPT_PATCH`** (~2026-07-05). **Confirmed dead/redundant**: immediately overwritten by layer 3's own `truncate_prompt_tokens` assignment.
-3. **`STRICT_GENERATION_CONTROL`** (2026-07-21 22:19) — forces `temperature`/`top_p`/`max_tokens`/`truncate_prompt_tokens`/`repetition_penalty`, injects a "no JSON/code" system prompt. **This is genuinely active for any generation run today, but it postdates every canonical MUSE-News/MUSE-Books generation (2026-07-08/10/12) by 9–13 days** — see `thesis/docs/generation_provenance.md` for the confirmed actual settings used at generation time, and the correction to a documentation claim this discrepancy exposed.
+1. Local-judge max-tokens cap and forced JSON on localhost (about 2026-06-29). Dead code: the rewritten `judgment.py` does not call this function for judging, and no generation script sets the `OPENAI_BASE_URL` variable the block checks.
+2. `FORCE_VLLM_TRUNCATE_PROMPT_PATCH` (about 2026-07-05). Redundant: it is overwritten by the next block's own `truncate_prompt_tokens` assignment.
+3. `STRICT_GENERATION_CONTROL` (2026-07-21). Forces `temperature`, `top_p`, `max_tokens`, `truncate_prompt_tokens` and `repetition_penalty`, and injects a "no JSON/code" system prompt. It is active for any generation run with the patched code, but it was added 9 to 13 days after all canonical MUSE generations (2026-07-08, 07-10, 07-12).
 
-## Reproducibility note
+## Consequence for reproduction
 
-Because layers 1–2 are dead code and layer 3 postdates the canonical generations, **re-running any `thesis/scripts/persistbench/*.sh` launcher today would not reproduce the original generation parameters exactly** (it would pick up layer 3's `repetition_penalty=1.08` default instead of the historically-confirmed effective `1.05`, and would inject a system prompt that wasn't present originally). The existing frozen generation JSON/JSONL files remain the authoritative record; see `thesis/manifests/provenance/persistbench_generation_corrections.json`.
-
-## Status of these files
-
-None of `external/PersistBench/`'s files were touched by this migration — this document only explains what was already there. Extracting the `judgment.py` rewrite into a separately-named `local_judge.py` module, and removing the two confirmed-dead `utils.py` blocks, are recommended future steps (see `thesis_cleanup_audit/METHODOLOGY_PRESERVATION_PLAN.md`), not performed in this pass.
+Running a `thesis/scripts/persistbench/*.sh` generation launcher with the patched code applies block 3 and therefore does not reproduce the original generation parameters: `repetition_penalty` defaults to 1.08 instead of the effective 1.05, and a system prompt is injected that was not present originally. The frozen generation files are the reference. The settings actually used are in `generation_provenance.md`, and the metadata corrections are in `thesis/manifests/provenance/persistbench_generation_corrections.json`.

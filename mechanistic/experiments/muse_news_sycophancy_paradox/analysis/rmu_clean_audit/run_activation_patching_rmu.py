@@ -1,14 +1,10 @@
 #!/usr/bin/env python3
 """RMU replication of the clean bidirectional activation-patching experiment.
 
-Identical protocol to
-`../activation_patching_clean_audit/run_activation_patching_clean.py`: same layer
-blocks, same capture/patch hook mechanism, same teacher-forced mean-logprob scoring,
-same CSV schema. Only differences: (1) method is RMU instead of SatImp/SimNPO,
-(2) example selection reads this directory's own `clean_selection.json`
-(8 HIGH_CONFIDENCE_FAILURE + 8 matched SAFE_TO_SAFE_MATCHED_CONTROL, built in
-`build_rmu_controls.py` / documented in `RMU_AUDIT.md`), (3) output written under this
-directory, never touching `../activation_patching_clean_audit/`.
+Same protocol as ../activation_patching_clean_audit/run_activation_patching_clean.py (layer
+blocks, hooks, teacher-forced mean-logprob scoring, CSV schema). Differences: the method is RMU,
+examples come from this directory's clean_selection.json (8 HIGH_CONFIDENCE_FAILURE + 8 matched
+SAFE_TO_SAFE controls, see build_rmu_controls.py / RMU_AUDIT.md), and output goes to this directory.
 """
 from __future__ import annotations
 

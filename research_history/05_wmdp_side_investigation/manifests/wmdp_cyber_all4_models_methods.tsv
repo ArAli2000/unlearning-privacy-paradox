@@ -1,8 +1,0 @@
-llama2_7b	RMU	rmu	NousResearch/Llama-2-7b-hf	NousResearch/Llama-2-7b-hf
-llama2_7b	WGA	wga	NousResearch/Llama-2-7b-hf	NousResearch/Llama-2-7b-hf
-llama2_7b	SimNPO	simnpo	NousResearch/Llama-2-7b-hf	NousResearch/Llama-2-7b-hf
-llama2_7b	SatImp	satimp	NousResearch/Llama-2-7b-hf	NousResearch/Llama-2-7b-hf
-qwen25_7b	RMU	rmu	Qwen/Qwen2.5-7B-Instruct	Qwen/Qwen2.5-7B-Instruct
-qwen25_7b	WGA	wga	Qwen/Qwen2.5-7B-Instruct	Qwen/Qwen2.5-7B-Instruct
-qwen25_7b	SimNPO	simnpo	Qwen/Qwen2.5-7B-Instruct	Qwen/Qwen2.5-7B-Instruct
-qwen25_7b	SatImp	satimp	Qwen/Qwen2.5-7B-Instruct	Qwen/Qwen2.5-7B-Instruct

@@ -1,9 +1,0 @@
-- experiment=unlearn/tofu/default
-- model=Qwen2.5-3B-Instruct
-- forget_split=forget10
-- retain_split=retain90
-- trainer=SatImp
-- task_name=paper_qwen25_3b_satimp_f10_a180_fullmetrics
-- model.model_args.pretrained_model_name_or_path=Qwen/Qwen2.5-3B-Instruct
-- model.tokenizer_args.pretrained_model_name_or_path=Qwen/Qwen2.5-3B-Instruct
-- model.model_args.attn_implementation=sdpa

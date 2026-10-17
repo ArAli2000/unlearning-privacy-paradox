@@ -1,5 +1,0 @@
-qwen25_7b_wga_ckpt100	saves/unlearn/wmdp_cyber_qwen25_7b_wga_sweep300/checkpoint-100	Qwen/Qwen2.5-7B-Instruct
-qwen25_7b_wga_ckpt160	saves/unlearn/wmdp_cyber_qwen25_7b_wga_sweep300/checkpoint-160	Qwen/Qwen2.5-7B-Instruct
-qwen25_7b_wga_ckpt220	saves/unlearn/wmdp_cyber_qwen25_7b_wga_sweep300/checkpoint-220	Qwen/Qwen2.5-7B-Instruct
-qwen25_7b_wga_ckpt260	saves/unlearn/wmdp_cyber_qwen25_7b_wga_sweep300/checkpoint-260	Qwen/Qwen2.5-7B-Instruct
-qwen25_7b_wga_ckpt280	saves/unlearn/wmdp_cyber_qwen25_7b_wga_sweep300/checkpoint-280	Qwen/Qwen2.5-7B-Instruct

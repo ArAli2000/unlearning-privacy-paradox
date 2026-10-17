@@ -1,6 +1,0 @@
-method	model_path
-before	muse-bench/MUSE-News_target
-RMU	saves/unlearn/muse_news_rmu_ckpts_bs1_gc_sbatch/checkpoint-500
-WGA	saves/unlearn/muse_news_wga_ckpts_bs1_gc_sbatch/checkpoint-357
-SimNPO	saves/unlearn/muse_news_simnpo_ckpts_bs1_gc_sbatch/checkpoint-459
-SatImp	saves/unlearn/muse_news_satimp_ckpts_bs1_gc_sbatch/checkpoint-500

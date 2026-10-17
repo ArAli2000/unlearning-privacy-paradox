@@ -1,3 +1,0 @@
-qwen25_7b_before	Qwen/Qwen2.5-7B-Instruct	Qwen/Qwen2.5-7B-Instruct
-qwen25_7b_rmu_selected	saves/unlearn/wmdp_cyber_qwen25_7b_rmu_sweep300/checkpoint-260	Qwen/Qwen2.5-7B-Instruct
-qwen25_7b_wga_selected	saves/unlearn/wmdp_cyber_qwen25_7b_wga_sweep300/checkpoint-300	Qwen/Qwen2.5-7B-Instruct

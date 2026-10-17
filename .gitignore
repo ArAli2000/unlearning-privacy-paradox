@@ -9,7 +9,7 @@ ms_cache/
 logs/
 hf_cache/
 cache*/
-saves*/
+/saves*/
 notebooks/
 output*/
 wandb/
@@ -143,7 +143,7 @@ celerybeat.pid
 # Environments
 .env
 .venv
-env/
+/env/
 venv/
 ENV/
 env.bak/
@@ -181,3 +181,50 @@ cython_debug/
 .idea/
 
 .vscode/
+
+# --- Thesis external-dependency additions (2026-09-14 fix pass) ---
+# external/PersistBench/ and external/privacy-collapse/ are vendored tool
+# checkouts, each its own git repository. They must NEVER be `git add`-ed as
+# plain directories (git would silently create dangling "embedded repository"
+# gitlinks, breaking the checkout for anyone who clones this repo). Exact
+# provenance (URL, pinned commit, thesis patch) is recorded instead at
+# thesis/manifests/external_dependencies/external_dependencies.tsv and
+# thesis/patches/; thesis/scripts/setup_external_dependencies.sh recreates
+# these working copies from that record. None of the three paths below are
+# affected by this rule since they live under thesis/, not external/.
+/external/PersistBench/
+/external/privacy-collapse/
+
+# --- Thesis cleanup migration additions (2026-09-14) ---
+# Large HF model-weight caches and generated hidden-state/representation tensors
+# produced by the mechanistic-analysis code (mechanistic/ stays in place; only its
+# generated artifacts are excluded here, not its source).
+mechanistic/**/model_cache/
+mechanistic/**/representations/
+
+# Redundant supervisor-reporting snapshot bundle: everything remaining under
+# supervisor_update/ after the 2026-09-14 migration is either a byte-identical copy
+# of a file that now lives in thesis/ or research_history/, or a redundant tar.gz of
+# the same directory. See thesis_cleanup_audit/DELETE_CANDIDATES_FINAL.md. Nothing
+# here was deleted; this only stops it from being newly committed.
+/supervisor_update/
+
+# Corrupted/oversized archives at repo root (see thesis_cleanup_audit/DELETE_CANDIDATES_FINAL.md)
+/*.tar.gz
+
+# .bak/.before_* snapshot files are ignored by default (they are typically ad hoc,
+# uncommitted editor backups), EXCEPT the two locations where this thesis
+# deliberately keeps small .bak snapshots as tracked historical evidence.
+*.bak*
+*.before_*
+!research_history/03_checkpoint_selection_development/trainer_snapshots/*
+!thesis/docs/persistbench_patch_history/*
+# Submission cleanup (2026-10-17): defense-only / scratch material kept on disk, not submitted
+/FINAL_DEFENSE_SLIDE_BLUEPRINT.md
+/presentation_figures_final/
+/presentation_figures_final.zip
+/thesis_defense_assets_bundle/
+/thesis_defense_assets_bundle.zip
+/tmp_paths/
+/configs/model/sedxTQNOq
+/thesis_code.zip

@@ -1,0 +1,10 @@
+- experiment=finetune/tofu/default
+- model=Qwen2.5-3B-Instruct
+- task_name=tofu_Qwen2.5-3B-Instruct_full
+- model.model_args.pretrained_model_name_or_path=/storage/ukp/work/elshashay/.cache/huggingface/models--Qwen--Qwen2.5-3B-Instruct/snapshots/aa8e72537993ba99e69dfaafa59ed015b17504d1
+- model.tokenizer_args.pretrained_model_name_or_path=/storage/ukp/work/elshashay/.cache/huggingface/models--Qwen--Qwen2.5-3B-Instruct/snapshots/aa8e72537993ba99e69dfaafa59ed015b17504d1
+- model.model_args.attn_implementation=sdpa
+- trainer.args.per_device_train_batch_size=1
+- trainer.args.per_device_eval_batch_size=4
+- trainer.args.gradient_accumulation_steps=32
+- ++trainer.args.save_safetensors=true

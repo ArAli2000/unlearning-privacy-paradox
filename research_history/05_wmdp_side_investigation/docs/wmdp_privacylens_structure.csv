@@ -1,0 +1,11 @@
+checkpoint,top_keys
+wmdp_cyber_llama2_7b_before,"meta, results"
+wmdp_cyber_llama2_7b_rmu_selected,"meta, results"
+wmdp_cyber_llama2_7b_satimp_selected,"meta, results"
+wmdp_cyber_llama2_7b_simnpo_selected,"meta, results"
+wmdp_cyber_llama2_7b_wga_selected,"meta, results"
+wmdp_cyber_qwen25_7b_before,"meta, results"
+wmdp_cyber_qwen25_7b_rmu_selected,"meta, results"
+wmdp_cyber_qwen25_7b_satimp_selected,"meta, results"
+wmdp_cyber_qwen25_7b_simnpo_selected,"meta, results"
+wmdp_cyber_qwen25_7b_wga_selected,"meta, results"

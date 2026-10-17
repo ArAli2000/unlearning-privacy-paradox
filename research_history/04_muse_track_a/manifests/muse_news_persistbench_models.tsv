@@ -1,0 +1,5 @@
+muse_news_before	muse-bench/MUSE-News_target	NousResearch/Llama-2-7b-hf
+muse_news_rmu_selected	/storage/ukp/work/elshashay/open-unlearning/saves/unlearn/muse_news_rmu_ckpts_bs1_gc_sbatch/checkpoint-500	/storage/ukp/work/elshashay/open-unlearning/saves/unlearn/muse_news_rmu_ckpts_bs1_gc_sbatch/checkpoint-500
+muse_news_wga_selected	/storage/ukp/work/elshashay/open-unlearning/saves/unlearn/muse_news_wga_ckpts_bs1_gc_sbatch/checkpoint-357	/storage/ukp/work/elshashay/open-unlearning/saves/unlearn/muse_news_wga_ckpts_bs1_gc_sbatch/checkpoint-357
+muse_news_simnpo_selected	/storage/ukp/work/elshashay/open-unlearning/saves/unlearn/muse_news_simnpo_ckpts_bs1_gc_sbatch/checkpoint-459	/storage/ukp/work/elshashay/open-unlearning/saves/unlearn/muse_news_simnpo_ckpts_bs1_gc_sbatch/checkpoint-459
+muse_news_satimp_selected	/storage/ukp/work/elshashay/open-unlearning/saves/unlearn/muse_news_satimp_ckpts_bs1_gc_sbatch/checkpoint-500	/storage/ukp/work/elshashay/open-unlearning/saves/unlearn/muse_news_satimp_ckpts_bs1_gc_sbatch/checkpoint-500

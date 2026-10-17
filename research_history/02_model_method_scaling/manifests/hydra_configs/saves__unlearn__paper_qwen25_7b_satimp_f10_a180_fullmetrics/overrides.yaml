@@ -1,0 +1,13 @@
+- experiment=unlearn/tofu/default
+- model=Qwen2.5-7B-Instruct
+- forget_split=forget10
+- retain_split=retain90
+- trainer=SatImp
+- task_name=paper_qwen25_7b_satimp_f10_a180_fullmetrics
+- model.model_args.pretrained_model_name_or_path=Qwen/Qwen2.5-7B-Instruct
+- model.tokenizer_args.pretrained_model_name_or_path=Qwen/Qwen2.5-7B-Instruct
+- model.model_args.attn_implementation=sdpa
+- trainer.args.per_device_train_batch_size=1
+- trainer.args.per_device_eval_batch_size=4
+- trainer.args.gradient_accumulation_steps=32
+- eval.tofu.batch_size=8

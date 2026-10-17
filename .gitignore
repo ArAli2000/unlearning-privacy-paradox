@@ -232,3 +232,7 @@ mechanistic/**/representations/
 /MASTER_THESIS_MAP.md
 /thesis_cleanup_audit/
 /research_history/
+/thesis/analysis/*
+!/thesis/analysis/final_thesis_handoff_20261016/
+/thesis/docs/experimental_setup_audit/
+/thesis/docs/persistbench_patch_history/

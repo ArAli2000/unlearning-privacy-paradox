@@ -1,0 +1,472 @@
+[
+ {
+  "model": "Qwen2.5-7B-Instruct (TOFU, forget10/retain90, B2)",
+  "fam": "qwen25_7b",
+  "m": "rmu",
+  "run": "proper_qwen25_7b_rmu_from_tofufull_selectionproxy_savebest",
+  "step": 104,
+  "cmp": {
+   "weights": [
+    "model-00001-of-00004.safetensors",
+    "model-00002-of-00004.safetensors",
+    "model-00003-of-00004.safetensors",
+    "model-00004-of-00004.safetensors"
+   ],
+   "weights_ck": [
+    "model-00001-of-00004.safetensors",
+    "model-00002-of-00004.safetensors",
+    "model-00003-of-00004.safetensors",
+    "model-00004-of-00004.safetensors"
+   ],
+   "weights_identical": true,
+   "n_weight_equal": 4,
+   "cfg": {
+    "config.json": true,
+    "generation_config.json": true,
+    "model.safetensors.index.json": true,
+    "tokenizer.json": true,
+    "tokenizer_config.json": true,
+    "special_tokens_map.json": true,
+    "vocab.json": true,
+    "merges.txt": true,
+    "added_tokens.json": true
+   },
+   "cfg_missing": [],
+   "cfg_identical": true
+  },
+  "ts_best": "./saves/unlearn/proper_qwen25_7b_rmu_from_tofufull_selectionproxy_savebest/checkpoint-104",
+  "ts_step": 120,
+  "ts_best_step": 104,
+  "best_txt": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_rmu_from_tofufull_selectionproxy_savebest/checkpoint-104",
+  "others": {
+   "checkpoint-78": {
+    "weights": [
+     "model-00001-of-00004.safetensors",
+     "model-00002-of-00004.safetensors",
+     "model-00003-of-00004.safetensors",
+     "model-00004-of-00004.safetensors"
+    ],
+    "weights_ck": [
+     "model-00001-of-00004.safetensors",
+     "model-00002-of-00004.safetensors",
+     "model-00003-of-00004.safetensors",
+     "model-00004-of-00004.safetensors"
+    ],
+    "weights_identical": false,
+    "n_weight_equal": 3,
+    "cfg": {
+     "config.json": true,
+     "generation_config.json": true,
+     "model.safetensors.index.json": true,
+     "tokenizer.json": true,
+     "tokenizer_config.json": true,
+     "special_tokens_map.json": true,
+     "vocab.json": true,
+     "merges.txt": true,
+     "added_tokens.json": true
+    },
+    "cfg_missing": [],
+    "cfg_identical": true
+   },
+   "checkpoint-120": {
+    "weights": [
+     "model-00001-of-00004.safetensors",
+     "model-00002-of-00004.safetensors",
+     "model-00003-of-00004.safetensors",
+     "model-00004-of-00004.safetensors"
+    ],
+    "weights_ck": [
+     "model-00001-of-00004.safetensors",
+     "model-00002-of-00004.safetensors",
+     "model-00003-of-00004.safetensors",
+     "model-00004-of-00004.safetensors"
+    ],
+    "weights_identical": false,
+    "n_weight_equal": 3,
+    "cfg": {
+     "config.json": true,
+     "generation_config.json": true,
+     "model.safetensors.index.json": true,
+     "tokenizer.json": true,
+     "tokenizer_config.json": true,
+     "special_tokens_map.json": true,
+     "vocab.json": true,
+     "merges.txt": true,
+     "added_tokens.json": true
+    },
+    "cfg_missing": [],
+    "cfg_identical": true
+   }
+  },
+  "pb": [
+   "logs/vllm_qwen25_7b_after_rmu_from_tofufull_404153_2.log",
+   "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_rmu_from_tofufull_selectionproxy_savebest"
+  ],
+  "pl": [
+   "outputs/privacylens_qwen_tofufull_methods/qwen25_7b_after_rmu_from_tofufull/privacy_mcq_all493.json",
+   "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_rmu_from_tofufull_selectionproxy_savebest/checkpoint-104"
+  ],
+  "mtimes": 1781823999.0,
+  "ck_mtime": 1781823325.0
+ },
+ {
+  "model": "Qwen2.5-7B-Instruct (TOFU, forget10/retain90, B2)",
+  "fam": "qwen25_7b",
+  "m": "wga",
+  "run": "proper_qwen25_7b_wga_from_tofufull_selectionproxy_savebest",
+  "step": 104,
+  "cmp": {
+   "weights": [
+    "model-00001-of-00004.safetensors",
+    "model-00002-of-00004.safetensors",
+    "model-00003-of-00004.safetensors",
+    "model-00004-of-00004.safetensors"
+   ],
+   "weights_ck": [
+    "model-00001-of-00004.safetensors",
+    "model-00002-of-00004.safetensors",
+    "model-00003-of-00004.safetensors",
+    "model-00004-of-00004.safetensors"
+   ],
+   "weights_identical": true,
+   "n_weight_equal": 4,
+   "cfg": {
+    "config.json": true,
+    "generation_config.json": true,
+    "model.safetensors.index.json": true,
+    "tokenizer.json": true,
+    "tokenizer_config.json": true,
+    "special_tokens_map.json": true,
+    "vocab.json": true,
+    "merges.txt": true,
+    "added_tokens.json": true
+   },
+   "cfg_missing": [],
+   "cfg_identical": true
+  },
+  "ts_best": "./saves/unlearn/proper_qwen25_7b_wga_from_tofufull_selectionproxy_savebest/checkpoint-104",
+  "ts_step": 120,
+  "ts_best_step": 104,
+  "best_txt": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_wga_from_tofufull_selectionproxy_savebest/checkpoint-104",
+  "others": {
+   "checkpoint-78": "NOT_HASHED",
+   "checkpoint-120": "NOT_HASHED"
+  },
+  "pb": [
+   "logs/vllm_qwen25_7b_after_wga_from_tofufull_404154_3.log",
+   "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_wga_from_tofufull_selectionproxy_savebest"
+  ],
+  "pl": [
+   "outputs/privacylens_qwen_tofufull_methods/qwen25_7b_after_wga_from_tofufull/privacy_mcq_all493.json",
+   "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_wga_from_tofufull_selectionproxy_savebest/checkpoint-104"
+  ],
+  "mtimes": 1781830968.0,
+  "ck_mtime": 1781830134.0
+ },
+ {
+  "model": "Qwen2.5-7B-Instruct (TOFU, forget10/retain90, B2)",
+  "fam": "qwen25_7b",
+  "m": "satimp",
+  "run": "proper_qwen25_7b_satimp_from_tofufull_selectionproxy_savebest",
+  "step": 104,
+  "cmp": {
+   "weights": [
+    "model-00001-of-00004.safetensors",
+    "model-00002-of-00004.safetensors",
+    "model-00003-of-00004.safetensors",
+    "model-00004-of-00004.safetensors"
+   ],
+   "weights_ck": [
+    "model-00001-of-00004.safetensors",
+    "model-00002-of-00004.safetensors",
+    "model-00003-of-00004.safetensors",
+    "model-00004-of-00004.safetensors"
+   ],
+   "weights_identical": true,
+   "n_weight_equal": 4,
+   "cfg": {
+    "config.json": true,
+    "generation_config.json": true,
+    "model.safetensors.index.json": true,
+    "tokenizer.json": true,
+    "tokenizer_config.json": true,
+    "special_tokens_map.json": true,
+    "vocab.json": true,
+    "merges.txt": true,
+    "added_tokens.json": true
+   },
+   "cfg_missing": [],
+   "cfg_identical": true
+  },
+  "ts_best": "./saves/unlearn/proper_qwen25_7b_satimp_from_tofufull_selectionproxy_savebest/checkpoint-104",
+  "ts_step": 120,
+  "ts_best_step": 104,
+  "best_txt": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_satimp_from_tofufull_selectionproxy_savebest/checkpoint-104",
+  "others": {
+   "checkpoint-78": "NOT_HASHED",
+   "checkpoint-120": "NOT_HASHED"
+  },
+  "pb": [
+   "logs/vllm_qwen25_7b_after_satimp_from_tofufull_404150_4.log",
+   "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_satimp_from_tofufull_selectionproxy_savebest"
+  ],
+  "pl": [
+   "outputs/privacylens_qwen_tofufull_methods/qwen25_7b_after_satimp_from_tofufull/privacy_mcq_all493.json",
+   "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_satimp_from_tofufull_selectionproxy_savebest/checkpoint-104"
+  ],
+  "mtimes": 1781837757.0,
+  "ck_mtime": 1781836970.0
+ },
+ {
+  "model": "Qwen2.5-7B-Instruct (TOFU, forget10/retain90, B2)",
+  "fam": "qwen25_7b",
+  "m": "simnpo",
+  "run": "proper_qwen25_7b_simnpo_from_tofufull_selectionproxy_savebest",
+  "step": 104,
+  "cmp": {
+   "weights": [
+    "model-00001-of-00004.safetensors",
+    "model-00002-of-00004.safetensors",
+    "model-00003-of-00004.safetensors",
+    "model-00004-of-00004.safetensors"
+   ],
+   "weights_ck": [
+    "model-00001-of-00004.safetensors",
+    "model-00002-of-00004.safetensors",
+    "model-00003-of-00004.safetensors",
+    "model-00004-of-00004.safetensors"
+   ],
+   "weights_identical": true,
+   "n_weight_equal": 4,
+   "cfg": {
+    "config.json": true,
+    "generation_config.json": true,
+    "model.safetensors.index.json": true,
+    "tokenizer.json": true,
+    "tokenizer_config.json": true,
+    "special_tokens_map.json": true,
+    "vocab.json": true,
+    "merges.txt": true,
+    "added_tokens.json": true
+   },
+   "cfg_missing": [],
+   "cfg_identical": true
+  },
+  "ts_best": "./saves/unlearn/proper_qwen25_7b_simnpo_from_tofufull_selectionproxy_savebest/checkpoint-104",
+  "ts_step": 120,
+  "ts_best_step": 104,
+  "best_txt": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_simnpo_from_tofufull_selectionproxy_savebest/checkpoint-104",
+  "others": {
+   "checkpoint-78": "NOT_HASHED",
+   "checkpoint-120": "NOT_HASHED"
+  },
+  "pb": [
+   "logs/vllm_qwen25_7b_after_simnpo_from_tofufull_404152_1.log",
+   "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_simnpo_from_tofufull_selectionproxy_savebest"
+  ],
+  "pl": [
+   "outputs/privacylens_qwen_tofufull_methods/qwen25_7b_after_simnpo_from_tofufull/privacy_mcq_all493.json",
+   "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_simnpo_from_tofufull_selectionproxy_savebest/checkpoint-104"
+  ],
+  "mtimes": 1781818067.0,
+  "ck_mtime": 1781817131.0
+ },
+ {
+  "model": "Llama-3.1-8B-Instruct (TOFU, forget10/retain90, B2)",
+  "fam": "llama31_8b",
+  "m": "rmu",
+  "run": "proper_llama31_8b_rmu_from_tofufull_aggproxy_savebest",
+  "step": 65,
+  "cmp": {
+   "weights": [
+    "model-00001-of-00004.safetensors",
+    "model-00002-of-00004.safetensors",
+    "model-00003-of-00004.safetensors",
+    "model-00004-of-00004.safetensors"
+   ],
+   "weights_ck": [
+    "model-00001-of-00004.safetensors",
+    "model-00002-of-00004.safetensors",
+    "model-00003-of-00004.safetensors",
+    "model-00004-of-00004.safetensors"
+   ],
+   "weights_identical": true,
+   "n_weight_equal": 4,
+   "cfg": {
+    "config.json": true,
+    "generation_config.json": true,
+    "model.safetensors.index.json": true,
+    "tokenizer.json": true,
+    "tokenizer_config.json": true,
+    "special_tokens_map.json": true
+   },
+   "cfg_missing": [],
+   "cfg_identical": true
+  },
+  "ts_best": "saves/unlearn/proper_llama31_8b_rmu_from_tofufull_aggproxy_savebest/checkpoint-65",
+  "ts_step": 120,
+  "ts_best_step": 65,
+  "best_txt": "",
+  "others": {
+   "checkpoint-120": null
+  },
+  "pb": [
+   "logs/vllm_llama31_8b_after_rmu_from_tofufull_404164_2.log",
+   "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_rmu_from_tofufull_aggproxy_savebest"
+  ],
+  "pl": [
+   "outputs/privacylens_llama31_8b_tofufull_methods/llama31_8b_after_rmu_from_tofufull/privacy_mcq_all493.json",
+   "saves/unlearn/proper_llama31_8b_rmu_from_tofufull_aggproxy_savebest"
+  ],
+  "mtimes": 1781964207.0,
+  "ck_mtime": 1781962241.0
+ },
+ {
+  "model": "Llama-3.1-8B-Instruct (TOFU, forget10/retain90, B2)",
+  "fam": "llama31_8b",
+  "m": "wga",
+  "run": "proper_llama31_8b_wga_from_tofufull_aggproxy_savebest",
+  "step": 117,
+  "cmp": {
+   "weights": [
+    "model-00001-of-00004.safetensors",
+    "model-00002-of-00004.safetensors",
+    "model-00003-of-00004.safetensors",
+    "model-00004-of-00004.safetensors"
+   ],
+   "weights_ck": [
+    "model-00001-of-00004.safetensors",
+    "model-00002-of-00004.safetensors",
+    "model-00003-of-00004.safetensors",
+    "model-00004-of-00004.safetensors"
+   ],
+   "weights_identical": true,
+   "n_weight_equal": 4,
+   "cfg": {
+    "config.json": true,
+    "generation_config.json": true,
+    "model.safetensors.index.json": true,
+    "tokenizer.json": true,
+    "tokenizer_config.json": true,
+    "special_tokens_map.json": true
+   },
+   "cfg_missing": [],
+   "cfg_identical": true
+  },
+  "ts_best": "saves/unlearn/proper_llama31_8b_wga_from_tofufull_aggproxy_savebest/checkpoint-117",
+  "ts_step": 120,
+  "ts_best_step": 117,
+  "best_txt": "",
+  "others": {
+   "checkpoint-120": null
+  },
+  "pb": [
+   "logs/vllm_llama31_8b_after_wga_from_tofufull_404164_3.log",
+   "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_wga_from_tofufull_aggproxy_savebest"
+  ],
+  "pl": [
+   "outputs/privacylens_llama31_8b_tofufull_methods/llama31_8b_after_wga_from_tofufull/privacy_mcq_all493.json",
+   "saves/unlearn/proper_llama31_8b_wga_from_tofufull_aggproxy_savebest"
+  ],
+  "mtimes": 1781969234.0,
+  "ck_mtime": 1781968822.0
+ },
+ {
+  "model": "Llama-3.1-8B-Instruct (TOFU, forget10/retain90, B2)",
+  "fam": "llama31_8b",
+  "m": "satimp",
+  "run": "proper_llama31_8b_satimp_from_tofufull_aggproxy_savebest",
+  "step": 52,
+  "cmp": {
+   "weights": [
+    "model-00001-of-00004.safetensors",
+    "model-00002-of-00004.safetensors",
+    "model-00003-of-00004.safetensors",
+    "model-00004-of-00004.safetensors"
+   ],
+   "weights_ck": [
+    "model-00001-of-00004.safetensors",
+    "model-00002-of-00004.safetensors",
+    "model-00003-of-00004.safetensors",
+    "model-00004-of-00004.safetensors"
+   ],
+   "weights_identical": true,
+   "n_weight_equal": 4,
+   "cfg": {
+    "config.json": true,
+    "generation_config.json": true,
+    "model.safetensors.index.json": true,
+    "tokenizer.json": true,
+    "tokenizer_config.json": true,
+    "special_tokens_map.json": true
+   },
+   "cfg_missing": [],
+   "cfg_identical": true
+  },
+  "ts_best": "saves/unlearn/proper_llama31_8b_satimp_from_tofufull_aggproxy_savebest/checkpoint-52",
+  "ts_step": 120,
+  "ts_best_step": 52,
+  "best_txt": "",
+  "others": {
+   "checkpoint-120": null
+  },
+  "pb": [
+   "logs/vllm_llama31_8b_after_satimp_from_tofufull_404164_4.log",
+   "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_satimp_from_tofufull_aggproxy_savebest"
+  ],
+  "pl": [
+   "outputs/privacylens_llama31_8b_tofufull_methods/llama31_8b_after_satimp_from_tofull/privacy_mcq_all493.json",
+   "saves/unlearn/proper_llama31_8b_satimp_from_tofufull_aggproxy_savebest"
+  ],
+  "mtimes": 1781974250.0,
+  "ck_mtime": 1781971684.0
+ },
+ {
+  "model": "Llama-3.1-8B-Instruct (TOFU, forget10/retain90, B2)",
+  "fam": "llama31_8b",
+  "m": "simnpo",
+  "run": "proper_llama31_8b_simnpo_from_tofufull_aggproxy_savebest",
+  "step": 120,
+  "cmp": {
+   "weights": [
+    "model-00001-of-00004.safetensors",
+    "model-00002-of-00004.safetensors",
+    "model-00003-of-00004.safetensors",
+    "model-00004-of-00004.safetensors"
+   ],
+   "weights_ck": [
+    "model-00001-of-00004.safetensors",
+    "model-00002-of-00004.safetensors",
+    "model-00003-of-00004.safetensors",
+    "model-00004-of-00004.safetensors"
+   ],
+   "weights_identical": true,
+   "n_weight_equal": 4,
+   "cfg": {
+    "config.json": true,
+    "generation_config.json": true,
+    "model.safetensors.index.json": true,
+    "tokenizer.json": true,
+    "tokenizer_config.json": true,
+    "special_tokens_map.json": true
+   },
+   "cfg_missing": [],
+   "cfg_identical": true
+  },
+  "ts_best": "saves/unlearn/proper_llama31_8b_simnpo_from_tofufull_selectionproxy_savebest/checkpoint-120",
+  "ts_step": 120,
+  "ts_best_step": 120,
+  "best_txt": "",
+  "others": {},
+  "pb": [
+   "logs/vllm_llama31_8b_after_simnpo_from_tofufull_404164_1.log",
+   "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_simnpo_from_tofufull_aggproxy_savebest"
+  ],
+  "pl": [
+   "outputs/privacylens_llama31_8b_tofufull_methods/llama31_8b_after_simnpo_from_tofufull/privacy_mcq_all493.json",
+   "saves/unlearn/proper_llama31_8b_simnpo_from_tofufull_aggproxy_savebest"
+  ],
+  "mtimes": 1781956756.0,
+  "ck_mtime": 1781956681.0
+ }
+]

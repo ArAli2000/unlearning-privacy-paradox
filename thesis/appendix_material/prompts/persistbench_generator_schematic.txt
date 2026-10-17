@@ -1,0 +1,38 @@
+PERSISTBENCH GENERATION PROMPT (GENERATOR_SYSTEM_PROMPT)
+source path          : external/PersistBench/src/benchmark/prompts.py  (constant GENERATOR_SYSTEM_PROMPT, source lines 7-278; file unmodified vs. upstream, not among the 4 thesis-patched files)
+builder              : build_generation_prompt(memories, model_name, prompt_template=GENERATOR_SYSTEM_PROMPT) in the same file
+call site            : external/PersistBench/src/benchmark/execution/generation.py (generation_prompt = build_generation_prompt(memories, model.name))
+                       -> external/PersistBench/src/benchmark/utils.py::openai_compat_generate (messages assembly)
+placeholders         : {model_name}  = model.name from the run config, i.e. the vLLM --served-model-name alias. It occurs TWICE ("model: {model_name}", "You are {model_name}, ...").
+                         MUSE runs: muse_news_qwen25_{before,rmu,wga,satimp,simnpo} etc.; TOFU runs: e.g. qwen25_7b_after_rmu_from_tofufull;
+                         full-prompt robustness runs: the neutral alias "muse_news_qwen25" for ALL conditions (deliberate, to avoid leaking the method name).
+                       {memories}    = formatted_memories(entry["memories"]) = "<memories>\n- m1\n- m2\n...\n</memories>"  (4-16 memories per scenario)
+                       {query}       is NOT part of the system prompt; entry["query"] is sent verbatim as the user message.
+build_generation_prompt behavior (verbatim, not paraphrased, see BUILDER SOURCE below): template.replace("{model_name}", model_name).replace("{memories}", formatted_memories).
+message passing      : openai_compat_generate sends messages=[{"role":"system","content":<generation_prompt>}, {"role":"user","content":<query>}] to the vLLM
+                       OpenAI-compatible /v1/chat/completions endpoint; the chat template is applied SERVER-SIDE by vLLM.
+                       (The later STRICT_GENERATION_CONTROL block in current utils.py -- extra system prefix, PB_* env overrides, repetition_penalty 1.08 -- was added 2026-07-21,
+                        after every MUSE/TOFU generation; it was NOT active for any reported result.)
+chat template (MUSE) : templates/simple_llama_chat_template.jinja for ALL MUSE runs (Qwen and Llama-2 alike) via `vllm serve --chat-template`:
+                       system content verbatim, then "User: <query>", then "Assistant:" -- plain text, no special tokens.
+chat template (TOFU) : none specified (no --chat-template flag) -> each model's own native template (Qwen2.5: ChatML; Llama-3.1-8B: Llama-3 header format).
+original MUSE truncation : extra_body.truncate_prompt_tokens=1800 (vLLM keeps the LAST 1800 prompt tokens = left truncation) with --max-model-len 2048 and max_tokens 96.
+                       The full prompt is ~4.8-5.1k Qwen tokens (vLLM prompt_tokens in the full-prompt run), so the head of the system prompt,
+                       INCLUDING both {model_name} occurrences, is cut off in the original MUSE runs; the retained tail contains the end of the persona text, the memories and the query.
+                       TOFU generation: no truncation (max_model_len 8192, max_tokens 512) -> persona text and the condition-specific {model_name} alias were fully visible to the model.
+full-prompt robustness : MUSE-News Qwen only; --max-model-len 8192, no truncate_prompt_tokens, neutral alias, otherwise identical (temperature 0.0, max_tokens 96, same template).
+                       Scripts: thesis/scripts/persistbench_fullprompt_robustness/run_fullprompt_robustness{,_crossdomain}.sh.
+provenance           : CODE INSPECTION
+Full text: persistbench_generator_exact.txt
+
+[system]
+full PersistBench persona/instructions
+...
+<memories>
+{memories}
+</memories>
+
+[user]
+{query}
+
+(In the system block, "{model_name}" appears twice in the opening lines of the persona text; see header above for what it was in each run family.)

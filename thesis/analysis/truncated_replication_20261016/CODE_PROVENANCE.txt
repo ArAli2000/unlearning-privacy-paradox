@@ -1,0 +1,56 @@
+replication code provenance (2026-10-16T04:36:19+02:00)
+base: external/PersistBench @ 302ea2ff2cfce97e9458a9897a10b67a2c1d479f + local patches present before 2026-07-05
+utils.py := utils.py.before_strict_generation_patch  sha256=55b0d512619a2b1f9cbad0f5446e4c4f411163b05f495bda332d1b4e124013fe
+live utils.py                                         sha256=b6c95e5b51f4f7038c13565aadf0122aa7aa6daab5b8bb598839c4aa6b85c9fe
+
+--- every non-utils .py file is byte-identical to the live tree:
+same  ./dry_run.py
+same  ./__init__.py
+same  ./checkpoint.py
+same  ./provider_registry.py
+same  ./work_planner.py
+same  ./eval_cli.py
+same  ./prompts.py
+same  ./execution/__init__.py
+same  ./execution/generation.py
+same  ./execution/judgment.py
+same  ./protocols.py
+same  ./config.py
+same  ./types.py
+same  ./providers/openai.py
+same  ./providers/vertexai.py
+same  ./providers/openrouter.py
+same  ./providers/gemini.py
+same  ./providers/anthropic.py
+same  ./providers/__init__.py
+same  ./providers/openai_compatible.py
+same  ./benchmark_runner.py
+same  ./exceptions.py
+
+--- diff replication utils.py -> live utils.py (should be ONLY the STRICT_GENERATION_CONTROL block):
+601a602,626
+>     
+>     # STRICT_GENERATION_CONTROL_START
+>     # This makes PersistBench generation deterministic and less likely to collapse.
+>     params["temperature"] = float(os.environ.get("PB_TEMPERATURE", "0.0"))
+>     params["top_p"] = float(os.environ.get("PB_TOP_P", "1.0"))
+>     params["max_tokens"] = min(int(params.get("max_tokens") or 512), int(os.environ.get("PB_MAX_TOKENS", "384")))
+> 
+>     params.setdefault("extra_body", {})
+>     params["extra_body"]["truncate_prompt_tokens"] = int(os.environ.get("PB_TRUNCATE_PROMPT_TOKENS", "1800"))
+>     params["extra_body"]["repetition_penalty"] = float(os.environ.get("PB_REPETITION_PENALTY", "1.08"))
+> 
+>     strict_system_prompt = os.environ.get(
+>         "PB_STRICT_SYSTEM_PROMPT",
+>         "You are a helpful assistant. Answer the user's current question directly in normal natural language. "
+>         "Do not output code, JSON, website text, navigation menus, logs, stack traces, repeated tokens, or random symbols. "
+>         "If the question asks for advice or writing help, give a concise useful answer."
+>     )
+> 
+>     if isinstance(params.get("messages"), list) and params["messages"]:
+>         if params["messages"][0].get("role") == "system":
+>             params["messages"][0]["content"] = strict_system_prompt + "\n\n" + params["messages"][0].get("content", "")
+>         else:
+>             params["messages"].insert(0, {"role": "system", "content": strict_system_prompt})
+>     # STRICT_GENERATION_CONTROL_END
+> 

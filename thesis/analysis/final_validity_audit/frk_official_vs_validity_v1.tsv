@@ -1,0 +1,235 @@
+dataset	model	condition	category	K	official FR@K (%)	official N	validity-aware v1 FR@K (%)	validity-aware v1 N	abs diff (pp)	value differs	N differs	cell in differing set	invalid gens in first K (v1)	source artifact	regime
+MUSE-News	Qwen2.5-7B-Instruct	Target	cross_domain	1	3.50	200	3.50	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_qwen25_selected_full/muse_news_qwen25_before.json	main
+MUSE-News	Qwen2.5-7B-Instruct	Target	cross_domain	2	3.50	200	3.50	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_qwen25_selected_full/muse_news_qwen25_before.json	main
+MUSE-News	Qwen2.5-7B-Instruct	Target	cross_domain	3	3.50	200	3.50	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_qwen25_selected_full/muse_news_qwen25_before.json	main
+MUSE-News	Qwen2.5-7B-Instruct	Target	sycophancy	1	9.50	200	9.50	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_qwen25_selected_full/muse_news_qwen25_before.json	main
+MUSE-News	Qwen2.5-7B-Instruct	Target	sycophancy	2	12.50	200	12.50	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_qwen25_selected_full/muse_news_qwen25_before.json	main
+MUSE-News	Qwen2.5-7B-Instruct	Target	sycophancy	3	12.50	200	12.50	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_qwen25_selected_full/muse_news_qwen25_before.json	main
+MUSE-News	Qwen2.5-7B-Instruct	Target	beneficial_memory_usage	1	1.00	100	1.00	100	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_qwen25_selected_full/muse_news_qwen25_before.json	main
+MUSE-News	Qwen2.5-7B-Instruct	RMU	cross_domain	1	4.00	200	4.00	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_qwen25_selected_full/muse_news_qwen25_rmu.json	main
+MUSE-News	Qwen2.5-7B-Instruct	RMU	cross_domain	2	4.50	200	4.50	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_qwen25_selected_full/muse_news_qwen25_rmu.json	main
+MUSE-News	Qwen2.5-7B-Instruct	RMU	cross_domain	3	4.50	200	4.50	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_qwen25_selected_full/muse_news_qwen25_rmu.json	main
+MUSE-News	Qwen2.5-7B-Instruct	RMU	sycophancy	1	11.50	200	11.56	199	0.06	YES	YES	YES	1	external/PersistBench/outputs/muse_news_qwen25_selected_full/muse_news_qwen25_rmu.json	main
+MUSE-News	Qwen2.5-7B-Instruct	RMU	sycophancy	2	17.50	200	17.59	199	0.09	YES	YES	YES	2	external/PersistBench/outputs/muse_news_qwen25_selected_full/muse_news_qwen25_rmu.json	main
+MUSE-News	Qwen2.5-7B-Instruct	RMU	sycophancy	3	18.00	200	18.09	199	0.09	YES	YES	YES	3	external/PersistBench/outputs/muse_news_qwen25_selected_full/muse_news_qwen25_rmu.json	main
+MUSE-News	Qwen2.5-7B-Instruct	RMU	beneficial_memory_usage	1	0.00	100	0.00	100	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_qwen25_selected_full/muse_news_qwen25_rmu.json	main
+MUSE-News	Qwen2.5-7B-Instruct	WGA	cross_domain	1	2.50	200	2.50	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_qwen25_selected_full/muse_news_qwen25_wga.json	main
+MUSE-News	Qwen2.5-7B-Instruct	WGA	cross_domain	2	5.50	200	5.50	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_qwen25_selected_full/muse_news_qwen25_wga.json	main
+MUSE-News	Qwen2.5-7B-Instruct	WGA	cross_domain	3	5.50	200	5.50	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_qwen25_selected_full/muse_news_qwen25_wga.json	main
+MUSE-News	Qwen2.5-7B-Instruct	WGA	sycophancy	1	9.50	200	9.50	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_qwen25_selected_full/muse_news_qwen25_wga.json	main
+MUSE-News	Qwen2.5-7B-Instruct	WGA	sycophancy	2	13.00	200	13.00	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_qwen25_selected_full/muse_news_qwen25_wga.json	main
+MUSE-News	Qwen2.5-7B-Instruct	WGA	sycophancy	3	13.00	200	13.00	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_qwen25_selected_full/muse_news_qwen25_wga.json	main
+MUSE-News	Qwen2.5-7B-Instruct	WGA	beneficial_memory_usage	1	1.00	100	1.00	100	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_qwen25_selected_full/muse_news_qwen25_wga.json	main
+MUSE-News	Qwen2.5-7B-Instruct	SatImp	cross_domain	1	2.00	200	2.00	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_qwen25_selected_full/muse_news_qwen25_satimp.json	main
+MUSE-News	Qwen2.5-7B-Instruct	SatImp	cross_domain	2	3.00	200	3.00	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_qwen25_selected_full/muse_news_qwen25_satimp.json	main
+MUSE-News	Qwen2.5-7B-Instruct	SatImp	cross_domain	3	3.00	200	3.00	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_qwen25_selected_full/muse_news_qwen25_satimp.json	main
+MUSE-News	Qwen2.5-7B-Instruct	SatImp	sycophancy	1	12.00	200	12.00	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_qwen25_selected_full/muse_news_qwen25_satimp.json	main
+MUSE-News	Qwen2.5-7B-Instruct	SatImp	sycophancy	2	17.00	200	17.00	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_qwen25_selected_full/muse_news_qwen25_satimp.json	main
+MUSE-News	Qwen2.5-7B-Instruct	SatImp	sycophancy	3	17.00	200	17.00	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_qwen25_selected_full/muse_news_qwen25_satimp.json	main
+MUSE-News	Qwen2.5-7B-Instruct	SatImp	beneficial_memory_usage	1	0.00	100	0.00	100	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_qwen25_selected_full/muse_news_qwen25_satimp.json	main
+MUSE-News	Qwen2.5-7B-Instruct	SimNPO	cross_domain	1	1.50	200	1.50	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_qwen25_selected_full/muse_news_qwen25_simnpo.json	main
+MUSE-News	Qwen2.5-7B-Instruct	SimNPO	cross_domain	2	2.00	200	2.00	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_qwen25_selected_full/muse_news_qwen25_simnpo.json	main
+MUSE-News	Qwen2.5-7B-Instruct	SimNPO	cross_domain	3	2.00	200	2.00	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_qwen25_selected_full/muse_news_qwen25_simnpo.json	main
+MUSE-News	Qwen2.5-7B-Instruct	SimNPO	sycophancy	1	11.50	200	11.50	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_qwen25_selected_full/muse_news_qwen25_simnpo.json	main
+MUSE-News	Qwen2.5-7B-Instruct	SimNPO	sycophancy	2	15.00	200	15.00	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_qwen25_selected_full/muse_news_qwen25_simnpo.json	main
+MUSE-News	Qwen2.5-7B-Instruct	SimNPO	sycophancy	3	15.00	200	15.00	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_qwen25_selected_full/muse_news_qwen25_simnpo.json	main
+MUSE-News	Qwen2.5-7B-Instruct	SimNPO	beneficial_memory_usage	1	1.00	100	1.00	100	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_qwen25_selected_full/muse_news_qwen25_simnpo.json	main
+MUSE-Books	Qwen2.5-7B-Instruct	Target	cross_domain	1	3.00	200	3.00	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_books_qwen25_selected_full/muse_books_qwen25_before.json	main
+MUSE-Books	Qwen2.5-7B-Instruct	Target	cross_domain	2	4.00	200	4.00	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_books_qwen25_selected_full/muse_books_qwen25_before.json	main
+MUSE-Books	Qwen2.5-7B-Instruct	Target	cross_domain	3	4.50	200	4.50	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_books_qwen25_selected_full/muse_books_qwen25_before.json	main
+MUSE-Books	Qwen2.5-7B-Instruct	Target	sycophancy	1	10.00	200	10.00	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_books_qwen25_selected_full/muse_books_qwen25_before.json	main
+MUSE-Books	Qwen2.5-7B-Instruct	Target	sycophancy	2	10.50	200	10.50	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_books_qwen25_selected_full/muse_books_qwen25_before.json	main
+MUSE-Books	Qwen2.5-7B-Instruct	Target	sycophancy	3	10.50	200	10.50	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_books_qwen25_selected_full/muse_books_qwen25_before.json	main
+MUSE-Books	Qwen2.5-7B-Instruct	Target	beneficial_memory_usage	1	1.00	100	1.00	100	0.00	no	no	no	0	external/PersistBench/outputs/muse_books_qwen25_selected_full/muse_books_qwen25_before.json	main
+MUSE-Books	Qwen2.5-7B-Instruct	RMU	cross_domain	1	12.50	200	12.50	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_books_qwen25_selected_full/muse_books_qwen25_rmu.json	main
+MUSE-Books	Qwen2.5-7B-Instruct	RMU	cross_domain	2	17.00	200	17.00	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_books_qwen25_selected_full/muse_books_qwen25_rmu.json	main
+MUSE-Books	Qwen2.5-7B-Instruct	RMU	cross_domain	3	18.00	200	18.00	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_books_qwen25_selected_full/muse_books_qwen25_rmu.json	main
+MUSE-Books	Qwen2.5-7B-Instruct	RMU	sycophancy	1	12.50	200	12.50	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_books_qwen25_selected_full/muse_books_qwen25_rmu.json	main
+MUSE-Books	Qwen2.5-7B-Instruct	RMU	sycophancy	2	16.00	200	16.00	200	0.00	no	no	no	2	external/PersistBench/outputs/muse_books_qwen25_selected_full/muse_books_qwen25_rmu.json	main
+MUSE-Books	Qwen2.5-7B-Instruct	RMU	sycophancy	3	16.00	200	16.00	200	0.00	no	no	no	4	external/PersistBench/outputs/muse_books_qwen25_selected_full/muse_books_qwen25_rmu.json	main
+MUSE-Books	Qwen2.5-7B-Instruct	RMU	beneficial_memory_usage	1	7.00	100	6.12	98	0.88	YES	YES	YES	2	external/PersistBench/outputs/muse_books_qwen25_selected_full/muse_books_qwen25_rmu.json	main
+MUSE-Books	Qwen2.5-7B-Instruct	WGA	cross_domain	1	2.00	200	2.00	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_books_qwen25_selected_full/muse_books_qwen25_wga.json	main
+MUSE-Books	Qwen2.5-7B-Instruct	WGA	cross_domain	2	2.50	200	2.50	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_books_qwen25_selected_full/muse_books_qwen25_wga.json	main
+MUSE-Books	Qwen2.5-7B-Instruct	WGA	cross_domain	3	2.50	200	2.50	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_books_qwen25_selected_full/muse_books_qwen25_wga.json	main
+MUSE-Books	Qwen2.5-7B-Instruct	WGA	sycophancy	1	9.50	200	9.50	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_books_qwen25_selected_full/muse_books_qwen25_wga.json	main
+MUSE-Books	Qwen2.5-7B-Instruct	WGA	sycophancy	2	10.00	200	10.00	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_books_qwen25_selected_full/muse_books_qwen25_wga.json	main
+MUSE-Books	Qwen2.5-7B-Instruct	WGA	sycophancy	3	10.00	200	10.00	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_books_qwen25_selected_full/muse_books_qwen25_wga.json	main
+MUSE-Books	Qwen2.5-7B-Instruct	WGA	beneficial_memory_usage	1	0.00	100	0.00	100	0.00	no	no	no	0	external/PersistBench/outputs/muse_books_qwen25_selected_full/muse_books_qwen25_wga.json	main
+MUSE-Books	Qwen2.5-7B-Instruct	SatImp	cross_domain	1	3.00	200	3.00	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_books_qwen25_selected_full/muse_books_qwen25_satimp.json	main
+MUSE-Books	Qwen2.5-7B-Instruct	SatImp	cross_domain	2	4.00	200	4.00	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_books_qwen25_selected_full/muse_books_qwen25_satimp.json	main
+MUSE-Books	Qwen2.5-7B-Instruct	SatImp	cross_domain	3	4.00	200	4.00	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_books_qwen25_selected_full/muse_books_qwen25_satimp.json	main
+MUSE-Books	Qwen2.5-7B-Instruct	SatImp	sycophancy	1	7.50	200	7.54	199	0.04	YES	YES	YES	1	external/PersistBench/outputs/muse_books_qwen25_selected_full/muse_books_qwen25_satimp.json	main
+MUSE-Books	Qwen2.5-7B-Instruct	SatImp	sycophancy	2	9.50	200	9.50	200	0.00	no	no	YES	1	external/PersistBench/outputs/muse_books_qwen25_selected_full/muse_books_qwen25_satimp.json	main
+MUSE-Books	Qwen2.5-7B-Instruct	SatImp	sycophancy	3	9.50	200	9.50	200	0.00	no	no	YES	1	external/PersistBench/outputs/muse_books_qwen25_selected_full/muse_books_qwen25_satimp.json	main
+MUSE-Books	Qwen2.5-7B-Instruct	SatImp	beneficial_memory_usage	1	2.00	100	2.00	100	0.00	no	no	no	0	external/PersistBench/outputs/muse_books_qwen25_selected_full/muse_books_qwen25_satimp.json	main
+MUSE-Books	Qwen2.5-7B-Instruct	SimNPO	cross_domain	1	4.00	200	4.00	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_books_qwen25_selected_full/muse_books_qwen25_simnpo.json	main
+MUSE-Books	Qwen2.5-7B-Instruct	SimNPO	cross_domain	2	4.50	200	4.50	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_books_qwen25_selected_full/muse_books_qwen25_simnpo.json	main
+MUSE-Books	Qwen2.5-7B-Instruct	SimNPO	cross_domain	3	4.50	200	4.50	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_books_qwen25_selected_full/muse_books_qwen25_simnpo.json	main
+MUSE-Books	Qwen2.5-7B-Instruct	SimNPO	sycophancy	1	8.00	200	8.00	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_books_qwen25_selected_full/muse_books_qwen25_simnpo.json	main
+MUSE-Books	Qwen2.5-7B-Instruct	SimNPO	sycophancy	2	10.00	200	10.00	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_books_qwen25_selected_full/muse_books_qwen25_simnpo.json	main
+MUSE-Books	Qwen2.5-7B-Instruct	SimNPO	sycophancy	3	10.00	200	10.00	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_books_qwen25_selected_full/muse_books_qwen25_simnpo.json	main
+MUSE-Books	Qwen2.5-7B-Instruct	SimNPO	beneficial_memory_usage	1	1.00	100	1.00	100	0.00	no	no	no	0	external/PersistBench/outputs/muse_books_qwen25_selected_full/muse_books_qwen25_simnpo.json	main
+MUSE-Books	Llama-2-7B	Target	cross_domain	1	25.50	200	25.50	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_books_llama2_selected_full/muse_books_llama2_before.json	main
+MUSE-Books	Llama-2-7B	Target	cross_domain	2	31.50	200	31.50	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_books_llama2_selected_full/muse_books_llama2_before.json	main
+MUSE-Books	Llama-2-7B	Target	cross_domain	3	31.50	200	31.50	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_books_llama2_selected_full/muse_books_llama2_before.json	main
+MUSE-Books	Llama-2-7B	Target	sycophancy	1	23.00	200	23.12	199	0.12	YES	YES	YES	1	external/PersistBench/outputs/muse_books_llama2_selected_full/muse_books_llama2_before.json	main
+MUSE-Books	Llama-2-7B	Target	sycophancy	2	27.50	200	27.64	199	0.14	YES	YES	YES	2	external/PersistBench/outputs/muse_books_llama2_selected_full/muse_books_llama2_before.json	main
+MUSE-Books	Llama-2-7B	Target	sycophancy	3	27.50	200	27.64	199	0.14	YES	YES	YES	3	external/PersistBench/outputs/muse_books_llama2_selected_full/muse_books_llama2_before.json	main
+MUSE-Books	Llama-2-7B	Target	beneficial_memory_usage	1	69.00	100	68.69	99	0.31	YES	YES	YES	1	external/PersistBench/outputs/muse_books_llama2_selected_full/muse_books_llama2_before.json	main
+MUSE-Books	Llama-2-7B	RMU	cross_domain	1	35.50	200	35.18	199	0.32	YES	YES	YES	1	external/PersistBench/outputs/muse_books_llama2_selected_full/muse_books_llama2_rmu.json	main
+MUSE-Books	Llama-2-7B	RMU	cross_domain	2	44.00	200	44.00	200	0.00	no	no	YES	1	external/PersistBench/outputs/muse_books_llama2_selected_full/muse_books_llama2_rmu.json	main
+MUSE-Books	Llama-2-7B	RMU	cross_domain	3	44.00	200	44.00	200	0.00	no	no	YES	1	external/PersistBench/outputs/muse_books_llama2_selected_full/muse_books_llama2_rmu.json	main
+MUSE-Books	Llama-2-7B	RMU	sycophancy	1	32.00	200	31.98	197	0.02	YES	YES	YES	3	external/PersistBench/outputs/muse_books_llama2_selected_full/muse_books_llama2_rmu.json	main
+MUSE-Books	Llama-2-7B	RMU	sycophancy	2	37.00	200	36.87	198	0.13	YES	YES	YES	6	external/PersistBench/outputs/muse_books_llama2_selected_full/muse_books_llama2_rmu.json	main
+MUSE-Books	Llama-2-7B	RMU	sycophancy	3	38.00	200	37.88	198	0.12	YES	YES	YES	9	external/PersistBench/outputs/muse_books_llama2_selected_full/muse_books_llama2_rmu.json	main
+MUSE-Books	Llama-2-7B	RMU	beneficial_memory_usage	1	65.00	100	65.31	98	0.31	YES	YES	YES	2	external/PersistBench/outputs/muse_books_llama2_selected_full/muse_books_llama2_rmu.json	main
+MUSE-Books	Llama-2-7B	WGA	cross_domain	1	10.00	200	NA	0	NA	YES	YES	YES	200	external/PersistBench/outputs/muse_books_llama2_selected_full/muse_books_llama2_wga.json	main
+MUSE-Books	Llama-2-7B	WGA	cross_domain	2	10.00	200	NA	0	NA	YES	YES	YES	400	external/PersistBench/outputs/muse_books_llama2_selected_full/muse_books_llama2_wga.json	main
+MUSE-Books	Llama-2-7B	WGA	cross_domain	3	10.00	200	NA	0	NA	YES	YES	YES	600	external/PersistBench/outputs/muse_books_llama2_selected_full/muse_books_llama2_wga.json	main
+MUSE-Books	Llama-2-7B	WGA	sycophancy	1	42.50	200	NA	0	NA	YES	YES	YES	200	external/PersistBench/outputs/muse_books_llama2_selected_full/muse_books_llama2_wga.json	main
+MUSE-Books	Llama-2-7B	WGA	sycophancy	2	43.00	200	NA	0	NA	YES	YES	YES	400	external/PersistBench/outputs/muse_books_llama2_selected_full/muse_books_llama2_wga.json	main
+MUSE-Books	Llama-2-7B	WGA	sycophancy	3	43.00	200	NA	0	NA	YES	YES	YES	600	external/PersistBench/outputs/muse_books_llama2_selected_full/muse_books_llama2_wga.json	main
+MUSE-Books	Llama-2-7B	WGA	beneficial_memory_usage	1	67.00	100	NA	0	NA	YES	YES	YES	100	external/PersistBench/outputs/muse_books_llama2_selected_full/muse_books_llama2_wga.json	main
+MUSE-Books	Llama-2-7B	SatImp	cross_domain	1	26.00	200	25.63	199	0.37	YES	YES	YES	1	external/PersistBench/outputs/muse_books_llama2_selected_full/muse_books_llama2_satimp.json	main
+MUSE-Books	Llama-2-7B	SatImp	cross_domain	2	29.50	200	29.15	199	0.35	YES	YES	YES	2	external/PersistBench/outputs/muse_books_llama2_selected_full/muse_books_llama2_satimp.json	main
+MUSE-Books	Llama-2-7B	SatImp	cross_domain	3	29.50	200	29.15	199	0.35	YES	YES	YES	3	external/PersistBench/outputs/muse_books_llama2_selected_full/muse_books_llama2_satimp.json	main
+MUSE-Books	Llama-2-7B	SatImp	sycophancy	1	27.00	200	27.00	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_books_llama2_selected_full/muse_books_llama2_satimp.json	main
+MUSE-Books	Llama-2-7B	SatImp	sycophancy	2	31.50	200	31.50	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_books_llama2_selected_full/muse_books_llama2_satimp.json	main
+MUSE-Books	Llama-2-7B	SatImp	sycophancy	3	31.50	200	31.50	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_books_llama2_selected_full/muse_books_llama2_satimp.json	main
+MUSE-Books	Llama-2-7B	SatImp	beneficial_memory_usage	1	65.00	100	65.00	100	0.00	no	no	no	0	external/PersistBench/outputs/muse_books_llama2_selected_full/muse_books_llama2_satimp.json	main
+MUSE-Books	Llama-2-7B	SimNPO	cross_domain	1	28.50	200	28.21	195	0.29	YES	YES	YES	5	external/PersistBench/outputs/muse_books_llama2_selected_full/muse_books_llama2_simnpo.json	main
+MUSE-Books	Llama-2-7B	SimNPO	cross_domain	2	36.50	200	36.22	196	0.28	YES	YES	YES	10	external/PersistBench/outputs/muse_books_llama2_selected_full/muse_books_llama2_simnpo.json	main
+MUSE-Books	Llama-2-7B	SimNPO	cross_domain	3	36.50	200	36.22	196	0.28	YES	YES	YES	15	external/PersistBench/outputs/muse_books_llama2_selected_full/muse_books_llama2_simnpo.json	main
+MUSE-Books	Llama-2-7B	SimNPO	sycophancy	1	30.50	200	30.65	199	0.15	YES	YES	YES	1	external/PersistBench/outputs/muse_books_llama2_selected_full/muse_books_llama2_simnpo.json	main
+MUSE-Books	Llama-2-7B	SimNPO	sycophancy	2	39.00	200	39.00	200	0.00	no	no	YES	2	external/PersistBench/outputs/muse_books_llama2_selected_full/muse_books_llama2_simnpo.json	main
+MUSE-Books	Llama-2-7B	SimNPO	sycophancy	3	40.00	200	40.00	200	0.00	no	no	YES	3	external/PersistBench/outputs/muse_books_llama2_selected_full/muse_books_llama2_simnpo.json	main
+MUSE-Books	Llama-2-7B	SimNPO	beneficial_memory_usage	1	78.00	100	78.00	100	0.00	no	no	no	0	external/PersistBench/outputs/muse_books_llama2_selected_full/muse_books_llama2_simnpo.json	main
+TOFU	Qwen2.5-7B-Instruct	Target	cross_domain	1	3.50	200	3.50	200	0.00	no	no	no	0	external/PersistBench/outputs/final_tofu_persistbench_localjudge/qwen25_7b_tofufull_before_localjudge.json	main
+TOFU	Qwen2.5-7B-Instruct	Target	cross_domain	2	5.00	200	5.00	200	0.00	no	no	no	0	external/PersistBench/outputs/final_tofu_persistbench_localjudge/qwen25_7b_tofufull_before_localjudge.json	main
+TOFU	Qwen2.5-7B-Instruct	Target	cross_domain	3	5.50	200	5.50	200	0.00	no	no	no	0	external/PersistBench/outputs/final_tofu_persistbench_localjudge/qwen25_7b_tofufull_before_localjudge.json	main
+TOFU	Qwen2.5-7B-Instruct	Target	sycophancy	1	14.50	200	14.65	198	0.15	YES	YES	YES	2	external/PersistBench/outputs/final_tofu_persistbench_localjudge/qwen25_7b_tofufull_before_localjudge.json	main
+TOFU	Qwen2.5-7B-Instruct	Target	sycophancy	2	21.50	200	21.11	199	0.39	YES	YES	YES	4	external/PersistBench/outputs/final_tofu_persistbench_localjudge/qwen25_7b_tofufull_before_localjudge.json	main
+TOFU	Qwen2.5-7B-Instruct	Target	sycophancy	3	28.50	200	28.14	199	0.36	YES	YES	YES	12	external/PersistBench/outputs/final_tofu_persistbench_localjudge/qwen25_7b_tofufull_before_localjudge.json	main
+TOFU	Qwen2.5-7B-Instruct	Target	beneficial_memory_usage	1	1.00	100	1.00	100	0.00	no	no	no	0	external/PersistBench/outputs/final_tofu_persistbench_localjudge/qwen25_7b_tofufull_before_localjudge.json	main
+TOFU	Qwen2.5-7B-Instruct	RMU	cross_domain	1	3.50	200	3.52	199	0.02	YES	YES	YES	1	external/PersistBench/outputs/final_tofu_persistbench_localjudge/qwen25_7b_after_rmu_from_tofufull_localjudge.json	main
+TOFU	Qwen2.5-7B-Instruct	RMU	cross_domain	2	7.00	200	7.00	200	0.00	no	no	YES	1	external/PersistBench/outputs/final_tofu_persistbench_localjudge/qwen25_7b_after_rmu_from_tofufull_localjudge.json	main
+TOFU	Qwen2.5-7B-Instruct	RMU	cross_domain	3	11.00	200	11.00	200	0.00	no	no	YES	1	external/PersistBench/outputs/final_tofu_persistbench_localjudge/qwen25_7b_after_rmu_from_tofufull_localjudge.json	main
+TOFU	Qwen2.5-7B-Instruct	RMU	sycophancy	1	17.50	200	17.26	197	0.24	YES	YES	YES	3	external/PersistBench/outputs/final_tofu_persistbench_localjudge/qwen25_7b_after_rmu_from_tofufull_localjudge.json	main
+TOFU	Qwen2.5-7B-Instruct	RMU	sycophancy	2	28.50	200	28.50	200	0.00	no	no	YES	3	external/PersistBench/outputs/final_tofu_persistbench_localjudge/qwen25_7b_after_rmu_from_tofufull_localjudge.json	main
+TOFU	Qwen2.5-7B-Instruct	RMU	sycophancy	3	36.00	200	36.00	200	0.00	no	no	YES	6	external/PersistBench/outputs/final_tofu_persistbench_localjudge/qwen25_7b_after_rmu_from_tofufull_localjudge.json	main
+TOFU	Qwen2.5-7B-Instruct	RMU	beneficial_memory_usage	1	0.00	100	0.00	100	0.00	no	no	no	0	external/PersistBench/outputs/final_tofu_persistbench_localjudge/qwen25_7b_after_rmu_from_tofufull_localjudge.json	main
+TOFU	Qwen2.5-7B-Instruct	WGA	cross_domain	1	2.00	200	2.00	200	0.00	no	no	no	0	external/PersistBench/outputs/final_tofu_persistbench_localjudge/qwen25_7b_after_wga_from_tofufull_localjudge.json	main
+TOFU	Qwen2.5-7B-Instruct	WGA	cross_domain	2	4.00	200	4.00	200	0.00	no	no	no	0	external/PersistBench/outputs/final_tofu_persistbench_localjudge/qwen25_7b_after_wga_from_tofufull_localjudge.json	main
+TOFU	Qwen2.5-7B-Instruct	WGA	cross_domain	3	4.50	200	4.50	200	0.00	no	no	no	1	external/PersistBench/outputs/final_tofu_persistbench_localjudge/qwen25_7b_after_wga_from_tofufull_localjudge.json	main
+TOFU	Qwen2.5-7B-Instruct	WGA	sycophancy	1	15.50	200	15.15	198	0.35	YES	YES	YES	2	external/PersistBench/outputs/final_tofu_persistbench_localjudge/qwen25_7b_after_wga_from_tofufull_localjudge.json	main
+TOFU	Qwen2.5-7B-Instruct	WGA	sycophancy	2	27.00	200	26.63	199	0.37	YES	YES	YES	4	external/PersistBench/outputs/final_tofu_persistbench_localjudge/qwen25_7b_after_wga_from_tofufull_localjudge.json	main
+TOFU	Qwen2.5-7B-Instruct	WGA	sycophancy	3	32.00	200	31.50	200	0.50	YES	no	YES	7	external/PersistBench/outputs/final_tofu_persistbench_localjudge/qwen25_7b_after_wga_from_tofufull_localjudge.json	main
+TOFU	Qwen2.5-7B-Instruct	WGA	beneficial_memory_usage	1	1.00	100	1.01	99	0.01	YES	YES	YES	1	external/PersistBench/outputs/final_tofu_persistbench_localjudge/qwen25_7b_after_wga_from_tofufull_localjudge.json	main
+TOFU	Qwen2.5-7B-Instruct	SatImp	cross_domain	1	1.00	200	1.00	200	0.00	no	no	no	0	external/PersistBench/outputs/final_tofu_persistbench_localjudge/qwen25_7b_after_satimp_from_tofufull_localjudge.json	main
+TOFU	Qwen2.5-7B-Instruct	SatImp	cross_domain	2	2.00	200	2.00	200	0.00	no	no	no	0	external/PersistBench/outputs/final_tofu_persistbench_localjudge/qwen25_7b_after_satimp_from_tofufull_localjudge.json	main
+TOFU	Qwen2.5-7B-Instruct	SatImp	cross_domain	3	2.50	200	2.50	200	0.00	no	no	no	0	external/PersistBench/outputs/final_tofu_persistbench_localjudge/qwen25_7b_after_satimp_from_tofufull_localjudge.json	main
+TOFU	Qwen2.5-7B-Instruct	SatImp	sycophancy	1	17.00	200	16.75	197	0.25	YES	YES	YES	3	external/PersistBench/outputs/final_tofu_persistbench_localjudge/qwen25_7b_after_satimp_from_tofufull_localjudge.json	main
+TOFU	Qwen2.5-7B-Instruct	SatImp	sycophancy	2	26.50	200	26.13	199	0.37	YES	YES	YES	5	external/PersistBench/outputs/final_tofu_persistbench_localjudge/qwen25_7b_after_satimp_from_tofufull_localjudge.json	main
+TOFU	Qwen2.5-7B-Instruct	SatImp	sycophancy	3	33.00	200	33.00	200	0.00	no	no	YES	7	external/PersistBench/outputs/final_tofu_persistbench_localjudge/qwen25_7b_after_satimp_from_tofufull_localjudge.json	main
+TOFU	Qwen2.5-7B-Instruct	SatImp	beneficial_memory_usage	1	1.00	100	1.00	100	0.00	no	no	no	0	external/PersistBench/outputs/final_tofu_persistbench_localjudge/qwen25_7b_after_satimp_from_tofufull_localjudge.json	main
+TOFU	Qwen2.5-7B-Instruct	SimNPO	cross_domain	1	3.00	200	3.00	200	0.00	no	no	no	0	external/PersistBench/outputs/final_tofu_persistbench_localjudge/qwen25_7b_after_simnpo_from_tofufull_localjudge.json	main
+TOFU	Qwen2.5-7B-Instruct	SimNPO	cross_domain	2	3.50	200	3.50	200	0.00	no	no	no	0	external/PersistBench/outputs/final_tofu_persistbench_localjudge/qwen25_7b_after_simnpo_from_tofufull_localjudge.json	main
+TOFU	Qwen2.5-7B-Instruct	SimNPO	cross_domain	3	4.50	200	4.50	200	0.00	no	no	no	0	external/PersistBench/outputs/final_tofu_persistbench_localjudge/qwen25_7b_after_simnpo_from_tofufull_localjudge.json	main
+TOFU	Qwen2.5-7B-Instruct	SimNPO	sycophancy	1	15.00	200	15.08	199	0.08	YES	YES	YES	1	external/PersistBench/outputs/final_tofu_persistbench_localjudge/qwen25_7b_after_simnpo_from_tofufull_localjudge.json	main
+TOFU	Qwen2.5-7B-Instruct	SimNPO	sycophancy	2	24.00	200	23.50	200	0.50	YES	no	YES	6	external/PersistBench/outputs/final_tofu_persistbench_localjudge/qwen25_7b_after_simnpo_from_tofufull_localjudge.json	main
+TOFU	Qwen2.5-7B-Instruct	SimNPO	sycophancy	3	30.00	200	29.50	200	0.50	YES	no	YES	10	external/PersistBench/outputs/final_tofu_persistbench_localjudge/qwen25_7b_after_simnpo_from_tofufull_localjudge.json	main
+TOFU	Qwen2.5-7B-Instruct	SimNPO	beneficial_memory_usage	1	1.00	100	1.02	98	0.02	YES	YES	YES	2	external/PersistBench/outputs/final_tofu_persistbench_localjudge/qwen25_7b_after_simnpo_from_tofufull_localjudge.json	main
+TOFU	Llama-3.1-8B-Instruct	Target	cross_domain	1	0.50	200	0.50	200	0.00	no	no	no	0	external/PersistBench/outputs/final_tofu_persistbench_localjudge/llama31_8b_tofufull_before_localjudge.json	main
+TOFU	Llama-3.1-8B-Instruct	Target	cross_domain	2	0.50	200	0.50	200	0.00	no	no	no	1	external/PersistBench/outputs/final_tofu_persistbench_localjudge/llama31_8b_tofufull_before_localjudge.json	main
+TOFU	Llama-3.1-8B-Instruct	Target	cross_domain	3	0.50	200	0.50	200	0.00	no	no	no	2	external/PersistBench/outputs/final_tofu_persistbench_localjudge/llama31_8b_tofufull_before_localjudge.json	main
+TOFU	Llama-3.1-8B-Instruct	Target	sycophancy	1	8.50	200	8.59	198	0.09	YES	YES	YES	2	external/PersistBench/outputs/final_tofu_persistbench_localjudge/llama31_8b_tofufull_before_localjudge.json	main
+TOFU	Llama-3.1-8B-Instruct	Target	sycophancy	2	18.00	200	18.09	199	0.09	YES	YES	YES	4	external/PersistBench/outputs/final_tofu_persistbench_localjudge/llama31_8b_tofufull_before_localjudge.json	main
+TOFU	Llama-3.1-8B-Instruct	Target	sycophancy	3	21.50	200	21.61	199	0.11	YES	YES	YES	6	external/PersistBench/outputs/final_tofu_persistbench_localjudge/llama31_8b_tofufull_before_localjudge.json	main
+TOFU	Llama-3.1-8B-Instruct	Target	beneficial_memory_usage	1	8.00	100	8.00	100	0.00	no	no	no	0	external/PersistBench/outputs/final_tofu_persistbench_localjudge/llama31_8b_tofufull_before_localjudge.json	main
+TOFU	Llama-3.1-8B-Instruct	RMU	cross_domain	1	0.00	200	0.00	200	0.00	no	no	no	0	external/PersistBench/outputs/final_tofu_persistbench_localjudge/llama31_8b_after_rmu_from_tofufull_localjudge.json	main
+TOFU	Llama-3.1-8B-Instruct	RMU	cross_domain	2	1.50	200	1.50	200	0.00	no	no	no	0	external/PersistBench/outputs/final_tofu_persistbench_localjudge/llama31_8b_after_rmu_from_tofufull_localjudge.json	main
+TOFU	Llama-3.1-8B-Instruct	RMU	cross_domain	3	2.00	200	2.00	200	0.00	no	no	no	0	external/PersistBench/outputs/final_tofu_persistbench_localjudge/llama31_8b_after_rmu_from_tofufull_localjudge.json	main
+TOFU	Llama-3.1-8B-Instruct	RMU	sycophancy	1	12.50	200	12.63	198	0.13	YES	YES	YES	2	external/PersistBench/outputs/final_tofu_persistbench_localjudge/llama31_8b_after_rmu_from_tofufull_localjudge.json	main
+TOFU	Llama-3.1-8B-Instruct	RMU	sycophancy	2	17.50	200	17.50	200	0.00	no	no	YES	4	external/PersistBench/outputs/final_tofu_persistbench_localjudge/llama31_8b_after_rmu_from_tofufull_localjudge.json	main
+TOFU	Llama-3.1-8B-Instruct	RMU	sycophancy	3	18.50	200	18.50	200	0.00	no	no	YES	4	external/PersistBench/outputs/final_tofu_persistbench_localjudge/llama31_8b_after_rmu_from_tofufull_localjudge.json	main
+TOFU	Llama-3.1-8B-Instruct	RMU	beneficial_memory_usage	1	9.00	100	9.00	100	0.00	no	no	no	0	external/PersistBench/outputs/final_tofu_persistbench_localjudge/llama31_8b_after_rmu_from_tofufull_localjudge.json	main
+TOFU	Llama-3.1-8B-Instruct	WGA	cross_domain	1	0.50	200	0.50	199	0.00	no	YES	YES	1	external/PersistBench/outputs/final_tofu_persistbench_localjudge/llama31_8b_after_wga_from_tofufull_localjudge.json	main
+TOFU	Llama-3.1-8B-Instruct	WGA	cross_domain	2	0.50	200	0.50	200	0.00	no	no	YES	2	external/PersistBench/outputs/final_tofu_persistbench_localjudge/llama31_8b_after_wga_from_tofufull_localjudge.json	main
+TOFU	Llama-3.1-8B-Instruct	WGA	cross_domain	3	1.00	200	1.00	200	0.00	no	no	YES	4	external/PersistBench/outputs/final_tofu_persistbench_localjudge/llama31_8b_after_wga_from_tofufull_localjudge.json	main
+TOFU	Llama-3.1-8B-Instruct	WGA	sycophancy	1	14.00	200	13.64	198	0.36	YES	YES	YES	2	external/PersistBench/outputs/final_tofu_persistbench_localjudge/llama31_8b_after_wga_from_tofufull_localjudge.json	main
+TOFU	Llama-3.1-8B-Instruct	WGA	sycophancy	2	19.00	200	18.59	199	0.41	YES	YES	YES	3	external/PersistBench/outputs/final_tofu_persistbench_localjudge/llama31_8b_after_wga_from_tofufull_localjudge.json	main
+TOFU	Llama-3.1-8B-Instruct	WGA	sycophancy	3	22.50	200	22.11	199	0.39	YES	YES	YES	5	external/PersistBench/outputs/final_tofu_persistbench_localjudge/llama31_8b_after_wga_from_tofufull_localjudge.json	main
+TOFU	Llama-3.1-8B-Instruct	WGA	beneficial_memory_usage	1	8.00	100	8.00	100	0.00	no	no	no	0	external/PersistBench/outputs/final_tofu_persistbench_localjudge/llama31_8b_after_wga_from_tofufull_localjudge.json	main
+TOFU	Llama-3.1-8B-Instruct	SatImp	cross_domain	1	0.00	200	0.00	200	0.00	no	no	no	0	external/PersistBench/outputs/final_tofu_persistbench_localjudge/llama31_8b_after_satimp_from_tofufull_localjudge.json	main
+TOFU	Llama-3.1-8B-Instruct	SatImp	cross_domain	2	0.50	200	0.50	200	0.00	no	no	no	0	external/PersistBench/outputs/final_tofu_persistbench_localjudge/llama31_8b_after_satimp_from_tofufull_localjudge.json	main
+TOFU	Llama-3.1-8B-Instruct	SatImp	cross_domain	3	1.00	200	1.00	200	0.00	no	no	no	0	external/PersistBench/outputs/final_tofu_persistbench_localjudge/llama31_8b_after_satimp_from_tofufull_localjudge.json	main
+TOFU	Llama-3.1-8B-Instruct	SatImp	sycophancy	1	9.50	200	9.60	198	0.10	YES	YES	YES	2	external/PersistBench/outputs/final_tofu_persistbench_localjudge/llama31_8b_after_satimp_from_tofufull_localjudge.json	main
+TOFU	Llama-3.1-8B-Instruct	SatImp	sycophancy	2	16.50	200	16.58	199	0.08	YES	YES	YES	4	external/PersistBench/outputs/final_tofu_persistbench_localjudge/llama31_8b_after_satimp_from_tofufull_localjudge.json	main
+TOFU	Llama-3.1-8B-Instruct	SatImp	sycophancy	3	19.50	200	19.50	200	0.00	no	no	YES	6	external/PersistBench/outputs/final_tofu_persistbench_localjudge/llama31_8b_after_satimp_from_tofufull_localjudge.json	main
+TOFU	Llama-3.1-8B-Instruct	SatImp	beneficial_memory_usage	1	8.00	100	8.00	100	0.00	no	no	no	0	external/PersistBench/outputs/final_tofu_persistbench_localjudge/llama31_8b_after_satimp_from_tofufull_localjudge.json	main
+TOFU	Llama-3.1-8B-Instruct	SimNPO	cross_domain	1	0.50	200	0.50	199	0.00	no	YES	YES	1	external/PersistBench/outputs/final_tofu_persistbench_localjudge/llama31_8b_after_simnpo_from_tofufull_localjudge.json	main
+TOFU	Llama-3.1-8B-Instruct	SimNPO	cross_domain	2	1.00	200	1.00	200	0.00	no	no	YES	1	external/PersistBench/outputs/final_tofu_persistbench_localjudge/llama31_8b_after_simnpo_from_tofufull_localjudge.json	main
+TOFU	Llama-3.1-8B-Instruct	SimNPO	cross_domain	3	1.00	200	1.00	200	0.00	no	no	YES	1	external/PersistBench/outputs/final_tofu_persistbench_localjudge/llama31_8b_after_simnpo_from_tofufull_localjudge.json	main
+TOFU	Llama-3.1-8B-Instruct	SimNPO	sycophancy	1	9.00	200	9.14	197	0.14	YES	YES	YES	3	external/PersistBench/outputs/final_tofu_persistbench_localjudge/llama31_8b_after_simnpo_from_tofufull_localjudge.json	main
+TOFU	Llama-3.1-8B-Instruct	SimNPO	sycophancy	2	12.50	200	12.50	200	0.00	no	no	YES	5	external/PersistBench/outputs/final_tofu_persistbench_localjudge/llama31_8b_after_simnpo_from_tofufull_localjudge.json	main
+TOFU	Llama-3.1-8B-Instruct	SimNPO	sycophancy	3	16.50	200	16.50	200	0.00	no	no	YES	6	external/PersistBench/outputs/final_tofu_persistbench_localjudge/llama31_8b_after_simnpo_from_tofufull_localjudge.json	main
+TOFU	Llama-3.1-8B-Instruct	SimNPO	beneficial_memory_usage	1	6.00	100	6.00	100	0.00	no	no	no	0	external/PersistBench/outputs/final_tofu_persistbench_localjudge/llama31_8b_after_simnpo_from_tofufull_localjudge.json	main
+MUSE-News fullprompt-sycophancy	Qwen2.5-7B-Instruct	Target	sycophancy	1	11.50	200	11.50	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_qwen25_fullprompt_robustness/muse_news_qwen25_before_fullprompt.json	fullprompt
+MUSE-News fullprompt-sycophancy	Qwen2.5-7B-Instruct	Target	sycophancy	2	12.50	200	12.50	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_qwen25_fullprompt_robustness/muse_news_qwen25_before_fullprompt.json	fullprompt
+MUSE-News fullprompt-sycophancy	Qwen2.5-7B-Instruct	Target	sycophancy	3	12.50	200	12.50	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_qwen25_fullprompt_robustness/muse_news_qwen25_before_fullprompt.json	fullprompt
+MUSE-News fullprompt-sycophancy	Qwen2.5-7B-Instruct	RMU	sycophancy	1	12.50	200	12.50	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_qwen25_fullprompt_robustness/muse_news_qwen25_rmu_fullprompt.json	fullprompt
+MUSE-News fullprompt-sycophancy	Qwen2.5-7B-Instruct	RMU	sycophancy	2	14.50	200	14.50	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_qwen25_fullprompt_robustness/muse_news_qwen25_rmu_fullprompt.json	fullprompt
+MUSE-News fullprompt-sycophancy	Qwen2.5-7B-Instruct	RMU	sycophancy	3	14.50	200	14.50	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_qwen25_fullprompt_robustness/muse_news_qwen25_rmu_fullprompt.json	fullprompt
+MUSE-News fullprompt-sycophancy	Qwen2.5-7B-Instruct	SatImp	sycophancy	1	14.50	200	14.57	199	0.07	YES	YES	YES	1	external/PersistBench/outputs/muse_news_qwen25_fullprompt_robustness/muse_news_qwen25_satimp_fullprompt.json	fullprompt
+MUSE-News fullprompt-sycophancy	Qwen2.5-7B-Instruct	SatImp	sycophancy	2	15.50	200	15.58	199	0.08	YES	YES	YES	2	external/PersistBench/outputs/muse_news_qwen25_fullprompt_robustness/muse_news_qwen25_satimp_fullprompt.json	fullprompt
+MUSE-News fullprompt-sycophancy	Qwen2.5-7B-Instruct	SatImp	sycophancy	3	15.50	200	15.58	199	0.08	YES	YES	YES	3	external/PersistBench/outputs/muse_news_qwen25_fullprompt_robustness/muse_news_qwen25_satimp_fullprompt.json	fullprompt
+MUSE-News fullprompt-sycophancy	Qwen2.5-7B-Instruct	SimNPO	sycophancy	1	12.00	200	12.00	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_qwen25_fullprompt_robustness/muse_news_qwen25_simnpo_fullprompt.json	fullprompt
+MUSE-News fullprompt-sycophancy	Qwen2.5-7B-Instruct	SimNPO	sycophancy	2	13.00	200	13.00	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_qwen25_fullprompt_robustness/muse_news_qwen25_simnpo_fullprompt.json	fullprompt
+MUSE-News fullprompt-sycophancy	Qwen2.5-7B-Instruct	SimNPO	sycophancy	3	13.50	200	13.50	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_qwen25_fullprompt_robustness/muse_news_qwen25_simnpo_fullprompt.json	fullprompt
+MUSE-News fullprompt-cross_domain	Qwen2.5-7B-Instruct	Target	cross_domain	1	0.50	200	0.50	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_qwen25_fullprompt_robustness_crossdomain/muse_news_qwen25_before_fullprompt_crossdomain.json	fullprompt
+MUSE-News fullprompt-cross_domain	Qwen2.5-7B-Instruct	Target	cross_domain	2	1.50	200	1.50	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_qwen25_fullprompt_robustness_crossdomain/muse_news_qwen25_before_fullprompt_crossdomain.json	fullprompt
+MUSE-News fullprompt-cross_domain	Qwen2.5-7B-Instruct	Target	cross_domain	3	1.50	200	1.50	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_qwen25_fullprompt_robustness_crossdomain/muse_news_qwen25_before_fullprompt_crossdomain.json	fullprompt
+MUSE-News fullprompt-cross_domain	Qwen2.5-7B-Instruct	RMU	cross_domain	1	2.50	200	2.50	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_qwen25_fullprompt_robustness_crossdomain/muse_news_qwen25_rmu_fullprompt_crossdomain.json	fullprompt
+MUSE-News fullprompt-cross_domain	Qwen2.5-7B-Instruct	RMU	cross_domain	2	2.50	200	2.50	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_qwen25_fullprompt_robustness_crossdomain/muse_news_qwen25_rmu_fullprompt_crossdomain.json	fullprompt
+MUSE-News fullprompt-cross_domain	Qwen2.5-7B-Instruct	RMU	cross_domain	3	2.50	200	2.50	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_qwen25_fullprompt_robustness_crossdomain/muse_news_qwen25_rmu_fullprompt_crossdomain.json	fullprompt
+MUSE-News fullprompt-cross_domain	Qwen2.5-7B-Instruct	SatImp	cross_domain	1	3.00	200	3.02	199	0.02	YES	YES	YES	1	external/PersistBench/outputs/muse_news_qwen25_fullprompt_robustness_crossdomain/muse_news_qwen25_satimp_fullprompt_crossdomain.json	fullprompt
+MUSE-News fullprompt-cross_domain	Qwen2.5-7B-Instruct	SatImp	cross_domain	2	3.00	200	3.02	199	0.02	YES	YES	YES	2	external/PersistBench/outputs/muse_news_qwen25_fullprompt_robustness_crossdomain/muse_news_qwen25_satimp_fullprompt_crossdomain.json	fullprompt
+MUSE-News fullprompt-cross_domain	Qwen2.5-7B-Instruct	SatImp	cross_domain	3	3.00	200	3.02	199	0.02	YES	YES	YES	3	external/PersistBench/outputs/muse_news_qwen25_fullprompt_robustness_crossdomain/muse_news_qwen25_satimp_fullprompt_crossdomain.json	fullprompt
+MUSE-News fullprompt-cross_domain	Qwen2.5-7B-Instruct	SimNPO	cross_domain	1	3.50	200	3.52	199	0.02	YES	YES	YES	1	external/PersistBench/outputs/muse_news_qwen25_fullprompt_robustness_crossdomain/muse_news_qwen25_simnpo_fullprompt_crossdomain.json	fullprompt
+MUSE-News fullprompt-cross_domain	Qwen2.5-7B-Instruct	SimNPO	cross_domain	2	5.00	200	5.03	199	0.03	YES	YES	YES	2	external/PersistBench/outputs/muse_news_qwen25_fullprompt_robustness_crossdomain/muse_news_qwen25_simnpo_fullprompt_crossdomain.json	fullprompt
+MUSE-News fullprompt-cross_domain	Qwen2.5-7B-Instruct	SimNPO	cross_domain	3	5.00	200	5.03	199	0.03	YES	YES	YES	3	external/PersistBench/outputs/muse_news_qwen25_fullprompt_robustness_crossdomain/muse_news_qwen25_simnpo_fullprompt_crossdomain.json	fullprompt
+MUSE-News	Llama-2-7B	Target	cross_domain	1	3.50	200	3.50	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_selected_full/muse_news_before.json	scan_extra
+MUSE-News	Llama-2-7B	Target	cross_domain	2	7.00	200	7.00	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_selected_full/muse_news_before.json	scan_extra
+MUSE-News	Llama-2-7B	Target	cross_domain	3	7.00	200	7.00	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_selected_full/muse_news_before.json	scan_extra
+MUSE-News	Llama-2-7B	Target	sycophancy	1	8.50	200	8.50	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_selected_full/muse_news_before.json	scan_extra
+MUSE-News	Llama-2-7B	Target	sycophancy	2	11.00	200	11.00	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_selected_full/muse_news_before.json	scan_extra
+MUSE-News	Llama-2-7B	Target	sycophancy	3	11.00	200	11.00	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_selected_full/muse_news_before.json	scan_extra
+MUSE-News	Llama-2-7B	Target	beneficial_memory_usage	1	52.00	100	52.00	100	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_selected_full/muse_news_before.json	scan_extra
+MUSE-News	Llama-2-7B	RMU	cross_domain	1	8.50	200	8.50	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_selected_full/muse_news_rmu_selected.json	scan_extra
+MUSE-News	Llama-2-7B	RMU	cross_domain	2	9.50	200	9.50	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_selected_full/muse_news_rmu_selected.json	scan_extra
+MUSE-News	Llama-2-7B	RMU	cross_domain	3	9.50	200	9.50	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_selected_full/muse_news_rmu_selected.json	scan_extra
+MUSE-News	Llama-2-7B	RMU	sycophancy	1	15.50	200	15.50	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_selected_full/muse_news_rmu_selected.json	scan_extra
+MUSE-News	Llama-2-7B	RMU	sycophancy	2	20.00	200	20.00	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_selected_full/muse_news_rmu_selected.json	scan_extra
+MUSE-News	Llama-2-7B	RMU	sycophancy	3	20.00	200	20.00	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_selected_full/muse_news_rmu_selected.json	scan_extra
+MUSE-News	Llama-2-7B	RMU	beneficial_memory_usage	1	73.00	100	73.00	100	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_selected_full/muse_news_rmu_selected.json	scan_extra
+MUSE-News	Llama-2-7B	WGA	cross_domain	1	8.00	200	8.00	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_selected_full/muse_news_wga_selected.json	scan_extra
+MUSE-News	Llama-2-7B	WGA	cross_domain	2	10.00	200	10.00	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_selected_full/muse_news_wga_selected.json	scan_extra
+MUSE-News	Llama-2-7B	WGA	cross_domain	3	10.00	200	10.00	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_selected_full/muse_news_wga_selected.json	scan_extra
+MUSE-News	Llama-2-7B	WGA	sycophancy	1	15.00	200	15.00	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_selected_full/muse_news_wga_selected.json	scan_extra
+MUSE-News	Llama-2-7B	WGA	sycophancy	2	17.00	200	17.00	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_selected_full/muse_news_wga_selected.json	scan_extra
+MUSE-News	Llama-2-7B	WGA	sycophancy	3	17.00	200	17.00	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_selected_full/muse_news_wga_selected.json	scan_extra
+MUSE-News	Llama-2-7B	WGA	beneficial_memory_usage	1	54.00	100	54.00	100	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_selected_full/muse_news_wga_selected.json	scan_extra
+MUSE-News	Llama-2-7B	SatImp	cross_domain	1	11.00	200	11.00	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_selected_full/muse_news_satimp_selected.json	scan_extra
+MUSE-News	Llama-2-7B	SatImp	cross_domain	2	14.00	200	14.00	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_selected_full/muse_news_satimp_selected.json	scan_extra
+MUSE-News	Llama-2-7B	SatImp	cross_domain	3	14.00	200	14.00	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_selected_full/muse_news_satimp_selected.json	scan_extra
+MUSE-News	Llama-2-7B	SatImp	sycophancy	1	15.00	200	15.00	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_selected_full/muse_news_satimp_selected.json	scan_extra
+MUSE-News	Llama-2-7B	SatImp	sycophancy	2	19.00	200	19.00	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_selected_full/muse_news_satimp_selected.json	scan_extra
+MUSE-News	Llama-2-7B	SatImp	sycophancy	3	19.00	200	19.00	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_selected_full/muse_news_satimp_selected.json	scan_extra
+MUSE-News	Llama-2-7B	SatImp	beneficial_memory_usage	1	54.00	100	54.00	100	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_selected_full/muse_news_satimp_selected.json	scan_extra
+MUSE-News	Llama-2-7B	SimNPO	cross_domain	1	10.50	200	10.50	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_selected_full/muse_news_simnpo_selected.json	scan_extra
+MUSE-News	Llama-2-7B	SimNPO	cross_domain	2	16.50	200	16.50	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_selected_full/muse_news_simnpo_selected.json	scan_extra
+MUSE-News	Llama-2-7B	SimNPO	cross_domain	3	16.50	200	16.50	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_selected_full/muse_news_simnpo_selected.json	scan_extra
+MUSE-News	Llama-2-7B	SimNPO	sycophancy	1	12.50	200	12.50	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_selected_full/muse_news_simnpo_selected.json	scan_extra
+MUSE-News	Llama-2-7B	SimNPO	sycophancy	2	15.50	200	15.50	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_selected_full/muse_news_simnpo_selected.json	scan_extra
+MUSE-News	Llama-2-7B	SimNPO	sycophancy	3	15.50	200	15.50	200	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_selected_full/muse_news_simnpo_selected.json	scan_extra
+MUSE-News	Llama-2-7B	SimNPO	beneficial_memory_usage	1	59.00	100	59.00	100	0.00	no	no	no	0	external/PersistBench/outputs/muse_news_selected_full/muse_news_simnpo_selected.json	scan_extra

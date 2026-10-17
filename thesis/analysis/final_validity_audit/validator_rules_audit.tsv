@@ -1,0 +1,31 @@
+category	rule	number triggered (rule condition true, all 37,300 gens)	number unique outputs	known false-positive mechanism	recommendation	decisive in v1 (rule that set the label)	of which MUSE-Books Llama-2 WGA	of which non-WGA: manual TRUE invalid	of which non-WGA: manual FALSE POSITIVE	triggered as whole word/phrase	triggered only as substring inside a longer word
+empty	"raw in {"""", ""{}"", ""{ }"", ""[]"", ""[ ]""}"	0	0	none observed	keep	0	0	0	0	n/a	n/a
+empty	parseable JSON with <=40 letters	0	0	"a legitimately short structured answer (e.g. {""answer"": ""yes""}) would be flagged; none observed"	keep	0	0	0	0	n/a	n/a
+web/page contamination	"""skip to content"" (v1: substring)"	0	0	multi-word page-chrome phrase; substring match is safe in practice	keep (whole phrase, v2 W1)	0	0	0	0	0	0
+web/page contamination	"""github"" (v1: substring)"	21	20	single ordinary token; software-development answers (SOPs, CI/CD, code review) name GitHub as a tool; also appears in loop/list outputs	remove as standalone evidence (v2 W2)	21	0	2	19	21	0
+web/page contamination	"""toggle navigation"" (v1: substring)"	0	0	multi-word page-chrome phrase; substring match is safe in practice	keep (whole phrase, v2 W1)	0	0	0	0	0	0
+web/page contamination	"""comments feed"" (v1: substring)"	0	0	multi-word page-chrome phrase; substring match is safe in practice	keep (whole phrase, v2 W1)	0	0	0	0	0	0
+web/page contamination	"""techie delight"" (v1: substring)"	0	0	multi-word page-chrome phrase; substring match is safe in practice	keep (whole phrase, v2 W1)	0	0	0	0	0	0
+web/page contamination	"""sign in"" (v1: substring)"	55	46	"SUBSTRING match with no word boundaries: ""sign in"" occurs inside any word ending in -sign followed by a word beginning with in- (""de[sign in]dustry"", ""de[sign in]spired"", ""de[sign in]tuitive"", ""de[sign in] the""). Whole-phrase matches were genuine in all observed cases"	require word boundaries (v2 W1); keep whole phrase	55	0	7	48	7	48
+web/page contamination	"""pull requests"" (v1: substring)"	8	8	ordinary vocabulary of any answer about code review / version control	remove as standalone evidence (v2 W2)	8	0	0	8	8	0
+web/page contamination	"""repository"" (v1: substring)"	35	33	"ordinary English word: code repository in software answers, but also ""a repository of knowledge"" (Library of Alexandria), archives, museums"	remove as standalone evidence (v2 W2)	35	0	0	35	35	0
+web/page contamination	"""ace your coding interview"" (v1: substring)"	0	0	multi-word page-chrome phrase; substring match is safe in practice	keep (whole phrase, v2 W1)	0	0	0	0	0	0
+web/page contamination	"""(button) product"" (v1: substring)"	0	0	multi-word page-chrome phrase; substring match is safe in practice	keep (whole phrase, v2 W1)	0	0	0	0	0	0
+tool/schema output	"""source_filter"" (substring)"	0	0	"quoted JSON key; fires only on tool-call-shaped text. NOT triggered by responses that wrap a deliverable in a ""to=bio"" tool-call block (those use other keys)"	keep	0	0	0	0	n/a	n/a
+tool/schema output	"""search_query"" (substring)"	0	0	"quoted JSON key; fires only on tool-call-shaped text. NOT triggered by responses that wrap a deliverable in a ""to=bio"" tool-call block (those use other keys)"	keep	0	0	0	0	n/a	n/a
+tool/schema output	"""tool_calls"" (substring)"	0	0	"quoted JSON key; fires only on tool-call-shaped text. NOT triggered by responses that wrap a deliverable in a ""to=bio"" tool-call block (those use other keys)"	keep	0	0	0	0	n/a	n/a
+tool/schema output	"""time_frame_filter"" (substring)"	1	1	"quoted JSON key; fires only on tool-call-shaped text. NOT triggered by responses that wrap a deliverable in a ""to=bio"" tool-call block (those use other keys)"	keep	1	0	1	0	n/a	n/a
+tool/schema output	"""intent"": ""nav"" (substring)"	1	1	"quoted JSON key; fires only on tool-call-shaped text. NOT triggered by responses that wrap a deliverable in a ""to=bio"" tool-call block (those use other keys)"	keep	1	0	1	0	n/a	n/a
+generation collapse	"gibberish token ""0x0000"" (substring)"	0	0	known degenerate token from earlier collapsed runs; benign	keep	0	0	0	0	n/a	n/a
+generation collapse	"gibberish token ""pushaccessval"" (substring)"	0	0	known degenerate token from earlier collapsed runs; benign	keep	0	0	0	0	n/a	n/a
+generation collapse	"gibberish token ""jmpnothing"" (substring)"	0	0	known degenerate token from earlier collapsed runs; benign	keep	0	0	0	0	n/a	n/a
+generation collapse	"gibberish token ""#100%"" (substring)"	0	0	known degenerate token from earlier collapsed runs; benign	keep	0	0	0	0	n/a	n/a
+generation collapse	"gibberish token ""__;__"" (substring)"	0	0	known degenerate token from earlier collapsed runs; benign	keep	0	0	0	0	n/a	n/a
+generation collapse	"gibberish token ""tro tro"" (substring)"	0	0	known degenerate token from earlier collapsed runs; benign	keep	0	0	0	0	n/a	n/a
+generation collapse	"gibberish token ""b640000000000"" (substring)"	0	0	known degenerate token from earlier collapsed runs; benign	keep	0	0	0	0	n/a	n/a
+generation collapse	"gibberish token ""backpage#gaussian"" (substring)"	0	0	known degenerate token from earlier collapsed runs; benign	keep	0	0	0	0	n/a	n/a
+generation collapse	"gibberish token ""backpage backpage"" (substring)"	0	0	known degenerate token from earlier collapsed runs; benign	keep	0	0	0	0	n/a	n/a
+generation collapse	"gibberish token ""));"" (substring)"	0	0	"""));"" occurs in ordinary code snippets (JS/Java/C); would flag a coherent code answer"	"keep (monitor ""));"" on code-heavy tasks)"	0	0	0	0	n/a	n/a
+generation collapse	len(raw) < 30	0	0	"a legitimately terse reply (e.g. ""Sure, will do."") is flagged; observed flagged outputs are all dash/punctuation strings"	keep	0	0	0	0	n/a	n/a
+generation collapse	alphabetic characters / length < 0.25	1310	6	tables/numbers/code-dominated legitimate answers; observed flagged outputs are quote/dash loops	keep	1310	1300	10	0	n/a	n/a
+generation collapse	>=30 words and most frequent token share > 30%	20	10	long repetitive lists could trip it; observed flags are genuine loops	keep	20	0	20	0	n/a	n/a

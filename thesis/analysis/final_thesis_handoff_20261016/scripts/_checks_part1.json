@@ -1,0 +1,117 @@
+[
+ [
+  "manifest has 30 cells, each (dataset, condition, category) exactly once",
+  true,
+  ""
+ ],
+ [
+  "full-prompt per-generation table covers 30 cells exactly",
+  true,
+  ""
+ ],
+ [
+  "total full-prompt generations = 13,000",
+  true,
+  "13000"
+ ],
+ [
+  "8,200 new + 4,800 reused = 13,000",
+  true,
+  "{'existing (reused)': 4800, 'new (this completion)': 8200}"
+ ],
+ [
+  "every cell has expected scenarios and generations per scenario",
+  true,
+  ""
+ ],
+ [
+  "judge score present for every one of the 13,000 generations",
+  true,
+  ""
+ ],
+ [
+  "manifest source files are full-prompt artifacts (none from truncated/replication/selected_full dirs)",
+  true,
+  ""
+ ],
+ [
+  "manifest SHA-256 of every cell file unchanged since the analysis",
+  true,
+  ""
+ ],
+ [
+  "generation_completeness.tsv: 30/30 COMPLETE+JUDGED, 0 errors, 0 empty",
+  true,
+  ""
+ ],
+ [
+  "v2 classifier file is the frozen one used by both analyses (hash recorded in their provenance files)",
+  true,
+  "b6bc85e30d705f6b"
+ ],
+ [
+  "fresh v2 (repetition_rule=OFF) classification of raw full-prompt JSON == stored labels, rules and judge scores",
+  true,
+  "13000 generations, 0 mismatches"
+ ],
+ [
+  "fresh v2 classification of raw truncated Qwen JSON (original + replicated) == stored per-generation table",
+  true,
+  "26000 generations, 0 mismatches"
+ ],
+ [
+  "truncated Qwen per-generation data complete: 2 runs x 2 datasets x 5 conditions x 1300",
+  true,
+  ""
+ ],
+ [
+  "recomputed full-prompt FR@K and N == frozen frk_fullprompt_v2.tsv (every available K)",
+  true,
+  "70 values compared"
+ ],
+ [
+  "recomputed truncated (original, replication) Qwen FR@K and N == frozen v2 truncated analysis",
+  true,
+  "140 values compared"
+ ],
+ [
+  "master table uses validity-aware FR (official/un-gated FR differs only in listed cells)",
+  true,
+  "1 (cell,K) values differ: [('MUSE-Books', 'RMU', 'sycophancy', 1, '11.56', 199, '11.50', 200)]"
+ ],
+ [
+  "master table: 30 rows, each (dataset, condition, category) exactly once",
+  true,
+  ""
+ ],
+ [
+  "master table: generated_responses sum == 13,000; valid sum == 12,999",
+  true,
+  "13000 / 12999"
+ ],
+ [
+  "paired tests: 24 comparisons (2 datasets x 4 methods x 3 categories)",
+  true,
+  ""
+ ],
+ [
+  "paired tests == frozen analysis (S->F, F->S, p)",
+  true,
+  ""
+ ],
+ [
+  "prompt-robustness table: 30 rows (24 with deltas)",
+  true,
+  ""
+ ],
+ [
+  "orig-vs-repl Qwen 3-gen scenario change reproduces frozen v2 value (198/4000)",
+  true,
+  "198/4000"
+ ],
+ [
+  "validity: 12,999 / 13,000 valid overall, exactly 1 invalid generation",
+  true,
+  "12999/13000; invalid at ('MUSE-Books', 'RMU', 'sycophancy')"
+ ]
+]

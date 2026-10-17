@@ -1,0 +1,13 @@
+dataset,model,method,before_valid_pct,after_valid_pct,evaluable,before_strict_pct,after_strict_pct,delta_strict_pp,direction_strict
+MUSE-News,Qwen2.5-7B-Instruct,RMU,100.0,99.7692,True,17.3077,23.1303,5.8226,WORSE
+MUSE-News,Qwen2.5-7B-Instruct,WGA,100.0,100.0,True,17.3077,18.3846,1.0769,WORSE
+MUSE-News,Qwen2.5-7B-Instruct,SimNPO,100.0,100.0,True,17.3077,22.3077,5.0,WORSE
+MUSE-News,Qwen2.5-7B-Instruct,SatImp,100.0,100.0,True,17.3077,21.3077,4.0,WORSE
+MUSE-Books,Llama-2-7B,RMU,99.6923,99.0769,True,19.8302,24.8447,5.0145,WORSE
+MUSE-Books,Llama-2-7B,WGA,99.6923,0.0,False,19.8302,,,NA
+MUSE-Books,Llama-2-7B,SimNPO,99.6923,98.6154,True,19.8302,23.0109,3.1807,WORSE
+MUSE-Books,Llama-2-7B,SatImp,99.6923,99.7692,True,19.8302,18.5813,-1.2489,BETTER
+MUSE-Books,Qwen2.5-7B-Instruct,RMU,100.0,99.5385,True,16.5385,18.9335,2.3951,WORSE
+MUSE-Books,Qwen2.5-7B-Instruct,WGA,100.0,100.0,True,16.5385,20.2308,3.6923,WORSE
+MUSE-Books,Qwen2.5-7B-Instruct,SimNPO,100.0,100.0,True,16.5385,18.4615,1.9231,WORSE
+MUSE-Books,Qwen2.5-7B-Instruct,SatImp,100.0,99.9231,True,16.5385,18.3988,1.8603,WORSE

@@ -1,0 +1,2102 @@
+{
+ "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_wga_from_tofufull_aggproxy_savebest/checkpoint-117": {
+  "model-00002-of-00004.safetensors": {
+   "sha256": "d3c0e90adb40805f976d33adad7ad76865c10a0ade1be220806ccefe8097cef9",
+   "size": 4999802720,
+   "mtime": 1781968828.0,
+   "inode": 6425104058594479340,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_wga_from_tofufull_aggproxy_savebest/checkpoint-117/model-00002-of-00004.safetensors"
+  },
+  "model-00001-of-00004.safetensors": {
+   "sha256": "819e0113191651ef47675a970dd523ac7459166026849c8390cea1758a613a4f",
+   "size": 4976698672,
+   "mtime": 1781968822.0,
+   "inode": 11366303156825192300,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_wga_from_tofufull_aggproxy_savebest/checkpoint-117/model-00001-of-00004.safetensors"
+  },
+  "model-00003-of-00004.safetensors": {
+   "sha256": "2eff9ec1f0bea2a122b847cc2187f888b3ffcb856a529107144b3df3363d8663",
+   "size": 4915916176,
+   "mtime": 1781968833.0,
+   "inode": 7190601819841419696,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_wga_from_tofufull_aggproxy_savebest/checkpoint-117/model-00003-of-00004.safetensors"
+  },
+  "model-00004-of-00004.safetensors": {
+   "sha256": "a793c7c7c0e76aba30060a7a0fb10f3988f46e2148eeb3e4e6e4f318abfed05c",
+   "size": 1168138808,
+   "mtime": 1781968834.0,
+   "inode": 12837979306791783903,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_wga_from_tofufull_aggproxy_savebest/checkpoint-117/model-00004-of-00004.safetensors"
+  },
+  "tokenizer.json": {
+   "sha256": "6b9e4e7fb171f92fd137b777cc2714bf87d11576700a1dcd7a399e7bbe39537b",
+   "size": 17209920,
+   "mtime": 1781968834.0,
+   "inode": 15552206627987982762,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_wga_from_tofufull_aggproxy_savebest/checkpoint-117/tokenizer.json"
+  },
+  "tokenizer_config.json": {
+   "sha256": "cf9caa6e3956c24f5787bff455fccb25532afa5091d6b8cbee01a5b7235a1362",
+   "size": 55406,
+   "mtime": 1781968834.0,
+   "inode": 8798350253999642075,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_wga_from_tofufull_aggproxy_savebest/checkpoint-117/tokenizer_config.json"
+  },
+  "model.safetensors.index.json": {
+   "sha256": "146776fce3f6db1103aa6f249e65ee5544c5923ce6f971b092eee79aa6e5d37b",
+   "size": 23950,
+   "mtime": 1781968834.0,
+   "inode": 9272447317322728624,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_wga_from_tofufull_aggproxy_savebest/checkpoint-117/model.safetensors.index.json"
+  },
+  "trainer_state.json": {
+   "sha256": "d422ded809e99e81502d67023a7977ad65e2dd147aeca6fd4fe912989135b152",
+   "size": 15142,
+   "mtime": 1781968834.0,
+   "inode": 802494889664391414,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_wga_from_tofufull_aggproxy_savebest/checkpoint-117/trainer_state.json"
+  },
+  "training_args.bin": {
+   "sha256": "835a02fe01a5db57691e1fd2e9560fe6b2caaa6612aaccebe66eb1728f4128fa",
+   "size": 5368,
+   "mtime": 1781968834.0,
+   "inode": 1283964644962029013,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_wga_from_tofufull_aggproxy_savebest/checkpoint-117/training_args.bin"
+  },
+  "config.json": {
+   "sha256": "fd86b50b4e2726fe070625cde63114bccda7757e4a7e47909eaac3ed194e69bd",
+   "size": 874,
+   "mtime": 1781968817.0,
+   "inode": 16929392707720099051,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_wga_from_tofufull_aggproxy_savebest/checkpoint-117/config.json"
+  },
+  "special_tokens_map.json": {
+   "sha256": "208d307467cabecb563e033fdb478b7c11a1bc6eca9a9c761bf6a303ccfce4c1",
+   "size": 439,
+   "mtime": 1781968834.0,
+   "inode": 14952887508450537789,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_wga_from_tofufull_aggproxy_savebest/checkpoint-117/special_tokens_map.json"
+  },
+  "generation_config.json": {
+   "sha256": "f62859b817ec0ad72540dfb2e2ae64fb70b3a8ffd7fad503193fa76e64b80227",
+   "size": 184,
+   "mtime": 1781968817.0,
+   "inode": 16768230190277548934,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_wga_from_tofufull_aggproxy_savebest/checkpoint-117/generation_config.json"
+  }
+ },
+ "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_wga_from_tofufull_aggproxy_savebest": {
+  "model-00002-of-00004.safetensors": {
+   "sha256": "d3c0e90adb40805f976d33adad7ad76865c10a0ade1be220806ccefe8097cef9",
+   "size": 4999802720,
+   "mtime": 1781969239.0,
+   "inode": 12530972413448285865,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_wga_from_tofufull_aggproxy_savebest/model-00002-of-00004.safetensors"
+  },
+  "model-00001-of-00004.safetensors": {
+   "sha256": "819e0113191651ef47675a970dd523ac7459166026849c8390cea1758a613a4f",
+   "size": 4976698672,
+   "mtime": 1781969234.0,
+   "inode": 16663584203553254826,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_wga_from_tofufull_aggproxy_savebest/model-00001-of-00004.safetensors"
+  },
+  "model-00003-of-00004.safetensors": {
+   "sha256": "2eff9ec1f0bea2a122b847cc2187f888b3ffcb856a529107144b3df3363d8663",
+   "size": 4915916176,
+   "mtime": 1781969244.0,
+   "inode": 11789696034260425265,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_wga_from_tofufull_aggproxy_savebest/model-00003-of-00004.safetensors"
+  },
+  "model-00004-of-00004.safetensors": {
+   "sha256": "a793c7c7c0e76aba30060a7a0fb10f3988f46e2148eeb3e4e6e4f318abfed05c",
+   "size": 1168138808,
+   "mtime": 1781969245.0,
+   "inode": 3979261408326287634,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_wga_from_tofufull_aggproxy_savebest/model-00004-of-00004.safetensors"
+  },
+  "tokenizer.json": {
+   "sha256": "6b9e4e7fb171f92fd137b777cc2714bf87d11576700a1dcd7a399e7bbe39537b",
+   "size": 17209920,
+   "mtime": 1781969246.0,
+   "inode": 17196350852529929434,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_wga_from_tofufull_aggproxy_savebest/tokenizer.json"
+  },
+  "WGA.log": {
+   "sha256": "0aef0f6f90cad307bcf4400d2c7e7542276a75801df6211d8e510ab698fb9d87",
+   "size": 58501,
+   "mtime": 1781969531.0,
+   "inode": 13593509074972197068,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_wga_from_tofufull_aggproxy_savebest/WGA.log"
+  },
+  "tokenizer_config.json": {
+   "sha256": "cf9caa6e3956c24f5787bff455fccb25532afa5091d6b8cbee01a5b7235a1362",
+   "size": 55406,
+   "mtime": 1781969246.0,
+   "inode": 17283099518276978259,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_wga_from_tofufull_aggproxy_savebest/tokenizer_config.json"
+  },
+  "model.safetensors.index.json": {
+   "sha256": "146776fce3f6db1103aa6f249e65ee5544c5923ce6f971b092eee79aa6e5d37b",
+   "size": 23950,
+   "mtime": 1781969245.0,
+   "inode": 12219243586200187056,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_wga_from_tofufull_aggproxy_savebest/model.safetensors.index.json"
+  },
+  "trainer_state.json": {
+   "sha256": "4c500acef0dbc1db985875eec04941e425cc5d791c250457cc41d088f586242b",
+   "size": 16627,
+   "mtime": 1781969228.0,
+   "inode": 13875199515532556586,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_wga_from_tofufull_aggproxy_savebest/trainer_state.json"
+  },
+  "training_args.bin": {
+   "sha256": "835a02fe01a5db57691e1fd2e9560fe6b2caaa6612aaccebe66eb1728f4128fa",
+   "size": 5368,
+   "mtime": 1781969246.0,
+   "inode": 17040203697154818598,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_wga_from_tofufull_aggproxy_savebest/training_args.bin"
+  },
+  "config.json": {
+   "sha256": "fd86b50b4e2726fe070625cde63114bccda7757e4a7e47909eaac3ed194e69bd",
+   "size": 874,
+   "mtime": 1781969228.0,
+   "inode": 16975554300592958622,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_wga_from_tofufull_aggproxy_savebest/config.json"
+  },
+  "special_tokens_map.json": {
+   "sha256": "208d307467cabecb563e033fdb478b7c11a1bc6eca9a9c761bf6a303ccfce4c1",
+   "size": 439,
+   "mtime": 1781969246.0,
+   "inode": 106770288325502831,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_wga_from_tofufull_aggproxy_savebest/special_tokens_map.json"
+  },
+  "generation_config.json": {
+   "sha256": "f62859b817ec0ad72540dfb2e2ae64fb70b3a8ffd7fad503193fa76e64b80227",
+   "size": 184,
+   "mtime": 1781969228.0,
+   "inode": 8486318793481229132,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_wga_from_tofufull_aggproxy_savebest/generation_config.json"
+  }
+ },
+ "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_simnpo_from_tofufull_aggproxy_savebest/checkpoint-120": {
+  "model-00002-of-00004.safetensors": {
+   "sha256": "02b7aee58e80db86d6b5cdbcc03bfe81b77d706f5b0cb54cbbcbae69c9f2876e",
+   "size": 4999802720,
+   "mtime": 1781956687.0,
+   "inode": 5246346347012168512,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_simnpo_from_tofufull_aggproxy_savebest/checkpoint-120/model-00002-of-00004.safetensors"
+  },
+  "model-00001-of-00004.safetensors": {
+   "sha256": "84a6895e7349eb3cea8439a30ab55b465854867b5dc302fd88e5c25845114d90",
+   "size": 4976698672,
+   "mtime": 1781956681.0,
+   "inode": 4269650882941610486,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_simnpo_from_tofufull_aggproxy_savebest/checkpoint-120/model-00001-of-00004.safetensors"
+  },
+  "model-00003-of-00004.safetensors": {
+   "sha256": "54b46f11cc300e6aa60098855606b2aed3e15012442842492abc987146717f92",
+   "size": 4915916176,
+   "mtime": 1781956692.0,
+   "inode": 2905013047174811982,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_simnpo_from_tofufull_aggproxy_savebest/checkpoint-120/model-00003-of-00004.safetensors"
+  },
+  "model-00004-of-00004.safetensors": {
+   "sha256": "b82f753eb27a12342a868fdcdf8612d417937da3d0dae12e64854f194894c981",
+   "size": 1168138808,
+   "mtime": 1781956693.0,
+   "inode": 11625891732999363937,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_simnpo_from_tofufull_aggproxy_savebest/checkpoint-120/model-00004-of-00004.safetensors"
+  },
+  "tokenizer.json": {
+   "sha256": "6b9e4e7fb171f92fd137b777cc2714bf87d11576700a1dcd7a399e7bbe39537b",
+   "size": 17209920,
+   "mtime": 1781956693.0,
+   "inode": 2811014491198352243,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_simnpo_from_tofufull_aggproxy_savebest/checkpoint-120/tokenizer.json"
+  },
+  "tokenizer_config.json": {
+   "sha256": "cf9caa6e3956c24f5787bff455fccb25532afa5091d6b8cbee01a5b7235a1362",
+   "size": 55406,
+   "mtime": 1781956693.0,
+   "inode": 11967771140802700191,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_simnpo_from_tofufull_aggproxy_savebest/checkpoint-120/tokenizer_config.json"
+  },
+  "model.safetensors.index.json": {
+   "sha256": "146776fce3f6db1103aa6f249e65ee5544c5923ce6f971b092eee79aa6e5d37b",
+   "size": 23950,
+   "mtime": 1781956693.0,
+   "inode": 9757447604082804075,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_simnpo_from_tofufull_aggproxy_savebest/checkpoint-120/model.safetensors.index.json"
+  },
+  "trainer_state.json": {
+   "sha256": "598524a5fb59861deaf2ccd946dd975993cd8b211657df21ed199d1187469534",
+   "size": 16459,
+   "mtime": 1781956693.0,
+   "inode": 1903344646087610052,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_simnpo_from_tofufull_aggproxy_savebest/checkpoint-120/trainer_state.json"
+  },
+  "training_args.bin": {
+   "sha256": "0b5f58b84a9f96f94fa5ea1e5d1973b5b5aaf923c7a8e9862bc3ba682443bb9c",
+   "size": 5432,
+   "mtime": 1781956693.0,
+   "inode": 13407519354245434698,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_simnpo_from_tofufull_aggproxy_savebest/checkpoint-120/training_args.bin"
+  },
+  "config.json": {
+   "sha256": "fd86b50b4e2726fe070625cde63114bccda7757e4a7e47909eaac3ed194e69bd",
+   "size": 874,
+   "mtime": 1781956676.0,
+   "inode": 12322204125895936340,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_simnpo_from_tofufull_aggproxy_savebest/checkpoint-120/config.json"
+  },
+  "special_tokens_map.json": {
+   "sha256": "208d307467cabecb563e033fdb478b7c11a1bc6eca9a9c761bf6a303ccfce4c1",
+   "size": 439,
+   "mtime": 1781956693.0,
+   "inode": 16645230569762833034,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_simnpo_from_tofufull_aggproxy_savebest/checkpoint-120/special_tokens_map.json"
+  },
+  "generation_config.json": {
+   "sha256": "f62859b817ec0ad72540dfb2e2ae64fb70b3a8ffd7fad503193fa76e64b80227",
+   "size": 184,
+   "mtime": 1781956676.0,
+   "inode": 4192882531171860470,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_simnpo_from_tofufull_aggproxy_savebest/checkpoint-120/generation_config.json"
+  }
+ },
+ "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_simnpo_from_tofufull_aggproxy_savebest": {
+  "model-00002-of-00004.safetensors": {
+   "sha256": "02b7aee58e80db86d6b5cdbcc03bfe81b77d706f5b0cb54cbbcbae69c9f2876e",
+   "size": 4999802720,
+   "mtime": 1781956761.0,
+   "inode": 17036298365097716362,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_simnpo_from_tofufull_aggproxy_savebest/model-00002-of-00004.safetensors"
+  },
+  "model-00001-of-00004.safetensors": {
+   "sha256": "84a6895e7349eb3cea8439a30ab55b465854867b5dc302fd88e5c25845114d90",
+   "size": 4976698672,
+   "mtime": 1781956756.0,
+   "inode": 15974246353768472557,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_simnpo_from_tofufull_aggproxy_savebest/model-00001-of-00004.safetensors"
+  },
+  "model-00003-of-00004.safetensors": {
+   "sha256": "54b46f11cc300e6aa60098855606b2aed3e15012442842492abc987146717f92",
+   "size": 4915916176,
+   "mtime": 1781956766.0,
+   "inode": 8914081418759146796,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_simnpo_from_tofufull_aggproxy_savebest/model-00003-of-00004.safetensors"
+  },
+  "model-00004-of-00004.safetensors": {
+   "sha256": "b82f753eb27a12342a868fdcdf8612d417937da3d0dae12e64854f194894c981",
+   "size": 1168138808,
+   "mtime": 1781956767.0,
+   "inode": 11858423941389073557,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_simnpo_from_tofufull_aggproxy_savebest/model-00004-of-00004.safetensors"
+  },
+  "tokenizer.json": {
+   "sha256": "6b9e4e7fb171f92fd137b777cc2714bf87d11576700a1dcd7a399e7bbe39537b",
+   "size": 17209920,
+   "mtime": 1781956768.0,
+   "inode": 16576199928993143997,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_simnpo_from_tofufull_aggproxy_savebest/tokenizer.json"
+  },
+  "SimNPO.log": {
+   "sha256": "0b9ca979e4946196bb3f3de869074e9b6895bfe0939b7b5f6b4b2c54a938673c",
+   "size": 58728,
+   "mtime": 1781957053.0,
+   "inode": 12631339257013662521,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_simnpo_from_tofufull_aggproxy_savebest/SimNPO.log"
+  },
+  "tokenizer_config.json": {
+   "sha256": "cf9caa6e3956c24f5787bff455fccb25532afa5091d6b8cbee01a5b7235a1362",
+   "size": 55406,
+   "mtime": 1781956767.0,
+   "inode": 7820754731523580944,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_simnpo_from_tofufull_aggproxy_savebest/tokenizer_config.json"
+  },
+  "model.safetensors.index.json": {
+   "sha256": "146776fce3f6db1103aa6f249e65ee5544c5923ce6f971b092eee79aa6e5d37b",
+   "size": 23950,
+   "mtime": 1781956767.0,
+   "inode": 1521022482066471110,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_simnpo_from_tofufull_aggproxy_savebest/model.safetensors.index.json"
+  },
+  "trainer_state.json": {
+   "sha256": "ea35f60ffd22de0ac85af03a79586be6e0d46938c8a13e891b0a721502f7a611",
+   "size": 16689,
+   "mtime": 1781956750.0,
+   "inode": 16222601883649118845,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_simnpo_from_tofufull_aggproxy_savebest/trainer_state.json"
+  },
+  "training_args.bin": {
+   "sha256": "0b5f58b84a9f96f94fa5ea1e5d1973b5b5aaf923c7a8e9862bc3ba682443bb9c",
+   "size": 5432,
+   "mtime": 1781956768.0,
+   "inode": 11171476355271092054,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_simnpo_from_tofufull_aggproxy_savebest/training_args.bin"
+  },
+  "config.json": {
+   "sha256": "fd86b50b4e2726fe070625cde63114bccda7757e4a7e47909eaac3ed194e69bd",
+   "size": 874,
+   "mtime": 1781956750.0,
+   "inode": 5688554489151468836,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_simnpo_from_tofufull_aggproxy_savebest/config.json"
+  },
+  "special_tokens_map.json": {
+   "sha256": "208d307467cabecb563e033fdb478b7c11a1bc6eca9a9c761bf6a303ccfce4c1",
+   "size": 439,
+   "mtime": 1781956767.0,
+   "inode": 2645060634073068464,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_simnpo_from_tofufull_aggproxy_savebest/special_tokens_map.json"
+  },
+  "generation_config.json": {
+   "sha256": "f62859b817ec0ad72540dfb2e2ae64fb70b3a8ffd7fad503193fa76e64b80227",
+   "size": 184,
+   "mtime": 1781956750.0,
+   "inode": 10464433385173423876,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_simnpo_from_tofufull_aggproxy_savebest/generation_config.json"
+  }
+ },
+ "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_satimp_from_tofufull_aggproxy_savebest/checkpoint-52": {
+  "model-00002-of-00004.safetensors": {
+   "sha256": "f3397b1f51dc3815c284aed71b63f809085a1384b707bb7d5e307b72c46454c8",
+   "size": 4999802720,
+   "mtime": 1781971689.0,
+   "inode": 17346499904274137521,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_satimp_from_tofufull_aggproxy_savebest/checkpoint-52/model-00002-of-00004.safetensors"
+  },
+  "model-00001-of-00004.safetensors": {
+   "sha256": "60a4e6075235688b1b9fd8c0a2cf7b04aa7cb662d485f2f610bd498ed96f4dab",
+   "size": 4976698672,
+   "mtime": 1781971684.0,
+   "inode": 13056457699708837933,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_satimp_from_tofufull_aggproxy_savebest/checkpoint-52/model-00001-of-00004.safetensors"
+  },
+  "model-00003-of-00004.safetensors": {
+   "sha256": "46ff7d6dcb1d1b9240a4ee065ffa44a9225c4cf2f484f59795a3e57998447481",
+   "size": 4915916176,
+   "mtime": 1781971695.0,
+   "inode": 11881892990916214346,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_satimp_from_tofufull_aggproxy_savebest/checkpoint-52/model-00003-of-00004.safetensors"
+  },
+  "model-00004-of-00004.safetensors": {
+   "sha256": "5faaa2299efb4c6857d43988712b298b5407212f9c974dd8072c4c252f7f56e6",
+   "size": 1168138808,
+   "mtime": 1781971696.0,
+   "inode": 16551451628934243935,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_satimp_from_tofufull_aggproxy_savebest/checkpoint-52/model-00004-of-00004.safetensors"
+  },
+  "tokenizer.json": {
+   "sha256": "6b9e4e7fb171f92fd137b777cc2714bf87d11576700a1dcd7a399e7bbe39537b",
+   "size": 17209920,
+   "mtime": 1781971696.0,
+   "inode": 2700803990635961799,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_satimp_from_tofufull_aggproxy_savebest/checkpoint-52/tokenizer.json"
+  },
+  "tokenizer_config.json": {
+   "sha256": "cf9caa6e3956c24f5787bff455fccb25532afa5091d6b8cbee01a5b7235a1362",
+   "size": 55406,
+   "mtime": 1781971696.0,
+   "inode": 18112209030765172947,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_satimp_from_tofufull_aggproxy_savebest/checkpoint-52/tokenizer_config.json"
+  },
+  "model.safetensors.index.json": {
+   "sha256": "146776fce3f6db1103aa6f249e65ee5544c5923ce6f971b092eee79aa6e5d37b",
+   "size": 23950,
+   "mtime": 1781971696.0,
+   "inode": 16438960057302467980,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_satimp_from_tofufull_aggproxy_savebest/checkpoint-52/model.safetensors.index.json"
+  },
+  "trainer_state.json": {
+   "sha256": "0629010f0dc511a48bece10fbebe6b27c3c05e623d8888b8af96788f756cdd56",
+   "size": 7854,
+   "mtime": 1781971696.0,
+   "inode": 13471561595764364835,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_satimp_from_tofufull_aggproxy_savebest/checkpoint-52/trainer_state.json"
+  },
+  "training_args.bin": {
+   "sha256": "48499fc9deb22769a44ceb3499c2c844a6f040f0fb594e24243e1086265bb569",
+   "size": 5368,
+   "mtime": 1781971696.0,
+   "inode": 17566180078485830644,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_satimp_from_tofufull_aggproxy_savebest/checkpoint-52/training_args.bin"
+  },
+  "config.json": {
+   "sha256": "fd86b50b4e2726fe070625cde63114bccda7757e4a7e47909eaac3ed194e69bd",
+   "size": 874,
+   "mtime": 1781971679.0,
+   "inode": 7361166152026498083,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_satimp_from_tofufull_aggproxy_savebest/checkpoint-52/config.json"
+  },
+  "special_tokens_map.json": {
+   "sha256": "208d307467cabecb563e033fdb478b7c11a1bc6eca9a9c761bf6a303ccfce4c1",
+   "size": 439,
+   "mtime": 1781971696.0,
+   "inode": 1541463011566765204,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_satimp_from_tofufull_aggproxy_savebest/checkpoint-52/special_tokens_map.json"
+  },
+  "generation_config.json": {
+   "sha256": "f62859b817ec0ad72540dfb2e2ae64fb70b3a8ffd7fad503193fa76e64b80227",
+   "size": 184,
+   "mtime": 1781971679.0,
+   "inode": 8963350925827383570,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_satimp_from_tofufull_aggproxy_savebest/checkpoint-52/generation_config.json"
+  }
+ },
+ "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_satimp_from_tofufull_aggproxy_savebest": {
+  "model-00002-of-00004.safetensors": {
+   "sha256": "f3397b1f51dc3815c284aed71b63f809085a1384b707bb7d5e307b72c46454c8",
+   "size": 4999802720,
+   "mtime": 1781974256.0,
+   "inode": 11286370119402584285,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_satimp_from_tofufull_aggproxy_savebest/model-00002-of-00004.safetensors"
+  },
+  "model-00001-of-00004.safetensors": {
+   "sha256": "60a4e6075235688b1b9fd8c0a2cf7b04aa7cb662d485f2f610bd498ed96f4dab",
+   "size": 4976698672,
+   "mtime": 1781974250.0,
+   "inode": 18278174688182673039,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_satimp_from_tofufull_aggproxy_savebest/model-00001-of-00004.safetensors"
+  },
+  "model-00003-of-00004.safetensors": {
+   "sha256": "46ff7d6dcb1d1b9240a4ee065ffa44a9225c4cf2f484f59795a3e57998447481",
+   "size": 4915916176,
+   "mtime": 1781974261.0,
+   "inode": 9841174309096660898,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_satimp_from_tofufull_aggproxy_savebest/model-00003-of-00004.safetensors"
+  },
+  "model-00004-of-00004.safetensors": {
+   "sha256": "5faaa2299efb4c6857d43988712b298b5407212f9c974dd8072c4c252f7f56e6",
+   "size": 1168138808,
+   "mtime": 1781974262.0,
+   "inode": 938182588022149352,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_satimp_from_tofufull_aggproxy_savebest/model-00004-of-00004.safetensors"
+  },
+  "tokenizer.json": {
+   "sha256": "6b9e4e7fb171f92fd137b777cc2714bf87d11576700a1dcd7a399e7bbe39537b",
+   "size": 17209920,
+   "mtime": 1781974262.0,
+   "inode": 18299936242032028942,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_satimp_from_tofufull_aggproxy_savebest/tokenizer.json"
+  },
+  "SatImp.log": {
+   "sha256": "48fe238f681ae9d96a402279996a70d13f74c8c98d5caeb170764d55be3eac8f",
+   "size": 58529,
+   "mtime": 1781974549.0,
+   "inode": 10439485656711276201,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_satimp_from_tofufull_aggproxy_savebest/SatImp.log"
+  },
+  "tokenizer_config.json": {
+   "sha256": "cf9caa6e3956c24f5787bff455fccb25532afa5091d6b8cbee01a5b7235a1362",
+   "size": 55406,
+   "mtime": 1781974262.0,
+   "inode": 9195737573157977528,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_satimp_from_tofufull_aggproxy_savebest/tokenizer_config.json"
+  },
+  "model.safetensors.index.json": {
+   "sha256": "146776fce3f6db1103aa6f249e65ee5544c5923ce6f971b092eee79aa6e5d37b",
+   "size": 23950,
+   "mtime": 1781974262.0,
+   "inode": 2296414586085137808,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_satimp_from_tofufull_aggproxy_savebest/model.safetensors.index.json"
+  },
+  "trainer_state.json": {
+   "sha256": "96d2e4e5561220e1cfc826c12256b8e71d21424c29b1bfe7da548de11874dbe7",
+   "size": 16705,
+   "mtime": 1781974245.0,
+   "inode": 18217250950809657816,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_satimp_from_tofufull_aggproxy_savebest/trainer_state.json"
+  },
+  "training_args.bin": {
+   "sha256": "48499fc9deb22769a44ceb3499c2c844a6f040f0fb594e24243e1086265bb569",
+   "size": 5368,
+   "mtime": 1781974262.0,
+   "inode": 2154573454981278890,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_satimp_from_tofufull_aggproxy_savebest/training_args.bin"
+  },
+  "config.json": {
+   "sha256": "fd86b50b4e2726fe070625cde63114bccda7757e4a7e47909eaac3ed194e69bd",
+   "size": 874,
+   "mtime": 1781974245.0,
+   "inode": 17298157838972809282,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_satimp_from_tofufull_aggproxy_savebest/config.json"
+  },
+  "special_tokens_map.json": {
+   "sha256": "208d307467cabecb563e033fdb478b7c11a1bc6eca9a9c761bf6a303ccfce4c1",
+   "size": 439,
+   "mtime": 1781974262.0,
+   "inode": 5376931895576561247,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_satimp_from_tofufull_aggproxy_savebest/special_tokens_map.json"
+  },
+  "generation_config.json": {
+   "sha256": "f62859b817ec0ad72540dfb2e2ae64fb70b3a8ffd7fad503193fa76e64b80227",
+   "size": 184,
+   "mtime": 1781974245.0,
+   "inode": 6038127994170276734,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_satimp_from_tofufull_aggproxy_savebest/generation_config.json"
+  }
+ },
+ "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_rmu_from_tofufull_aggproxy_savebest/checkpoint-65": {
+  "model-00002-of-00004.safetensors": {
+   "sha256": "6959f518e51d8813ea0acc4c89549a80961797bbf68f4e2a5bc1687b930a32d7",
+   "size": 4999802720,
+   "mtime": 1781962247.0,
+   "inode": 6252895681077860002,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_rmu_from_tofufull_aggproxy_savebest/checkpoint-65/model-00002-of-00004.safetensors"
+  },
+  "model-00001-of-00004.safetensors": {
+   "sha256": "03319965b67bb7cb91d64879d653aefb7a34c84f4f6a2bed01311542fe8cda85",
+   "size": 4976698672,
+   "mtime": 1781962241.0,
+   "inode": 2815274710509392351,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_rmu_from_tofufull_aggproxy_savebest/checkpoint-65/model-00001-of-00004.safetensors"
+  },
+  "model-00003-of-00004.safetensors": {
+   "sha256": "a75a0a3a2b78a448a01c6ee79f5bead49f66b8ba7a0214674e004f61e182d6ea",
+   "size": 4915916176,
+   "mtime": 1781962252.0,
+   "inode": 12613806089055472680,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_rmu_from_tofufull_aggproxy_savebest/checkpoint-65/model-00003-of-00004.safetensors"
+  },
+  "model-00004-of-00004.safetensors": {
+   "sha256": "ee20e004173a2f3bd70aad327c0924b66061b264d80d9ec080df8605381ce5b2",
+   "size": 1168138808,
+   "mtime": 1781962253.0,
+   "inode": 4640540852809861724,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_rmu_from_tofufull_aggproxy_savebest/checkpoint-65/model-00004-of-00004.safetensors"
+  },
+  "tokenizer.json": {
+   "sha256": "6b9e4e7fb171f92fd137b777cc2714bf87d11576700a1dcd7a399e7bbe39537b",
+   "size": 17209920,
+   "mtime": 1781962253.0,
+   "inode": 8008099724751813114,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_rmu_from_tofufull_aggproxy_savebest/checkpoint-65/tokenizer.json"
+  },
+  "tokenizer_config.json": {
+   "sha256": "cf9caa6e3956c24f5787bff455fccb25532afa5091d6b8cbee01a5b7235a1362",
+   "size": 55406,
+   "mtime": 1781962253.0,
+   "inode": 16076290566142057292,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_rmu_from_tofufull_aggproxy_savebest/checkpoint-65/tokenizer_config.json"
+  },
+  "model.safetensors.index.json": {
+   "sha256": "146776fce3f6db1103aa6f249e65ee5544c5923ce6f971b092eee79aa6e5d37b",
+   "size": 23950,
+   "mtime": 1781962253.0,
+   "inode": 14444216477056434040,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_rmu_from_tofufull_aggproxy_savebest/checkpoint-65/model.safetensors.index.json"
+  },
+  "trainer_state.json": {
+   "sha256": "ee471dec498ae9e590f86b0698841d2b138dce22b14ba736d3e7f32f075ee67d",
+   "size": 9371,
+   "mtime": 1781962253.0,
+   "inode": 10547450305875798716,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_rmu_from_tofufull_aggproxy_savebest/checkpoint-65/trainer_state.json"
+  },
+  "training_args.bin": {
+   "sha256": "743718469c0d179e9ef01feb6dd87672ba0078cd83ead1985f3cc389c42ec5a5",
+   "size": 5368,
+   "mtime": 1781962253.0,
+   "inode": 4691310359792574188,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_rmu_from_tofufull_aggproxy_savebest/checkpoint-65/training_args.bin"
+  },
+  "config.json": {
+   "sha256": "fd86b50b4e2726fe070625cde63114bccda7757e4a7e47909eaac3ed194e69bd",
+   "size": 874,
+   "mtime": 1781962236.0,
+   "inode": 2020317806994461977,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_rmu_from_tofufull_aggproxy_savebest/checkpoint-65/config.json"
+  },
+  "special_tokens_map.json": {
+   "sha256": "208d307467cabecb563e033fdb478b7c11a1bc6eca9a9c761bf6a303ccfce4c1",
+   "size": 439,
+   "mtime": 1781962253.0,
+   "inode": 16081586828954231399,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_rmu_from_tofufull_aggproxy_savebest/checkpoint-65/special_tokens_map.json"
+  },
+  "generation_config.json": {
+   "sha256": "f62859b817ec0ad72540dfb2e2ae64fb70b3a8ffd7fad503193fa76e64b80227",
+   "size": 184,
+   "mtime": 1781962236.0,
+   "inode": 15854363877052800367,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_rmu_from_tofufull_aggproxy_savebest/checkpoint-65/generation_config.json"
+  }
+ },
+ "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_rmu_from_tofufull_aggproxy_savebest": {
+  "model-00002-of-00004.safetensors": {
+   "sha256": "6959f518e51d8813ea0acc4c89549a80961797bbf68f4e2a5bc1687b930a32d7",
+   "size": 4999802720,
+   "mtime": 1781964213.0,
+   "inode": 4667545856075778399,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_rmu_from_tofufull_aggproxy_savebest/model-00002-of-00004.safetensors"
+  },
+  "model-00001-of-00004.safetensors": {
+   "sha256": "03319965b67bb7cb91d64879d653aefb7a34c84f4f6a2bed01311542fe8cda85",
+   "size": 4976698672,
+   "mtime": 1781964207.0,
+   "inode": 1504523460676010240,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_rmu_from_tofufull_aggproxy_savebest/model-00001-of-00004.safetensors"
+  },
+  "model-00003-of-00004.safetensors": {
+   "sha256": "a75a0a3a2b78a448a01c6ee79f5bead49f66b8ba7a0214674e004f61e182d6ea",
+   "size": 4915916176,
+   "mtime": 1781964218.0,
+   "inode": 10660943789679285414,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_rmu_from_tofufull_aggproxy_savebest/model-00003-of-00004.safetensors"
+  },
+  "model-00004-of-00004.safetensors": {
+   "sha256": "ee20e004173a2f3bd70aad327c0924b66061b264d80d9ec080df8605381ce5b2",
+   "size": 1168138808,
+   "mtime": 1781964219.0,
+   "inode": 18405493438216857765,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_rmu_from_tofufull_aggproxy_savebest/model-00004-of-00004.safetensors"
+  },
+  "tokenizer.json": {
+   "sha256": "6b9e4e7fb171f92fd137b777cc2714bf87d11576700a1dcd7a399e7bbe39537b",
+   "size": 17209920,
+   "mtime": 1781964219.0,
+   "inode": 16750840854966797237,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_rmu_from_tofufull_aggproxy_savebest/tokenizer.json"
+  },
+  "RMU.log": {
+   "sha256": "ab6853b20a89d6fd13776a19d31edb2a1b61c29c6b566dc103fd49cad1d0e4f4",
+   "size": 58520,
+   "mtime": 1781964556.0,
+   "inode": 2832344552456959505,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_rmu_from_tofufull_aggproxy_savebest/RMU.log"
+  },
+  "tokenizer_config.json": {
+   "sha256": "cf9caa6e3956c24f5787bff455fccb25532afa5091d6b8cbee01a5b7235a1362",
+   "size": 55406,
+   "mtime": 1781964219.0,
+   "inode": 1245193609039223365,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_rmu_from_tofufull_aggproxy_savebest/tokenizer_config.json"
+  },
+  "model.safetensors.index.json": {
+   "sha256": "146776fce3f6db1103aa6f249e65ee5544c5923ce6f971b092eee79aa6e5d37b",
+   "size": 23950,
+   "mtime": 1781964219.0,
+   "inode": 18021031586285525131,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_rmu_from_tofufull_aggproxy_savebest/model.safetensors.index.json"
+  },
+  "trainer_state.json": {
+   "sha256": "80544162ed3ca1f3539640104b153dfc10fb5f7892821d4db57900030e455d33",
+   "size": 16752,
+   "mtime": 1781964202.0,
+   "inode": 14784394026889363133,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_rmu_from_tofufull_aggproxy_savebest/trainer_state.json"
+  },
+  "training_args.bin": {
+   "sha256": "743718469c0d179e9ef01feb6dd87672ba0078cd83ead1985f3cc389c42ec5a5",
+   "size": 5368,
+   "mtime": 1781964219.0,
+   "inode": 5350877200310876386,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_rmu_from_tofufull_aggproxy_savebest/training_args.bin"
+  },
+  "config.json": {
+   "sha256": "fd86b50b4e2726fe070625cde63114bccda7757e4a7e47909eaac3ed194e69bd",
+   "size": 874,
+   "mtime": 1781964202.0,
+   "inode": 11436361809187633144,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_rmu_from_tofufull_aggproxy_savebest/config.json"
+  },
+  "special_tokens_map.json": {
+   "sha256": "208d307467cabecb563e033fdb478b7c11a1bc6eca9a9c761bf6a303ccfce4c1",
+   "size": 439,
+   "mtime": 1781964219.0,
+   "inode": 12560803564287485183,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_rmu_from_tofufull_aggproxy_savebest/special_tokens_map.json"
+  },
+  "generation_config.json": {
+   "sha256": "f62859b817ec0ad72540dfb2e2ae64fb70b3a8ffd7fad503193fa76e64b80227",
+   "size": 184,
+   "mtime": 1781964202.0,
+   "inode": 9304353075470465724,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_llama31_8b_rmu_from_tofufull_aggproxy_savebest/generation_config.json"
+  }
+ },
+ "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_wga_from_tofufull_selectionproxy_savebest/checkpoint-104": {
+  "model-00002-of-00004.safetensors": {
+   "sha256": "4a29877a028135fff71aa62bea07eb9abdd769afbc31e6260c5b669e6e65da01",
+   "size": 4932751008,
+   "mtime": 1781830139.0,
+   "inode": 2380907147236869304,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_wga_from_tofufull_selectionproxy_savebest/checkpoint-104/model-00002-of-00004.safetensors"
+  },
+  "model-00001-of-00004.safetensors": {
+   "sha256": "9125f378a943603dafbb6402576b75fa94a604a671335a48dbfe830b2c8f7890",
+   "size": 4877660776,
+   "mtime": 1781830134.0,
+   "inode": 9043302254248439371,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_wga_from_tofufull_selectionproxy_savebest/checkpoint-104/model-00001-of-00004.safetensors"
+  },
+  "model-00003-of-00004.safetensors": {
+   "sha256": "9bfd24dae4874cddcbf700eeb41b385242c043bc9215a9e211bd456b389d1449",
+   "size": 4330865200,
+   "mtime": 1781830144.0,
+   "inode": 9518914783471958752,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_wga_from_tofufull_selectionproxy_savebest/checkpoint-104/model-00003-of-00004.safetensors"
+  },
+  "model-00004-of-00004.safetensors": {
+   "sha256": "afde89d687e575848d570ace0ec6765f0b1da4dad098802b425bbf50fa25c7eb",
+   "size": 1089994880,
+   "mtime": 1781830145.0,
+   "inode": 13501863012839993882,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_wga_from_tofufull_selectionproxy_savebest/checkpoint-104/model-00004-of-00004.safetensors"
+  },
+  "tokenizer.json": {
+   "sha256": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa",
+   "size": 11421896,
+   "mtime": 1781830145.0,
+   "inode": 10507811829306572682,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_wga_from_tofufull_selectionproxy_savebest/checkpoint-104/tokenizer.json"
+  },
+  "vocab.json": {
+   "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+   "size": 2776833,
+   "mtime": 1781830145.0,
+   "inode": 11005501146786900077,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_wga_from_tofufull_selectionproxy_savebest/checkpoint-104/vocab.json"
+  },
+  "merges.txt": {
+   "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+   "size": 1671853,
+   "mtime": 1781830145.0,
+   "inode": 3364673165706270472,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_wga_from_tofufull_selectionproxy_savebest/checkpoint-104/merges.txt"
+  },
+  "model.safetensors.index.json": {
+   "sha256": "998a078123ffc97763690de7f2a677eb89168af5eaf8a5e12e6bc24d18e25bdb",
+   "size": 27752,
+   "mtime": 1781830145.0,
+   "inode": 15662950212471199247,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_wga_from_tofufull_selectionproxy_savebest/checkpoint-104/model.safetensors.index.json"
+  },
+  "trainer_state.json": {
+   "sha256": "c6d5ae3778a8d3e80519e03c2d09f18403c5c7cc2aaa5a5bf59db616a4a4311d",
+   "size": 12512,
+   "mtime": 1781830145.0,
+   "inode": 2844507642834422901,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_wga_from_tofufull_selectionproxy_savebest/checkpoint-104/trainer_state.json"
+  },
+  "tokenizer_config.json": {
+   "sha256": "57fea41fa99fce34f91450643e48b3bfbb078c32c6831a3c06834f122c200510",
+   "size": 7336,
+   "mtime": 1781830145.0,
+   "inode": 6889083824321981786,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_wga_from_tofufull_selectionproxy_savebest/checkpoint-104/tokenizer_config.json"
+  },
+  "training_args.bin": {
+   "sha256": "1947f892625cb2c0cc6f12e4d965a7ff2a86e456b4196bc268056883bca0eaed",
+   "size": 5432,
+   "mtime": 1781830145.0,
+   "inode": 11374337593777876770,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_wga_from_tofufull_selectionproxy_savebest/checkpoint-104/training_args.bin"
+  },
+  "config.json": {
+   "sha256": "c10b35d48319d02617f103eaf08200239fc378fe973490e4a2b69c570e6a1396",
+   "size": 687,
+   "mtime": 1781830129.0,
+   "inode": 3573050587185262410,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_wga_from_tofufull_selectionproxy_savebest/checkpoint-104/config.json"
+  },
+  "special_tokens_map.json": {
+   "sha256": "76862e765266b85aa9459767e33cbaf13970f327a0e88d1c65846c2ddd3a1ecd",
+   "size": 613,
+   "mtime": 1781830145.0,
+   "inode": 6210601276660067669,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_wga_from_tofufull_selectionproxy_savebest/checkpoint-104/special_tokens_map.json"
+  },
+  "added_tokens.json": {
+   "sha256": "58b54bbe36fc752f79a24a271ef66a0a0830054b4dfad94bde757d851968060b",
+   "size": 605,
+   "mtime": 1781830145.0,
+   "inode": 12670769963724264153,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_wga_from_tofufull_selectionproxy_savebest/checkpoint-104/added_tokens.json"
+  },
+  "generation_config.json": {
+   "sha256": "80b8ec6e7991b64763e4ff29b59a9cd2968b390d0736e0dc586585da04bad013",
+   "size": 243,
+   "mtime": 1781830129.0,
+   "inode": 13423208569775687929,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_wga_from_tofufull_selectionproxy_savebest/checkpoint-104/generation_config.json"
+  }
+ },
+ "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_wga_from_tofufull_selectionproxy_savebest": {
+  "model-00002-of-00004.safetensors": {
+   "sha256": "4a29877a028135fff71aa62bea07eb9abdd769afbc31e6260c5b669e6e65da01",
+   "size": 4932751008,
+   "mtime": 1781830973.0,
+   "inode": 15945905310261263333,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_wga_from_tofufull_selectionproxy_savebest/model-00002-of-00004.safetensors"
+  },
+  "model-00001-of-00004.safetensors": {
+   "sha256": "9125f378a943603dafbb6402576b75fa94a604a671335a48dbfe830b2c8f7890",
+   "size": 4877660776,
+   "mtime": 1781830968.0,
+   "inode": 2848144416595957183,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_wga_from_tofufull_selectionproxy_savebest/model-00001-of-00004.safetensors"
+  },
+  "model-00003-of-00004.safetensors": {
+   "sha256": "9bfd24dae4874cddcbf700eeb41b385242c043bc9215a9e211bd456b389d1449",
+   "size": 4330865200,
+   "mtime": 1781830978.0,
+   "inode": 2519074510278681490,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_wga_from_tofufull_selectionproxy_savebest/model-00003-of-00004.safetensors"
+  },
+  "model-00004-of-00004.safetensors": {
+   "sha256": "afde89d687e575848d570ace0ec6765f0b1da4dad098802b425bbf50fa25c7eb",
+   "size": 1089994880,
+   "mtime": 1781830979.0,
+   "inode": 5543411268195786454,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_wga_from_tofufull_selectionproxy_savebest/model-00004-of-00004.safetensors"
+  },
+  "tokenizer.json": {
+   "sha256": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa",
+   "size": 11421896,
+   "mtime": 1781830979.0,
+   "inode": 15225585973168472751,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_wga_from_tofufull_selectionproxy_savebest/tokenizer.json"
+  },
+  "vocab.json": {
+   "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+   "size": 2776833,
+   "mtime": 1781830979.0,
+   "inode": 7409691899347764322,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_wga_from_tofufull_selectionproxy_savebest/vocab.json"
+  },
+  "merges.txt": {
+   "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+   "size": 1671853,
+   "mtime": 1781830979.0,
+   "inode": 17966426937951042187,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_wga_from_tofufull_selectionproxy_savebest/merges.txt"
+  },
+  "WGA.log": {
+   "sha256": "e0ad284ecf3395ea0a962cff0bd895416b7fe56c7a8b24b8691374b5199c61bd",
+   "size": 49440,
+   "mtime": 1781831478.0,
+   "inode": 2615213229551366218,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_wga_from_tofufull_selectionproxy_savebest/WGA.log"
+  },
+  "model.safetensors.index.json": {
+   "sha256": "998a078123ffc97763690de7f2a677eb89168af5eaf8a5e12e6bc24d18e25bdb",
+   "size": 27752,
+   "mtime": 1781830979.0,
+   "inode": 8041509250859872559,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_wga_from_tofufull_selectionproxy_savebest/model.safetensors.index.json"
+  },
+  "trainer_state.json": {
+   "sha256": "6f50ef90fa0e1734b47aa82117d2bfbe0cfe6b58e3f410cdd585da1df15288b8",
+   "size": 14424,
+   "mtime": 1781830963.0,
+   "inode": 12105931567352302157,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_wga_from_tofufull_selectionproxy_savebest/trainer_state.json"
+  },
+  "tokenizer_config.json": {
+   "sha256": "57fea41fa99fce34f91450643e48b3bfbb078c32c6831a3c06834f122c200510",
+   "size": 7336,
+   "mtime": 1781830979.0,
+   "inode": 232902048945732332,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_wga_from_tofufull_selectionproxy_savebest/tokenizer_config.json"
+  },
+  "training_args.bin": {
+   "sha256": "1947f892625cb2c0cc6f12e4d965a7ff2a86e456b4196bc268056883bca0eaed",
+   "size": 5432,
+   "mtime": 1781830979.0,
+   "inode": 2083024457091991217,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_wga_from_tofufull_selectionproxy_savebest/training_args.bin"
+  },
+  "config.json": {
+   "sha256": "c10b35d48319d02617f103eaf08200239fc378fe973490e4a2b69c570e6a1396",
+   "size": 687,
+   "mtime": 1781830963.0,
+   "inode": 3769665372837629335,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_wga_from_tofufull_selectionproxy_savebest/config.json"
+  },
+  "special_tokens_map.json": {
+   "sha256": "76862e765266b85aa9459767e33cbaf13970f327a0e88d1c65846c2ddd3a1ecd",
+   "size": 613,
+   "mtime": 1781830979.0,
+   "inode": 11529325943854200252,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_wga_from_tofufull_selectionproxy_savebest/special_tokens_map.json"
+  },
+  "added_tokens.json": {
+   "sha256": "58b54bbe36fc752f79a24a271ef66a0a0830054b4dfad94bde757d851968060b",
+   "size": 605,
+   "mtime": 1781830979.0,
+   "inode": 5051368533082258473,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_wga_from_tofufull_selectionproxy_savebest/added_tokens.json"
+  },
+  "generation_config.json": {
+   "sha256": "80b8ec6e7991b64763e4ff29b59a9cd2968b390d0736e0dc586585da04bad013",
+   "size": 243,
+   "mtime": 1781830963.0,
+   "inode": 1765127801814092299,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_wga_from_tofufull_selectionproxy_savebest/generation_config.json"
+  },
+  "BEST_CHECKPOINT.txt": {
+   "sha256": "932a08adb9dbd46cca845d8e0049e8a90f1e3b7c2a1a9bfefea0bc8149b5ee7e",
+   "size": 131,
+   "mtime": 1781866372.0,
+   "inode": 3999192780469341229,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_wga_from_tofufull_selectionproxy_savebest/BEST_CHECKPOINT.txt"
+  }
+ },
+ "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_simnpo_from_tofufull_selectionproxy_savebest/checkpoint-104": {
+  "model-00002-of-00004.safetensors": {
+   "sha256": "0ad72e66d79d889a3b9490059a62a725e3f0a51d56b6f82f91c0f508d7d61fd9",
+   "size": 4932751008,
+   "mtime": 1781817144.0,
+   "inode": 2695674295593694519,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_simnpo_from_tofufull_selectionproxy_savebest/checkpoint-104/model-00002-of-00004.safetensors"
+  },
+  "model-00001-of-00004.safetensors": {
+   "sha256": "c60be6f84073fc2a3af525e1a250be7494767612738d9bd1cb1d6cafdf2aacef",
+   "size": 4877660776,
+   "mtime": 1781817131.0,
+   "inode": 17760119560485867570,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_simnpo_from_tofufull_selectionproxy_savebest/checkpoint-104/model-00001-of-00004.safetensors"
+  },
+  "model-00003-of-00004.safetensors": {
+   "sha256": "083d13affa8ce789c8364f7f77ef55d44e75991c8684edf65ecede3de5087d71",
+   "size": 4330865200,
+   "mtime": 1781817156.0,
+   "inode": 16897785354109419686,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_simnpo_from_tofufull_selectionproxy_savebest/checkpoint-104/model-00003-of-00004.safetensors"
+  },
+  "model-00004-of-00004.safetensors": {
+   "sha256": "2b38613dead2cec3eeba461c7b8db777c4cd782cd6b9d6b5c3c894be2b21354d",
+   "size": 1089994880,
+   "mtime": 1781817160.0,
+   "inode": 10956918833492049516,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_simnpo_from_tofufull_selectionproxy_savebest/checkpoint-104/model-00004-of-00004.safetensors"
+  },
+  "tokenizer.json": {
+   "sha256": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa",
+   "size": 11421896,
+   "mtime": 1781817161.0,
+   "inode": 16264644850045156247,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_simnpo_from_tofufull_selectionproxy_savebest/checkpoint-104/tokenizer.json"
+  },
+  "vocab.json": {
+   "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+   "size": 2776833,
+   "mtime": 1781817160.0,
+   "inode": 7925827480388472450,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_simnpo_from_tofufull_selectionproxy_savebest/checkpoint-104/vocab.json"
+  },
+  "merges.txt": {
+   "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+   "size": 1671853,
+   "mtime": 1781817160.0,
+   "inode": 13714693244337161681,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_simnpo_from_tofufull_selectionproxy_savebest/checkpoint-104/merges.txt"
+  },
+  "model.safetensors.index.json": {
+   "sha256": "998a078123ffc97763690de7f2a677eb89168af5eaf8a5e12e6bc24d18e25bdb",
+   "size": 27752,
+   "mtime": 1781817160.0,
+   "inode": 8447797724313080197,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_simnpo_from_tofufull_selectionproxy_savebest/checkpoint-104/model.safetensors.index.json"
+  },
+  "trainer_state.json": {
+   "sha256": "fe41950bc33261f76f65d5b2bf832ebfd707d06458394f9c9e1035bd73e2933f",
+   "size": 12580,
+   "mtime": 1781817161.0,
+   "inode": 7806671476140235221,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_simnpo_from_tofufull_selectionproxy_savebest/checkpoint-104/trainer_state.json"
+  },
+  "tokenizer_config.json": {
+   "sha256": "57fea41fa99fce34f91450643e48b3bfbb078c32c6831a3c06834f122c200510",
+   "size": 7336,
+   "mtime": 1781817160.0,
+   "inode": 69458890048649444,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_simnpo_from_tofufull_selectionproxy_savebest/checkpoint-104/tokenizer_config.json"
+  },
+  "training_args.bin": {
+   "sha256": "9f81b1b4a570b7038dfe2f8e06eed5633272bf967c862ede4e409a8cf2a9d08f",
+   "size": 5432,
+   "mtime": 1781817161.0,
+   "inode": 17366742200404300708,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_simnpo_from_tofufull_selectionproxy_savebest/checkpoint-104/training_args.bin"
+  },
+  "config.json": {
+   "sha256": "c10b35d48319d02617f103eaf08200239fc378fe973490e4a2b69c570e6a1396",
+   "size": 687,
+   "mtime": 1781817119.0,
+   "inode": 16128051635587761376,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_simnpo_from_tofufull_selectionproxy_savebest/checkpoint-104/config.json"
+  },
+  "special_tokens_map.json": {
+   "sha256": "76862e765266b85aa9459767e33cbaf13970f327a0e88d1c65846c2ddd3a1ecd",
+   "size": 613,
+   "mtime": 1781817160.0,
+   "inode": 16190104963450151975,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_simnpo_from_tofufull_selectionproxy_savebest/checkpoint-104/special_tokens_map.json"
+  },
+  "added_tokens.json": {
+   "sha256": "58b54bbe36fc752f79a24a271ef66a0a0830054b4dfad94bde757d851968060b",
+   "size": 605,
+   "mtime": 1781817160.0,
+   "inode": 15828854247124974190,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_simnpo_from_tofufull_selectionproxy_savebest/checkpoint-104/added_tokens.json"
+  },
+  "generation_config.json": {
+   "sha256": "80b8ec6e7991b64763e4ff29b59a9cd2968b390d0736e0dc586585da04bad013",
+   "size": 243,
+   "mtime": 1781817119.0,
+   "inode": 7554043069228619687,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_simnpo_from_tofufull_selectionproxy_savebest/checkpoint-104/generation_config.json"
+  }
+ },
+ "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_simnpo_from_tofufull_selectionproxy_savebest": {
+  "model-00002-of-00004.safetensors": {
+   "sha256": "0ad72e66d79d889a3b9490059a62a725e3f0a51d56b6f82f91c0f508d7d61fd9",
+   "size": 4932751008,
+   "mtime": 1781818078.0,
+   "inode": 59617909272165396,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_simnpo_from_tofufull_selectionproxy_savebest/model-00002-of-00004.safetensors"
+  },
+  "model-00001-of-00004.safetensors": {
+   "sha256": "c60be6f84073fc2a3af525e1a250be7494767612738d9bd1cb1d6cafdf2aacef",
+   "size": 4877660776,
+   "mtime": 1781818067.0,
+   "inode": 8068079891656883582,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_simnpo_from_tofufull_selectionproxy_savebest/model-00001-of-00004.safetensors"
+  },
+  "model-00003-of-00004.safetensors": {
+   "sha256": "083d13affa8ce789c8364f7f77ef55d44e75991c8684edf65ecede3de5087d71",
+   "size": 4330865200,
+   "mtime": 1781818087.0,
+   "inode": 7289483849259493458,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_simnpo_from_tofufull_selectionproxy_savebest/model-00003-of-00004.safetensors"
+  },
+  "model-00004-of-00004.safetensors": {
+   "sha256": "2b38613dead2cec3eeba461c7b8db777c4cd782cd6b9d6b5c3c894be2b21354d",
+   "size": 1089994880,
+   "mtime": 1781818090.0,
+   "inode": 2080608269275624023,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_simnpo_from_tofufull_selectionproxy_savebest/model-00004-of-00004.safetensors"
+  },
+  "tokenizer.json": {
+   "sha256": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa",
+   "size": 11421896,
+   "mtime": 1781818090.0,
+   "inode": 14250609677726132807,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_simnpo_from_tofufull_selectionproxy_savebest/tokenizer.json"
+  },
+  "vocab.json": {
+   "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+   "size": 2776833,
+   "mtime": 1781818090.0,
+   "inode": 10378644515603510263,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_simnpo_from_tofufull_selectionproxy_savebest/vocab.json"
+  },
+  "merges.txt": {
+   "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+   "size": 1671853,
+   "mtime": 1781818090.0,
+   "inode": 18110020378316125031,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_simnpo_from_tofufull_selectionproxy_savebest/merges.txt"
+  },
+  "SimNPO.log": {
+   "sha256": "d776c1b84ead3c0b13fb292aeddd8a6a3d4f1022bb4d56783b392c0b78466101",
+   "size": 49092,
+   "mtime": 1781818579.0,
+   "inode": 13562311559148550076,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_simnpo_from_tofufull_selectionproxy_savebest/SimNPO.log"
+  },
+  "model.safetensors.index.json": {
+   "sha256": "998a078123ffc97763690de7f2a677eb89168af5eaf8a5e12e6bc24d18e25bdb",
+   "size": 27752,
+   "mtime": 1781818090.0,
+   "inode": 17452027637662548309,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_simnpo_from_tofufull_selectionproxy_savebest/model.safetensors.index.json"
+  },
+  "trainer_state.json": {
+   "sha256": "6eba1eff86b8d4c43bd62c86688d1c2dcbbc0ea1f710234a812542796005731b",
+   "size": 14490,
+   "mtime": 1781818057.0,
+   "inode": 18327968889127750518,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_simnpo_from_tofufull_selectionproxy_savebest/trainer_state.json"
+  },
+  "tokenizer_config.json": {
+   "sha256": "57fea41fa99fce34f91450643e48b3bfbb078c32c6831a3c06834f122c200510",
+   "size": 7336,
+   "mtime": 1781818090.0,
+   "inode": 15013678591221584087,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_simnpo_from_tofufull_selectionproxy_savebest/tokenizer_config.json"
+  },
+  "training_args.bin": {
+   "sha256": "9f81b1b4a570b7038dfe2f8e06eed5633272bf967c862ede4e409a8cf2a9d08f",
+   "size": 5432,
+   "mtime": 1781818090.0,
+   "inode": 4599015758029026008,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_simnpo_from_tofufull_selectionproxy_savebest/training_args.bin"
+  },
+  "config.json": {
+   "sha256": "c10b35d48319d02617f103eaf08200239fc378fe973490e4a2b69c570e6a1396",
+   "size": 687,
+   "mtime": 1781818057.0,
+   "inode": 3384970749661516296,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_simnpo_from_tofufull_selectionproxy_savebest/config.json"
+  },
+  "special_tokens_map.json": {
+   "sha256": "76862e765266b85aa9459767e33cbaf13970f327a0e88d1c65846c2ddd3a1ecd",
+   "size": 613,
+   "mtime": 1781818090.0,
+   "inode": 16104832066258620652,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_simnpo_from_tofufull_selectionproxy_savebest/special_tokens_map.json"
+  },
+  "added_tokens.json": {
+   "sha256": "58b54bbe36fc752f79a24a271ef66a0a0830054b4dfad94bde757d851968060b",
+   "size": 605,
+   "mtime": 1781818090.0,
+   "inode": 1634807433497614064,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_simnpo_from_tofufull_selectionproxy_savebest/added_tokens.json"
+  },
+  "generation_config.json": {
+   "sha256": "80b8ec6e7991b64763e4ff29b59a9cd2968b390d0736e0dc586585da04bad013",
+   "size": 243,
+   "mtime": 1781818057.0,
+   "inode": 8323480440315289896,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_simnpo_from_tofufull_selectionproxy_savebest/generation_config.json"
+  },
+  "BEST_CHECKPOINT.txt": {
+   "sha256": "99aad5fb6474078d3872499650d982eb6ff68d3377c1f723c9383dcef122bbb7",
+   "size": 134,
+   "mtime": 1781866372.0,
+   "inode": 15149053314021789436,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_simnpo_from_tofufull_selectionproxy_savebest/BEST_CHECKPOINT.txt"
+  }
+ },
+ "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_satimp_from_tofufull_selectionproxy_savebest/checkpoint-104": {
+  "model-00002-of-00004.safetensors": {
+   "sha256": "ac8136b6677562dc1ba1fbf63ef8aa0bb9593fd6f61290669945ff4dcbd161e4",
+   "size": 4932751008,
+   "mtime": 1781836975.0,
+   "inode": 2972121858513688743,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_satimp_from_tofufull_selectionproxy_savebest/checkpoint-104/model-00002-of-00004.safetensors"
+  },
+  "model-00001-of-00004.safetensors": {
+   "sha256": "811a63537a141c54923b352b1c66db870c802e2e04a9b7fad342164a9a379e7e",
+   "size": 4877660776,
+   "mtime": 1781836970.0,
+   "inode": 455418589857564302,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_satimp_from_tofufull_selectionproxy_savebest/checkpoint-104/model-00001-of-00004.safetensors"
+  },
+  "model-00003-of-00004.safetensors": {
+   "sha256": "3cec0842ae0e21d55120397729c88606960fddbc15b6d870fda7639d549f562a",
+   "size": 4330865200,
+   "mtime": 1781836980.0,
+   "inode": 12157777142322620606,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_satimp_from_tofufull_selectionproxy_savebest/checkpoint-104/model-00003-of-00004.safetensors"
+  },
+  "model-00004-of-00004.safetensors": {
+   "sha256": "eca8937a4b3d33c770615b7ac02d4ce3527ff547a40a167f8798ec6c38d12ca2",
+   "size": 1089994880,
+   "mtime": 1781836981.0,
+   "inode": 4083879255312592886,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_satimp_from_tofufull_selectionproxy_savebest/checkpoint-104/model-00004-of-00004.safetensors"
+  },
+  "tokenizer.json": {
+   "sha256": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa",
+   "size": 11421896,
+   "mtime": 1781836981.0,
+   "inode": 15631279540026996825,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_satimp_from_tofufull_selectionproxy_savebest/checkpoint-104/tokenizer.json"
+  },
+  "vocab.json": {
+   "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+   "size": 2776833,
+   "mtime": 1781836981.0,
+   "inode": 15221204669814680919,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_satimp_from_tofufull_selectionproxy_savebest/checkpoint-104/vocab.json"
+  },
+  "merges.txt": {
+   "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+   "size": 1671853,
+   "mtime": 1781836981.0,
+   "inode": 16602573847602048580,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_satimp_from_tofufull_selectionproxy_savebest/checkpoint-104/merges.txt"
+  },
+  "model.safetensors.index.json": {
+   "sha256": "998a078123ffc97763690de7f2a677eb89168af5eaf8a5e12e6bc24d18e25bdb",
+   "size": 27752,
+   "mtime": 1781836981.0,
+   "inode": 9580060523599937434,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_satimp_from_tofufull_selectionproxy_savebest/checkpoint-104/model.safetensors.index.json"
+  },
+  "trainer_state.json": {
+   "sha256": "772de34e3d42eac09063ed3c93340897816c6663dd4b73b173079ac3d2897f67",
+   "size": 12446,
+   "mtime": 1781836981.0,
+   "inode": 11209054309593189648,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_satimp_from_tofufull_selectionproxy_savebest/checkpoint-104/trainer_state.json"
+  },
+  "tokenizer_config.json": {
+   "sha256": "57fea41fa99fce34f91450643e48b3bfbb078c32c6831a3c06834f122c200510",
+   "size": 7336,
+   "mtime": 1781836981.0,
+   "inode": 10132198099283600116,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_satimp_from_tofufull_selectionproxy_savebest/checkpoint-104/tokenizer_config.json"
+  },
+  "training_args.bin": {
+   "sha256": "1ab657d7642a813f2c064ef9451137da614fc5326d3dd7cb818aaeb1669b7b16",
+   "size": 5432,
+   "mtime": 1781836981.0,
+   "inode": 15134252257488030526,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_satimp_from_tofufull_selectionproxy_savebest/checkpoint-104/training_args.bin"
+  },
+  "config.json": {
+   "sha256": "c10b35d48319d02617f103eaf08200239fc378fe973490e4a2b69c570e6a1396",
+   "size": 687,
+   "mtime": 1781836965.0,
+   "inode": 16986390770900834236,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_satimp_from_tofufull_selectionproxy_savebest/checkpoint-104/config.json"
+  },
+  "special_tokens_map.json": {
+   "sha256": "76862e765266b85aa9459767e33cbaf13970f327a0e88d1c65846c2ddd3a1ecd",
+   "size": 613,
+   "mtime": 1781836981.0,
+   "inode": 6702885191778148129,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_satimp_from_tofufull_selectionproxy_savebest/checkpoint-104/special_tokens_map.json"
+  },
+  "added_tokens.json": {
+   "sha256": "58b54bbe36fc752f79a24a271ef66a0a0830054b4dfad94bde757d851968060b",
+   "size": 605,
+   "mtime": 1781836981.0,
+   "inode": 12599474103265536172,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_satimp_from_tofufull_selectionproxy_savebest/checkpoint-104/added_tokens.json"
+  },
+  "generation_config.json": {
+   "sha256": "80b8ec6e7991b64763e4ff29b59a9cd2968b390d0736e0dc586585da04bad013",
+   "size": 243,
+   "mtime": 1781836965.0,
+   "inode": 14500200066726931225,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_satimp_from_tofufull_selectionproxy_savebest/checkpoint-104/generation_config.json"
+  }
+ },
+ "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_satimp_from_tofufull_selectionproxy_savebest": {
+  "model-00002-of-00004.safetensors": {
+   "sha256": "ac8136b6677562dc1ba1fbf63ef8aa0bb9593fd6f61290669945ff4dcbd161e4",
+   "size": 4932751008,
+   "mtime": 1781837763.0,
+   "inode": 12245970125757430139,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_satimp_from_tofufull_selectionproxy_savebest/model-00002-of-00004.safetensors"
+  },
+  "model-00001-of-00004.safetensors": {
+   "sha256": "811a63537a141c54923b352b1c66db870c802e2e04a9b7fad342164a9a379e7e",
+   "size": 4877660776,
+   "mtime": 1781837757.0,
+   "inode": 18317761284571485877,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_satimp_from_tofufull_selectionproxy_savebest/model-00001-of-00004.safetensors"
+  },
+  "model-00003-of-00004.safetensors": {
+   "sha256": "3cec0842ae0e21d55120397729c88606960fddbc15b6d870fda7639d549f562a",
+   "size": 4330865200,
+   "mtime": 1781837768.0,
+   "inode": 5143300994076682029,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_satimp_from_tofufull_selectionproxy_savebest/model-00003-of-00004.safetensors"
+  },
+  "model-00004-of-00004.safetensors": {
+   "sha256": "eca8937a4b3d33c770615b7ac02d4ce3527ff547a40a167f8798ec6c38d12ca2",
+   "size": 1089994880,
+   "mtime": 1781837770.0,
+   "inode": 11515690300806248947,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_satimp_from_tofufull_selectionproxy_savebest/model-00004-of-00004.safetensors"
+  },
+  "tokenizer.json": {
+   "sha256": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa",
+   "size": 11421896,
+   "mtime": 1781837770.0,
+   "inode": 4158885794703681750,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_satimp_from_tofufull_selectionproxy_savebest/tokenizer.json"
+  },
+  "vocab.json": {
+   "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+   "size": 2776833,
+   "mtime": 1781837770.0,
+   "inode": 12112782582984739790,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_satimp_from_tofufull_selectionproxy_savebest/vocab.json"
+  },
+  "merges.txt": {
+   "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+   "size": 1671853,
+   "mtime": 1781837770.0,
+   "inode": 3660874224691622638,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_satimp_from_tofufull_selectionproxy_savebest/merges.txt"
+  },
+  "SatImp.log": {
+   "sha256": "e1b1da10d4775c40c2875962341ea66b8a7548e0c4c9507417ba180e6512f6a3",
+   "size": 48978,
+   "mtime": 1781838267.0,
+   "inode": 1292929319326444455,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_satimp_from_tofufull_selectionproxy_savebest/SatImp.log"
+  },
+  "model.safetensors.index.json": {
+   "sha256": "998a078123ffc97763690de7f2a677eb89168af5eaf8a5e12e6bc24d18e25bdb",
+   "size": 27752,
+   "mtime": 1781837770.0,
+   "inode": 16232719411650345943,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_satimp_from_tofufull_selectionproxy_savebest/model.safetensors.index.json"
+  },
+  "trainer_state.json": {
+   "sha256": "9ef78919ea3891bba4fc25fdc384bd55b9e32869390cf952a1f97ac71da7e910",
+   "size": 14356,
+   "mtime": 1781837750.0,
+   "inode": 785799676583765680,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_satimp_from_tofufull_selectionproxy_savebest/trainer_state.json"
+  },
+  "tokenizer_config.json": {
+   "sha256": "57fea41fa99fce34f91450643e48b3bfbb078c32c6831a3c06834f122c200510",
+   "size": 7336,
+   "mtime": 1781837770.0,
+   "inode": 9787139967021612974,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_satimp_from_tofufull_selectionproxy_savebest/tokenizer_config.json"
+  },
+  "training_args.bin": {
+   "sha256": "1ab657d7642a813f2c064ef9451137da614fc5326d3dd7cb818aaeb1669b7b16",
+   "size": 5432,
+   "mtime": 1781837770.0,
+   "inode": 17509472544154009276,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_satimp_from_tofufull_selectionproxy_savebest/training_args.bin"
+  },
+  "config.json": {
+   "sha256": "c10b35d48319d02617f103eaf08200239fc378fe973490e4a2b69c570e6a1396",
+   "size": 687,
+   "mtime": 1781837750.0,
+   "inode": 143536935163083791,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_satimp_from_tofufull_selectionproxy_savebest/config.json"
+  },
+  "special_tokens_map.json": {
+   "sha256": "76862e765266b85aa9459767e33cbaf13970f327a0e88d1c65846c2ddd3a1ecd",
+   "size": 613,
+   "mtime": 1781837770.0,
+   "inode": 5786619022720259058,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_satimp_from_tofufull_selectionproxy_savebest/special_tokens_map.json"
+  },
+  "added_tokens.json": {
+   "sha256": "58b54bbe36fc752f79a24a271ef66a0a0830054b4dfad94bde757d851968060b",
+   "size": 605,
+   "mtime": 1781837770.0,
+   "inode": 763893282684808688,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_satimp_from_tofufull_selectionproxy_savebest/added_tokens.json"
+  },
+  "generation_config.json": {
+   "sha256": "80b8ec6e7991b64763e4ff29b59a9cd2968b390d0736e0dc586585da04bad013",
+   "size": 243,
+   "mtime": 1781837750.0,
+   "inode": 2732360061450622841,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_satimp_from_tofufull_selectionproxy_savebest/generation_config.json"
+  },
+  "BEST_CHECKPOINT.txt": {
+   "sha256": "b0459a870d45e7691b04e4fc7975842ffa17b856f54171e3edf0d09f6968ccaa",
+   "size": 134,
+   "mtime": 1781866372.0,
+   "inode": 13616499453998918991,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_satimp_from_tofufull_selectionproxy_savebest/BEST_CHECKPOINT.txt"
+  }
+ },
+ "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_rmu_from_tofufull_selectionproxy_savebest/checkpoint-104": {
+  "model-00002-of-00004.safetensors": {
+   "sha256": "63719a31c45a8566e026222836b07f14af59d755d962058b3c285964d0009bf9",
+   "size": 4932751008,
+   "mtime": 1781823331.0,
+   "inode": 13155293679943158316,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_rmu_from_tofufull_selectionproxy_savebest/checkpoint-104/model-00002-of-00004.safetensors"
+  },
+  "model-00001-of-00004.safetensors": {
+   "sha256": "0fb3060e9c0523bb8f364c8f831de726066db0bc54c235c4a68ce71b07d3f228",
+   "size": 4877660776,
+   "mtime": 1781823325.0,
+   "inode": 12350635186369663605,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_rmu_from_tofufull_selectionproxy_savebest/checkpoint-104/model-00001-of-00004.safetensors"
+  },
+  "model-00003-of-00004.safetensors": {
+   "sha256": "9e2e364b20bba84e75774b5b17e25a82ce8127959ad4e75cdc3513783a50069e",
+   "size": 4330865200,
+   "mtime": 1781823337.0,
+   "inode": 15939260542971327926,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_rmu_from_tofufull_selectionproxy_savebest/checkpoint-104/model-00003-of-00004.safetensors"
+  },
+  "model-00004-of-00004.safetensors": {
+   "sha256": "98f7b1396180ae2403ca8fd1bf31e38c6390f6b99cb2d3440b53aa58f06d03e7",
+   "size": 1089994880,
+   "mtime": 1781823338.0,
+   "inode": 13057734109819478304,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_rmu_from_tofufull_selectionproxy_savebest/checkpoint-104/model-00004-of-00004.safetensors"
+  },
+  "tokenizer.json": {
+   "sha256": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa",
+   "size": 11421896,
+   "mtime": 1781823338.0,
+   "inode": 12537248013689465354,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_rmu_from_tofufull_selectionproxy_savebest/checkpoint-104/tokenizer.json"
+  },
+  "vocab.json": {
+   "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+   "size": 2776833,
+   "mtime": 1781823338.0,
+   "inode": 7221017588520764104,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_rmu_from_tofufull_selectionproxy_savebest/checkpoint-104/vocab.json"
+  },
+  "merges.txt": {
+   "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+   "size": 1671853,
+   "mtime": 1781823338.0,
+   "inode": 10163206696277829259,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_rmu_from_tofufull_selectionproxy_savebest/checkpoint-104/merges.txt"
+  },
+  "model.safetensors.index.json": {
+   "sha256": "998a078123ffc97763690de7f2a677eb89168af5eaf8a5e12e6bc24d18e25bdb",
+   "size": 27752,
+   "mtime": 1781823338.0,
+   "inode": 11252287031088909816,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_rmu_from_tofufull_selectionproxy_savebest/checkpoint-104/model.safetensors.index.json"
+  },
+  "trainer_state.json": {
+   "sha256": "cf67c78dddd23de03f861cec6ac67c9d7eda2cf4635574b528ce04d61deb59e7",
+   "size": 12502,
+   "mtime": 1781823338.0,
+   "inode": 6486596691177118630,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_rmu_from_tofufull_selectionproxy_savebest/checkpoint-104/trainer_state.json"
+  },
+  "tokenizer_config.json": {
+   "sha256": "57fea41fa99fce34f91450643e48b3bfbb078c32c6831a3c06834f122c200510",
+   "size": 7336,
+   "mtime": 1781823338.0,
+   "inode": 15793613471108615435,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_rmu_from_tofufull_selectionproxy_savebest/checkpoint-104/tokenizer_config.json"
+  },
+  "training_args.bin": {
+   "sha256": "d3d0b53d700da3ab7f28b149bb2359b0bcc5ce23d388a19b181f45b7169050ed",
+   "size": 5432,
+   "mtime": 1781823338.0,
+   "inode": 5459341628761466438,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_rmu_from_tofufull_selectionproxy_savebest/checkpoint-104/training_args.bin"
+  },
+  "config.json": {
+   "sha256": "c10b35d48319d02617f103eaf08200239fc378fe973490e4a2b69c570e6a1396",
+   "size": 687,
+   "mtime": 1781823319.0,
+   "inode": 12082009670549616085,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_rmu_from_tofufull_selectionproxy_savebest/checkpoint-104/config.json"
+  },
+  "special_tokens_map.json": {
+   "sha256": "76862e765266b85aa9459767e33cbaf13970f327a0e88d1c65846c2ddd3a1ecd",
+   "size": 613,
+   "mtime": 1781823338.0,
+   "inode": 2009811005865098898,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_rmu_from_tofufull_selectionproxy_savebest/checkpoint-104/special_tokens_map.json"
+  },
+  "added_tokens.json": {
+   "sha256": "58b54bbe36fc752f79a24a271ef66a0a0830054b4dfad94bde757d851968060b",
+   "size": 605,
+   "mtime": 1781823338.0,
+   "inode": 554725733472264812,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_rmu_from_tofufull_selectionproxy_savebest/checkpoint-104/added_tokens.json"
+  },
+  "generation_config.json": {
+   "sha256": "80b8ec6e7991b64763e4ff29b59a9cd2968b390d0736e0dc586585da04bad013",
+   "size": 243,
+   "mtime": 1781823319.0,
+   "inode": 8301496558527085500,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_rmu_from_tofufull_selectionproxy_savebest/checkpoint-104/generation_config.json"
+  }
+ },
+ "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_rmu_from_tofufull_selectionproxy_savebest": {
+  "model-00002-of-00004.safetensors": {
+   "sha256": "63719a31c45a8566e026222836b07f14af59d755d962058b3c285964d0009bf9",
+   "size": 4932751008,
+   "mtime": 1781824008.0,
+   "inode": 6216486169088175083,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_rmu_from_tofufull_selectionproxy_savebest/model-00002-of-00004.safetensors"
+  },
+  "model-00001-of-00004.safetensors": {
+   "sha256": "0fb3060e9c0523bb8f364c8f831de726066db0bc54c235c4a68ce71b07d3f228",
+   "size": 4877660776,
+   "mtime": 1781823999.0,
+   "inode": 7562469999524419812,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_rmu_from_tofufull_selectionproxy_savebest/model-00001-of-00004.safetensors"
+  },
+  "model-00003-of-00004.safetensors": {
+   "sha256": "9e2e364b20bba84e75774b5b17e25a82ce8127959ad4e75cdc3513783a50069e",
+   "size": 4330865200,
+   "mtime": 1781824017.0,
+   "inode": 12274932267702357864,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_rmu_from_tofufull_selectionproxy_savebest/model-00003-of-00004.safetensors"
+  },
+  "model-00004-of-00004.safetensors": {
+   "sha256": "98f7b1396180ae2403ca8fd1bf31e38c6390f6b99cb2d3440b53aa58f06d03e7",
+   "size": 1089994880,
+   "mtime": 1781824020.0,
+   "inode": 14152309909705202442,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_rmu_from_tofufull_selectionproxy_savebest/model-00004-of-00004.safetensors"
+  },
+  "tokenizer.json": {
+   "sha256": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa",
+   "size": 11421896,
+   "mtime": 1781824020.0,
+   "inode": 12142762310354917321,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_rmu_from_tofufull_selectionproxy_savebest/tokenizer.json"
+  },
+  "vocab.json": {
+   "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+   "size": 2776833,
+   "mtime": 1781824020.0,
+   "inode": 4611102128254109582,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_rmu_from_tofufull_selectionproxy_savebest/vocab.json"
+  },
+  "merges.txt": {
+   "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+   "size": 1671853,
+   "mtime": 1781824020.0,
+   "inode": 10172094094570584091,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_rmu_from_tofufull_selectionproxy_savebest/merges.txt"
+  },
+  "RMU.log": {
+   "sha256": "29564bcf3386907f6ce8952ea547b4cb9d2f638a67f5efc3f6806f40b3f63f43",
+   "size": 49005,
+   "mtime": 1781824550.0,
+   "inode": 5830805866992790161,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_rmu_from_tofufull_selectionproxy_savebest/RMU.log"
+  },
+  "model.safetensors.index.json": {
+   "sha256": "998a078123ffc97763690de7f2a677eb89168af5eaf8a5e12e6bc24d18e25bdb",
+   "size": 27752,
+   "mtime": 1781824020.0,
+   "inode": 4048572852142908870,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_rmu_from_tofufull_selectionproxy_savebest/model.safetensors.index.json"
+  },
+  "trainer_state.json": {
+   "sha256": "d1352c09a85fb092d30d5905a133becdac1248cd8e6a8060b54db8140099a9a9",
+   "size": 14428,
+   "mtime": 1781823990.0,
+   "inode": 15013744921281045413,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_rmu_from_tofufull_selectionproxy_savebest/trainer_state.json"
+  },
+  "tokenizer_config.json": {
+   "sha256": "57fea41fa99fce34f91450643e48b3bfbb078c32c6831a3c06834f122c200510",
+   "size": 7336,
+   "mtime": 1781824020.0,
+   "inode": 5707251409529423461,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_rmu_from_tofufull_selectionproxy_savebest/tokenizer_config.json"
+  },
+  "training_args.bin": {
+   "sha256": "d3d0b53d700da3ab7f28b149bb2359b0bcc5ce23d388a19b181f45b7169050ed",
+   "size": 5432,
+   "mtime": 1781824020.0,
+   "inode": 6619091733665942098,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_rmu_from_tofufull_selectionproxy_savebest/training_args.bin"
+  },
+  "config.json": {
+   "sha256": "c10b35d48319d02617f103eaf08200239fc378fe973490e4a2b69c570e6a1396",
+   "size": 687,
+   "mtime": 1781823990.0,
+   "inode": 18184504141415594895,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_rmu_from_tofufull_selectionproxy_savebest/config.json"
+  },
+  "special_tokens_map.json": {
+   "sha256": "76862e765266b85aa9459767e33cbaf13970f327a0e88d1c65846c2ddd3a1ecd",
+   "size": 613,
+   "mtime": 1781824020.0,
+   "inode": 10973031093886226540,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_rmu_from_tofufull_selectionproxy_savebest/special_tokens_map.json"
+  },
+  "added_tokens.json": {
+   "sha256": "58b54bbe36fc752f79a24a271ef66a0a0830054b4dfad94bde757d851968060b",
+   "size": 605,
+   "mtime": 1781824020.0,
+   "inode": 15269380551812878337,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_rmu_from_tofufull_selectionproxy_savebest/added_tokens.json"
+  },
+  "generation_config.json": {
+   "sha256": "80b8ec6e7991b64763e4ff29b59a9cd2968b390d0736e0dc586585da04bad013",
+   "size": 243,
+   "mtime": 1781823990.0,
+   "inode": 8970786000952148417,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_rmu_from_tofufull_selectionproxy_savebest/generation_config.json"
+  },
+  "BEST_CHECKPOINT.txt": {
+   "sha256": "af35315f2e60ce43add178d57a7e1643a96b469d414c5d64201e45fbbf175601",
+   "size": 131,
+   "mtime": 1781866372.0,
+   "inode": 14534493194663742761,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_rmu_from_tofufull_selectionproxy_savebest/BEST_CHECKPOINT.txt"
+  }
+ },
+ "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_rmu_from_tofufull_selectionproxy_savebest/checkpoint-78": {
+  "model-00002-of-00004.safetensors": {
+   "sha256": "63719a31c45a8566e026222836b07f14af59d755d962058b3c285964d0009bf9",
+   "size": 4932751008,
+   "mtime": 1781822156.0,
+   "inode": 9673825414524675248,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_rmu_from_tofufull_selectionproxy_savebest/checkpoint-78/model-00002-of-00004.safetensors"
+  },
+  "model-00001-of-00004.safetensors": {
+   "sha256": "85e138a6da4038b24229b609ad3d0238a203198981f1158ecefa8e06d71ba2f6",
+   "size": 4877660776,
+   "mtime": 1781822147.0,
+   "inode": 5312925705759529781,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_rmu_from_tofufull_selectionproxy_savebest/checkpoint-78/model-00001-of-00004.safetensors"
+  },
+  "model-00003-of-00004.safetensors": {
+   "sha256": "9e2e364b20bba84e75774b5b17e25a82ce8127959ad4e75cdc3513783a50069e",
+   "size": 4330865200,
+   "mtime": 1781822165.0,
+   "inode": 884326275280012506,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_rmu_from_tofufull_selectionproxy_savebest/checkpoint-78/model-00003-of-00004.safetensors"
+  },
+  "model-00004-of-00004.safetensors": {
+   "sha256": "98f7b1396180ae2403ca8fd1bf31e38c6390f6b99cb2d3440b53aa58f06d03e7",
+   "size": 1089994880,
+   "mtime": 1781822167.0,
+   "inode": 7969881076381255680,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_rmu_from_tofufull_selectionproxy_savebest/checkpoint-78/model-00004-of-00004.safetensors"
+  },
+  "tokenizer.json": {
+   "sha256": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa",
+   "size": 11421896,
+   "mtime": 1781822167.0,
+   "inode": 650571675379218862,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_rmu_from_tofufull_selectionproxy_savebest/checkpoint-78/tokenizer.json"
+  },
+  "vocab.json": {
+   "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+   "size": 2776833,
+   "mtime": 1781822167.0,
+   "inode": 15529677586122148283,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_rmu_from_tofufull_selectionproxy_savebest/checkpoint-78/vocab.json"
+  },
+  "merges.txt": {
+   "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+   "size": 1671853,
+   "mtime": 1781822167.0,
+   "inode": 3448741624099168733,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_rmu_from_tofufull_selectionproxy_savebest/checkpoint-78/merges.txt"
+  },
+  "model.safetensors.index.json": {
+   "sha256": "998a078123ffc97763690de7f2a677eb89168af5eaf8a5e12e6bc24d18e25bdb",
+   "size": 27752,
+   "mtime": 1781822167.0,
+   "inode": 15404557544187212765,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_rmu_from_tofufull_selectionproxy_savebest/checkpoint-78/model.safetensors.index.json"
+  },
+  "trainer_state.json": {
+   "sha256": "c671dd62c8187622c19fd6938544d8b2939f944339575efe0565d0af73893d8a",
+   "size": 9560,
+   "mtime": 1781822167.0,
+   "inode": 6936619095809599351,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_rmu_from_tofufull_selectionproxy_savebest/checkpoint-78/trainer_state.json"
+  },
+  "tokenizer_config.json": {
+   "sha256": "57fea41fa99fce34f91450643e48b3bfbb078c32c6831a3c06834f122c200510",
+   "size": 7336,
+   "mtime": 1781822167.0,
+   "inode": 2105461884504013239,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_rmu_from_tofufull_selectionproxy_savebest/checkpoint-78/tokenizer_config.json"
+  },
+  "training_args.bin": {
+   "sha256": "d3d0b53d700da3ab7f28b149bb2359b0bcc5ce23d388a19b181f45b7169050ed",
+   "size": 5432,
+   "mtime": 1781822167.0,
+   "inode": 15862052659390020318,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_rmu_from_tofufull_selectionproxy_savebest/checkpoint-78/training_args.bin"
+  },
+  "config.json": {
+   "sha256": "c10b35d48319d02617f103eaf08200239fc378fe973490e4a2b69c570e6a1396",
+   "size": 687,
+   "mtime": 1781822138.0,
+   "inode": 2429822264167023900,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_rmu_from_tofufull_selectionproxy_savebest/checkpoint-78/config.json"
+  },
+  "special_tokens_map.json": {
+   "sha256": "76862e765266b85aa9459767e33cbaf13970f327a0e88d1c65846c2ddd3a1ecd",
+   "size": 613,
+   "mtime": 1781822167.0,
+   "inode": 285644652007420072,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_rmu_from_tofufull_selectionproxy_savebest/checkpoint-78/special_tokens_map.json"
+  },
+  "added_tokens.json": {
+   "sha256": "58b54bbe36fc752f79a24a271ef66a0a0830054b4dfad94bde757d851968060b",
+   "size": 605,
+   "mtime": 1781822167.0,
+   "inode": 9244089103243772368,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_rmu_from_tofufull_selectionproxy_savebest/checkpoint-78/added_tokens.json"
+  },
+  "generation_config.json": {
+   "sha256": "80b8ec6e7991b64763e4ff29b59a9cd2968b390d0736e0dc586585da04bad013",
+   "size": 243,
+   "mtime": 1781822138.0,
+   "inode": 18008378041276681537,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_rmu_from_tofufull_selectionproxy_savebest/checkpoint-78/generation_config.json"
+  }
+ },
+ "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_rmu_from_tofufull_selectionproxy_savebest/checkpoint-120": {
+  "model-00002-of-00004.safetensors": {
+   "sha256": "63719a31c45a8566e026222836b07f14af59d755d962058b3c285964d0009bf9",
+   "size": 4932751008,
+   "mtime": 1781823953.0,
+   "inode": 15073905120633530830,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_rmu_from_tofufull_selectionproxy_savebest/checkpoint-120/model-00002-of-00004.safetensors"
+  },
+  "model-00001-of-00004.safetensors": {
+   "sha256": "32f8c3d20a94f4091c465e171809440e4df39bbdd6f873c26836cb7e5ab75a79",
+   "size": 4877660776,
+   "mtime": 1781823946.0,
+   "inode": 15950406299606773277,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_rmu_from_tofufull_selectionproxy_savebest/checkpoint-120/model-00001-of-00004.safetensors"
+  },
+  "model-00003-of-00004.safetensors": {
+   "sha256": "9e2e364b20bba84e75774b5b17e25a82ce8127959ad4e75cdc3513783a50069e",
+   "size": 4330865200,
+   "mtime": 1781823958.0,
+   "inode": 6851651255592252314,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_rmu_from_tofufull_selectionproxy_savebest/checkpoint-120/model-00003-of-00004.safetensors"
+  },
+  "model-00004-of-00004.safetensors": {
+   "sha256": "98f7b1396180ae2403ca8fd1bf31e38c6390f6b99cb2d3440b53aa58f06d03e7",
+   "size": 1089994880,
+   "mtime": 1781823959.0,
+   "inode": 6420578201978863433,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_rmu_from_tofufull_selectionproxy_savebest/checkpoint-120/model-00004-of-00004.safetensors"
+  },
+  "tokenizer.json": {
+   "sha256": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa",
+   "size": 11421896,
+   "mtime": 1781823959.0,
+   "inode": 12897628115898930807,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_rmu_from_tofufull_selectionproxy_savebest/checkpoint-120/tokenizer.json"
+  },
+  "vocab.json": {
+   "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+   "size": 2776833,
+   "mtime": 1781823959.0,
+   "inode": 2202508349385485657,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_rmu_from_tofufull_selectionproxy_savebest/checkpoint-120/vocab.json"
+  },
+  "merges.txt": {
+   "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+   "size": 1671853,
+   "mtime": 1781823959.0,
+   "inode": 262408985547837298,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_rmu_from_tofufull_selectionproxy_savebest/checkpoint-120/merges.txt"
+  },
+  "model.safetensors.index.json": {
+   "sha256": "998a078123ffc97763690de7f2a677eb89168af5eaf8a5e12e6bc24d18e25bdb",
+   "size": 27752,
+   "mtime": 1781823959.0,
+   "inode": 17689010949899648521,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_rmu_from_tofufull_selectionproxy_savebest/checkpoint-120/model.safetensors.index.json"
+  },
+  "trainer_state.json": {
+   "sha256": "9bf32e1af4283e55aad1031fe50dba9309458a3ee375b17c03a5162f93f4dbd3",
+   "size": 14197,
+   "mtime": 1781823959.0,
+   "inode": 12281158484189887764,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_rmu_from_tofufull_selectionproxy_savebest/checkpoint-120/trainer_state.json"
+  },
+  "tokenizer_config.json": {
+   "sha256": "57fea41fa99fce34f91450643e48b3bfbb078c32c6831a3c06834f122c200510",
+   "size": 7336,
+   "mtime": 1781823959.0,
+   "inode": 9218752693851653601,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_rmu_from_tofufull_selectionproxy_savebest/checkpoint-120/tokenizer_config.json"
+  },
+  "training_args.bin": {
+   "sha256": "d3d0b53d700da3ab7f28b149bb2359b0bcc5ce23d388a19b181f45b7169050ed",
+   "size": 5432,
+   "mtime": 1781823959.0,
+   "inode": 752285470531011911,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_rmu_from_tofufull_selectionproxy_savebest/checkpoint-120/training_args.bin"
+  },
+  "config.json": {
+   "sha256": "c10b35d48319d02617f103eaf08200239fc378fe973490e4a2b69c570e6a1396",
+   "size": 687,
+   "mtime": 1781823941.0,
+   "inode": 14385542050259501703,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_rmu_from_tofufull_selectionproxy_savebest/checkpoint-120/config.json"
+  },
+  "special_tokens_map.json": {
+   "sha256": "76862e765266b85aa9459767e33cbaf13970f327a0e88d1c65846c2ddd3a1ecd",
+   "size": 613,
+   "mtime": 1781823959.0,
+   "inode": 5697708593135630744,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_rmu_from_tofufull_selectionproxy_savebest/checkpoint-120/special_tokens_map.json"
+  },
+  "added_tokens.json": {
+   "sha256": "58b54bbe36fc752f79a24a271ef66a0a0830054b4dfad94bde757d851968060b",
+   "size": 605,
+   "mtime": 1781823959.0,
+   "inode": 41570980080250267,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_rmu_from_tofufull_selectionproxy_savebest/checkpoint-120/added_tokens.json"
+  },
+  "generation_config.json": {
+   "sha256": "80b8ec6e7991b64763e4ff29b59a9cd2968b390d0736e0dc586585da04bad013",
+   "size": 243,
+   "mtime": 1781823941.0,
+   "inode": 11460249900290079994,
+   "islink": false,
+   "realpath": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/proper_qwen25_7b_rmu_from_tofufull_selectionproxy_savebest/checkpoint-120/generation_config.json"
+  }
+ }
+}

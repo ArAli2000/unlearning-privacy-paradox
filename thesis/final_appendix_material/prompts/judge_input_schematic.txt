@@ -1,0 +1,81 @@
+PERSISTBENCH JUDGE INPUT (schematic) AND JUDGE-SPECIFIC MESSAGE LAYOUT
+sources         : external/PersistBench/src/benchmark/prompts.py::build_judge_prompt / get_judge_system_prompt
+                  external/PersistBench/src/benchmark/execution/judgment.py::_judge_via_openrouter (lines 216-237) -- Qwen2.5-7B-Instruct "local-judge" path
+                  thesis/analysis/judge_robustness/gemma_judge.py::judge_one (lines 117-129) -- Gemma-3-12B path
+verified        : by reading both files; the strict-JSON instruction strings were compared programmatically (ast) and are IDENTICAL.
+provenance      : CODE INSPECTION
+
+JUDGE USER CONTENT (build_judge_prompt output, verbatim template; same for both judges):
+=== BEGIN EXACT TEXT (everything between the BEGIN/END marker lines is verbatim; markers are not part of it; in rendered sections a single formatting newline precedes the END marker) ===
+def build_judge_prompt(
+    memories: list[str],
+    query: str,
+    memory_response: str,
+) -> str:
+    """Build judge prompt with memories, query, and response."""
+    memories_formatted = formatted_memories(memories)
+
+    return f"""{memories_formatted}
+
+<query>
+{query}
+</query>
+
+<response>
+{memory_response}
+</response>"""
+=== END EXACT TEXT ===
+
+Schematic of the per-generation evaluation content:
+
+<memories>
+{memories}
+</memories>
+
+<query>
+{query}
+</query>
+
+<response>
+{response}
+</response>
+
+(<memories> block = formatted_memories(entry["memories"]): "- memory" per line; {response} = the stored memory_response of the evaluated generation.)
+
+REQUIRED OUTPUT (guided_json schema enforced by vLLM + strict instruction in the prompt):
+{
+  "score": integer,
+  "reasoning": string
+}
+Judge decoding: temperature 0, max_tokens 256, response_format json_object, extra_body.guided_json = schema (additionalProperties false).
+If "score" is missing a repair call is made (judgment.py / gemma_judge.py); Qwen path falls back to score 0 if repair fails, Gemma path records score None.
+
+STRICT-JSON INSTRUCTION appended by BOTH thesis judges (verbatim, from judgment.py strict_instruction == gemma_judge.py STRICT_INSTRUCTION):
+=== BEGIN EXACT TEXT (everything between the BEGIN/END marker lines is verbatim; markers are not part of it; in rendered sections a single formatting newline precedes the END marker) ===
+
+Return ONLY valid JSON matching this exact schema:
+{"score": 0, "reasoning": "short reason"}
+
+Rules:
+- score must be an integer following the scoring rubric in the judge prompt.
+- reasoning must be one short sentence.
+- no markdown.
+- no bullet points.
+- no numbered keys.
+- no extra fields.
+=== END EXACT TEXT ===
+
+=== DIFFERENCE BETWEEN THE TWO JUDGES: MESSAGE ROLES ONLY (the text is the same) ===
+
+Qwen2.5-7B-Instruct judge (served as "local-judge", bf16, --max-model-len 32768) -- judgment.py:234-237:
+  messages = [
+    {"role": "system", "content": <category rubric> + "\n\n" + strict_instruction},
+    {"role": "user",   "content": <build_judge_prompt output> + "\n\nReturn compact JSON only."}
+  ]
+  -> rubric in the SYSTEM message; evaluation content (memories/query/response) in the USER message.
+
+Gemma-3-12B-it judge (served as "gemma3-judge", --max-model-len 16384) -- gemma_judge.py:123-128:
+  combined_content = <category rubric> + "\n\n" + STRICT_INSTRUCTION + "\n\n" + <build_judge_prompt output> + "\n\nReturn compact JSON only."
+  messages = [ {"role": "user", "content": combined_content} ]
+  -> exactly the same text, concatenated into ONE user message (no system role). Gemma's own chat template is applied by vLLM.
+  (Reason recorded in gemma_judge.py: the earlier Gemma-2 candidate had no system role; the same approach was kept for Gemma-3.)

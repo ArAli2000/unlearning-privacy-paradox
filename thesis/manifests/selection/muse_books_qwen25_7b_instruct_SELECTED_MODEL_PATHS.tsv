@@ -1,0 +1,6 @@
+method	model_path	best_metric
+before	saves/finetune/muse_books_qwen25_7b_instruct_target	
+RMU	saves/unlearn/muse_books_qwen25_7b_instruct_rmu/checkpoint-102	0.5730875977441042
+WGA	saves/unlearn/muse_books_qwen25_7b_instruct_wga/checkpoint-102	0.441373161823847
+SIMNPO	saves/unlearn/muse_books_qwen25_7b_instruct_simnpo/checkpoint-51	0.42173269999477636
+SATIMP	saves/unlearn/muse_books_qwen25_7b_instruct_satimp/checkpoint-51	0.419866764546087

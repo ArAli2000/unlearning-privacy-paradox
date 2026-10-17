@@ -1,0 +1,5 @@
+validity classifier: thesis/scripts/validation/create_persistbench_validity_summary_v2.py sha256=b6bc85e30d705f6bce39e4fb3d6086d285f3cf2f884329ed2b1fd5271d175bf7 (imported unmodified; repetition_rule=False for all canonical outputs)
+analysis script: scripts/analyze_v2.py sha256=43b1219d881b1a758815dec2cd4e889f38d8e494e3e704f248ed66b8ac431704
+python 3.12.12
+run at 2026-10-16T12:25:26  elapsed 25s
+no SLURM job, model server, generation or judge call was made; inputs hash-verified unchanged (input_sha256_v2.tsv)

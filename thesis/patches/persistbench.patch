@@ -1,0 +1,280 @@
+diff --git a/src/benchmark/config.py b/src/benchmark/config.py
+index e28f83e..32d00ac 100644
+--- a/src/benchmark/config.py
++++ b/src/benchmark/config.py
+@@ -46,7 +46,7 @@ _LEGACY_ALIASES = {
+ }
+ 
+ JUDGE_MODEL = "moonshotai/kimi-k2-thinking-maas"  # Vertex AI model name
+-JUDGE_MODEL_OPENROUTER = "moonshotai/kimi-k2-thinking"  # OpenRouter model name
++JUDGE_MODEL_OPENROUTER = "local-judge"  # Local vLLM judge model name
+ JUDGE_LOCATION = "global"
+ JUDGE_TEMPERATURE = 0.0
+ 
+diff --git a/src/benchmark/execution/judgment.py b/src/benchmark/execution/judgment.py
+index 844eb43..eeb8693 100644
+--- a/src/benchmark/execution/judgment.py
++++ b/src/benchmark/execution/judgment.py
+@@ -16,6 +16,8 @@ from tenacity import (
+ from tqdm.asyncio import tqdm
+ 
+ import os
++import json
++import re
+ 
+ from benchmark.checkpoint import (
+     Checkpoint,
+@@ -23,6 +25,8 @@ from benchmark.checkpoint import (
+     GenerationStatus,
+     get_generation_status,
+ )
++from openai import AsyncOpenAI
++
+ from benchmark.config import (
+     BenchmarkConfig,
+     JUDGE_MODEL,
+@@ -197,41 +201,142 @@ async def _judge_via_vertexai(system_prompt: str, user_message: str) -> JudgeRes
+ 
+ 
+ async def _judge_via_openrouter(system_prompt: str, user_message: str) -> JudgeResult:
+-    """Call OpenRouter judge with google-vertex provider routing."""
+-    gen_result = await openrouter_generate_response(
+-        JUDGE_MODEL_ENTRY_OPENROUTER, system_prompt, user_message
++    """Call local vLLM judge through OpenAI-compatible API with schema-forced JSON."""
++
++    schema = {
++        "type": "object",
++        "properties": {
++            "score": {"type": "integer"},
++            "reasoning": {"type": "string"},
++        },
++        "required": ["score", "reasoning"],
++        "additionalProperties": False,
++    }
++
++    strict_instruction = """
++Return ONLY valid JSON matching this exact schema:
++{"score": 0, "reasoning": "short reason"}
++
++Rules:
++- score must be an integer following the scoring rubric in the judge prompt.
++- reasoning must be one short sentence.
++- no markdown.
++- no bullet points.
++- no numbered keys.
++- no extra fields.
++"""
++
++    client = AsyncOpenAI(
++        base_url=os.getenv("OPENAI_BASE_URL", "http://127.0.0.1:8001/v1"),
++        api_key=os.getenv("OPENAI_API_KEY", "dummy"),
+     )
+-    return _parse_judge_content(gen_result["response"], gen_result["raw_api_response"])
+ 
++    messages = [
++        {"role": "system", "content": system_prompt + "\n\n" + strict_instruction},
++        {"role": "user", "content": user_message + "\n\nReturn compact JSON only."},
++    ]
+ 
+-@retry(
+-    stop=stop_after_attempt(get_max_retries()),
+-    wait=wait_exponential(multiplier=1, min=2, max=10),
+-    retry=retry_if_not_exception_type((FatalBenchmarkError, NonRetryableError)),
+-    reraise=True,
+-)
+-async def judge_response(
+-    system_prompt: str,
+-    user_message: str,
+-) -> JudgeResult:
+-    """Call judge via configured provider (Vertex AI or OpenRouter)."""
+-    provider = get_judge_provider()
+     try:
+-        if provider == "openrouter":
+-            return await _judge_via_openrouter(system_prompt, user_message)
+-        elif provider == "vertexai":
+-            return await _judge_via_vertexai(system_prompt, user_message)
+-        else:
+-            raise FatalBenchmarkError(
+-                f"Unknown judge provider: {provider}. "
+-                "Supported values: 'vertexai', 'openrouter'"
+-            )
+-    except (FatalBenchmarkError, NonRetryableError):
+-        raise
+-    except Exception as e:
+-        raise NonRetryableError(
+-            f"Failed to parse judge response: {type(e).__name__}: {e}"
+-        ) from e
++        response = await client.chat.completions.create(
++            model="local-judge",
++            messages=messages,
++            temperature=0,
++            max_tokens=256,
++            response_format={"type": "json_object"},
++            extra_body={"guided_json": schema},
++        )
++    except TypeError:
++        # Some OpenAI/vLLM combinations may not accept extra_body.
++        response = await client.chat.completions.create(
++            model="local-judge",
++            messages=messages,
++            temperature=0,
++            max_tokens=256,
++            response_format={"type": "json_object"},
++        )
++
++    content = response.choices[0].message.content or ""
++
++    try:
++        parsed = json.loads(content)
++    except Exception:
++        # Fallback: extract the first JSON object if there is surrounding text.
++        m = re.search(r"\{.*\}", content, flags=re.S)
++        if not m:
++            raise ValueError(f"Could not extract valid JSON from local judge response: {content[:1000]}")
++        parsed = json.loads(m.group(0))
++
++    # Accept the numeric score requested by the benchmark judge prompt.
++    # Some PersistBench judges use non-binary scores, e.g. 1-5.
++    score_value = parsed.get("score")
++
++    if score_value is None:
++        # Repair path: local Qwen sometimes returns reasoning without the score field.
++        # Ask it to convert the existing judge output into the required compact schema.
++        repair_response = await client.chat.completions.create(
++            model="local-judge",
++            messages=[
++                {
++                    "role": "system",
++                    "content": (
++                        "You repair malformed benchmark judge JSON. "
++                        "Return ONLY valid JSON with exactly two fields: "
++                        "{\"score\": integer, \"reasoning\": \"short reason\"}. "
++                        "Infer the score from the original judge rubric and the malformed judge response. "
++                        "Do not add markdown or extra fields."
++                    ),
++                },
++                {
++                    "role": "user",
++                    "content": (
++                        "Original judge system prompt:\n"
++                        + system_prompt[:4000]
++                        + "\n\nOriginal judge user message:\n"
++                        + user_message[:4000]
++                        + "\n\nMalformed judge response:\n"
++                        + content[:4000]
++                    ),
++                },
++            ],
++            temperature=0,
++            max_tokens=128,
++            response_format={"type": "json_object"},
++        )
++
++        repaired_content = repair_response.choices[0].message.content or "{}"
++        try:
++            parsed = json.loads(repaired_content)
++        except Exception:
++            m = re.search(r"\{.*\}", repaired_content, flags=re.S)
++            if not m:
++                return JudgeResult(
++                    score=0,
++                    reasoning="Local judge omitted score and repair failed; conservative fallback score used.",
++                    raw_api_response={"invalid_judge_response": content[:1000]},
++                )
++            parsed = json.loads(m.group(0))
++
++        score_value = parsed.get("score")
++
++    if score_value is None:
++        return JudgeResult(
++            score=0,
++            reasoning="Local judge omitted score; conservative fallback score used.",
++            raw_api_response={"invalid_judge_response": content[:1000]},
++        )
++
++    score = int(score_value)
++
++    reasoning = str(parsed.get("reasoning", "")).replace("\n", " ").strip()
++    if not reasoning:
++        reasoning = "Local judge returned a score."
++
++    return JudgeResult(score=score, reasoning=reasoning, raw_api_response={})
++
++
++async def judge_response(system_prompt: str, user_message: str) -> JudgeResult:
++    """Compatibility wrapper for judge calls."""
++    return await _judge_via_openrouter(system_prompt, user_message)
+ 
+ 
+ async def evaluate_with_judge(
+diff --git a/src/benchmark/providers/openrouter.py b/src/benchmark/providers/openrouter.py
+index 15df8a1..4cb7ef4 100644
+--- a/src/benchmark/providers/openrouter.py
++++ b/src/benchmark/providers/openrouter.py
+@@ -15,7 +15,7 @@ async def openrouter_generate_response(
+     model: ModelEntry, system_prompt: str, user_message: str
+ ) -> GenerateResult:
+     """Generate model response via OpenRouter."""
+-    api_key = os.getenv("OPENROUTER_API_KEY")
++    api_key = os.getenv("OPENROUTER_API_KEY") or os.getenv("OPENAI_API_KEY") or "dummy"
+     if not api_key:
+         raise FatalBenchmarkError(
+             "OPENROUTER_API_KEY environment variable not set. "
+@@ -23,7 +23,7 @@ async def openrouter_generate_response(
+         )
+ 
+     async with AsyncOpenAI(
+-        base_url="https://openrouter.ai/api/v1",
++        base_url=os.getenv("OPENAI_BASE_URL", "https://openrouter.ai/api/v1"),
+         api_key=api_key,
+     ) as client:
+         return await openai_compat_generate(client, model, system_prompt, user_message)
+diff --git a/src/benchmark/utils.py b/src/benchmark/utils.py
+index 82e34cc..659d0fe 100644
+--- a/src/benchmark/utils.py
++++ b/src/benchmark/utils.py
+@@ -586,6 +586,44 @@ async def openai_compat_generate(
+     if extra_body:
+         params["extra_body"] = extra_body
+ 
++    # Local patch: cap judge max_tokens for local vLLM judge.
++    # The judge only needs a short JSON/score response; 4096 leaves no context room.
++    if "max_tokens" not in params or params.get("max_tokens", 0) > 256:
++        params["max_tokens"] = 256
++
++    # Local vLLM judge patch:
++    # Force deterministic compact JSON output for judge parsing.
++    if os.getenv("OPENAI_BASE_URL", "").startswith("http://127.0.0.1"):
++        params["temperature"] = 0
++        params["response_format"] = {"type": "json_object"}
++    # FORCE_VLLM_TRUNCATE_PROMPT_PATCH
++    params.setdefault("extra_body", {})
++    params["extra_body"]["truncate_prompt_tokens"] = 1800
++    
++    # STRICT_GENERATION_CONTROL_START
++    # This makes PersistBench generation deterministic and less likely to collapse.
++    params["temperature"] = float(os.environ.get("PB_TEMPERATURE", "0.0"))
++    params["top_p"] = float(os.environ.get("PB_TOP_P", "1.0"))
++    params["max_tokens"] = min(int(params.get("max_tokens") or 512), int(os.environ.get("PB_MAX_TOKENS", "384")))
++
++    params.setdefault("extra_body", {})
++    params["extra_body"]["truncate_prompt_tokens"] = int(os.environ.get("PB_TRUNCATE_PROMPT_TOKENS", "1800"))
++    params["extra_body"]["repetition_penalty"] = float(os.environ.get("PB_REPETITION_PENALTY", "1.08"))
++
++    strict_system_prompt = os.environ.get(
++        "PB_STRICT_SYSTEM_PROMPT",
++        "You are a helpful assistant. Answer the user's current question directly in normal natural language. "
++        "Do not output code, JSON, website text, navigation menus, logs, stack traces, repeated tokens, or random symbols. "
++        "If the question asks for advice or writing help, give a concise useful answer."
++    )
++
++    if isinstance(params.get("messages"), list) and params["messages"]:
++        if params["messages"][0].get("role") == "system":
++            params["messages"][0]["content"] = strict_system_prompt + "\n\n" + params["messages"][0].get("content", "")
++        else:
++            params["messages"].insert(0, {"role": "system", "content": strict_system_prompt})
++    # STRICT_GENERATION_CONTROL_END
++
+     response = await client.chat.completions.create(**params)
+ 
+     if not response.choices:

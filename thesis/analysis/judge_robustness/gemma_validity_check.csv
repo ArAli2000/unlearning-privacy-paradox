@@ -1,0 +1,6 @@
+dataset,model,method,n,valid,invalid,validity_pct,main_invalidity_type
+MUSE-Books,Llama-2-7B,BASE,200,200,0,100.0,
+MUSE-Books,Llama-2-7B,WGA,200,0,200,0.0,gibberish_or_generation_collapse
+MUSE-Books,Llama-2-7B,SatImp,200,199,1,99.5,gibberish_or_generation_collapse
+MUSE-Books,Qwen2.5-7B-Instruct,BASE,200,200,0,100.0,
+MUSE-Books,Qwen2.5-7B-Instruct,SatImp,200,200,0,100.0,

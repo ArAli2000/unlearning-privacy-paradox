@@ -1,0 +1,42 @@
+artifact	category	n scenarios	expected	comparison	identical?	file	unique ids
+benchmark input	cross_domain	200	200	full_benchmark.jsonl subset identical (ids + order)	YES	cross_domain	200
+benchmark input	sycophancy	200	200	full_benchmark.jsonl subset identical (ids + order)	YES	sycophancy	200
+benchmark input	beneficial_memory_usage	100	100	full_benchmark.jsonl subset identical (ids + order)	YES	beneficial_memory_usage	100
+MUSE-News original truncated / Target	cross_domain	200	200	ids + order vs per-category input	YES	muse_news_qwen25_before.json	200
+MUSE-News original truncated / Target	sycophancy	200	200	ids + order vs per-category input	YES	muse_news_qwen25_before.json	200
+MUSE-News original truncated / Target	beneficial_memory_usage	100	100	ids + order vs per-category input	YES	muse_news_qwen25_before.json	100
+MUSE-News original truncated / RMU	cross_domain	200	200	ids + order vs per-category input	YES	muse_news_qwen25_rmu.json	200
+MUSE-News original truncated / RMU	sycophancy	200	200	ids + order vs per-category input	YES	muse_news_qwen25_rmu.json	200
+MUSE-News original truncated / RMU	beneficial_memory_usage	100	100	ids + order vs per-category input	YES	muse_news_qwen25_rmu.json	100
+MUSE-News original truncated / WGA	cross_domain	200	200	ids + order vs per-category input	YES	muse_news_qwen25_wga.json	200
+MUSE-News original truncated / WGA	sycophancy	200	200	ids + order vs per-category input	YES	muse_news_qwen25_wga.json	200
+MUSE-News original truncated / WGA	beneficial_memory_usage	100	100	ids + order vs per-category input	YES	muse_news_qwen25_wga.json	100
+MUSE-News original truncated / SatImp	cross_domain	200	200	ids + order vs per-category input	YES	muse_news_qwen25_satimp.json	200
+MUSE-News original truncated / SatImp	sycophancy	200	200	ids + order vs per-category input	YES	muse_news_qwen25_satimp.json	200
+MUSE-News original truncated / SatImp	beneficial_memory_usage	100	100	ids + order vs per-category input	YES	muse_news_qwen25_satimp.json	100
+MUSE-News original truncated / SimNPO	cross_domain	200	200	ids + order vs per-category input	YES	muse_news_qwen25_simnpo.json	200
+MUSE-News original truncated / SimNPO	sycophancy	200	200	ids + order vs per-category input	YES	muse_news_qwen25_simnpo.json	200
+MUSE-News original truncated / SimNPO	beneficial_memory_usage	100	100	ids + order vs per-category input	YES	muse_news_qwen25_simnpo.json	100
+MUSE-Books original truncated / Target	cross_domain	200	200	ids + order vs per-category input	YES	muse_books_qwen25_before.json	200
+MUSE-Books original truncated / Target	sycophancy	200	200	ids + order vs per-category input	YES	muse_books_qwen25_before.json	200
+MUSE-Books original truncated / Target	beneficial_memory_usage	100	100	ids + order vs per-category input	YES	muse_books_qwen25_before.json	100
+MUSE-Books original truncated / RMU	cross_domain	200	200	ids + order vs per-category input	YES	muse_books_qwen25_rmu.json	200
+MUSE-Books original truncated / RMU	sycophancy	200	200	ids + order vs per-category input	YES	muse_books_qwen25_rmu.json	200
+MUSE-Books original truncated / RMU	beneficial_memory_usage	100	100	ids + order vs per-category input	YES	muse_books_qwen25_rmu.json	100
+MUSE-Books original truncated / WGA	cross_domain	200	200	ids + order vs per-category input	YES	muse_books_qwen25_wga.json	200
+MUSE-Books original truncated / WGA	sycophancy	200	200	ids + order vs per-category input	YES	muse_books_qwen25_wga.json	200
+MUSE-Books original truncated / WGA	beneficial_memory_usage	100	100	ids + order vs per-category input	YES	muse_books_qwen25_wga.json	100
+MUSE-Books original truncated / SatImp	cross_domain	200	200	ids + order vs per-category input	YES	muse_books_qwen25_satimp.json	200
+MUSE-Books original truncated / SatImp	sycophancy	200	200	ids + order vs per-category input	YES	muse_books_qwen25_satimp.json	200
+MUSE-Books original truncated / SatImp	beneficial_memory_usage	100	100	ids + order vs per-category input	YES	muse_books_qwen25_satimp.json	100
+MUSE-Books original truncated / SimNPO	cross_domain	200	200	ids + order vs per-category input	YES	muse_books_qwen25_simnpo.json	200
+MUSE-Books original truncated / SimNPO	sycophancy	200	200	ids + order vs per-category input	YES	muse_books_qwen25_simnpo.json	200
+MUSE-Books original truncated / SimNPO	beneficial_memory_usage	100	100	ids + order vs per-category input	YES	muse_books_qwen25_simnpo.json	100
+MUSE-News existing full-prompt / Target	sycophancy	200	200	ids + order vs per-category input	YES	muse_news_qwen25_before_fullprompt.json	200
+MUSE-News existing full-prompt / RMU	sycophancy	200	200	ids + order vs per-category input	YES	muse_news_qwen25_rmu_fullprompt.json	200
+MUSE-News existing full-prompt / SatImp	sycophancy	200	200	ids + order vs per-category input	YES	muse_news_qwen25_satimp_fullprompt.json	200
+MUSE-News existing full-prompt / SimNPO	sycophancy	200	200	ids + order vs per-category input	YES	muse_news_qwen25_simnpo_fullprompt.json	200
+MUSE-News existing full-prompt / Target	cross_domain	200	200	ids + order vs per-category input	YES	muse_news_qwen25_before_fullprompt_crossdomain.json	200
+MUSE-News existing full-prompt / RMU	cross_domain	200	200	ids + order vs per-category input	YES	muse_news_qwen25_rmu_fullprompt_crossdomain.json	200
+MUSE-News existing full-prompt / SatImp	cross_domain	200	200	ids + order vs per-category input	YES	muse_news_qwen25_satimp_fullprompt_crossdomain.json	200
+MUSE-News existing full-prompt / SimNPO	cross_domain	200	200	ids + order vs per-category input	YES	muse_news_qwen25_simnpo_fullprompt_crossdomain.json	200

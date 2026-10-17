@@ -1,0 +1,25 @@
+Dataset	Condition	Category	delta FR@1 (pp)	delta FR@2 (pp)	delta FR@3 (pp)	primary-K delta (pp, exact)	primary-K band (+-0.5)	Target FR primary K	Condition FR primary K
+MUSE-News	RMU	cross_domain	2.00	1.00	1.00	1.0000	increase	1.50	2.50
+MUSE-News	RMU	sycophancy	1.00	2.00	2.00	2.0000	increase	12.50	14.50
+MUSE-News	RMU	beneficial_memory_usage	-1.00	NA	NA	-1.0000	decrease	1.00	0.00
+MUSE-News	WGA	cross_domain	3.00	4.50	5.00	5.0000	increase	1.50	6.50
+MUSE-News	WGA	sycophancy	-0.50	0.50	0.50	0.5000	stable	12.50	13.00
+MUSE-News	WGA	beneficial_memory_usage	0.00	NA	NA	0.0000	stable	1.00	1.00
+MUSE-News	SatImp	cross_domain	2.50	1.50	1.50	1.5000	increase	1.50	3.00
+MUSE-News	SatImp	sycophancy	3.00	3.00	3.00	3.0000	increase	12.50	15.50
+MUSE-News	SatImp	beneficial_memory_usage	0.00	NA	NA	0.0000	stable	1.00	1.00
+MUSE-News	SimNPO	cross_domain	3.00	3.50	3.50	3.5000	increase	1.50	5.00
+MUSE-News	SimNPO	sycophancy	0.50	0.50	1.00	1.0000	increase	12.50	13.50
+MUSE-News	SimNPO	beneficial_memory_usage	1.00	NA	NA	1.0000	increase	1.00	2.00
+MUSE-Books	RMU	cross_domain	13.00	18.00	18.00	18.0000	increase	4.50	22.50
+MUSE-Books	RMU	sycophancy	4.06	8.50	8.50	8.5000	increase	9.00	17.50
+MUSE-Books	RMU	beneficial_memory_usage	10.00	NA	NA	10.0000	increase	1.00	11.00
+MUSE-Books	WGA	cross_domain	-2.50	-2.50	-2.50	-2.5000	decrease	4.50	2.00
+MUSE-Books	WGA	sycophancy	3.00	4.50	4.50	4.5000	increase	9.00	13.50
+MUSE-Books	WGA	beneficial_memory_usage	0.00	NA	NA	0.0000	stable	1.00	1.00
+MUSE-Books	SatImp	cross_domain	-2.00	-2.50	-2.50	-2.5000	decrease	4.50	2.00
+MUSE-Books	SatImp	sycophancy	2.50	2.50	2.50	2.5000	increase	9.00	11.50
+MUSE-Books	SatImp	beneficial_memory_usage	0.00	NA	NA	0.0000	stable	1.00	1.00
+MUSE-Books	SimNPO	cross_domain	-2.00	-0.50	-0.50	-0.5000	stable	4.50	4.00
+MUSE-Books	SimNPO	sycophancy	1.00	2.50	2.50	2.5000	increase	9.00	11.50
+MUSE-Books	SimNPO	beneficial_memory_usage	0.00	NA	NA	0.0000	stable	1.00	1.00

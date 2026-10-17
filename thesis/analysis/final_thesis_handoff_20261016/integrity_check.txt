@@ -1,0 +1,57 @@
+FINAL INTEGRITY CHECK  (32 of 32 checks passed)
+
+PASS  manifest has 30 cells, each (dataset, condition, category) exactly once
+PASS  full-prompt per-generation table covers 30 cells exactly
+PASS  total full-prompt generations = 13,000
+        13000
+PASS  8,200 new + 4,800 reused = 13,000
+        {'existing (reused)': 4800, 'new (this completion)': 8200}
+PASS  every cell has expected scenarios and generations per scenario
+PASS  judge score present for every one of the 13,000 generations
+PASS  manifest source files are full-prompt artifacts (none from truncated/replication/selected_full dirs)
+PASS  manifest SHA-256 of every cell file unchanged since the analysis
+PASS  generation_completeness.tsv: 30/30 COMPLETE+JUDGED, 0 errors, 0 empty
+PASS  v2 classifier file is the frozen one used by both analyses (hash recorded in their provenance files)
+        b6bc85e30d705f6b
+PASS  fresh v2 (repetition_rule=OFF) classification of raw full-prompt JSON == stored labels, rules and judge scores
+        13000 generations, 0 mismatches
+PASS  fresh v2 classification of raw truncated Qwen JSON (original + replicated) == stored per-generation table
+        26000 generations, 0 mismatches
+PASS  truncated Qwen per-generation data complete: 2 runs x 2 datasets x 5 conditions x 1300
+PASS  recomputed full-prompt FR@K and N == frozen frk_fullprompt_v2.tsv (every available K)
+        70 values compared
+PASS  recomputed truncated (original, replication) Qwen FR@K and N == frozen v2 truncated analysis
+        140 values compared
+PASS  master table uses validity-aware FR (official/un-gated FR differs only in listed cells)
+        1 (cell,K) values differ: [('MUSE-Books', 'RMU', 'sycophancy', 1, '11.56', 199, '11.50', 200)]
+PASS  master table: 30 rows, each (dataset, condition, category) exactly once
+PASS  master table: generated_responses sum == 13,000; valid sum == 12,999
+        13000 / 12999
+PASS  paired tests: 24 comparisons (2 datasets x 4 methods x 3 categories)
+PASS  paired tests == frozen analysis (S->F, F->S, p)
+PASS  prompt-robustness table: 30 rows (24 with deltas)
+PASS  orig-vs-repl Qwen 3-gen scenario change reproduces frozen v2 value (198/4000)
+        198/4000
+PASS  validity: 12,999 / 13,000 valid overall, exactly 1 invalid generation
+        12999/13000; invalid at ('MUSE-Books', 'RMU', 'sycophancy')
+PASS  prompt inventory: 8 files copied, source and copy SHA-256 identical
+PASS  exact prompt files verified verbatim against source constants
+        privacylens_prompt_exact.txt: verified:; persistbench_generator_exact.txt: verified:; judge_cross_domain_exact.txt: verified:; judge_sycophancy_exact.txt: verified:; judge_beneficial_memory_exact.txt: verified:
+PASS  config inventory: every row carries one of the three status labels
+        72 rows
+PASS  checkpoints: derived from audited model_checkpoints.tsv (no selection change); every path exists now
+        30 rows; missing: []
+PASS  checkpoints: MUSE Qwen (News, Books) and Llama-2 Books selections equal the persistbench model-list manifests
+        []
+PASS  LaTeX snippets: balanced environments/braces and consistent column counts (7 tables)
+        []
+PASS  INFO v1 cross-check: old v1 appendix table differs from v2 in the listed News cells (handoff values come from the fresh v2 reclassification, verified in part 1)
+        4 v1-vs-v2 cell differences: [('sycophancy', 'RMU', 'v1 orig 18.09/N199 full 14.50/N200', 'v2 orig 18.00/N200 full 14.50/N200'), ('sycophancy', 'SatImp', 'v1 orig 17.00/N200 full 15.58/N199', 'v2 orig 17.00/N200 full 15.50/N200'), ('cross_domain', 'SatImp', 'v1 orig 3.00/N200 full 3.02/N199', 'v2 orig 3.00/N200 full 3.00/N200'), ('cross_domain', 'SimNPO', 'v1 orig 2.00/N200 full 5.03/N199', 'v2 orig 2.00/N200 full 5.00/N200')]
+PASS  master table carries v2 N for the cells where v1 had N=199 (News SatImp/SimNPO/RMU sycophancy: N=200)
+PASS  no experiment/job launched by the handoff scripts (squeue empty)
+
+v1 vs v2 differences in the old appendix_material full-prompt table (News):
+  ('sycophancy', 'RMU', 'v1 orig 18.09/N199 full 14.50/N200', 'v2 orig 18.00/N200 full 14.50/N200')
+  ('sycophancy', 'SatImp', 'v1 orig 17.00/N200 full 15.58/N199', 'v2 orig 17.00/N200 full 15.50/N200')
+  ('cross_domain', 'SatImp', 'v1 orig 3.00/N200 full 3.02/N199', 'v2 orig 3.00/N200 full 3.00/N200')
+  ('cross_domain', 'SimNPO', 'v1 orig 2.00/N200 full 5.03/N199', 'v2 orig 2.00/N200 full 5.00/N200')

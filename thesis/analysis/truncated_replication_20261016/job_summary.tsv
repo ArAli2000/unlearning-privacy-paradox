@@ -1,0 +1,5 @@
+setting	SLURM job ID	node	GPU (nvidia-smi)	GPU gres	state	exit code	elapsed	start	end	output path
+A_muse_news_qwen25	466261	lenny	NVIDIA H200 NVL, 143771 MiB, 590.48.01	h200nvl	COMPLETED	0:0	02:20:58	2026-10-16T04:46:54	2026-10-16T07:07:52	/mnt/beegfs/work/elshashay/open-unlearning/external/PersistBench/outputs/truncated_replication_20261016/muse_news_qwen25
+B_muse_books_qwen25	466262	nelson	NVIDIA H200 NVL, 143771 MiB, 590.48.01	h200nvl	COMPLETED	0:0	01:51:34	2026-10-16T04:47:24	2026-10-16T06:38:58	/mnt/beegfs/work/elshashay/open-unlearning/external/PersistBench/outputs/truncated_replication_20261016/muse_books_qwen25
+C_muse_news_llama2	466263	nelson	NVIDIA H200 NVL, 143771 MiB, 590.48.01	h200nvl	COMPLETED	0:0	02:20:10	2026-10-16T06:39:26	2026-10-16T08:59:36	/mnt/beegfs/work/elshashay/open-unlearning/external/PersistBench/outputs/truncated_replication_20261016/muse_news_llama2
+D_muse_books_llama2	466264	lenny	NVIDIA H200 NVL, 143771 MiB, 590.48.01	h200nvl	COMPLETED	0:0	02:20:02	2026-10-16T07:07:57	2026-10-16T09:27:59	/mnt/beegfs/work/elshashay/open-unlearning/external/PersistBench/outputs/truncated_replication_20261016/muse_books_llama2

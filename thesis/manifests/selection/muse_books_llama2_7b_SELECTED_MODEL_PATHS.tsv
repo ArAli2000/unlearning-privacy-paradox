@@ -1,0 +1,6 @@
+method	model_path	best_metric
+before	muse-bench/MUSE-Books_target	
+RMU	saves/unlearn/muse_books_llama2_7b_rmu/checkpoint-51	0.6692798391437592
+WGA	saves/unlearn/muse_books_llama2_7b_wga/checkpoint-357	0.5145708314413456
+SIMNPO	saves/unlearn/muse_books_llama2_7b_simnpo/checkpoint-408	0.6762440490902151
+SATIMP	saves/unlearn/muse_books_llama2_7b_satimp/checkpoint-153	0.3417519040854419

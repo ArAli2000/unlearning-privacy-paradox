@@ -1,0 +1,25 @@
+Dataset	Condition	Category	Original truncated delta (A100)	Replicated truncated delta (H200)	Full prompt delta (H200)
+MUSE-News	RMU	cross_domain	1.0000	3.5000	1.0000
+MUSE-News	WGA	cross_domain	2.0000	2.5000	5.0000
+MUSE-News	SatImp	cross_domain	-0.5000	-0.5000	1.5000
+MUSE-News	SimNPO	cross_domain	-1.5000	0.5000	3.5000
+MUSE-News	RMU	sycophancy	5.5000	2.5000	2.0000
+MUSE-News	WGA	sycophancy	0.5000	-2.5000	0.5000
+MUSE-News	SatImp	sycophancy	4.5000	2.5000	3.0000
+MUSE-News	SimNPO	sycophancy	2.5000	2.5000	1.0000
+MUSE-News	RMU	beneficial_memory_usage	-1.0000	-2.0000	-1.0000
+MUSE-News	WGA	beneficial_memory_usage	0.0000	-1.0000	0.0000
+MUSE-News	SatImp	beneficial_memory_usage	-1.0000	-1.0000	0.0000
+MUSE-News	SimNPO	beneficial_memory_usage	0.0000	-1.0000	1.0000
+MUSE-Books	RMU	cross_domain	13.5000	13.5000	18.0000
+MUSE-Books	WGA	cross_domain	-2.0000	-0.5000	-2.5000
+MUSE-Books	SatImp	cross_domain	-0.5000	1.5000	-2.5000
+MUSE-Books	SimNPO	cross_domain	0.0000	1.0000	-0.5000
+MUSE-Books	RMU	sycophancy	5.5000	0.0000	8.5000
+MUSE-Books	WGA	sycophancy	-0.5000	-3.0000	4.5000
+MUSE-Books	SatImp	sycophancy	-1.0000	-2.5000	2.5000
+MUSE-Books	SimNPO	sycophancy	-0.5000	-3.5000	2.5000
+MUSE-Books	RMU	beneficial_memory_usage	5.0606	6.0707	10.0000
+MUSE-Books	WGA	beneficial_memory_usage	-1.0000	-1.0000	0.0000
+MUSE-Books	SatImp	beneficial_memory_usage	1.0000	1.0000	0.0000
+MUSE-Books	SimNPO	beneficial_memory_usage	0.0000	0.0000	0.0000

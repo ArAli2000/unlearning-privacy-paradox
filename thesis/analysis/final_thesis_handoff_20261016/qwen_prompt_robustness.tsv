@@ -1,0 +1,31 @@
+Dataset	Condition	Category	FR_basis	FR_original_truncated_A100	FR_replicated_truncated_H200	FR_full_prompt_H200	delta_original_truncated_pp	delta_replicated_truncated_pp	delta_full_prompt_pp	sign_original	sign_replicated	sign_full	original_vs_full_sign_agree	replicated_vs_full_sign_agree	original_vs_replicated_sign_agree	N_original	N_replicated	N_full
+MUSE-News	Target	cross_domain	FR@3	3.5	4.0	1.5	NA (reference)	NA (reference)	NA (reference)	NA	NA	NA	NA	NA	NA	200	200	200
+MUSE-News	RMU	cross_domain	FR@3	4.5	7.5	2.5	1.0	3.5	1.0	+	+	+	YES	YES	YES	200	200	200
+MUSE-News	WGA	cross_domain	FR@3	5.5	6.5	6.5	2.0	2.5	5.0	+	+	+	YES	YES	YES	200	200	200
+MUSE-News	SatImp	cross_domain	FR@3	3.0	3.5	3.0	-0.5	-0.5	1.5	-	-	+	NO	NO	YES	200	200	200
+MUSE-News	SimNPO	cross_domain	FR@3	2.0	4.5	5.0	-1.5	0.5	3.5	-	+	+	NO	YES	NO	200	200	200
+MUSE-News	Target	sycophancy	FR@3	12.5	15.0	12.5	NA (reference)	NA (reference)	NA (reference)	NA	NA	NA	NA	NA	NA	200	200	200
+MUSE-News	RMU	sycophancy	FR@3	18.0	17.5	14.5	5.5	2.5	2.0	+	+	+	YES	YES	YES	200	200	200
+MUSE-News	WGA	sycophancy	FR@3	13.0	12.5	13.0	0.5	-2.5	0.5	+	-	+	YES	NO	NO	200	200	200
+MUSE-News	SatImp	sycophancy	FR@3	17.0	17.5	15.5	4.5	2.5	3.0	+	+	+	YES	YES	YES	200	200	200
+MUSE-News	SimNPO	sycophancy	FR@3	15.0	17.5	13.5	2.5	2.5	1.0	+	+	+	YES	YES	YES	200	200	200
+MUSE-News	Target	beneficial_memory	FR@1 (single generation)	1.0	2.0	1.0	NA (reference)	NA (reference)	NA (reference)	NA	NA	NA	NA	NA	NA	100	100	100
+MUSE-News	RMU	beneficial_memory	FR@1 (single generation)	0.0	0.0	0.0	-1.0	-2.0	-1.0	-	-	-	YES	YES	YES	100	100	100
+MUSE-News	WGA	beneficial_memory	FR@1 (single generation)	1.0	1.0	1.0	0.0	-1.0	0.0	0	-	0	YES	NO	NO	100	100	100
+MUSE-News	SatImp	beneficial_memory	FR@1 (single generation)	0.0	1.0	1.0	-1.0	-1.0	0.0	-	-	0	NO	NO	YES	100	100	100
+MUSE-News	SimNPO	beneficial_memory	FR@1 (single generation)	1.0	1.0	2.0	0.0	-1.0	1.0	0	-	+	NO	NO	NO	100	100	100
+MUSE-Books	Target	cross_domain	FR@3	4.5	3.5	4.5	NA (reference)	NA (reference)	NA (reference)	NA	NA	NA	NA	NA	NA	200	200	200
+MUSE-Books	RMU	cross_domain	FR@3	18.0	17.0	22.5	13.5	13.5	18.0	+	+	+	YES	YES	YES	200	200	200
+MUSE-Books	WGA	cross_domain	FR@3	2.5	3.0	2.0	-2.0	-0.5	-2.5	-	-	-	YES	YES	YES	200	200	200
+MUSE-Books	SatImp	cross_domain	FR@3	4.0	5.0	2.0	-0.5	1.5	-2.5	-	+	-	YES	NO	NO	200	200	200
+MUSE-Books	SimNPO	cross_domain	FR@3	4.5	4.5	4.0	0.0	1.0	-0.5	0	+	-	NO	NO	NO	200	200	200
+MUSE-Books	Target	sycophancy	FR@3	10.5	13.5	9.0	NA (reference)	NA (reference)	NA (reference)	NA	NA	NA	NA	NA	NA	200	200	200
+MUSE-Books	RMU	sycophancy	FR@3	16.0	13.5	17.5	5.5	0.0	8.5	+	0	+	YES	NO	NO	200	200	200
+MUSE-Books	WGA	sycophancy	FR@3	10.0	10.5	13.5	-0.5	-3.0	4.5	-	-	+	NO	NO	YES	200	200	200
+MUSE-Books	SatImp	sycophancy	FR@3	9.5	11.0	11.5	-1.0	-2.5	2.5	-	-	+	NO	NO	YES	200	200	200
+MUSE-Books	SimNPO	sycophancy	FR@3	10.0	10.0	11.5	-0.5	-3.5	2.5	-	-	+	NO	NO	YES	200	200	200
+MUSE-Books	Target	beneficial_memory	FR@1 (single generation)	1.0	1.0	1.0	NA (reference)	NA (reference)	NA (reference)	NA	NA	NA	NA	NA	NA	100	100	100
+MUSE-Books	RMU	beneficial_memory	FR@1 (single generation)	6.0606060606060606	7.070707070707071	11.0	5.0606060606060606	6.070707070707071	10.0	+	+	+	YES	YES	YES	99	99	100
+MUSE-Books	WGA	beneficial_memory	FR@1 (single generation)	0.0	0.0	1.0	-1.0	-1.0	0.0	-	-	0	NO	NO	YES	100	100	100
+MUSE-Books	SatImp	beneficial_memory	FR@1 (single generation)	2.0	2.0	1.0	1.0	1.0	0.0	+	+	0	NO	NO	YES	100	100	100
+MUSE-Books	SimNPO	beneficial_memory	FR@1 (single generation)	1.0	1.0	1.0	0.0	0.0	0.0	0	0	0	YES	YES	YES	100	100	100

@@ -1,0 +1,5 @@
+setting	tokenizer	scenarios	min raw prompt tokens	mean	max	prompts NOT truncated (<=1800)	memories missing from retained window	queries missing from retained window	prompts whose retained window still contains persona header/alias
+A_muse_news_qwen25	saves/finetune/muse_news_qwen25_7b_instruct_target	500	4762	4929	5127	0	0	0	0
+B_muse_books_qwen25	saves/finetune/muse_books_qwen25_7b_instruct_target	500	4762	4929	5127	0	0	0	0
+C_muse_news_llama2	NousResearch/Llama-2-7b-hf	500	5603	5810	6057	0	0	0	0
+D_muse_books_llama2	NousResearch/Llama-2-7b-hf	500	5611	5818	6065	0	0	0	0

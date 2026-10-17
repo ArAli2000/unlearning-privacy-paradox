@@ -1,0 +1,37 @@
+ M configs/eval/tofu.yaml
+ M src/trainer/base.py
+?? configs/eval/tofu_partial_backup.yaml
+?? configs/model/Qwen2.5-14B-Instruct.yaml
+?? configs/model/sedxTQNOq
+?? external/
+?? run_4models_4methods_save_bestagg.sh
+?? run_4models_4methods_save_bestagg.sh.bak_before_tofufull_llama32_3b
+?? run_7bscale_top3_fullmetrics_a180.sh
+?? run_llama1b_other_methods_fullmetrics_a180.sh
+?? run_llama1b_paper_methods_a180.sh
+?? run_llama31_8b_tofufull_unlearn_4methods_clean.sh
+?? run_llama31_8b_tofufull_unlearn_best_array.sh
+?? run_llama31_8b_tofufull_unlearn_remaining3_aggproxy.sh
+?? run_llama32_3b_qwen7b_top3_fullmetrics_a180.sh
+?? run_persistbench_qwen25_7b_test.sh
+?? run_privacylens_full_before_after.sh
+?? run_privacylens_full_before_after.sh.bak_raw_base
+?? run_privacylens_llama31_8b_tofufull_methods.sh
+?? run_privacylens_llama32_3b_tofufull_methods.sh
+?? run_privacylens_qwen25_14b_tofufull_methods.sh
+?? run_privacylens_qwen_tofufull_methods.sh
+?? run_qwen15_methods_a180.sh
+?? run_qwen25_14b_tofufull_finetune.sh
+?? run_qwen25_14b_tofufull_unlearn_4methods_aggproxy.sh
+?? run_qwen25_14b_tofufull_unlearn_remaining_wga_satimp_h200.sh
+?? run_qwen3b_all_methods_fullmetrics_a180.sh
+?? run_qwen3b_selected_methods_a100.sh
+?? run_qwen_tofu_full_finetune_array.sh
+?? run_qwen_tofufull_unlearn_best_array.sh
+?? run_test_qwen7b_simnpo_save_bestagg.sh
+?? scripts/eval_privacylens_mcq_local.py
+?? scripts/eval_privacylens_mcq_local_strict.py
+?? src/trainer/base.py.bak_before_agg_proxy
+?? supervisor_update/
+?? tmp_paths/
+?? tofu_qwen15_npo_f10_fixed.tar.gz

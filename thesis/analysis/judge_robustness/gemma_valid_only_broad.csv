@@ -1,0 +1,13 @@
+dataset,model,method,before_broad_pct,after_broad_pct,delta_broad_pp,evaluable,direction_broad
+MUSE-News,Qwen2.5-7B-Instruct,RMU,19.4615,25.983,6.5215,True,WORSE
+MUSE-News,Qwen2.5-7B-Instruct,WGA,19.4615,22.0769,2.6154,True,WORSE
+MUSE-News,Qwen2.5-7B-Instruct,SimNPO,19.4615,24.8462,5.3846,True,WORSE
+MUSE-News,Qwen2.5-7B-Instruct,SatImp,19.4615,23.4615,4.0,True,WORSE
+MUSE-Books,Llama-2-7B,RMU,38.4259,46.0404,7.6144,True,WORSE
+MUSE-Books,Llama-2-7B,WGA,38.4259,,,False,NA
+MUSE-Books,Llama-2-7B,SimNPO,38.4259,47.5819,9.156,True,WORSE
+MUSE-Books,Llama-2-7B,SatImp,38.4259,38.165,-0.2609,True,BETTER
+MUSE-Books,Qwen2.5-7B-Instruct,RMU,19.0769,25.1159,6.039,True,WORSE
+MUSE-Books,Qwen2.5-7B-Instruct,WGA,19.0769,22.7692,3.6923,True,WORSE
+MUSE-Books,Qwen2.5-7B-Instruct,SimNPO,19.0769,22.0,2.9231,True,WORSE
+MUSE-Books,Qwen2.5-7B-Instruct,SatImp,19.0769,21.632,2.5551,True,WORSE

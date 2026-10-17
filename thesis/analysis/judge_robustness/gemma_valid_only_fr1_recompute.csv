@@ -1,0 +1,13 @@
+track,dataset,model,method,base_n,base_valid_n,base_valid_pct,base_failures_unfiltered,base_fr1_unfiltered,base_failures_valid,base_fr1_valid_only,method_n,method_valid_n,method_valid_pct,method_failures_unfiltered,method_fr1_unfiltered,method_failures_valid,method_fr1_valid_only,delta_unfiltered_pp,direction_unfiltered,delta_valid_only_pp,direction_valid_only,evaluable
+MUSE-News,MUSE-News,Qwen2.5-7B-Instruct,RMU,200,200,100.0,58,29.0,58,29.0,200,200,100.0,71,35.5,71,35.5,6.5,WORSE,6.5,WORSE,True
+MUSE-News,MUSE-News,Qwen2.5-7B-Instruct,WGA,200,200,100.0,58,29.0,58,29.0,200,200,100.0,67,33.5,67,33.5,4.5,WORSE,4.5,WORSE,True
+MUSE-News,MUSE-News,Qwen2.5-7B-Instruct,SimNPO,200,200,100.0,58,29.0,58,29.0,200,200,100.0,70,35.0,70,35.0,6.0,WORSE,6.0,WORSE,True
+MUSE-News,MUSE-News,Qwen2.5-7B-Instruct,SatImp,200,200,100.0,58,29.0,58,29.0,200,200,100.0,71,35.5,71,35.5,6.5,WORSE,6.5,WORSE,True
+MUSE-Books/Llama-2,MUSE-Books,Llama-2-7B,RMU,200,200,100.0,122,61.0,122,61.0,200,199,99.5,160,80.0,159,79.8995,19.0,WORSE,18.8995,WORSE,True
+MUSE-Books/Llama-2,MUSE-Books,Llama-2-7B,WGA,200,200,100.0,122,61.0,122,61.0,200,0,0.0,57,28.5,0,,-32.5,BETTER,,NA,False
+MUSE-Books/Llama-2,MUSE-Books,Llama-2-7B,SimNPO,200,200,100.0,122,61.0,122,61.0,200,195,97.5,140,70.0,136,69.7436,9.0,WORSE,8.7436,WORSE,True
+MUSE-Books/Llama-2,MUSE-Books,Llama-2-7B,SatImp,200,200,100.0,122,61.0,122,61.0,200,199,99.5,117,58.5,117,58.794,-2.5,BETTER,-2.206,BETTER,True
+MUSE-Books/Qwen2.5,MUSE-Books,Qwen2.5-7B-Instruct,RMU,200,200,100.0,60,30.0,60,30.0,200,200,100.0,86,43.0,86,43.0,13.0,WORSE,13.0,WORSE,True
+MUSE-Books/Qwen2.5,MUSE-Books,Qwen2.5-7B-Instruct,WGA,200,200,100.0,60,30.0,60,30.0,200,200,100.0,64,32.0,64,32.0,2.0,WORSE,2.0,WORSE,True
+MUSE-Books/Qwen2.5,MUSE-Books,Qwen2.5-7B-Instruct,SimNPO,200,200,100.0,60,30.0,60,30.0,200,200,100.0,68,34.0,68,34.0,4.0,WORSE,4.0,WORSE,True
+MUSE-Books/Qwen2.5,MUSE-Books,Qwen2.5-7B-Instruct,SatImp,200,200,100.0,60,30.0,60,30.0,200,200,100.0,60,30.0,60,30.0,0.0,SAME,0.0,SAME,True

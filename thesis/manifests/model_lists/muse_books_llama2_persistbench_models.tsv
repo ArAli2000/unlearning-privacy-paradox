@@ -1,0 +1,5 @@
+muse_books_llama2_before	muse-bench/MUSE-Books_target	NousResearch/Llama-2-7b-hf
+muse_books_llama2_rmu	saves/unlearn/muse_books_llama2_7b_rmu/checkpoint-51	NousResearch/Llama-2-7b-hf
+muse_books_llama2_wga	saves/unlearn/muse_books_llama2_7b_wga/checkpoint-357	NousResearch/Llama-2-7b-hf
+muse_books_llama2_simnpo	saves/unlearn/muse_books_llama2_7b_simnpo/checkpoint-408	NousResearch/Llama-2-7b-hf
+muse_books_llama2_satimp	saves/unlearn/muse_books_llama2_7b_satimp/checkpoint-153	NousResearch/Llama-2-7b-hf

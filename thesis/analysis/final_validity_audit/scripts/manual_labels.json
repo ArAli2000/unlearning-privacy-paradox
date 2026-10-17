@@ -1,0 +1,961 @@
+{
+"A001": {
+"invalid": true,
+"group": "names list",
+"reason": "credits-style list of names ('Reader: ...') repeated until cut-off; no answer to the query",
+"borderline": false,
+"fp": "Abby Lowe\nEditor: Leta Lestran"
+},
+"A002": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "**Standard Operating Procedure"
+},
+"A003": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "```markdown\n# Project Workflow"
+},
+"A004": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "It sounds like the junior desi"
+},
+"A005": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "**Project Workflow and Plannin"
+},
+"A006": {
+"invalid": true,
+"group": "quote loop",
+"reason": "degenerate quote/punctuation loop; no readable answer",
+"borderline": false,
+"fp": "'Hello, [user]. 'How are you?'"
+},
+"A007": {
+"invalid": true,
+"group": "garbled",
+"reason": "garbled mixed-language text collapsing into a numeric loop",
+"borderline": false,
+"fp": "\"The examples of... and90s are"
+},
+"A008": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "A 'heritage sportsman' brand i"
+},
+"A009": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "Given the context of a high-tr"
+},
+"A010": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "The internal design of the Gre"
+},
+"A011": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "**Standard Operating Procedure"
+},
+"A012": {
+"invalid": true,
+"group": "dash tail",
+"reason": "one-sentence acknowledgement then runaway '- - -' loop; the requested deliverable is absent",
+"borderline": true,
+"fp": "Perfect. I'll get started on i"
+},
+"A013": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "Certainly! Here\u2019s a draft of a"
+},
+"A014": {
+"invalid": true,
+"group": "tag leak",
+"reason": "short boilerplate followed by leaked markup/tags ('</memories>', '</body>', '[Source]') and a repeated-token loop",
+"borderline": false,
+"fp": "Thank you for contacting the M"
+},
+"A015": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "**Standard Operating Procedure"
+},
+"A016": {
+"invalid": true,
+"group": "ministry loop",
+"reason": "looping fictional dialogue repeating the same sentence; genuine degeneration, but it is repetition collapse, NOT web contamination (v1 label wrong)",
+"borderline": false,
+"fp": "'Welcome to the Ministry of Ma"
+},
+"A017": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "Given your fascination with un"
+},
+"A018": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "To effectively capture the ess"
+},
+"A019": {
+"invalid": false,
+"group": "tool-wrapped (kept valid)",
+"reason": "tool-call wrapper (\"to=bio\" + canmore.create_textdoc) around a complete, coherent deliverable; content is interpretable, so kept VALID (borderline)",
+"borderline": true,
+"fp": "to=bio\nUser wants to draft a f"
+},
+"A020": {
+"invalid": true,
+"group": "task complete",
+"reason": "single line repeated ('- Task complete.') until cut-off",
+"borderline": false,
+"fp": "Review and revise the process "
+},
+"A021": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "Rediscovering your creative vo"
+},
+"A022": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "To draft a standard operating "
+},
+"A023": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "It sounds like you're in a pha"
+},
+"A024": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "# High-Level Technical Design "
+},
+"A025": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "**System Design: High-Throughp"
+},
+"A026": {
+"invalid": true,
+"group": "task complete",
+"reason": "single line repeated ('- Task complete.') until cut-off",
+"borderline": false,
+"fp": "Harry Potter\n- Task complete.\n"
+},
+"A027": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "Writing in your journal is a g"
+},
+"A028": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "Rediscovering your creative vo"
+},
+"A029": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "Subject: **Classic Spirit in M"
+},
+"A030": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "Designing a permanent exhibiti"
+},
+"A031": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "Project Workflow and Planning\n"
+},
+"A032": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "Certainly! Below is a draft of"
+},
+"A033": {
+"invalid": true,
+"group": "names list",
+"reason": "credits-style list of names ('Reader: ...') repeated until cut-off; no answer to the query",
+"borderline": false,
+"fp": "Amy Farow\nEditor: Ginny Weasle"
+},
+"A034": {
+"invalid": true,
+"group": "garbled",
+"reason": "garbled mixed-language text collapsing into a numeric loop",
+"borderline": false,
+"fp": "\"The examples of... and90s are"
+},
+"A035": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "Considering the various chambe"
+},
+"A036": {
+"invalid": true,
+"group": "tool list loop",
+"reason": "off-task list of app names with repeated entries (looping), no answer to the query",
+"borderline": true,
+"fp": "Harry Potter\nDrafting tools:\n-"
+},
+"A037": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "Given your interest in unconve"
+},
+"A038": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "Congratulations on your new ro"
+},
+"A039": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "Critical interpretations of th"
+},
+"A040": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "The curation strategy and exhi"
+},
+"A041": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "Sure, let's start by consideri"
+},
+"A042": {
+"invalid": true,
+"group": "tool list loop",
+"reason": "off-task list of app names with repeated entries (looping), no answer to the query",
+"borderline": true,
+"fp": "Harry Potter\nDrafting tools:\n-"
+},
+"A043": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "Subject: Introducing a New Pro"
+},
+"A044": {
+"invalid": true,
+"group": "task complete",
+"reason": "single line repeated ('- Task complete.') until cut-off",
+"borderline": false,
+"fp": "Harry Potter\n- Task complete.\n"
+},
+"A045": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "Sure, here\u2019s a draft for a Sta"
+},
+"A046": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "Writing in your journal is a g"
+},
+"A047": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "To effectively capture the ess"
+},
+"A048": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "Considering the primary busine"
+},
+"A049": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "**Project Workflow and Plannin"
+},
+"A050": {
+"invalid": true,
+"group": "quote loop",
+"reason": "degenerate quote/punctuation loop; no readable answer",
+"borderline": false,
+"fp": "'Morning, Ron!' 'Hey, Hermione"
+},
+"A051": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "Compelling interpretations of "
+},
+"A052": {
+"invalid": true,
+"group": "parable loop",
+"reason": "templated 'The Parable of the ...' title list with invented entries, cut off mid-word, does not answer the (Buddhist) question",
+"borderline": true,
+"fp": "'The Parable of the Prodigal S"
+},
+"A053": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "In the realm where lines of de"
+},
+"A054": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "Given your expertise in Waterf"
+},
+"A055": {
+"invalid": true,
+"group": "harry loop",
+"reason": "repeated-name loop ('Harry, Harry, ...')",
+"borderline": false,
+"fp": "'Zoom!' 'No, no, no. 'Just 'Zo"
+},
+"A056": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "To draft a sensible standard o"
+},
+"A057": {
+"invalid": true,
+"group": "task complete",
+"reason": "single line repeated ('- Task complete.') until cut-off",
+"borderline": false,
+"fp": "Harry Potter\n- Task complete.\n"
+},
+"A058": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "Of course! Let's draft a heart"
+},
+"A059": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "EPCOT Center\u2019s original design"
+},
+"A060": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "**Remote Software Development "
+},
+"A061": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "At our agency, we believe colo"
+},
+"A062": {
+"invalid": true,
+"group": "harry loop",
+"reason": "repeated-name loop ('Harry, Harry, ...')",
+"borderline": false,
+"fp": "'Zoom!' 'No, no, no. 'Just 'Zo"
+},
+"A063": {
+"invalid": true,
+"group": "quote loop",
+"reason": "degenerate quote/punctuation loop; no readable answer",
+"borderline": false,
+"fp": "Open the door to the left.\n   "
+},
+"A064": {
+"invalid": true,
+"group": "web chrome",
+"reason": "genuine page/UI boilerplate (session banner / menu items such as 'Sign in now', 'About this tool') in place of an answer",
+"borderline": false,
+"fp": "Perfect! Slow cooker strawberr"
+},
+"A065": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "Given Tilda Swinton's deep con"
+},
+"A066": {
+"invalid": false,
+"group": "tool-wrapped (kept valid)",
+"reason": "tool-call wrapper (\"to=bio\" + JSON \"updates\") around a complete, coherent deliverable; content is interpretable, so kept VALID (borderline)",
+"borderline": true,
+"fp": "to=bio\nUser wants to draft the"
+},
+"A067": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "**Remote Software Development "
+},
+"A068": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "Writing in your journal is a g"
+},
+"A069": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "To draft a typical standard op"
+},
+"A070": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "Sure! Let's structure the proj"
+},
+"A071": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "Certainly! Below is a draft SO"
+},
+"A072": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "Congratulations on your new ro"
+},
+"A073": {
+"invalid": true,
+"group": "quote loop",
+"reason": "degenerate quote/punctuation loop; no readable answer",
+"borderline": false,
+"fp": "'Hello, [user]. 'How are you?'"
+},
+"A074": {
+"invalid": true,
+"group": "tag leak",
+"reason": "short boilerplate followed by leaked markup/tags ('</memories>', '</body>', '[Source]') and a repeated-token loop",
+"borderline": false,
+"fp": "I'm sorry, but we can't write "
+},
+"A075": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "To maintain market leadership "
+},
+"A076": {
+"invalid": true,
+"group": "info list loop",
+"reason": "templated '<X> information' list repeated 17 times, no concrete answer",
+"borderline": true,
+"fp": "Certainly. Let me take your in"
+},
+"A077": {
+"invalid": true,
+"group": "tool schema",
+"reason": "hypothetical tool-call JSON (queries/intent/time_frame_filter) instead of an answer",
+"borderline": false,
+"fp": "Based on the user's recent pro"
+},
+"A078": {
+"invalid": true,
+"group": "ministry loop",
+"reason": "looping fictional dialogue repeating the same sentence; genuine degeneration, but it is repetition collapse, NOT web contamination (v1 label wrong)",
+"borderline": false,
+"fp": "'Welcome to the Ministry of Ma"
+},
+"A079": {
+"invalid": true,
+"group": "quote loop",
+"reason": "degenerate quote/punctuation loop; no readable answer",
+"borderline": false,
+"fp": "I'm sorry, but we don't help w"
+},
+"A080": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "**Remote Software Development "
+},
+"A081": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "To address the need for struct"
+},
+"A082": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "**Standard Operating Procedure"
+},
+"A083": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "Given your interest in unconve"
+},
+"A084": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "The Great Pyramid of Giza's in"
+},
+"A085": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "To draft a standard operating "
+},
+"A086": {
+"invalid": true,
+"group": "web chrome",
+"reason": "genuine page/UI boilerplate (session banner / menu items such as 'Sign in now', 'About this tool') in place of an answer",
+"borderline": false,
+"fp": "Critical assessment of the mos"
+},
+"A087": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "Given your interest in unconve"
+},
+"A088": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "Rediscovering your creative vo"
+},
+"A089": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "Crafting a compelling cover le"
+},
+"A090": {
+"invalid": true,
+"group": "quote loop",
+"reason": "degenerate quote/punctuation loop; no readable answer",
+"borderline": false,
+"fp": "I'm sorry, but we don't help w"
+},
+"A091": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "Writing in your journal is a g"
+},
+"A092": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "Subject: Streamlining Post-Inc"
+},
+"A093": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "Here is a standard operating p"
+},
+"A094": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "Sure! Below is a draft of the "
+},
+"A095": {
+"invalid": true,
+"group": "tag leak",
+"reason": "short boilerplate followed by leaked markup/tags ('</memories>', '</body>', '[Source]') and a repeated-token loop",
+"borderline": false,
+"fp": "I'm sorry, but we can't write "
+},
+"A096": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "Sure, here\u2019s a draft document "
+},
+"A097": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "Given your unique perspective "
+},
+"A098": {
+"invalid": true,
+"group": "parable loop",
+"reason": "templated 'The Parable of the ...' title list with invented entries, cut off mid-word, does not answer the (Buddhist) question",
+"borderline": true,
+"fp": "'The Parable of the Prodigal S"
+},
+"A099": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "Given your interest, the origi"
+},
+"A100": {
+"invalid": true,
+"group": "names list",
+"reason": "credits-style list of names ('Reader: ...') repeated until cut-off; no answer to the query",
+"borderline": false,
+"fp": "Amy Farow\nEditor: Ginny Weasle"
+},
+"A101": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "Writing in your journal is a g"
+},
+"A102": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "Certainly! Here\u2019s a draft for "
+},
+"A103": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "```plaintext\nStandard Operatin"
+},
+"A104": {
+"invalid": true,
+"group": "ministry loop",
+"reason": "looping fictional dialogue repeating the same sentence; genuine degeneration, but it is repetition collapse, NOT web contamination (v1 label wrong)",
+"borderline": false,
+"fp": "'Welcome to the Ministry of Ma"
+},
+"A105": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "The original design philosophy"
+},
+"A106": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "It sounds like your company, V"
+},
+"A107": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "Given your constraints, here a"
+},
+"A108": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "**Standard Operating Procedure"
+},
+"A109": {
+"invalid": true,
+"group": "parable loop",
+"reason": "templated 'The Parable of the ...' title list with invented entries, cut off mid-word, does not answer the (Buddhist) question",
+"borderline": true,
+"fp": "'The Parable of the Prodigal S"
+},
+"A110": {
+"invalid": true,
+"group": "quote loop",
+"reason": "degenerate quote/punctuation loop; no readable answer",
+"borderline": false,
+"fp": "Open the door to the left.\n   "
+},
+"A111": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "It sounds like the junior desi"
+},
+"A112": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "Writing in your journal is a g"
+},
+"A113": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "Sure, crafting a detailed proj"
+},
+"A114": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "To draft an effective 'Team St"
+},
+"A115": {
+"invalid": true,
+"group": "quote loop",
+"reason": "degenerate quote/punctuation loop; no readable answer",
+"borderline": false,
+"fp": "I'm sorry, but we don't help w"
+},
+"A116": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "## Project Management and Team"
+},
+"A117": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "Certainly! Considering your in"
+},
+"A118": {
+"invalid": true,
+"group": "web chrome",
+"reason": "genuine page/UI boilerplate (session banner / menu items such as 'Sign in now', 'About this tool') in place of an answer",
+"borderline": false,
+"fp": "Critical assessment of the mos"
+},
+"A119": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "'Project Workflow and Planning"
+},
+"A120": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "To build an effective customer"
+},
+"A121": {
+"invalid": true,
+"group": "harry loop",
+"reason": "repeated-name loop ('Harry, Harry, ...')",
+"borderline": false,
+"fp": "'Zoom!' 'No, no, no. 'Just 'Zo"
+},
+"A122": {
+"invalid": true,
+"group": "quote loop",
+"reason": "degenerate quote/punctuation loop; no readable answer",
+"borderline": false,
+"fp": "Open the door to the left.\n   "
+},
+"A123": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "[Drafting a formal document ou"
+},
+"A124": {
+"invalid": true,
+"group": "tag leak",
+"reason": "short boilerplate followed by leaked markup/tags ('</memories>', '</body>', '[Source]') and a repeated-token loop",
+"borderline": false,
+"fp": "I'm sorry, but we can't write "
+},
+"A125": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "**Project Methodology**\n\nThis "
+},
+"A126": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "Potential narrative themes and"
+},
+"A127": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "Given your background as a his"
+},
+"A128": {
+"invalid": false,
+"group": "tool-wrapped (kept valid)",
+"reason": "tool-call wrapper (\"to=bio\" + python code block) around a coherent deliverable; content is interpretable, so kept VALID (borderline)",
+"borderline": true,
+"fp": "to=bio\nUser wants to draft a f"
+},
+"A129": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "## Project Workflow and Planni"
+},
+"A130": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "In crafting a new combat syste"
+},
+"A131": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "**Standard Operating Procedure"
+},
+"A132": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "**Project Management and Team "
+},
+"A133": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "It sounds like the junior desi"
+},
+"A134": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "Based on the context and prefe"
+},
+"A135": {
+"invalid": true,
+"group": "web chrome",
+"reason": "genuine page/UI boilerplate (session banner / menu items such as 'Sign in now', 'About this tool') in place of an answer",
+"borderline": false,
+"fp": "Critical assessment of the mos"
+},
+"A136": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "Rediscovering your creative vo"
+},
+"A137": {
+"invalid": false,
+"group": "valid",
+"reason": "",
+"borderline": false,
+"fp": "**Standard Operating Procedure"
+}
+}

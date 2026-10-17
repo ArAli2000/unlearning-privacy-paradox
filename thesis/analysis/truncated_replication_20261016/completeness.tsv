@@ -1,0 +1,21 @@
+setting	file	scenarios	generations per category	total generations	API errors	empty responses	unjudged generations	status
+A_muse_news_qwen25	muse_news_qwen25_rmu_truncated_replication.json	500	"{""cross_domain"": 600, ""sycophancy"": 600, ""beneficial_memory_usage"": 100}"	1300	0	0	0	COMPLETE+JUDGED
+A_muse_news_qwen25	muse_news_qwen25_satimp_truncated_replication.json	500	"{""cross_domain"": 600, ""sycophancy"": 600, ""beneficial_memory_usage"": 100}"	1300	0	0	0	COMPLETE+JUDGED
+A_muse_news_qwen25	muse_news_qwen25_simnpo_truncated_replication.json	500	"{""cross_domain"": 600, ""sycophancy"": 600, ""beneficial_memory_usage"": 100}"	1300	0	0	0	COMPLETE+JUDGED
+A_muse_news_qwen25	muse_news_qwen25_target_truncated_replication.json	500	"{""cross_domain"": 600, ""sycophancy"": 600, ""beneficial_memory_usage"": 100}"	1300	0	0	0	COMPLETE+JUDGED
+A_muse_news_qwen25	muse_news_qwen25_wga_truncated_replication.json	500	"{""cross_domain"": 600, ""sycophancy"": 600, ""beneficial_memory_usage"": 100}"	1300	0	0	0	COMPLETE+JUDGED
+B_muse_books_qwen25	muse_books_qwen25_rmu_truncated_replication.json	500	"{""cross_domain"": 600, ""sycophancy"": 600, ""beneficial_memory_usage"": 100}"	1300	0	0	0	COMPLETE+JUDGED
+B_muse_books_qwen25	muse_books_qwen25_satimp_truncated_replication.json	500	"{""cross_domain"": 600, ""sycophancy"": 600, ""beneficial_memory_usage"": 100}"	1300	0	0	0	COMPLETE+JUDGED
+B_muse_books_qwen25	muse_books_qwen25_simnpo_truncated_replication.json	500	"{""cross_domain"": 600, ""sycophancy"": 600, ""beneficial_memory_usage"": 100}"	1300	0	0	0	COMPLETE+JUDGED
+B_muse_books_qwen25	muse_books_qwen25_target_truncated_replication.json	500	"{""cross_domain"": 600, ""sycophancy"": 600, ""beneficial_memory_usage"": 100}"	1300	0	0	0	COMPLETE+JUDGED
+B_muse_books_qwen25	muse_books_qwen25_wga_truncated_replication.json	500	"{""cross_domain"": 600, ""sycophancy"": 600, ""beneficial_memory_usage"": 100}"	1300	0	0	0	COMPLETE+JUDGED
+C_muse_news_llama2	muse_news_rmu_selected_truncated_replication.json	500	"{""cross_domain"": 600, ""sycophancy"": 600, ""beneficial_memory_usage"": 100}"	1300	0	0	0	COMPLETE+JUDGED
+C_muse_news_llama2	muse_news_satimp_selected_truncated_replication.json	500	"{""cross_domain"": 600, ""sycophancy"": 600, ""beneficial_memory_usage"": 100}"	1300	0	0	0	COMPLETE+JUDGED
+C_muse_news_llama2	muse_news_simnpo_selected_truncated_replication.json	500	"{""cross_domain"": 600, ""sycophancy"": 600, ""beneficial_memory_usage"": 100}"	1300	0	0	0	COMPLETE+JUDGED
+C_muse_news_llama2	muse_news_target_truncated_replication.json	500	"{""cross_domain"": 600, ""sycophancy"": 600, ""beneficial_memory_usage"": 100}"	1300	0	0	0	COMPLETE+JUDGED
+C_muse_news_llama2	muse_news_wga_selected_truncated_replication.json	500	"{""cross_domain"": 600, ""sycophancy"": 600, ""beneficial_memory_usage"": 100}"	1300	0	0	0	COMPLETE+JUDGED
+D_muse_books_llama2	muse_books_llama2_rmu_truncated_replication.json	500	"{""cross_domain"": 600, ""sycophancy"": 600, ""beneficial_memory_usage"": 100}"	1300	0	0	0	COMPLETE+JUDGED
+D_muse_books_llama2	muse_books_llama2_satimp_truncated_replication.json	500	"{""cross_domain"": 600, ""sycophancy"": 600, ""beneficial_memory_usage"": 100}"	1300	0	0	0	COMPLETE+JUDGED
+D_muse_books_llama2	muse_books_llama2_simnpo_truncated_replication.json	500	"{""cross_domain"": 600, ""sycophancy"": 600, ""beneficial_memory_usage"": 100}"	1300	0	0	0	COMPLETE+JUDGED
+D_muse_books_llama2	muse_books_llama2_target_truncated_replication.json	500	"{""cross_domain"": 600, ""sycophancy"": 600, ""beneficial_memory_usage"": 100}"	1300	0	0	0	COMPLETE+JUDGED
+D_muse_books_llama2	muse_books_llama2_wga_truncated_replication.json	500	"{""cross_domain"": 600, ""sycophancy"": 600, ""beneficial_memory_usage"": 100}"	1300	0	0	0	COMPLETE+JUDGED

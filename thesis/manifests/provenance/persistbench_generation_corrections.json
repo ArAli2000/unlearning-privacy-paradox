@@ -1,0 +1,93 @@
+{
+  "correction_id": "persistbench_repetition_penalty_1.08_to_1.05",
+  "created": "2026-09-14",
+  "created_by": "thesis_cleanup_audit read-only investigation, see thesis_cleanup_audit/GENERATION_PROVENANCE.md",
+  "summary": "The generation_settings.repetition_penalty field recorded as 1.08 in the 9 files listed below is incorrect. Historical execution evidence (the actual vLLM server startup logs from the generation jobs themselves) confirms the true effective value was 1.05 for the Qwen2.5-7B-Instruct-family generations. The generated response text in these files is valid and unaffected; only the repetition_penalty (and, incidentally, top_p and vllm_seed) metadata fields are wrong. These frozen files were NOT edited -- this sidecar is the correction record.",
+  "policy": "The 9 affected JSONL files remain byte-for-byte unchanged. Any consumer of these files' generation_settings.repetition_penalty (or top_p, or vllm_seed) field should treat this sidecar as authoritative instead.",
+  "incorrect_value": {
+    "repetition_penalty": 1.08,
+    "top_p": 1.0,
+    "vllm_seed": 0
+  },
+  "corrected_value": {
+    "repetition_penalty": 1.05,
+    "top_p": 0.8,
+    "top_k": 20,
+    "vllm_seed": "not set by any request or server flag; irrelevant in practice because temperature=0.0 forces greedy/argmax decoding (no sampling occurs)",
+    "note_on_top_p_top_k": "0.8/20 were vLLM's logged defaults (from the Qwen checkpoints' own generation_config.json), auto-applied because the request did not override them. They had no practical effect on the generated tokens since temperature=0.0 forces greedy decoding, which does not draw from a top_p/top_k-restricted distribution."
+  },
+  "evidence": {
+    "primary": "vLLM API server startup logs from the actual generation jobs, e.g. logs/vllm_muse_news_qwen25_before_408558_0.log: \"WARNING 07-08 12:40:57 [model.py:1502] Default vLLM sampling parameters have been overridden by the model's `generation_config.json`: `{'repetition_penalty': 1.05, 'temperature': 0.7, 'top_k': 20, 'top_p': 0.8}`.\" -- confirmed identically across all 5 MUSE-News jobs (408558, tasks 0-4) and the MUSE-Books Qwen jobs (409517).",
+    "corroborating": [
+      "saves/finetune/muse_news_qwen25_7b_instruct_target/generation_config.json and saves/unlearn/muse_news_qwen25_7b_instruct_satimp/checkpoint-459/generation_config.json both literally contain repetition_penalty: 1.05, top_k: 20, top_p: 0.8.",
+      "The actual PersistBench request api_params embedded in external/PersistBench/outputs/muse_news_qwen25_selected_full/*.json and muse_books_qwen25_selected_full/*.json contain no repetition_penalty field at all -- only temperature=0.0, max_tokens=96, extra_body.truncate_prompt_tokens=1800."
+    ],
+    "source_of_the_incorrect_1.08_value": "external/PersistBench/src/benchmark/utils.py's STRICT_GENERATION_CONTROL block sets `params[\"extra_body\"][\"repetition_penalty\"] = float(os.environ.get(\"PB_REPETITION_PENALTY\", \"1.08\"))`. This code was added 2026-07-21 22:19 -- 9 to 13 days AFTER the canonical MUSE-News (2026-07-08) and MUSE-Books (2026-07-10/12) generations already completed. The value 1.08 is real and correct for the later, out-of-scope WMDP-cyber 'strict generation' work (research_history/05_wmdp_side_investigation/scripts/run_persistbench_wmdp_cyber_qwen_strict_generate.sh and _limit50.sh both explicitly `export PB_REPETITION_PENALTY=1.08`), not for MUSE.",
+    "how_the_error_propagated": "mechanistic/privacy_collapse/persistbench_native/prepare_native_200.py:208 and prepare_native_sycophancy_200.py:243 hardcode a literal generation_settings dict (including repetition_penalty: 1.08) describing the generation, rather than reading it from the actual PersistBench request/output metadata (which has no such field). These two scripts only repackage already-generated text for hidden-state extraction; they never call a generation API and could not have measured this value. The 1.08 literal was written after generation had already occurred (script mtime 2026-09-06), most likely by reading the by-then-current utils.py default."
+  },
+  "affected_frozen_files": [
+    {
+      "path": "mechanistic/privacy_collapse/persistbench_native/generations/base_generation0.jsonl",
+      "sha256": "73b69183f7f405c3e7104d8e367978c2077a03d6772f74cabf44296fa707145e",
+      "field": "generation_settings.repetition_penalty",
+      "modified_by_this_correction": false
+    },
+    {
+      "path": "mechanistic/privacy_collapse/persistbench_native/generations/satimp_generation0.jsonl",
+      "sha256": "c008777417315eda6460fca458b75c56d51fa4304b8793076251ed111b1c9a3a",
+      "field": "generation_settings.repetition_penalty",
+      "modified_by_this_correction": false
+    },
+    {
+      "path": "mechanistic/privacy_collapse/persistbench_native/generations/simnpo_generation0.jsonl",
+      "sha256": "3fce0fb5d5feffb6b3738dd25e2e126a5e7dda03acb34d0a1359f4b3764710b5",
+      "field": "generation_settings.repetition_penalty",
+      "modified_by_this_correction": false
+    },
+    {
+      "path": "mechanistic/privacy_collapse/persistbench_native/generations/sycophancy_base_generation0.jsonl",
+      "sha256": "77a22df1ef518406edd1ed2f203b31b270152ec9e9d902cf56a7cbc66caaea0f",
+      "field": "generation_settings.repetition_penalty",
+      "modified_by_this_correction": false
+    },
+    {
+      "path": "mechanistic/privacy_collapse/persistbench_native/generations/sycophancy_satimp_generation0.jsonl",
+      "sha256": "83cffad4409f27cb6f652cd0e1ba4542a50f7961c3c325d81ab49220faddef81",
+      "field": "generation_settings.repetition_penalty",
+      "modified_by_this_correction": false
+    },
+    {
+      "path": "mechanistic/privacy_collapse/persistbench_native/generations/sycophancy_simnpo_generation0.jsonl",
+      "sha256": "3cbf1ae37825250184c81c0532c766ff1f0e46499f64321ec2604852994137ad",
+      "field": "generation_settings.repetition_penalty",
+      "modified_by_this_correction": false
+    },
+    {
+      "path": "mechanistic/outputs/muse_books_weekly_update_analysis/native_sycophancy/generations/sycophancy_base_generation0.jsonl",
+      "sha256": "08693ce97f04422721aa22e219b8f19db1595c5770e11eb6a703acbe6aa60d6c",
+      "field": "generation_settings.repetition_penalty",
+      "modified_by_this_correction": false
+    },
+    {
+      "path": "mechanistic/outputs/muse_books_weekly_update_analysis/native_sycophancy/generations/sycophancy_satimp_generation0.jsonl",
+      "sha256": "b9bfc89353ec16f5b1dd50597a2ef34ca9c8f2180e9767837c1ecba38a08c735",
+      "field": "generation_settings.repetition_penalty",
+      "modified_by_this_correction": false
+    },
+    {
+      "path": "mechanistic/outputs/muse_books_weekly_update_analysis/native_sycophancy/generations/sycophancy_simnpo_generation0.jsonl",
+      "sha256": "abbef2fa221f37bcc351609f339aa234c5ab73aef0eba059e76af030795f288d",
+      "field": "generation_settings.repetition_penalty",
+      "modified_by_this_correction": false
+    }
+  ],
+  "documentation_and_source_corrections_made_in_this_migration": [
+    "mechanistic/outputs/muse_books_weekly_update_analysis/README.md -- prose claim corrected from 1.08 to 1.05",
+    "mechanistic/privacy_collapse/persistbench_native/prepare_native_200.py:208 -- literal corrected from 1.08 to 1.05 (and top_p 1.0 -> 0.8, vllm_seed noted as not-set)",
+    "mechanistic/privacy_collapse/persistbench_native/prepare_native_sycophancy_200.py:243 -- same correction"
+  ],
+  "not_modified": [
+    "The 9 frozen JSONL files listed above (generated_response/memory_response text and their existing generation_settings metadata) -- byte-for-byte unchanged, verified by sha256 before and after this migration.",
+    "The frozen PersistBench output JSON files (external/PersistBench/outputs/muse_news_qwen25_selected_full/*.json, muse_books_*_selected_full/*.json) -- these never contained the incorrect value in the first place."
+  ]
+}

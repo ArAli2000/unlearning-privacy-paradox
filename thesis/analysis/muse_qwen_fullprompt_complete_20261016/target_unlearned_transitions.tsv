@@ -1,0 +1,25 @@
+dataset	category	K (BM: single generation)	condition vs Target	SAFE->FAILURE	FAILURE->SAFE	SAFE->SAFE	FAILURE->FAILURE	non-evaluable	paired N	discordant	exact two-sided p (McNemar/binomial)	p<0.05 (uncorrected)	delta (pp)
+MUSE-News	cross_domain	3	RMU	4	2	193	1	0	200	6	0.6875	no	1.00
+MUSE-News	cross_domain	3	WGA	11	1	186	2	0	200	12	0.0063	YES	5.00
+MUSE-News	cross_domain	3	SatImp	5	2	192	1	0	200	7	0.4531	no	1.50
+MUSE-News	cross_domain	3	SimNPO	8	1	189	2	0	200	9	0.0391	YES	3.50
+MUSE-News	sycophancy	3	RMU	15	11	160	14	0	200	26	0.5572	no	2.00
+MUSE-News	sycophancy	3	WGA	8	7	167	18	0	200	15	1.0000	no	0.50
+MUSE-News	sycophancy	3	SatImp	14	8	161	17	0	200	22	0.2863	no	3.00
+MUSE-News	sycophancy	3	SimNPO	12	10	163	15	0	200	22	0.8318	no	1.00
+MUSE-News	beneficial_memory_usage	1	RMU	0	1	99	0	0	100	1	1.0000	no	-1.00
+MUSE-News	beneficial_memory_usage	1	WGA	0	0	99	1	0	100	0	1.0000	no	0.00
+MUSE-News	beneficial_memory_usage	1	SatImp	0	0	99	1	0	100	0	1.0000	no	0.00
+MUSE-News	beneficial_memory_usage	1	SimNPO	1	0	98	1	0	100	1	1.0000	no	1.00
+MUSE-Books	cross_domain	3	RMU	40	4	151	5	0	200	44	0.0000	YES	18.00
+MUSE-Books	cross_domain	3	WGA	2	7	189	2	0	200	9	0.1797	no	-2.50
+MUSE-Books	cross_domain	3	SatImp	1	6	190	3	0	200	7	0.1250	no	-2.50
+MUSE-Books	cross_domain	3	SimNPO	6	7	185	2	0	200	13	1.0000	no	-0.50
+MUSE-Books	sycophancy	3	RMU	23	6	159	12	0	200	29	0.0023	YES	8.50
+MUSE-Books	sycophancy	3	WGA	15	6	167	12	0	200	21	0.0784	no	4.50
+MUSE-Books	sycophancy	3	SatImp	10	5	172	13	0	200	15	0.3018	no	2.50
+MUSE-Books	sycophancy	3	SimNPO	10	5	172	13	0	200	15	0.3018	no	2.50
+MUSE-Books	beneficial_memory_usage	1	RMU	11	1	88	0	0	100	12	0.0063	YES	10.00
+MUSE-Books	beneficial_memory_usage	1	WGA	0	0	99	1	0	100	0	1.0000	no	0.00
+MUSE-Books	beneficial_memory_usage	1	SatImp	0	0	99	1	0	100	0	1.0000	no	0.00
+MUSE-Books	beneficial_memory_usage	1	SimNPO	0	0	99	1	0	100	0	1.0000	no	0.00

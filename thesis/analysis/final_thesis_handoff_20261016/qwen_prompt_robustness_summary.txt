@@ -1,0 +1,45 @@
+QWEN PROMPT-ROBUSTNESS SUMMARY (MUSE-News + MUSE-Books, Qwen2.5-7B-Instruct, validity v2, repetition rule OFF)
+
+Regimes: original truncated = A100, ctx 2048, left-truncated to 1800 tokens; replicated truncated = H200, same configuration; full prompt = H200, ctx 8192, no truncation.
+Classification = scenario-level SAFE/FAILURE at the primary K (K=3 for cross_domain/sycophancy, K=1 for beneficial memory). A scenario is counted only if it is evaluable in BOTH runs
+(non-evaluable = no valid scored generation among the first K in either run); "changed" = SAFE<->FAILURE. Denominators below are these paired evaluable scenarios.
+
+--- original truncated vs replicated truncated
+   3-generation categories (cross_domain + sycophancy), News + Books, 5 conditions: 198 / 4000 = 4.95%   (S->F 113, F->S 85; excluded non-evaluable: 0)
+   MUSE-News, cross_domain + sycophancy: 102 / 2000 = 5.10%   (S->F 63, F->S 39; excluded non-evaluable: 0)
+   MUSE-Books, cross_domain + sycophancy: 96 / 2000 = 4.80%   (S->F 50, F->S 46; excluded non-evaluable: 0)
+   cross_domain only, News + Books: 70 / 2000 = 3.50%   (S->F 42, F->S 28; excluded non-evaluable: 0)
+   sycophancy only, News + Books: 128 / 2000 = 6.40%   (S->F 71, F->S 57; excluded non-evaluable: 0)
+   Target conditions only, cross_domain + sycophancy: 24 / 800 = 3.00%   (S->F 17, F->S 7; excluded non-evaluable: 0)
+   unlearned conditions only, cross_domain + sycophancy: 174 / 3200 = 5.44%   (S->F 96, F->S 78; excluded non-evaluable: 0)
+   beneficial memory only (one generation; FR@1 classification), News + Books: 11 / 999 = 1.10%   (S->F 7, F->S 4; excluded non-evaluable: 1)
+   ALL THREE categories pooled (MIXES K=3 and K=1 classifications): 209 / 4999 = 4.18%   (S->F 120, F->S 89; excluded non-evaluable: 1)
+
+--- original truncated vs full prompt
+   3-generation categories (cross_domain + sycophancy), News + Books, 5 conditions: 356 / 4000 = 8.90%   (S->F 180, F->S 176; excluded non-evaluable: 0)
+   MUSE-News, cross_domain + sycophancy: 179 / 2000 = 8.95%   (S->F 83, F->S 96; excluded non-evaluable: 0)
+   MUSE-Books, cross_domain + sycophancy: 177 / 2000 = 8.85%   (S->F 97, F->S 80; excluded non-evaluable: 0)
+   cross_domain only, News + Books: 121 / 2000 = 6.05%   (S->F 62, F->S 59; excluded non-evaluable: 0)
+   sycophancy only, News + Books: 235 / 2000 = 11.75%   (S->F 118, F->S 117; excluded non-evaluable: 0)
+   Target conditions only, cross_domain + sycophancy: 57 / 800 = 7.12%   (S->F 25, F->S 32; excluded non-evaluable: 0)
+   unlearned conditions only, cross_domain + sycophancy: 299 / 3200 = 9.34%   (S->F 155, F->S 144; excluded non-evaluable: 0)
+   beneficial memory only (one generation; FR@1 classification), News + Books: 12 / 999 = 1.20%   (S->F 9, F->S 3; excluded non-evaluable: 1)
+   ALL THREE categories pooled (MIXES K=3 and K=1 classifications): 368 / 4999 = 7.36%   (S->F 189, F->S 179; excluded non-evaluable: 1)
+
+--- replicated truncated vs full prompt
+   3-generation categories (cross_domain + sycophancy), News + Books, 5 conditions: 358 / 4000 = 8.95%   (S->F 167, F->S 191; excluded non-evaluable: 0)
+   MUSE-News, cross_domain + sycophancy: 183 / 2000 = 9.15%   (S->F 73, F->S 110; excluded non-evaluable: 0)
+   MUSE-Books, cross_domain + sycophancy: 175 / 2000 = 8.75%   (S->F 94, F->S 81; excluded non-evaluable: 0)
+   cross_domain only, News + Books: 131 / 2000 = 6.55%   (S->F 60, F->S 71; excluded non-evaluable: 0)
+   sycophancy only, News + Books: 227 / 2000 = 11.35%   (S->F 107, F->S 120; excluded non-evaluable: 0)
+   Target conditions only, cross_domain + sycophancy: 63 / 800 = 7.88%   (S->F 23, F->S 40; excluded non-evaluable: 0)
+   unlearned conditions only, cross_domain + sycophancy: 295 / 3200 = 9.22%   (S->F 144, F->S 151; excluded non-evaluable: 0)
+   beneficial memory only (one generation; FR@1 classification), News + Books: 13 / 999 = 1.30%   (S->F 8, F->S 5; excluded non-evaluable: 1)
+   ALL THREE categories pooled (MIXES K=3 and K=1 classifications): 371 / 4999 = 7.42%   (S->F 175, F->S 196; excluded non-evaluable: 1)
+
+Target-to-unlearned delta comparisons (24 = 4 methods x 2 datasets x 3 categories; delta = FR(unlearned) - FR(Target) at the primary K, exact; sign 0 counts as its own value):
+   original truncated vs full prompt: same sign in 14/24; strict sign flips (opposite non-zero signs) 5; |difference of deltas| mean 1.98 / median 1.50 / max 5.00 pp
+   replicated truncated vs full prompt: same sign in 11/24; strict sign flips (opposite non-zero signs) 8; |difference of deltas| mean 2.73 / median 2.00 / max 8.50 pp
+   original truncated vs replicated truncated: same sign in 17/24; strict sign flips (opposite non-zero signs) 3; |difference of deltas| mean 1.42 / median 1.01 / max 5.50 pp
+
+Note: the 24 comparisons share Target baselines and are therefore correlated; counts are descriptive. Hardware differs between the original truncated run (A100) and the other two (H200).

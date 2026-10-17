@@ -1,0 +1,31 @@
+dataset	condition	category	scenarios	generations/scenario	cell generations	status	existing source file	new generations needed
+MUSE-News	Target	cross_domain	200	3	600	REUSE (verified)	external/PersistBench/outputs/muse_news_qwen25_fullprompt_robustness_crossdomain/muse_news_qwen25_before_fullprompt_crossdomain.json	0
+MUSE-News	Target	sycophancy	200	3	600	REUSE (verified)	external/PersistBench/outputs/muse_news_qwen25_fullprompt_robustness/muse_news_qwen25_before_fullprompt.json	0
+MUSE-News	Target	beneficial_memory_usage	100	1	100	GENERATE		100
+MUSE-News	RMU	cross_domain	200	3	600	REUSE (verified)	external/PersistBench/outputs/muse_news_qwen25_fullprompt_robustness_crossdomain/muse_news_qwen25_rmu_fullprompt_crossdomain.json	0
+MUSE-News	RMU	sycophancy	200	3	600	REUSE (verified)	external/PersistBench/outputs/muse_news_qwen25_fullprompt_robustness/muse_news_qwen25_rmu_fullprompt.json	0
+MUSE-News	RMU	beneficial_memory_usage	100	1	100	GENERATE		100
+MUSE-News	WGA	cross_domain	200	3	600	GENERATE		600
+MUSE-News	WGA	sycophancy	200	3	600	GENERATE		600
+MUSE-News	WGA	beneficial_memory_usage	100	1	100	GENERATE		100
+MUSE-News	SatImp	cross_domain	200	3	600	REUSE (verified)	external/PersistBench/outputs/muse_news_qwen25_fullprompt_robustness_crossdomain/muse_news_qwen25_satimp_fullprompt_crossdomain.json	0
+MUSE-News	SatImp	sycophancy	200	3	600	REUSE (verified)	external/PersistBench/outputs/muse_news_qwen25_fullprompt_robustness/muse_news_qwen25_satimp_fullprompt.json	0
+MUSE-News	SatImp	beneficial_memory_usage	100	1	100	GENERATE		100
+MUSE-News	SimNPO	cross_domain	200	3	600	REUSE (verified)	external/PersistBench/outputs/muse_news_qwen25_fullprompt_robustness_crossdomain/muse_news_qwen25_simnpo_fullprompt_crossdomain.json	0
+MUSE-News	SimNPO	sycophancy	200	3	600	REUSE (verified)	external/PersistBench/outputs/muse_news_qwen25_fullprompt_robustness/muse_news_qwen25_simnpo_fullprompt.json	0
+MUSE-News	SimNPO	beneficial_memory_usage	100	1	100	GENERATE		100
+MUSE-Books	Target	cross_domain	200	3	600	GENERATE		600
+MUSE-Books	Target	sycophancy	200	3	600	GENERATE		600
+MUSE-Books	Target	beneficial_memory_usage	100	1	100	GENERATE		100
+MUSE-Books	RMU	cross_domain	200	3	600	GENERATE		600
+MUSE-Books	RMU	sycophancy	200	3	600	GENERATE		600
+MUSE-Books	RMU	beneficial_memory_usage	100	1	100	GENERATE		100
+MUSE-Books	WGA	cross_domain	200	3	600	GENERATE		600
+MUSE-Books	WGA	sycophancy	200	3	600	GENERATE		600
+MUSE-Books	WGA	beneficial_memory_usage	100	1	100	GENERATE		100
+MUSE-Books	SatImp	cross_domain	200	3	600	GENERATE		600
+MUSE-Books	SatImp	sycophancy	200	3	600	GENERATE		600
+MUSE-Books	SatImp	beneficial_memory_usage	100	1	100	GENERATE		100
+MUSE-Books	SimNPO	cross_domain	200	3	600	GENERATE		600
+MUSE-Books	SimNPO	sycophancy	200	3	600	GENERATE		600
+MUSE-Books	SimNPO	beneficial_memory_usage	100	1	100	GENERATE		100

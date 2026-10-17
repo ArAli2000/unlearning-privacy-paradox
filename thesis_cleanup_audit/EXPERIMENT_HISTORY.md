@@ -1,0 +1,159 @@
+# Experimental History of the Thesis
+
+Read-only reconstruction. Every date below is a file-timestamp (`stat`/`ls --time-style=long-iso` mtime) or a `git log` date on an actual file in this repository, not a guess; every script/config/output path named was directly confirmed to exist. Where evidence is ambiguous or a gap exists, this is stated explicitly rather than filled in. This document does not move, rename, or modify anything — it only explains what the already-existing (and, per the migration plan, soon-to-be-archived) files represent, so that older work reads as **a documented research trajectory**, not as clutter.
+
+Note on dates: the repository's own clock places these events in 2026 (confirmed by the session's current date and every file mtime referenced), while `git log` on framework files shows the original open-unlearning upstream project's real-world 2025 commit dates — these are two different timelines (upstream project history vs. this thesis's local work) and are not mixed below.
+
+---
+
+## 1. Early TOFU experiments
+
+**Purpose**: establish a working unlearning pipeline and baseline results across the standard TOFU benchmark, using open-unlearning's built-in methods, before any thesis-specific extension existed.
+
+**What was tried**: a sweep of 10 unlearning methods — CEU, GradAscent, GradDiff, NPO, PDU, RMU, SatImp, SimNPO, UNDIAL, WGA — on **Llama-3.2-1B**, plus subsets of the same methods on **Qwen2.5-1.5B** and **Qwen2.5-3B**, all on the TOFU "forget10" (`f10`) split, tagged `a180` in every script/checkpoint name (an internal experiment-batch label, not further decoded in any file found). Evidence:
+
+- `run_qwen15_methods_a180.sh` (2026-05-22, the oldest thesis script in the repository by mtime)
+- `run_llama1b_paper_methods_a180.sh` (2026-05-23) and `run_llama1b_other_methods_fullmetrics_a180.sh` (2026-05-24) — together cover all 10 methods on Llama-3.2-1B, split into a "paper methods" batch and an "other methods, full metrics" batch
+- `run_qwen3b_selected_methods_a100.sh` (2026-05-23) and `run_qwen3b_all_methods_fullmetrics_a180.sh` (2026-05-24/25) — a smaller "selected" subset followed by a full sweep
+- Live checkpoints: `saves/unlearn/paper_llama32_1b_{ceu,gradascent,graddiff,npo,pdu,rmu,satimp,simnpo,undial,wga}_f10_a180[_fullmetrics]/` — 20 directories (10 methods × plain/fullmetrics), with mtimes running 2026-05-23 18:14 through 2026-05-24 17:08, confirming this was a single, roughly two-day training campaign
+- Frozen record: `supervisor_update/code_settings/trainer_states/saves__unlearn__paper_llama32_1b_*_f10_a180[_fullmetrics]__trainer_state.json` (20 files)
+
+**Evaluation metrics**: whatever open-unlearning's stock TOFU evaluator reports (ROUGE-based knowledge/verbatim memorization, `extraction_strength`, `exact_memorization`, `forget_Q_A_Prob`, `forget_truth_ratio`, 4 MIA-based scores, `model_utility`) — read directly from `configs/eval/tofu.yaml`, which at this point had received **no thesis modification** (its only diff vs. tracked upstream is the later `M` change, not present yet in this phase).
+
+**Checkpoint selection approach**: none beyond the framework default at this stage — no `metric_for_best_model`/`load_best_model_at_end` override appears in any of the phase-1 scripts (confirmed by grep). Checkpoints were saved on a schedule and presumably inspected manually.
+
+**Why this phase was later superseded / became secondary**: it establishes only the smallest model (1B) and partial coverage of 3B, on the `f10` (10%-forget) split rather than the full TOFU forget set, and — critically — predates any checkpoint-selection mechanism. Phase 2 immediately begins scaling to larger models and full-forget-set training, and introduces `Agg_proxy`/`best_agg` specifically to replace "no selection logic" with a principled one. It remains valuable as the baseline confirming all 10 methods run correctly end-to-end on this codebase before any scaling or metric work began.
+
+---
+
+## 2. Scaling and method comparison
+
+**Purpose**: scale the unlearning methods up through larger models, narrow the method set to the strongest performers, and — the key methodological development of this phase — build a **principled checkpoint-selection metric**, since phase 1 had none.
+
+**What was tried**:
+
+- **Model-size scaling**: `run_7bscale_top3_fullmetrics_a180.sh` and `run_llama32_3b_qwen7b_top3_fullmetrics_a180.sh` (both 2026-05-31) extend the method sweep to **Llama-3.1-8B** and **Qwen2.5-7B**, narrowed to a "top 3" method subset (SatImp/SimNPO/WGA, inferred from the surviving method set in every later phase — RMU is added back explicitly in the very next step, so the "top 3" here is most likely SatImp/SimNPO/WGA).
+- **`Agg_proxy`/`Selection_proxy` development**: `src/trainer/base.py.bak_before_agg_proxy` (2026-06-14 13:01) is the last state of the trainer *before* these metrics existed; `run_test_qwen7b_simnpo_save_bestagg.sh` (2026-06-14 13:25, **12 minutes later**) is a single-method, single-model smoke test of the new metric-driven checkpoint selection (`metric_for_best_model=eval_Agg_proxy`) — i.e. the metric was written and immediately smoke-tested the same day. `run_4models_4methods_save_bestagg.sh` (2026-06-17) then applies it at scale: SatImp/SimNPO/RMU/WGA across **Llama-3.2-1B, Llama-3.2-3B, Qwen2.5-3B, Qwen2.5-7B** — 16 checkpoint directories `saves/unlearn/bestagg_{llama32_1b,llama32_3b,qwen25_3b,qwen25_7b}_{simnpo,rmu,wga,satimp}_savebest/` with mtimes 2026-06-14 17:26 through 2026-06-16 12:14 (this training run itself started before the *systematic* 4-model script's own mtime of 06-17, consistent with `run_test_...` on 06-14 being the same campaign's first jobs, and `run_4models_4methods_save_bestagg.sh`'s later mtime reflecting the script being finalized/edited after some jobs were already launched from an earlier version — a `.bak_before_tofufull_llama32_3b` variant of this script survives, confirming at least one prior edit).
+- **PrivacyLens introduced**: `run_privacylens_full_before_after.sh` (2026-06-17) — the first appearance of PrivacyLens evaluation in the thesis, run "before/after" unlearning across this same model×method grid.
+- **Scaling to full-TOFU-forget + 8B/14B**: `run_qwen_tofu_full_finetune_array.sh` (2026-06-18) and `run_qwen_tofufull_unlearn_best_array.sh` (2026-06-18) move from the `f10` subset to the full TOFU forget set (`tofufull`), and `run_llama31_8b_tofufull_unlearn_{4methods_clean,best_array,remaining3_aggproxy}.sh` (2026-06-19 to 06-20) and `run_qwen25_14b_tofufull_unlearn_4methods_aggproxy.sh` (2026-06-21) extend this to Llama-3.1-8B and Qwen2.5-14B. This sub-phase shows the selection metric itself being iterated on: `metric_for_best_model=eval_Selection_proxy` (no MIA/privacy term) in the `_clean`/`_best_array` scripts, then switched to `eval_Agg_proxy` (with the MIA-derived `Privacy_proxy` term) in `_remaining3_aggproxy.sh` two hours later the same day (06-20) — a deliberate refinement of which proxy to trust, confirmed by the checkpoint naming itself: `saves/unlearn/proper_qwen25_{3b,7b}_*_from_tofufull_selectionproxy_savebest/` (2026-06-19) vs. `proper_{llama31_8b,qwen25_14b}_*_from_tofufull_aggproxy_savebest/` (2026-06-20 to 06-23).
+- **PrivacyLens sweeps at this scale**: `run_privacylens_llama32_3b_tofufull_methods.sh` (06-19), `run_privacylens_qwen_tofufull_methods.sh` (06-19), `run_privacylens_llama31_8b_tofufull_methods.sh` (06-20), `run_privacylens_qwen25_14b_tofufull_methods.sh` (06-21).
+
+**What was learned / what remained relevant later**: the harmonic-mean-of-(utility, forgetting[, privacy]) checkpoint-selection idea developed here for TOFU (`Agg_proxy`/`Selection_proxy`) is the direct conceptual ancestor of `best_agg`, the metric that actually selected the final MUSE-News/MUSE-Books checkpoints (phase 3). The specific TOFU metrics (MIA scores, `exact_memorization`) do not carry over to MUSE (which lacks them), which is exactly why a MUSE-specific variant had to be written rather than reused as-is — see `CHECKPOINT_SELECTION_PATCH.md` §2 for the full mechanism.
+
+---
+
+## 3. Transition to MUSE
+
+**Purpose**: move the thesis's primary empirical claims from TOFU (a synthetic, small-scale benchmark) to **MUSE-News and MUSE-Books**, and build the checkpoint-selection metric MUSE actually needs.
+
+**Why MUSE entered the workflow**: not stated explicitly in any file (no design-rationale document exists — consistent with `CHECKPOINT_SELECTION_PATCH.md`'s finding that the trainer patches likewise carry no prose rationale, only code comments). What the evidence does show is a clean, immediate pivot: the last TOFU-scaling checkpoint (`proper_qwen25_14b_satimp_from_tofufull_aggproxy_savebest`, 2026-06-23 01:16) is followed within eight days by the first MUSE-News selection artifact (`saves/final_muse_news_simnpo_openunlearning_selection/`, 2026-07-01 14:30) — i.e. MUSE work began immediately after the TOFU scaling campaign concluded, not interleaved with it.
+
+**Two parallel setups, resolved in a separate audit** (`MUSE_NEWS_TRACK_RESOLUTION.md`; summarized here for completeness):
+
+- **Track A ("openunlearning_selection")**: unlearning directly from the official HuggingFace `muse-bench/MUSE-News_target` (Llama-2-7b), no local finetuning step. `run_muse_news_remaining_methods.sbatch` (WGA/RMU/SatImp) + `run_muse_news_simnpo.sbatch` → checkpoints named `muse_news_{method}_ckpts_bs1_gc_sbatch`. Selected post-hoc by `select_muse_news_best_checkpoints.py` (2026-07-01 21:40) and `make_muse_news_selected_table.py` (2026-07-01 21:50), combined into `make_final_muse_news_combined_table.py` (2026-07-04 14:59) → `FINAL_MUSE_News_MUSE_plus_PrivacyLens.csv`. **This track does not use `best_agg`/in-training selection at all.**
+- **Track B ("qwen25_7b_instruct")**: a **locally finetuned Qwen2.5-7B-Instruct target** (`saves/finetune/muse_news_qwen25_7b_instruct_target`, 2026-07-06 06:25) via `run_muse_news_qwen25_7b_instruct_finetune.sh`, then unlearning via `run_muse_news_qwen25_7b_instruct_unlearn_after_ft.sh` + a retry pass (`_unlearn_retry_after_rmu.sh`) for 3 of 4 methods that OOM'd on first attempt. **`best_agg` was developed and applied here**: `src/trainer/base.py.bak_before_bestagg_patch` and the current `base.py` share the exact mtime 2026-07-06 21:27 — i.e. the `best_agg` metric was written the same day the Qwen target was finetuned, immediately before the unlearning runs that use it (`metric_for_best_model=best_agg`, confirmed in all 4 of the scripts that produced the canonical checkpoints — see `CHECKPOINT_SELECTION_PATCH.md` §3).
+
+**Resolution** (per `MUSE_NEWS_TRACK_RESOLUTION.md`): **Track B is canonical** — it is the only track consumed by every subsequent mechanistic-analysis and News-vs-Books-comparison artifact; Track A is a dead-end early result never carried forward and never shown in the supervisor bundle.
+
+**Methods retained for the main experiments going forward**: **BASE, SatImp, SimNPO** are the three models used in every mechanistic-analysis artifact from this point on (confirmed repeatedly in `gpu_extraction_provenance.json` files, §1 of `MUSE_NEWS_TRACK_RESOLUTION.md`); RMU and WGA continue to appear in the *behavioral* (PrivacyLens/PersistBench) evaluation layer for both MUSE-News and MUSE-Books, but were not carried into the mechanistic hidden-state/probe pipelines built later.
+
+---
+
+## 4. MUSE-News final behavioral evaluation
+
+**Purpose**: produce the actual reported MUSE-News unlearning results — standard MUSE metrics, PrivacyLens, and PersistBench — for BASE/SatImp/SimNPO(/RMU/WGA), on the canonical Track B checkpoints.
+
+**Sequence** (Track B, 2026-07-06 to 07-08):
+
+1. Finetune target (`run_muse_news_qwen25_7b_instruct_finetune.sh`) → `saves/finetune/muse_news_qwen25_7b_instruct_target`.
+2. Unlearn 4 methods (`run_muse_news_qwen25_7b_instruct_unlearn_after_ft.sh`, retried for 3 of them via `_unlearn_retry_after_rmu.sh` after OOM failures — `saves/unlearn/muse_news_qwen25_7b_instruct_{satimp,simnpo,wga}_failed_oom_before_retry_20260706_231334/` are the failed attempts, kept on disk) → standard MUSE metrics computed in-line by the framework's own evaluator, checkpoint selected by `best_agg`.
+3. Selection frozen: `saves/final_muse_news_qwen25_7b_instruct_selection/SELECTED_MODEL_PATHS.tsv` (2026-07-08 11:26) — BASE/SatImp-459/SimNPO-459/RMU-459/WGA-306.
+4. PrivacyLens (`run_privacylens_muse_news_qwen25_selected.sh`) → `outputs/privacylens_muse_news_qwen25_selected/`.
+5. PersistBench generation (`run_persistbench_muse_news_qwen25_selected.sh`, 2026-07-08) → `external/PersistBench/outputs/muse_news_qwen25_selected_full/`; judged locally (`run_persistbench_muse_news_qwen25_judge_like_tofu.sh`, via the local-judge patch documented in `PERSISTBENCH_MODIFICATIONS.md`).
+6. Generation validation: `tmp_paths/create_persistbench_validity_summary_with_muse.py` → `PERSISTBENCH_ALL_DATASETS_VALIDITY_SUMMARY_WITH_MUSE.tsv`.
+
+**Checkpoint-selection provenance**: fully traced and cross-verified in `CHECKPOINT_SELECTION_PATCH.md` §4 — `trainer_state.json`'s own `best_metric`/`best_global_step` for the SatImp checkpoint matches the selection manifest's `best_metric` column to 17 significant figures, closing the loop between the trainer patch, the selection manifest, and the checkpoint actually used everywhere downstream.
+
+**Which outputs became canonical**: everything listed in step 3–6 above; the parallel Track A outputs (`outputs/privacylens_muse_news_selected/`, `external/PersistBench/outputs/muse_news_selected_full/`, `saves/final_muse_news_openunlearning_selection/FINAL_MUSE_News_MUSE_plus_PrivacyLens.csv`) are historical, not canonical (§3 above / `MUSE_NEWS_TRACK_RESOLUTION.md`).
+
+---
+
+## 5. Mechanistic analysis phase
+
+**Purpose**: move beyond behavioral (input/output) evaluation into the model's internal representations, to characterize *how* unlearning changes behavior at the hidden-state level — this is the thesis's original-research core, built entirely on the Track B MUSE-News checkpoints.
+
+**Sub-phases, in file-timestamp order** (a roughly two-week campaign, 2026-08-15 to 2026-08-28):
+
+1. **2026-08-15** — PrivacyLens hidden-state/logit-lens tooling: `mechanistic/extract_single_privacylens.py`, `build_population_manifest.py`, `extract_privacylens_population.py`, `compare_privacylens_samples.py`, `analyze_single_representation_drift.py` — whole-model and population-level (12-vs-12) representation analysis of PrivacyLens safe/leaky responses.
+2. **2026-08-23 to 08-24** — `mechanistic/privacy_collapse/` pilot: `prepare_manifest.py`, `validate_outputs.py`, `validate_static.py`, then `extract_pilot.py`/`analyze_pilot.py` run via `mechanistic/privacy_collapse/slurm/run_muse_news_qwen25_7b_pilot.sbatch` — a first, smaller-scale pilot of the same MUSE-News Qwen2.5-7B BASE/SatImp/SimNPO models before committing to the larger studies that follow. `mechanistic/outputs/privacy_collapse_muse_news_qwen25_7b/gpu_extraction_provenance.json` (started 2026-08-24 10:39) records this study's exact absolute checkpoint paths — matching the Track B canonical paths exactly (cross-verified in `MUSE_NEWS_TRACK_RESOLUTION.md` §3).
+3. **2026-08-24 to 08-25** — PersistBench single-case + stress-test tooling: `analyze_single_persistbench_case.py`/`extract_single_persistbench_case.py` (RMU-specific originals) generalized into `analyze_persistbench_case_generic.py`/`extract_persistbench_case_generic.py`; `mechanistic/privacy_collapse/persistbench/` stress-test scripts (`run_local_{simple,target,matched_rewrite,minimal_edit,smoke}_stress.py`) and validation helpers (`pair_validation.py`, `token_audit.py`, `two_stage_validation.py`, each with real unit tests).
+4. **2026-08-27** — `persistbench_mcq/`: the controlled MCQ **privacy-judgment** probe (`build_manifest.py`, `extract.py`, `analyze.py`).
+5. **2026-08-27 to 08-28** — `persistbench_native/`: native (non-MCQ) **prompt-end hidden-state extraction** over the real PersistBench cross-domain generations, plus `prepare_native_sycophancy_200.py`/`analyze_sycophancy.py` — the **sycophancy transition analysis** (non→non / non→syc / syc→non / syc→syc classification of PersistBench sycophancy-category responses before vs. after unlearning).
+6. **2026-08-28** — `persistbench_sycophancy_mcq/`: the controlled MCQ **sycophancy** probe with **A/B label-swap robustness** testing (`original_directions.pt`/`swapped_directions.pt`, confirmed in `mechanistic/privacy_collapse/persistbench_sycophancy_mcq/representations/{base,satimp,simnpo}/`), plus `finalize.py` (2026-08-28 12:04) which explicitly cross-links this probe's output with the native pipeline's category-comparison output — the two pipelines were deliberately made to talk to each other, not run in isolation.
+
+**Key manifests/results**: `mechanistic/privacy_collapse/persistbench_native/analysis/muse_news_category_comparison_validated.{json,md}`, `muse_news_persistbench_metric_reconciliation.{json,md}` (2026-08-28 — the document that explicitly reconciles this phase's official category-specific FR@K numbers against an earlier custom classifier's numbers and against Track A's Llama-2 numbers, concluding they are different, non-comparable measurements, not a contradiction — see `PERSISTBENCH_MODIFICATIONS.md` §5–6 for the substring-classifier finding this document itself already flagged).
+
+---
+
+## 6. MUSE-Books replication
+
+**Purpose**: test whether the MUSE-News mechanistic findings generalize to a second dataset (MUSE-Books), using the same three-model (BASE/SatImp/SimNPO) methodology.
+
+**Behavioral layer** (2026-07-10 to 07-12, i.e. concurrent with/immediately after MUSE-News's own behavioral layer, well before the mechanistic phase existed):
+
+- Llama-2-7b: `run_muse_books_llama2_7b_unlearn_selected_methods.sh` → `saves/final_muse_books_llama2_7b_selection/` → `run_persistbench_muse_books_llama2_selected.sh`/`_judge_like_tofu.sh` (generation 2026-07-10/11) → `run_privacylens_muse_books_llama2_selected.sh`/`_forced_choice.sh`.
+- Qwen2.5-7B-Instruct: `run_muse_books_qwen25_7b_instruct_finetune.sh` → `run_muse_books_qwen25_7b_instruct_unlearn_after_ft.sh` (also using `best_agg`, confirmed in `CHECKPOINT_SELECTION_PATCH.md` §3) → `run_persistbench_muse_books_qwen25_selected.sh`/`_localjudge.sh` (generation 2026-07-12) → `run_privacylens_muse_books_qwen25_selected.sh`.
+
+**Mechanistic replication** (2026-09-06, roughly 6 weeks after the MUSE-News mechanistic phase, using the exact frozen manifests/methodology from that phase): `mechanistic/outputs/muse_books_weekly_update_analysis/{DISCOVERY_REPORT.md,README.md}` — a full replication of the PrivacyLens behavioral+representation analysis, PersistBench cross-domain/sycophancy/beneficial-memory FR@K, native sycophancy hidden-state extraction, and the controlled MCQ recognition-vs-native-behavior + A/B label-swap probes, on `saves/finetune/muse_books_qwen25_7b_instruct_target` and `.../muse_books_qwen25_7b_instruct_{satimp,simnpo}/checkpoint-51`.
+
+**What replicated and what did not** (quoted from the replication document's own "Bottom line," since this is the thesis's own stated finding, not an inference by this audit): *"The full MUSE-News story does not replicate on MUSE-Books. PrivacyLens again shows no Privacy-Collapse-style collapse, and the controlled A/B direction is again lexically confounded. However, the central PersistBench behavioral split reverses or becomes mixed: cross-domain FR@K is essentially unchanged/mixed, and sycophancy FR@K improves, not worsens."* This is a genuine, reported **negative replication result** — MUSE-Books does not show the News dataset's recognition-vs-worsened-native-behavior dissociation — and is exactly the kind of finding that must not be lost or mistaken for a discarded/failed experiment during cleanup.
+
+**Exact canonical model/checkpoint family**: BASE = `saves/finetune/muse_books_qwen25_7b_instruct_target`; SatImp/SimNPO = `saves/unlearn/muse_books_qwen25_7b_instruct_{satimp,simnpo}/checkpoint-51` — confirmed by `saves/final_muse_books_qwen25_7b_instruct_selection/SELECTED_MODEL_PATHS.tsv` and cross-checked against `trainer_state.json`'s own `best_global_step` in the replication document (both independently point to checkpoint 51, per the document's own "This is not an unresolved choice between steps 51 and 500" statement).
+
+---
+
+## 7. Final thesis scope
+
+Based on everything traced above, the thesis's **final, actively-cited scope** is:
+
+- **Datasets**: MUSE-News, MUSE-Books.
+- **Models/methods**: BASE, SatImp, SimNPO as the mechanistic-analysis core; RMU and WGA additionally at the behavioral (PrivacyLens/PersistBench standard-metric) layer only.
+- **Checkpoint family**: MUSE-News Track B (`muse_news_qwen25_7b_instruct_*`), MUSE-Books both Llama-2-7b and Qwen2.5-7B-Instruct tracks.
+- **Analyses**: standard MUSE eval, PrivacyLens (behavioral + hidden-state), PersistBench (cross-domain/sycophancy/beneficial-memory FR@K, native hidden-state extraction, controlled MCQ probes, A/B label-swap robustness), News-vs-Books comparison.
+
+Everything in phases 1–2 (TOFU, all sizes) and the WMDP side-investigation (`run_wmdp_*.sh`, `run_persistbench_wmdp_*.sh`, 2026-07-13 to 07-22 generate/judge work plus a 2026-08-12 MMLU-utility follow-up and `meeting_updates/wmdp_followup_2026_08_12/`) is **earlier or parallel work that is not part of this final scope** — but, per Task 3 below, "not final scope" is not the same as "junk."
+
+---
+
+## 8. Historical work preserved in archive
+
+This section exists so that a grader (or the author, months later) opening `archive/` sees a labeled research trail, not an unexplained pile of old scripts.
+
+### 8a. Must be preserved (documents methodology, evolution, or a real result)
+
+| Item | Why it matters |
+|---|---|
+| `run_qwen15_methods_a180.sh`, `run_llama1b_paper_methods_a180.sh`, `run_llama1b_other_methods_fullmetrics_a180.sh`, `run_qwen3b_*_a180.sh`, `run_7bscale_top3_fullmetrics_a180.sh`, `run_llama32_3b_qwen7b_top3_fullmetrics_a180.sh` | The complete, working baseline that established all 10 unlearning methods run correctly, before any selection-metric or scaling decision was made — the starting point the thesis's method choice narrows down from. |
+| `run_test_qwen7b_simnpo_save_bestagg.sh` + `src/trainer/base.py.bak_before_agg_proxy` | Documents the exact moment (2026-06-14) `Agg_proxy`-based checkpoint selection was introduced and first smoke-tested — the direct ancestor of `best_agg`. |
+| `run_4models_4methods_save_bestagg.sh` (+ its `.bak_before_tofufull_llama32_3b` prior version) | The first systematic application of proxy-metric checkpoint selection across model sizes — shows the metric being trusted at scale before being ported to MUSE. |
+| `run_llama31_8b_tofufull_unlearn_4methods_clean.sh` → `_best_array.sh` → `_remaining3_aggproxy.sh` | Documents the deliberate switch from `Selection_proxy` to `Agg_proxy` (adding the MIA/privacy term) — a real methodological decision about which proxy to trust, not noise. |
+| `saves/final_muse_news_openunlearning_selection/` (incl. `FINAL_MUSE_News_MUSE_plus_PrivacyLens.csv`) and Track A's scripts (`run_muse_news_remaining_methods.sbatch`, `run_muse_news_simnpo.sbatch`, `run_privacylens_muse_news_selected.sh`, `run_persistbench_muse_news_judge_like_tofu.sh`/`_selected.sh`, `select_muse_news_best_checkpoints.py`, `make_muse_news_selected_table.py`, `make_final_muse_news_combined_table.py`) | This is a **complete, real, combined result** — not a smoke test — for an alternative MUSE-News setup. It documents why the thesis moved to a locally-finetuned target instead of the official one, and must be kept clearly labeled ("Track A, superseded, not the cited result") rather than deleted, per `MUSE_NEWS_TRACK_RESOLUTION.md`. |
+| `saves/final_muse_news_simnpo_openunlearning_selection/` | The single-method precursor to the full Track A selection one day later — shows the selection methodology being built incrementally. |
+| `meeting_updates/wmdp_followup_2026_08_12/`, `meeting_updates_wmdp_safety_summary.csv`, and the WMDP `run_*.sh` scripts (2026-07-13 to 07-22, 2026-08-12) | A real side-investigation, explicitly discussed with a supervisor ("Last week we agreed to revisit WMDP before moving to interpretability"), that directly motivated the decision to pivot to the mechanistic-interpretability phase. Documents *why* the thesis moved where it did next, even though WMDP itself isn't in the final scope. |
+| `mechanistic/privacy_collapse/{extract_pilot.py,analyze_pilot.py}` + `mechanistic/outputs/privacy_collapse_muse_news_qwen25_7b/` pilot output | The exploratory pilot that precedes and justifies the larger `persistbench_native`/`persistbench_mcq`/`persistbench_sycophancy_mcq` studies — shows the mechanistic methodology being validated at small scale first. |
+| `mechanistic/analyze_single_persistbench_case.py`/`extract_single_persistbench_case.py` (RMU-specific originals) | Superseded by the generic versions, but their own frozen output (`mechanistic/outputs/single_persistbench_case_rmu_case1/`, etc.) is a real, cited single-case result, and the originals document how the generic tooling was derived. |
+| `mechanistic/privacy_collapse/persistbench_native/analysis/muse_news_persistbench_metric_reconciliation.{json,md}` | A genuine, already-performed methodological reconciliation (old custom classifier vs. official FR@K vs. Track A) — this *is* the thesis's own quality-control work and must never be discarded; it is cited by `PERSISTBENCH_MODIFICATIONS.md` as primary evidence. |
+| `mechanistic/outputs/muse_books_weekly_update_analysis/{DISCOVERY_REPORT.md,README.md}` | Contains a genuine **negative replication result** (§6 above) — this is a real thesis finding, not a discarded draft. |
+| `src/trainer/base.py.bak_before_agg_proxy`, `src/trainer/base.py.bak_before_bestagg_patch`, and the 6 `external/PersistBench/src/benchmark/*.bak_*`/`.before_*` files | The only surviving record of the trainer's and PersistBench's pre-patch states — already the subject of `CHECKPOINT_SELECTION_PATCH.md` and `PERSISTBENCH_MODIFICATIONS.md`; must not be deleted until their content is captured in the recommended `thesis/docs/*.md` methodology notes. |
+| `supervisor_update/code_settings/trainer_states/*.json` (102 files) and `supervisor_update/code_settings/hydra_configs/` (108 files, currently invisible to `git status` due to an unanchored `.gitignore` rule — see `CODE_QUALITY_REVIEW.md` §7) | Small, frozen, reproducibility-critical records of exactly which checkpoint/config was used for every run across every phase above — this is the machine-readable backbone this history document was reconstructed from. |
+
+### 8b. True junk / safe to discard (contrast with the above — nothing here documents a decision or a result)
+
+- `run_privacylens_full_before_after.sh.bak_raw_base` — confirmed byte-identical to the live script (`DUPLICATION_REPORT.md` §2); zero informational value beyond what the live file already has.
+- `configs/model/sedxTQNOq` — confirmed 0-byte, garbled filename, not referenced anywhere.
+- `tofu_qwen15_npo_f10_fixed.tar.gz` — confirmed corrupted (`tar -tzf` fails partway) in addition to being out of scope; not a usable artifact regardless of scope decisions.
+- `run_wmdp_cyber_all4_smoke_array.sh`, `_nonrmu_smoke_fixed_array.sh`, `run_persistbench_wmdp_cyber_test0{,_anygpu}.sh`, `run_wmdp_cyber_qwen25_7b_rmu_test.sh` — genuine smoke/debug tests superseded same-week by their "real"/non-test counterparts (`run_wmdp_cyber_rmu_real_array.sh`, `_sweep300_array.sh`); they document an iteration step but carry no unique result (the real runs' output is what matters).
+- `supervisor_update/code_settings_bundle.tar.gz` and `code_settings_bundle_full.tar.gz` — confirmed redundant archives of the `code_settings/` directory that sits unpacked right next to them (`DUPLICATION_REPORT.md` §1c); the unpacked directory (or, after migration, its useful sub-parts per §8a above) is what should be kept, not these duplicate tarballs.
+- 5 orphaned `tmp_paths/*` files confirmed unreferenced by any script (`llama31_8b_persistbench_models.tsv`, `muse_news_qwen25_privacylens_models.tsv`, `muse_news_qwen25_selected_models.tsv`, `persistbench_validity_all_datasets.py`, `qwen25_14b_finetune_cfg_preview.yaml`) — no script depends on them and no phase-history evidence ties them to a specific decision or result.
+
+**The distinction that matters**: everything in 8a is being recommended for `archive/` (per `MIGRATION_PLAN.md`), not deletion — archived material that documents a real decision, evolution, or result is exactly as important to keep as the final pipeline itself, just not part of the active code path. Everything in 8b was already marked `DELETE CANDIDATE (but DO NOT delete)` or `ARCHIVE` in the existing migration plan for reasons unrelated to its scientific content (byte-identical duplication, corruption, or zero references) — this document does not change that classification, it confirms it from the history reconstruction and explains why these specific items, unlike their neighbors, carry no historical narrative weight.

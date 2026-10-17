@@ -14,7 +14,7 @@ import matplotlib.pyplot as plt
 import torch
 
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_DIR = ROOT / "mechanistic/outputs/privacy_population_12v12"
 ACTIVATION_ROOT = ROOT / "mechanistic/outputs"
 EXPECTED_SHAPE = (29, 3584)

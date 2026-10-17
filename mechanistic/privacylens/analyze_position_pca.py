@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 import numpy as np,pandas as pd
 from sklearn.decomposition import PCA
 
-ROOT=Path(__file__).resolve().parents[1]; OUT=ROOT/'mechanistic/outputs/privacy_position_analysis'; POP=ROOT/'mechanistic/outputs/privacy_population_12v12/sample_manifest.csv'
+ROOT=Path(__file__).resolve().parents[2]; OUT=ROOT/'mechanistic/outputs/privacy_position_analysis'; POP=ROOT/'mechanistic/outputs/privacy_population_12v12/sample_manifest.csv'
 CANDIDATES=[('recipient',18),('data_subject',24),('sensitive_information',27),('sensitive_information',28)]
 def main():
  pop=pd.read_csv(POP); rows=[]

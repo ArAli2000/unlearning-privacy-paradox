@@ -35,4 +35,4 @@ echo "HOSTNAME: $(hostname)"
 echo "JOB ID: ${SLURM_JOB_ID}"
 nvidia-smi
 
-python mechanistic/extract_privacy_branch_counterfactuals.py
+python mechanistic/persistbench/extract_privacy_branch_counterfactuals.py

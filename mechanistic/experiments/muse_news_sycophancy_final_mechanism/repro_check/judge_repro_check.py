@@ -17,7 +17,7 @@ ROOT = Path(__file__).resolve().parents[4]
 OUT_DIR = Path(__file__).resolve().parent
 
 _spec = importlib.util.spec_from_file_location(
-    "muse_news_activation_patching", ROOT / "mechanistic/muse_news_activation_patching.py"
+    "muse_news_activation_patching", ROOT / "mechanistic/muse_news/muse_news_activation_patching.py"
 )
 apatch = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(apatch)

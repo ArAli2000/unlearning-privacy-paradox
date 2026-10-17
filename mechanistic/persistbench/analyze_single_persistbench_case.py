@@ -6,7 +6,7 @@ import matplotlib; matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import numpy as np,pandas as pd,torch
 
-ROOT=Path(__file__).resolve().parents[1]; OUT=ROOT/'mechanistic/outputs/single_persistbench_case'
+ROOT=Path(__file__).resolve().parents[2]; OUT=ROOT/'mechanistic/outputs/single_persistbench_case'
 def metrics(a,b):
  d=b-a; return float(torch.nn.functional.cosine_similarity(a,b,dim=0)),float(d.norm()),float(d.norm()/a.norm()),float(a.norm()),float(b.norm())
 def main():

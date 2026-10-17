@@ -3,7 +3,7 @@
 import json
 from pathlib import Path
 
-ROOT=Path(__file__).resolve().parents[1]
+ROOT=Path(__file__).resolve().parents[2]
 OUT=ROOT/'mechanistic/outputs/single_persistbench_case'
 PB=ROOT/'external/PersistBench/outputs/final_tofu_persistbench_localjudge'
 ENTRY='c7e2c674a21ce297ad7adb3e2711f08a'; INDEX=1

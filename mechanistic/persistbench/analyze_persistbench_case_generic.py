@@ -9,7 +9,7 @@ import torch
 import torch.nn.functional as F
 
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 
 
 def cosine(a, b):

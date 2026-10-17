@@ -64,7 +64,7 @@ uses greedy decoding (temperature 0), so results are reproducible without a seed
 
 `L0-6`, `L7-13`, `L14-20`, `L21-27` (from `run_activation_patching_clean.py`, hooks on
 `model.model.layers[j]` directly). The older autoregressive script
-(`mechanistic/muse_news_activation_patching.py`) uses 1-indexed labels (`early=1-7,
+(`mechanistic/muse_news/muse_news_activation_patching.py`) uses 1-indexed labels (`early=1-7,
 early_middle=8-14, middle_late=15-21, late=22-28`) via `layers[index-1]` — **verified by
 direct inspection these resolve to the identical 0-indexed layers**, just a different
 labeling convention. We standardize all new reporting on the 0-indexed `L14-20`/`L21-27`
@@ -85,7 +85,7 @@ greedy decoding this does not change the sampled output, only speed.
 - **Teacher-forced Phase-9 result itself**: already complete and clean
   (`run_activation_patching_clean.py` + `clean_selection.json` + `CLEAN_RERUN_REPORT.md`).
   Not rerun.
-- **Autoregressive patching mechanism**: `mechanistic/muse_news_activation_patching.py`
+- **Autoregressive patching mechanism**: `mechanistic/muse_news/muse_news_activation_patching.py`
   (`ActivationDonor`, `generate()`, `apply_repetition_penalty()`). At every decoding step it
   reruns the donor model from scratch over the recipient's actual generated-so-far sequence
   and patches only the donor's last-position activation into the recipient's current step —
@@ -118,7 +118,7 @@ greedy decoding this does not change the sampled output, only speed.
 
 ### New, but thin (glue/selection code, not new methodology)
 
-- **Exp 1 driver**: point `mechanistic/muse_news_activation_patching.py`'s case selection at
+- **Exp 1 driver**: point `mechanistic/muse_news/muse_news_activation_patching.py`'s case selection at
   `clean_selection.json` (10 treatment + 10 matched controls) instead of the old
   `continuation_cases_v1.json` (9 cases, judge-score-jump selected, includes cross_domain).
   Resolve `prompt_token_ids` per `persistbench_id` from

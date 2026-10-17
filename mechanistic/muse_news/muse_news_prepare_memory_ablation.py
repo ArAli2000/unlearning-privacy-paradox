@@ -30,7 +30,7 @@ from typing import Any
 import torch
 from transformers import AutoTokenizer
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 NATIVE_DIR = ROOT / "mechanistic/privacy_collapse/persistbench_native"
 OUT_DIR = ROOT / "mechanistic/outputs/muse_news_sycophancy_mechanistic"
 MANIFEST_OUT_DIR = OUT_DIR / "manifests"

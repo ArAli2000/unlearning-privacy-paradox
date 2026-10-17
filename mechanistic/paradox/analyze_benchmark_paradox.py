@@ -7,7 +7,7 @@ import matplotlib; matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import numpy as np,pandas as pd
 
-ROOT=Path(__file__).resolve().parents[1]; OUT=ROOT/'mechanistic/outputs/benchmark_paradox'; OUT.mkdir(parents=True,exist_ok=True)
+ROOT=Path(__file__).resolve().parents[2]; OUT=ROOT/'mechanistic/outputs/benchmark_paradox'; OUT.mkdir(parents=True,exist_ok=True)
 PBROOT=ROOT/'external/PersistBench/outputs'; PLROOT=ROOT/'outputs'; VALID_THRESHOLD=80.0
 METHODS=['RMU','WGA','SimNPO','SatImp']
 

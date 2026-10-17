@@ -1,38 +1,17 @@
-# Single-sample PrivacyLens hidden-state extraction
+# Mechanistic analysis
 
-This module is the first mechanistic-interpretability sanity check. It extracts
-the last prompt token's hidden representation for one PrivacyLens sample from
-the BASE, RMU, and WGA Qwen2.5-7B checkpoints. It does not generate text or
-perform PCA, logit-lens analysis, steering, plotting, or dataset-scale work.
+Hidden-state, logit-lens and activation-patching analyses. Run every script from the
+repository root; Slurm wrappers are in `slurm/`. Generated outputs go to
+`mechanistic/outputs/` and are not part of the repository.
 
-The script imports `construct_prompt` and `format_chat_prompt` from the existing
-PrivacyLens evaluator. It loads `--sample-id` (default: `main1`) from the repository's existing dataset,
-builds the naive/default evaluation prompt with the BASE tokenizer's chat
-template, tokenizes that final prompt once, and reuses the same `input_ids` and
-`attention_mask` for all three sequential forward passes.
+| Directory | Contents |
+|---|---|
+| `privacylens/` | PrivacyLens hidden-state extraction for one sample, the 493-sample population and token positions; PCA, representation drift, validation. `extract_single_privacylens.py` holds the shared prompt and model-path helpers. |
+| `persistbench/` | PersistBench single-case and generic case extraction and analysis, privacy-branch counterfactuals, privacy-bearing token analysis. |
+| `paradox/` | Benchmark-paradox analysis and selection of candidates for the mechanistic study. |
+| `muse_news/` | MUSE-News activation patching, memory ablation, continuation-preference and logit-lens analyses, transition tables. |
+| `experiments/` | Self-contained experiment folders (sycophancy paradox, final mechanism) with their own README, manifests and reports. |
+| `privacy_collapse/` | Small manifests and analysis tables for the PersistBench native, sycophancy and MCQ runs. |
+| `slurm/` | Slurm launchers for the scripts above. |
 
-Submit from the repository root (the job has not been submitted):
-
-```bash
-sbatch mechanistic/slurm/run_single_privacylens.sbatch
-sbatch mechanistic/slurm/run_single_privacylens.sbatch main415
-# Alternatively: sbatch --export=ALL,SAMPLE_ID=main415 mechanistic/slurm/run_single_privacylens.sbatch
-```
-
-The job uses the existing `unlearning` conda environment and requests one A180
-GPU, 160 GB host memory, 8 CPUs, and 2 hours. It loads only local model files and
-does not install or upgrade packages.
-
-Successful execution creates `mechanistic/outputs/<sample-id>/` containing:
-
-- `base_last_prompt_token.pt`
-- `rmu_last_prompt_token.pt`
-- `wga_last_prompt_token.pt`
-- `metadata.json`
-
-Each `.pt` file is a CPU `torch.float32` tensor with shape `[29, 3584]`: row 0
-is the embedding output and rows 1--28 are the transformer-layer outputs.
-`metadata.json` records the sample ID, exact chat-formatted prompt, token IDs,
-decoded token strings, sequence length, token-ID hash, and per-model paths and
-shape/configuration details. The script fails if the reused IDs or attention
-mask differ, a tensor shape is unexpected, or any activation is NaN or Inf.
+Example: `sbatch mechanistic/slurm/run_single_privacylens.sbatch main415`

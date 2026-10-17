@@ -37,5 +37,5 @@ echo "JOB ID: ${SLURM_JOB_ID}"
 echo "CASE DIR: ${CASE_DIR}"
 nvidia-smi
 
-python mechanistic/extract_persistbench_case_generic.py \
+python mechanistic/persistbench/extract_persistbench_case_generic.py \
     --case-dir "$CASE_DIR"

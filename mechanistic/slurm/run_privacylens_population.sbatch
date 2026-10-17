@@ -33,4 +33,4 @@ echo "JOB ID: ${SLURM_JOB_ID:-unset}"
 echo "WORKDIR: $(pwd)"
 nvidia-smi
 
-python mechanistic/extract_privacylens_population.py
+python mechanistic/privacylens/extract_privacylens_population.py

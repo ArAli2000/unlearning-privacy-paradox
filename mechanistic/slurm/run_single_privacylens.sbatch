@@ -44,5 +44,5 @@ nvidia-smi
 
 echo "PRIVACYLENS SAMPLE: $SAMPLE_ID_TO_RUN"
 
-python mechanistic/extract_single_privacylens.py \
+python mechanistic/privacylens/extract_single_privacylens.py \
   --sample-id "$SAMPLE_ID_TO_RUN"

@@ -26,5 +26,5 @@ echo "HOSTNAME: $(hostname)"
 echo "JOB ID: ${SLURM_JOB_ID}"
 nvidia-smi
 
-python mechanistic/muse_news_extract_no_memory_states.py --category sycophancy
-python mechanistic/muse_news_extract_no_memory_states.py --category cross_domain
+python mechanistic/muse_news/muse_news_extract_no_memory_states.py --category sycophancy
+python mechanistic/muse_news/muse_news_extract_no_memory_states.py --category cross_domain

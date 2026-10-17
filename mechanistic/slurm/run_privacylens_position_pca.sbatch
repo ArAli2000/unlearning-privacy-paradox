@@ -17,4 +17,4 @@ export CUDA_VISIBLE_DEVICES=''
 export MPLCONFIGDIR=/tmp/mech-pca-mpl-${SLURM_JOB_ID}
 export XDG_CACHE_HOME=/tmp/mech-pca-cache-${SLURM_JOB_ID}
 mkdir -p "$MPLCONFIGDIR" "$XDG_CACHE_HOME" logs
-python -u mechanistic/analyze_position_pca.py
+python -u mechanistic/privacylens/analyze_position_pca.py

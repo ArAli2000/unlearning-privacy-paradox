@@ -26,6 +26,6 @@ echo "HOSTNAME: $(hostname)"
 echo "JOB ID: ${SLURM_JOB_ID}"
 nvidia-smi
 
-python mechanistic/muse_news_activation_patching.py \
+python mechanistic/muse_news/muse_news_activation_patching.py \
   --max-per-method 1 --max-cross-domain 0 --methods SatImp \
   --max-new-tokens 12 --skip-judge --tag smoketest

@@ -30,7 +30,7 @@ from collections import Counter
 from pathlib import Path
 from typing import Any
 
-REPO_ROOT = Path(__file__).resolve().parents[1]
+REPO_ROOT = Path(__file__).resolve().parents[2]
 NATIVE = REPO_ROOT / "mechanistic/privacy_collapse/persistbench_native"
 OUT_DIR = REPO_ROOT / "mechanistic/outputs/muse_news_sycophancy_mechanistic"
 

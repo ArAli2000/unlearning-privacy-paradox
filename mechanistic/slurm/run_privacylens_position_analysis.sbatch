@@ -18,4 +18,4 @@ export CUDA_VISIBLE_DEVICES=''
 export MPLCONFIGDIR=/tmp/mech-mpl-${SLURM_JOB_ID}
 export XDG_CACHE_HOME=/tmp/mech-cache-${SLURM_JOB_ID}
 mkdir -p "$MPLCONFIGDIR" "$XDG_CACHE_HOME" logs
-python -u mechanistic/analyze_privacylens_positions.py
+python -u mechanistic/privacylens/analyze_privacylens_positions.py

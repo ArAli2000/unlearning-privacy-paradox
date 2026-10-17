@@ -24,4 +24,4 @@ cd "$PROJECT_ROOT"
 source /storage/ukp/work/elshashay/miniconda3/bin/activate
 conda activate unlearning
 echo "HOSTNAME: $(hostname)"; echo "JOB ID: ${SLURM_JOB_ID:-unset}"; nvidia-smi
-python mechanistic/extract_privacylens_positions.py
+python mechanistic/privacylens/extract_privacylens_positions.py

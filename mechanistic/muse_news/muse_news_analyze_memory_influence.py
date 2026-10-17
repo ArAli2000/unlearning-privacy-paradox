@@ -34,7 +34,7 @@ import numpy as np
 import pandas as pd
 import torch
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 OUT_ROOT = ROOT / "mechanistic/outputs/muse_news_sycophancy_mechanistic"
 NATIVE_DIR = ROOT / "mechanistic/privacy_collapse/persistbench_native"
 SEED = 20260919

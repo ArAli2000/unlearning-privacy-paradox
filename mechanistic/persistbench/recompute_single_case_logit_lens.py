@@ -4,7 +4,7 @@ import gc,json
 from pathlib import Path
 import pandas as pd,torch
 from transformers import AutoModelForCausalLM,AutoTokenizer
-ROOT=Path(__file__).resolve().parents[1]; OUT=ROOT/'mechanistic/outputs/single_persistbench_case'
+ROOT=Path(__file__).resolve().parents[2]; OUT=ROOT/'mechanistic/outputs/single_persistbench_case'
 MODELS={'BASE':ROOT/'saves/finetune/tofu_Qwen2.5-7B-Instruct_full','RMU':ROOT/'saves/unlearn/proper_qwen25_7b_rmu_from_tofufull_selectionproxy_savebest/checkpoint-104','WGA':ROOT/'saves/unlearn/proper_qwen25_7b_wga_from_tofull_selectionproxy_savebest/checkpoint-104'}
 MODELS['WGA']=ROOT/'saves/unlearn/proper_qwen25_7b_wga_from_tofufull_selectionproxy_savebest/checkpoint-104'
 def main():

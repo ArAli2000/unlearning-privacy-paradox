@@ -27,7 +27,7 @@ import torch
 import transformers
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 OUT_ROOT = ROOT / "mechanistic/outputs/muse_news_sycophancy_mechanistic"
 EXPECTED_SHAPE = (200, 29, 3584)
 MODEL_PATHS = {

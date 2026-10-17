@@ -10,7 +10,7 @@ from transformers import AutoTokenizer
 from extract_single_privacylens import DATA_PATH, MODEL_PATHS, build_prompt
 
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 OUTPUT_DIR = ROOT / "mechanistic/outputs/privacy_population_12v12"
 RESULT_ROOT = ROOT / "outputs/privacylens_qwen_tofufull_methods"
 RESULT_PATHS = {

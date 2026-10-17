@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt
 import torch
 
 
-REPO_ROOT = Path(__file__).resolve().parents[1]
+REPO_ROOT = Path(__file__).resolve().parents[2]
 OUTPUTS_ROOT = REPO_ROOT / "mechanistic/outputs"
 EXPECTED_SHAPE = (29, 3584)
 NEAR_ZERO_NORM = 1e-12

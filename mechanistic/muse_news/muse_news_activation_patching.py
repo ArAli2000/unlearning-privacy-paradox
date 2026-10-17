@@ -47,7 +47,7 @@ from typing import Any
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 OUT_ROOT = ROOT / "mechanistic/outputs/muse_news_sycophancy_mechanistic"
 PATCH_OUT = OUT_ROOT / "patching"
 CONTINUATION_MANIFEST = OUT_ROOT / "manifests/continuation_cases_v1.json"

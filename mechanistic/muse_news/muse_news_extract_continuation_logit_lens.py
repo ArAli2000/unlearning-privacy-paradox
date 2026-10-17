@@ -29,7 +29,7 @@ import torch
 import transformers
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 OUT_ROOT = ROOT / "mechanistic/outputs/muse_news_sycophancy_mechanistic"
 MANIFEST_PATH = OUT_ROOT / "manifests/continuation_cases_v1.json"
 MODEL_PATHS = {

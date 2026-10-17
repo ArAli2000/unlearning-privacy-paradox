@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """GPU extraction for one frozen PersistBench case (own and aligned RMU replay)."""
-import gc,hashlib,importlib.util,json,sys,time,types
+import argparse,gc,hashlib,importlib.util,json,sys,time,types
 from pathlib import Path
 import pandas as pd
 import torch
 from transformers import AutoModelForCausalLM,AutoTokenizer
 
-ROOT=Path(__file__).resolve().parents[1]; OUT=ROOT/'mechanistic/outputs/single_persistbench_case'
+ROOT=Path(__file__).resolve().parents[2]
 PB_SRC=ROOT/'external/PersistBench/src/benchmark'
 # Load only the exact upstream config/prompt modules. Importing benchmark's package
 # initializer also imports optional API providers that are irrelevant to extraction.
@@ -61,52 +61,60 @@ def seq_logprob(model,prompt,prefix,cont):
  return vals
 
 def main():
+ ap=argparse.ArgumentParser()
+ ap.add_argument('--case-dir',required=True)
+ args=ap.parse_args()
+ OUT=ROOT/args.case_dir
  if not torch.cuda.is_available(): raise RuntimeError('CUDA required: submit the SLURM script')
- case=json.loads((OUT/'selected_case.json').read_text()); tok=AutoTokenizer.from_pretrained(MODELS['BASE'],use_fast=True,local_files_only=True,trust_remote_code=True)
- prompt_ids,system,full_n=make_ids(tok,case,NAMES['RMU']); variants={k:make_ids(tok,case,NAMES[k])[0] for k in MODELS}
+ case=json.loads((OUT/'selected_case.json').read_text())
+ target=case['target_model']
+ tok=AutoTokenizer.from_pretrained(MODELS['BASE'],use_fast=True,local_files_only=True,trust_remote_code=True)
+ prompt_ids,system,full_n=make_ids(tok,case,NAMES[target]); variants={k:make_ids(tok,case,NAMES[k])[0] for k in MODELS}
  if any(v!=prompt_ids for v in variants.values()): raise RuntimeError('Left-truncated original model prompts are not token-identical')
  responses={k:tok(case['models'][k]['response'],add_special_tokens=False).input_ids for k in MODELS}
- rtext=case['models']['RMU']['response']; phrase=case['first_injected_phrase']; char0=rtext.index(phrase); char1=char0+len(phrase)
+ rtext=case['models'][target]['response']; phrase=case['first_injected_phrase']; char0=rtext.index(phrase); char1=char0+len(phrase)
  enc=tok(rtext,add_special_tokens=False,return_offsets_mapping=True); offsets=enc.offset_mapping
  inj_tokens=[i for i,(a,b) in enumerate(offsets) if b>char0 and a<char1]
  inj_start=min(inj_tokens); inj_end=max(inj_tokens)+1
  token_char_start=offsets[inj_start][0]; token_char_end=offsets[inj_end-1][1]
- prefix_text=rtext[:token_char_start]; prefix_ids=responses['RMU'][:inj_start]; phrase_ids=responses['RMU'][inj_start:inj_end]
+ prefix_text=rtext[:token_char_start]; prefix_ids=responses[target][:inj_start]; phrase_ids=responses[target][inj_start:inj_end]
  injected_token_text=rtext[token_char_start:token_char_end]
- lo=max(0,inj_start-WINDOW); hi=min(len(responses['RMU']),inj_end+WINDOW)
- relevant=[(0,'memory_financial_stress','IRS notices and financial stress'),(2,'memory_home','shares a home with partner'),(3,'memory_yoga','vinyasa yoga in sunroom'),(6,'memory_scam','real-estate scam and life savings')]
- rows=[span_row(tok,prompt_ids,label,case['memories'][i],f'memory item {i+1}; {note}',required=False) for i,label,note in relevant]
+ lo=max(0,inj_start-WINDOW); hi=min(len(responses[target]),inj_end+WINDOW)
+ rows=[span_row(tok,prompt_ids,f'memory_{i+1}',m,f'memory item {i+1}',required=False) for i,m in enumerate(case['memories'])]
  rows.append(span_row(tok,prompt_ids,'user_query',case['query'],'complete current request'))
- rows.append(span_row(tok,prompt_ids,'query_entity_professor','Dr. Davis','person/entity in current query; distinct role from Mr. Davis in memory'))
  rows.append({'span_label':'final_prompt_token','text':tok.decode([prompt_ids[-1]]),'token_start':len(prompt_ids)-1,'token_end_exclusive':len(prompt_ids),'token_count':1,'decoded_tokens':json.dumps(tok.convert_ids_to_tokens([prompt_ids[-1]]),ensure_ascii=False),'confidence':'exact','notes':'last token of chat-formatted prompt'})
  pd.DataFrame(rows).to_csv(OUT/'position_manifest.csv',index=False)
  alt=(' ' if injected_token_text.startswith(' ') else '')+case['non_personal_alternative']; alt_ids=tok(alt,add_special_tokens=False).input_ids
  metadata={'entry_id':case['entry_id'],'generation_index':case['generation_index'],'prompt_reconstruction':{'strict_prefix':STRICT,'generator_system_prompt':system,'full_chat_token_count_before_server_truncation':full_n,'truncate_prompt_tokens':MAX_PROMPT,'truncation_side':'left (vLLM truncate_prompt_tokens)','exact_formatted_prompt_after_truncation':tok.decode(prompt_ids),'token_ids':prompt_ids,'decoded_tokens':tok.convert_ids_to_tokens(prompt_ids),'token_count':len(prompt_ids),'prompt_text_sha256':hashlib.sha256(tok.decode(prompt_ids).encode()).hexdigest(),'prompt_ids_sha256':hashlib.sha256(torch.tensor(prompt_ids).numpy().tobytes()).hexdigest(),'model_specific_original_prompts_identical_after_truncation':True},'responses':{k:{'token_count':len(v)} for k,v in responses.items()},'injection':{'phrase':phrase,'response_char_start':char0,'response_char_end_exclusive':char1,'token_aligned_text':injected_token_text,'token_aligned_char_span':[token_char_start,token_char_end],'generated_token_start':inj_start,'generated_token_end_exclusive':inj_end,'token_ids':phrase_ids,'tokens':tok.convert_ids_to_tokens(phrase_ids),'window_generated_token_start':lo,'window_generated_token_end_exclusive':hi},'alternative':{'text':alt,'token_ids':alt_ids,'tokens':tok.convert_ids_to_tokens(alt_ids)},'execution':{'torch_dtype':'bfloat16','attention':'sdpa','use_cache':False,'output_hidden_states':True,'saved_dtype':'float32','window':WINDOW},'models':{}}
- p=torch.tensor([prompt_ids]); shared=responses['RMU']; all_cont=[]; lens=[]
+ p=torch.tensor([prompt_ids]); shared=responses[target]; all_cont=[]; lens=[]
  selected_positions=sorted(set(x for row in rows if int(row['token_start'])>=0 for x in range(int(row['token_start']),int(row['token_end_exclusive']))))
  for label,path in MODELS.items():
   t=time.time(); print('Loading',label,path,flush=True)
   model=AutoModelForCausalLM.from_pretrained(path,torch_dtype=torch.bfloat16,attn_implementation='sdpa',local_files_only=True,trust_remote_code=True).cuda().eval()
+  model.requires_grad_(False)
   # Tokenizer compatibility is checked directly for prompt and all stored responses.
   mt=AutoTokenizer.from_pretrained(path,use_fast=True,local_files_only=True,trust_remote_code=True)
   if mt.get_vocab()!=tok.get_vocab(): raise RuntimeError(f'{label} tokenizer vocabulary differs')
   saved={}
-  for mode,resp in [('own',responses[label]),('shared_rmu',shared)]:
+  for mode,resp in [('own',responses[label]),('shared_target',shared)]:
    ids=torch.tensor([prompt_ids+resp],device='cuda'); att=torch.ones_like(ids)
    with torch.inference_mode(): out=model(ids,attention_mask=att,output_hidden_states=True,use_cache=False,return_dict=True)
    hs=torch.stack([x[0].detach().float().cpu() for x in out.hidden_states])
    assert hs.shape[0]==29 and hs.shape[2]==3584 and torch.isfinite(hs).all()
-   if mode=='shared_rmu':
+   if mode=='shared_target':
     saved['prompt_selected']=hs[:,selected_positions,:].contiguous(); saved['shared_generated']=hs[:,len(prompt_ids):,:].contiguous()
     # Ordinary logit lens: final RMSNorm then tied/untied LM head, at state before each target.
     for gi in range(lo,hi):
-     target=shared[gi]; abs_prev=len(prompt_ids)+gi-1
+     target_token_id=shared[gi]; abs_prev=len(prompt_ids)+gi-1
      for layer,hstate in enumerate(out.hidden_states):
       # hidden_states[-1] is already post-final-RMSNorm in Qwen2; earlier
       # residual states require the model's final norm for an ordinary logit lens.
       h=hstate[0,abs_prev] if layer==model.config.num_hidden_layers else model.model.norm(hstate[0,abs_prev])
-      logits=model.lm_head(h.unsqueeze(0)).float()[0]; lp=torch.log_softmax(logits,-1); rank=int((logits>logits[target]).sum().item())+1
-      lens.append({'model':label,'generated_token_index':gi,'relative_to_injection':gi-inj_start,'layer':layer,'target_token_id':target,'target_token':tok.decode([target]),'probability':float(lp[target].exp()),'log_probability':float(lp[target]),'rank':rank,'is_injected_phrase':inj_start<=gi<inj_end})
+      with torch.inference_mode():
+       logits=model.lm_head(h.unsqueeze(0)).float()[0]
+       lp=torch.log_softmax(logits,-1)
+       rank=int((logits>logits[target_token_id]).sum().item())+1
+      lens.append({'model':label,'generated_token_index':gi,'relative_to_injection':gi-inj_start,'layer':layer,'target_token_id':target_token_id,'target_token':tok.decode([target_token_id]),'probability':float(lp[target_token_id].exp()),'log_probability':float(lp[target_token_id]),'rank':rank,'is_injected_phrase':inj_start<=gi<inj_end})
    else: saved['own_generated']=hs[:,len(prompt_ids):,:].contiguous()
    del out,hs,ids,att; torch.cuda.empty_cache()
   injected_lp=seq_logprob(model,prompt_ids,prefix_ids,phrase_ids); alt_lp=seq_logprob(model,prompt_ids,prefix_ids,alt_ids)

@@ -8,7 +8,7 @@ import matplotlib; matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import numpy as np,pandas as pd
 
-ROOT=Path(__file__).resolve().parents[1]; OUT=ROOT/'mechanistic/outputs/privacy_position_analysis'; POP=ROOT/'mechanistic/outputs/privacy_population_12v12/sample_manifest.csv'
+ROOT=Path(__file__).resolve().parents[2]; OUT=ROOT/'mechanistic/outputs/privacy_position_analysis'; POP=ROOT/'mechanistic/outputs/privacy_population_12v12/sample_manifest.csv'
 ROLES=['sensitive_information','data_subject','recipient','transmission_action','decision_instruction','final_prompt_token']; LABELS=['Emb']+[f'L{i}' for i in range(1,29)]
 def cos(a,b):
  n=np.linalg.norm(a)*np.linalg.norm(b); return float(np.dot(a,b)/n) if n>1e-12 else np.nan

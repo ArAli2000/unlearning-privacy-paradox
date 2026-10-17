@@ -26,7 +26,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 OUT_ROOT = ROOT / "mechanistic/outputs/muse_news_sycophancy_mechanistic"
 SEED = 20260919
 N_BOOTSTRAP = 2000

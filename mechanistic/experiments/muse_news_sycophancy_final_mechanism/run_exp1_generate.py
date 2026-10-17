@@ -9,7 +9,7 @@ under autoregressive generation on the same examples.
 Cases: analysis/activation_patching_clean_audit/clean_selection.json (10 HIGH_CONFIDENCE_FAILURE
 treatment + 10 matched SAFE_TO_SAFE controls). See ../EXPERIMENT_PLAN.md.
 
-Patching reuses ActivationDonor/generate from mechanistic/muse_news_activation_patching.py
+Patching reuses ActivationDonor/generate from mechanistic/muse_news/muse_news_activation_patching.py
 (dynamic import). At each decoding step the donor is rerun on the recipient's generated-so-far
 sequence and only its last-position activation is spliced in, so no stale donor tensor is needed.
 
@@ -55,7 +55,7 @@ NATIVE_MANIFEST = ROOT / "mechanistic/privacy_collapse/persistbench_native/manif
 
 # Reuse the autoregressive patching code as is.
 _spec = importlib.util.spec_from_file_location(
-    "muse_news_activation_patching", ROOT / "mechanistic/muse_news_activation_patching.py"
+    "muse_news_activation_patching", ROOT / "mechanistic/muse_news/muse_news_activation_patching.py"
 )
 apatch = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(apatch)
@@ -211,7 +211,7 @@ def main() -> None:
         "max_new_tokens": MAX_NEW_TOKENS,
         "decoding": (
             "greedy (temperature 0) with HF-style repetition penalty 1.05; no KV cache "
-            "(full recompute per step), identical to mechanistic/muse_news_activation_patching.py"
+            "(full recompute per step), identical to mechanistic/muse_news/muse_news_activation_patching.py"
         ),
         "conditions": [
             "A_base_unpatched",

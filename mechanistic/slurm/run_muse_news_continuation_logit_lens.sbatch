@@ -26,4 +26,4 @@ echo "HOSTNAME: $(hostname)"
 echo "JOB ID: ${SLURM_JOB_ID}"
 nvidia-smi
 
-python mechanistic/muse_news_extract_continuation_logit_lens.py
+python mechanistic/muse_news/muse_news_extract_continuation_logit_lens.py

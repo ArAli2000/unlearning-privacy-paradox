@@ -7,7 +7,7 @@ from pathlib import Path
 import numpy as np
 from tokenizers import Tokenizer
 
-REPO_ROOT = Path(__file__).resolve().parents[1]
+REPO_ROOT = Path(__file__).resolve().parents[2]
 DATA_PATH = REPO_ROOT / "external/privacy-collapse/benchmarks/privacylens/data/main_data.json"
 BASE_PATH = Path("/storage/ukp/work/elshashay/open-unlearning/saves/finetune/tofu_Qwen2.5-7B-Instruct_full")
 

@@ -16,4 +16,4 @@ module load cuda/12.2 || true
 export CUDA_HOME=/nfs/cuda/cuda-12.2
 export LD_LIBRARY_PATH="$CUDA_HOME/lib64:${LD_LIBRARY_PATH:-}"
 echo "HOSTNAME: $(hostname)"; echo "JOB ID: ${SLURM_JOB_ID}"
-python mechanistic/recompute_single_case_logit_lens.py
+python mechanistic/persistbench/recompute_single_case_logit_lens.py

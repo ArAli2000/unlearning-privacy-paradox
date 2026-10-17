@@ -185,6 +185,8 @@ cython_debug/
 # --- Thesis external-dependency additions (2026-09-14 fix pass) ---
 # external/PersistBench/ and external/privacy-collapse/ are vendored tool
 # checkouts, each its own git repository. They must NEVER be `git add`-ed as
+# (superseded 2026-10-17: external/ repos are now registered as git submodules, see .gitmodules;
+# the earlier note below described the ignore-based alternative)
 # plain directories (git would silently create dangling "embedded repository"
 # gitlinks, breaking the checkout for anyone who clones this repo). Exact
 # provenance (URL, pinned commit, thesis patch) is recorded instead at
@@ -192,8 +194,6 @@ cython_debug/
 # thesis/patches/; thesis/scripts/setup_external_dependencies.sh recreates
 # these working copies from that record. None of the three paths below are
 # affected by this rule since they live under thesis/, not external/.
-/external/PersistBench/
-/external/privacy-collapse/
 
 # --- Thesis cleanup migration additions (2026-09-14) ---
 # Large HF model-weight caches and generated hidden-state/representation tensors

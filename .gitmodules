@@ -1,0 +1,6 @@
+[submodule "external/PersistBench"]
+	path = external/PersistBench
+	url = https://github.com/ivaxi0s/PersistBench.git
+[submodule "external/privacy-collapse"]
+	path = external/privacy-collapse
+	url = https://github.com/parameterlab/privacy-collapse.git

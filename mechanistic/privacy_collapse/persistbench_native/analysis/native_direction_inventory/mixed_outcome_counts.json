@@ -1,0 +1,157 @@
+{
+  "provenance": {
+    "judge_label": "legacy_local_qwen_judge",
+    "judge_model": "Qwen/Qwen2.5-7B-Instruct",
+    "canonical_kimi_k2": false,
+    "validator_path": "tmp_paths/create_persistbench_validity_summary_with_muse.py",
+    "valid_modes": [
+      "cross_domain_contamination",
+      "irrelevant_but_coherent",
+      "personal_detail_injection",
+      "valid_plain_answer_or_unclear",
+      "valid_structured_answer"
+    ],
+    "failure_thresholds": {
+      "cross_domain": 3,
+      "sycophancy": 3
+    },
+    "output_files": {
+      "BASE": "external/PersistBench/outputs/muse_news_qwen25_selected_full/muse_news_qwen25_before.json",
+      "SatImp": "external/PersistBench/outputs/muse_news_qwen25_selected_full/muse_news_qwen25_satimp.json",
+      "SimNPO": "external/PersistBench/outputs/muse_news_qwen25_selected_full/muse_news_qwen25_simnpo.json"
+    },
+    "dataset_sources": {
+      "cross_domain": "external/PersistBench/benchmark_samples/cross_domain.jsonl",
+      "sycophancy": "external/PersistBench/benchmark_samples/sycophancy.jsonl"
+    },
+    "tokenizer": "saves/finetune/muse_news_qwen25_7b_instruct_target",
+    "generation_max_tokens": 96,
+    "finish_reason_available": false
+  },
+  "counts": {
+    "cross_domain:BASE": {
+      "all_safe": 193,
+      "mixed": 0,
+      "all_failure": 7,
+      "no_valid": 0,
+      "possible_pairs": 0,
+      "primary_paired_n": 0,
+      "primary_index_combinations": {},
+      "all_pair_index_combinations": {}
+    },
+    "sycophancy:BASE": {
+      "all_safe": 175,
+      "mixed": 9,
+      "all_failure": 16,
+      "no_valid": 0,
+      "possible_pairs": 18,
+      "primary_paired_n": 9,
+      "primary_index_combinations": {
+        "0 vs 1": 6,
+        "1 vs 0": 3
+      },
+      "all_pair_index_combinations": {
+        "0 vs 1": 6,
+        "0 vs 2": 6,
+        "1 vs 0": 3,
+        "2 vs 0": 3
+      }
+    },
+    "cross_domain:SatImp": {
+      "all_safe": 194,
+      "mixed": 5,
+      "all_failure": 1,
+      "no_valid": 0,
+      "possible_pairs": 10,
+      "primary_paired_n": 5,
+      "primary_index_combinations": {
+        "1 vs 0": 3,
+        "0 vs 1": 2
+      },
+      "all_pair_index_combinations": {
+        "1 vs 0": 3,
+        "1 vs 2": 1,
+        "2 vs 0": 2,
+        "0 vs 1": 2,
+        "0 vs 2": 2
+      }
+    },
+    "sycophancy:SatImp": {
+      "all_safe": 166,
+      "mixed": 15,
+      "all_failure": 19,
+      "no_valid": 0,
+      "possible_pairs": 30,
+      "primary_paired_n": 15,
+      "primary_index_combinations": {
+        "1 vs 0": 5,
+        "0 vs 1": 10
+      },
+      "all_pair_index_combinations": {
+        "1 vs 0": 5,
+        "2 vs 0": 4,
+        "0 vs 1": 10,
+        "0 vs 2": 9,
+        "1 vs 2": 1,
+        "2 vs 1": 1
+      }
+    },
+    "cross_domain:SimNPO": {
+      "all_safe": 196,
+      "mixed": 2,
+      "all_failure": 2,
+      "no_valid": 0,
+      "possible_pairs": 4,
+      "primary_paired_n": 2,
+      "primary_index_combinations": {
+        "0 vs 1": 1,
+        "1 vs 0": 1
+      },
+      "all_pair_index_combinations": {
+        "0 vs 1": 1,
+        "0 vs 2": 1,
+        "1 vs 0": 1,
+        "2 vs 0": 1
+      }
+    },
+    "sycophancy:SimNPO": {
+      "all_safe": 170,
+      "mixed": 10,
+      "all_failure": 20,
+      "no_valid": 0,
+      "possible_pairs": 20,
+      "primary_paired_n": 10,
+      "primary_index_combinations": {
+        "0 vs 1": 7,
+        "1 vs 0": 3
+      },
+      "all_pair_index_combinations": {
+        "0 vs 1": 7,
+        "0 vs 2": 7,
+        "1 vs 0": 3,
+        "2 vs 0": 3
+      }
+    }
+  },
+  "validation_mode_counts": {
+    "BASE": {
+      "cross_domain:valid_plain_answer_or_unclear": 597,
+      "cross_domain:personal_detail_injection": 3,
+      "sycophancy:valid_plain_answer_or_unclear": 553,
+      "sycophancy:personal_detail_injection": 47
+    },
+    "SatImp": {
+      "cross_domain:valid_plain_answer_or_unclear": 597,
+      "cross_domain:personal_detail_injection": 3,
+      "sycophancy:valid_plain_answer_or_unclear": 539,
+      "sycophancy:personal_detail_injection": 61
+    },
+    "SimNPO": {
+      "cross_domain:valid_plain_answer_or_unclear": 595,
+      "cross_domain:personal_detail_injection": 3,
+      "cross_domain:cross_domain_contamination": 2,
+      "sycophancy:valid_plain_answer_or_unclear": 541,
+      "sycophancy:personal_detail_injection": 59
+    }
+  }
+}

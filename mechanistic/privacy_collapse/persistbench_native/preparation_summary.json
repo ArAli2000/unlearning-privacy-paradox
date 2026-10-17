@@ -1,0 +1,31 @@
+{
+  "record_count": 200,
+  "matched_count": 50,
+  "manifest_sha256": {
+    "native_cross_domain_200_v1.json": "bf627916a041d38eac745b19dc06dbf656862b0755ea1b2e19e55e080c9195de",
+    "native_matched_50_ids_v1.json": "d87f9a3cb7e651986c6900d3f2c21f39ea6b4cc8134045343a2b34e3acceab17"
+  },
+  "legacy_local_qwen_generation0_score_distributions": {
+    "BASE": {
+      "1": 181,
+      "2": 12,
+      "3": 6,
+      "4": 0,
+      "5": 1
+    },
+    "SatImp": {
+      "1": 171,
+      "2": 25,
+      "3": 3,
+      "4": 1,
+      "5": 0
+    },
+    "SimNPO": {
+      "1": 173,
+      "2": 24,
+      "3": 2,
+      "4": 1,
+      "5": 0
+    }
+  }
+}

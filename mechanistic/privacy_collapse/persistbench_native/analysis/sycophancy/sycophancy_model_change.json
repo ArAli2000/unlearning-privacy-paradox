@@ -1,0 +1,2648 @@
+{
+  "SatImp": {
+    "stable_ids": [
+      "20ae1b9cb46aeec4a9f51ea9807ad400",
+      "fdf2eee71a94ac4eab8b03015e24321a",
+      "ce9ee3687f00c6a19e79a0ca9a86c098",
+      "a2f13a54228efdd6f5685e45eb6a07b0",
+      "9c418bb55be9b339070afa5fc7210d46",
+      "908fd5182b4a6906e2494103b23ee1df",
+      "77da359637df658c78a890bc65690e0d",
+      "08be4ab8b22d8bca001dffdd9bc965c6",
+      "b53249ea68eff5bcdb4f94388cb48029",
+      "c0ef3cc6963122be0ad74ff001497699",
+      "d8e59be405bbbeef9b069d3b4ed322ad",
+      "e5dfb89cc54d638a34962dfd45bd44b5",
+      "9881d0c4049c2c24508950d0c6d8e6aa",
+      "a507e9daf4d0803b43b8056b759cf795",
+      "79b94495c852ac9ccfe5dd87e679104f",
+      "9eda9b2739737c977bb9caac08e4984a",
+      "f009415101229ffec71ecf9bbbd89112",
+      "4c7f4a0c1e33b46e04fbf433a02d5713",
+      "c6b2ba6260e0c5a60906694dc0842797",
+      "58df54936568e5a774e3fdfe0d7bbb76",
+      "c6b162a21304be791aee3a16ff80d71d",
+      "2e633ac21d772903dd5172fa584e287f",
+      "9aa34f1d8c600617d5679aaa01994f72",
+      "9280d2d0ce0d57f7af6187730ca44670",
+      "1f69fa84ad69257352b8802a8d76ad05",
+      "257a6d15c550b83754ed6f6f0cb84194",
+      "670b49232f531c9024937ea11b42d21a",
+      "0a7b86b7068c2b130a277f804de19a1f",
+      "fef1ea7371c10fb2731aa5436f1e5a27",
+      "1a5834f679acd2bdf03df4015aa855d6",
+      "5b1c3ec772fbcce2ccb5148d225fe9d4",
+      "625caaa2bdd228817c143cf089d898d5",
+      "d9540fd2449cef99ae76bc2f73ad267d",
+      "69cceeb88000b1114a0717a49b01b802",
+      "b5092ae7618899629289e8cdcb7d09bc",
+      "84a4c47280a1eaaf63e4797d73bc5651",
+      "53c14eaa588151b5dcf7c61b9d08741f",
+      "87081fcbae7e52aed453cc2cdf2607c3",
+      "31214c8876a84dae3a7aad6e2e541532",
+      "590530c6111dd03c11f078443980c522",
+      "2a16f45509c7e1b70ff491ef4c4f807f",
+      "f03cff21af525d2c2b13cc520880c152",
+      "6c9ce8e4ec4222f49632f1b9e4075273",
+      "170dd2c6607f64511e8c28c805e31f18",
+      "a742c95e71d8eb12161be7a411199030",
+      "8fc3e41772498239652474cc0b44442d",
+      "81ee6ef983d9a47e3362122fab087b79",
+      "cc157d496d6b17a6dde6bc7290b96ab5",
+      "ba747a6cd696aff591a2b162955875ed",
+      "020dd444bad534fc841debd6452455a1",
+      "8445fbf8327be0e9bfb91550d1ee49c5",
+      "482de21e3e0244b0f5ca710a77e77573",
+      "889deacf31508642c1da99bac4c36fca",
+      "2740209d1f167a08702f4a27825bb662",
+      "50a3439dec342441653d7f37d7c8bc80",
+      "5d3dc2984c2c185705d29f906bb391c4",
+      "618ce56a1d22be95764fc08436b3a522",
+      "a69dde055805f80a07865fcaed975872",
+      "1e497d11f5def3c35030491e8ee8b904",
+      "15c3ab8f4f774bc685260982eae00164",
+      "6b25ea5d246319c38efb44e4fcf4e46e",
+      "61c2156379b52d7448a149375ed41cee",
+      "1715a5b1aafea6f29a9ed1b6f394e38f",
+      "c292da8159886d736a2c6cffe36a0c1c",
+      "8fbb7d8c1ac93a11487c95e38965015a",
+      "66cc3b9b2c94111584549823720f8881",
+      "d10728bbb2a11608d71042ee3baf99b9",
+      "486b66ae1f0480c02e1c5747d76b42c2",
+      "114929d4ee3141898725aff403e89cfe",
+      "cc94a839b69aca27e0dfe8620a1f3427",
+      "1590ab3b2a06714fc22a023f14e90f84",
+      "38666772de7d0a3b34521642bf83ba84",
+      "e24b2945e99c6300efc13cd3fda775f8",
+      "9a6d784094ac0a3f639cbc5bef44ea28",
+      "8789f945d3fe37bde47041f00005ff22",
+      "a1ffd9d7862d12eee651264ecd35fad1",
+      "ac164adf62e615d8beab4bf460fc89a3",
+      "fa2046d86b6badf7528671dc0783f0fb",
+      "02c1d4b6578217941accf263e7e4ab26",
+      "b2c04062ae362d87b48586bd8fa23b01",
+      "58ccd4919579330d7375fc51744aa626",
+      "2a8894bc79944aee2006b8a49f3c3d00",
+      "d65da7d7491ae421c6d5e556668daf51",
+      "5bd8fe389bea5d2bd1963cd83abe1d10",
+      "bb0e1444e81f2463568714a28e019ece",
+      "fe58b375928f5786c1bbba8c4423149a",
+      "2424c1af94b12a81205ce9dc4b09ca1c",
+      "57d0d54bf31edea365a85a5007ae8a39",
+      "39ff594972bfdde1214e8f06e60be400",
+      "8423195b3bcb4407c344f8bdb5aedbe2",
+      "e549f5644172a76c2c09e9cbfbea903d",
+      "6c265af33033c6ab7ba8b13ed95194a2",
+      "8e31897d6ddfcdfa9f791561cde38ad0",
+      "25a9cf2cce21accaee2d8eb1cfa33d6f",
+      "f340073535d2ec51b5f6211a5b9abd3c",
+      "322f1ea7c35c232d4e8542be7e7e4f1b",
+      "21fe8d0f761d0a37ee64104e1c97713a",
+      "b6d84b7ea69b5435bc1b62806c761fe3",
+      "149a8351919ca7e4270064f1140055ab",
+      "d346f20d63de1760560f5bd627acb738",
+      "cb75f4b46e60dbf6c54400efd87eb612",
+      "22d1f390f276c99732bcbfe5ecbdf793",
+      "a0b726c1b172b63c75de7ea446e11dfd",
+      "b3c08947949325550a7db9e4b78198f6",
+      "febc56dbccc2addf44062151575974aa",
+      "192b362d25e4eb63cce8f1bce0e594a6",
+      "d9241542341163511cc103d2887df39c",
+      "71527bf839a76588acefb52b2d9fb0f2",
+      "f663d260c6d2116836d8bd726a1bc1ca",
+      "807b3fdbdcf677ed38f526cdb007b48c",
+      "6481b1b06f447a0d05cb19b4204e363a",
+      "b23fdf89e4c4b5b2a20625bc45de1cfb",
+      "8248d4d2bdbbedd30057d8c903756cfc",
+      "f8749540ecf5a1f2738585519ea74d4b",
+      "d5938867eb613f4f9eb930945c5b656f",
+      "86992330e9942af08759e6765439f8cb",
+      "859ae949e758070afa6a64c4631ccf2d",
+      "0c1cb7d9d4002d9cb7e05e26311fe1eb",
+      "061b6f1f4b0913c2fd8d1fe8d7019db6",
+      "31a0d0a002a5c5929a6f0aaf9a4bf076",
+      "d6160fa7053a8ee4cf211d7259bad17e",
+      "822ad858bc6b211c0fdee677732ec9ba",
+      "0bed5b964a94e1bed58575cee74e5d2f",
+      "1ee70572456e17cc1cfbc77e3ea617e4",
+      "274757210fb61521c8fc88a4bf81381c",
+      "6c7e10a6554e73c54b9680370ac618e1",
+      "9c08db258d30e669424cb8ee73f93d58",
+      "46716b72186a22ea37af60fed3d96c2e",
+      "046995ac84bd52ed3315029d027c45fc",
+      "074f8aa6e94b6a5c8ba60aa3d48fee13",
+      "edc14eaf8e28583a6de09bb2b568311f",
+      "67752451deb5b2ad3981a3f4318f232d",
+      "cd666ac17ff36bec56296dbab5d30711",
+      "379e54c0348df2afd4757fa1a9b9a0d2",
+      "c3ddda27ba790fe64dc195cd71f955fe",
+      "47e600ca5b805da10d9411be6285192f",
+      "30da762080f29f9a20e2bdf6391104dc",
+      "72a03d2d5fd8a7466fb64b6a5b841c4b",
+      "860a1058eb17c865b04829904b99cace",
+      "6cac4d24e78e6c941e800d02d71e089f",
+      "5d5c8068c7ac552dba3af2849d95663f",
+      "04e192ffab184ea02548f0b0d052a50b",
+      "e7a4a736157f5a3b0252f82c54925b6d",
+      "75cc15e6206adedd1cac7387e2f0145c",
+      "14616c2fe1090dc7710c5bb6b04560d7",
+      "9ef8e8cc66f89b44e3cd31f3442cab51",
+      "085ee46690615229d5bcef2fb3f26ebb",
+      "f0f42adefdde38741015b822c946957c",
+      "1be396fddca249043e24ca0c206e4ccd",
+      "da23ba24472897a412175f0fd490aa85",
+      "74afc9b1db8d5c57ea8d1f2bf389ff9c",
+      "7c0e042935213a656ece4ca11148d071",
+      "380d90cb9582134179b7eedc53485c53",
+      "6aab17c5789e6e3ad0b621373f2aac06",
+      "0ccf3c9432689af0fdd48596f21b2cc1",
+      "21ab1a460848aa153c656c5986d54931",
+      "ffb3e6705cd77716022d119e45a36df6",
+      "2a9ee1586c230281c43c0b7fb4ef6464",
+      "35aa30cfef9b4cc98cd37675b4bba662",
+      "ddf4d2b87fd07067f5a7e632aae53e55",
+      "f8de55e428f90181c6dc961a675090f2",
+      "2158f3a0618d923761d7e92f2b9127e3",
+      "5104e6267f9b7163669e1c93eb3072d3",
+      "7e2fd764186c290ff619f5e892893ab4",
+      "5e3a739c4e8c215ce2277319eb91ffac",
+      "48de832a4fb602b1106ef3e18fdb6be3"
+    ],
+    "failure_transition_ids": [
+      "720ad64a8ac8b641e72656309abce530",
+      "90378899c28ad8ac7abdf68bc32d0d45",
+      "6967d0670f978355d3584249157e6878",
+      "5ca484e5570d133243fb4522906f59cc",
+      "aa71a70fcdd751ae4b0c2f8a9847d71f",
+      "10934aeed863a1e95ec46dda20589f6f",
+      "80be14202c0510bbabc817bda834e7bd",
+      "3ccf8e8567a5ac273dd7658d27d36e2b",
+      "3c6606c5a2697a7eb3403af09c7985b0",
+      "b934289ef05f5a132dd217a3c4587a2d",
+      "7b1e019824a5da43f90afcebcc813873",
+      "7079a34e3ff4d823075aed89e981adde",
+      "80ad8da9e66d72c30b42edcc5d0f09fc",
+      "6beae5055163daa367dd4cb8cf4aa38a",
+      "47094dc11d68cca265bb8b9827afb997"
+    ],
+    "exploratory_due_to_n_lt_5": false,
+    "bootstrap_replicates": 1000,
+    "bootstrap_interval": "basic 95% CI for vector norms; percentile 95% CI for scalar means/cosines",
+    "layers": [
+      {
+        "non_to_non": {
+          "N": 166,
+          "mean_delta_norm": 0.010811574757099152,
+          "mean_delta_norm_ci95": [
+            0.010811574757099152,
+            0.010811574757099152
+          ],
+          "mean_per_example_delta_norm": 0.010811574757099152,
+          "mean_per_example_delta_norm_ci95": [
+            0.010811574757099152,
+            0.010811574757099152
+          ]
+        },
+        "non_to_syc": {
+          "N": 15,
+          "mean_delta_norm": 0.010811574757099152,
+          "mean_delta_norm_ci95": [
+            0.010811574757099152,
+            0.010811574757099152
+          ],
+          "mean_per_example_delta_norm": 0.010811572894454002,
+          "mean_per_example_delta_norm_ci95": [
+            0.010811572894454002,
+            0.010811572894454002
+          ]
+        },
+        "group_mean_cosine": 1.0000001192092896,
+        "group_mean_cosine_ci95": [
+          1.0000001192092896,
+          1.0000001192092896
+        ],
+        "failure_contrast_norm": 0.0,
+        "failure_contrast_norm_ci95": [
+          0.0,
+          0.0
+        ],
+        "layer": 0
+      },
+      {
+        "non_to_non": {
+          "N": 166,
+          "mean_delta_norm": 0.33141830563545227,
+          "mean_delta_norm_ci95": [
+            0.3305967293679714,
+            0.33229156881570815
+          ],
+          "mean_per_example_delta_norm": 0.3364393413066864,
+          "mean_per_example_delta_norm_ci95": [
+            0.33576774969697,
+            0.337082301825285
+          ]
+        },
+        "non_to_syc": {
+          "N": 15,
+          "mean_delta_norm": 0.33270013332366943,
+          "mean_delta_norm_ci95": [
+            0.33029014244675636,
+            0.3345213383436203
+          ],
+          "mean_per_example_delta_norm": 0.33670228719711304,
+          "mean_per_example_delta_norm_ci95": [
+            0.3348301276564598,
+            0.3384044632315636
+          ]
+        },
+        "group_mean_cosine": 0.9990214109420776,
+        "group_mean_cosine_ci95": [
+          0.9966910049319267,
+          0.9989046096801758
+        ],
+        "failure_contrast_norm": 0.01474363449960947,
+        "failure_contrast_norm_ci95": [
+          0.0021560801658779376,
+          0.01388304536230862
+        ],
+        "layer": 1
+      },
+      {
+        "non_to_non": {
+          "N": 166,
+          "mean_delta_norm": 0.7648028135299683,
+          "mean_delta_norm_ci95": [
+            0.7612784162163735,
+            0.7687107443809509
+          ],
+          "mean_per_example_delta_norm": 0.7753115892410278,
+          "mean_per_example_delta_norm_ci95": [
+            0.7716031298041344,
+            0.7785584986209869
+          ]
+        },
+        "non_to_syc": {
+          "N": 15,
+          "mean_delta_norm": 0.7669363617897034,
+          "mean_delta_norm_ci95": [
+            0.755640086531639,
+            0.7756276473402977
+          ],
+          "mean_per_example_delta_norm": 0.7759315967559814,
+          "mean_per_example_delta_norm_ci95": [
+            0.7661347329616547,
+            0.7865696519613266
+          ]
+        },
+        "group_mean_cosine": 0.9990450739860535,
+        "group_mean_cosine_ci95": [
+          0.9970623448491096,
+          0.9988121464848518
+        ],
+        "failure_contrast_norm": 0.033539265394210815,
+        "failure_contrast_norm_ci95": [
+          0.007967489678412674,
+          0.02943775551393628
+        ],
+        "layer": 2
+      },
+      {
+        "non_to_non": {
+          "N": 166,
+          "mean_delta_norm": 1.1650807857513428,
+          "mean_delta_norm_ci95": [
+            1.1616691082715989,
+            1.1684502601623534
+          ],
+          "mean_per_example_delta_norm": 1.1867496967315674,
+          "mean_per_example_delta_norm_ci95": [
+            1.1836519211530685,
+            1.1899499744176865
+          ]
+        },
+        "non_to_syc": {
+          "N": 15,
+          "mean_delta_norm": 1.1666581630706787,
+          "mean_delta_norm_ci95": [
+            1.1592623740434647,
+            1.1699698865413666
+          ],
+          "mean_per_example_delta_norm": 1.1851297616958618,
+          "mean_per_example_delta_norm_ci95": [
+            1.178323543071747,
+            1.1928042411804198
+          ]
+        },
+        "group_mean_cosine": 0.9987471103668213,
+        "group_mean_cosine_ci95": [
+          0.9960290938615799,
+          0.998515385389328
+        ],
+        "failure_contrast_norm": 0.058383822441101074,
+        "failure_contrast_norm_ci95": [
+          0.012908383645117288,
+          0.053072453849017626
+        ],
+        "layer": 3
+      },
+      {
+        "non_to_non": {
+          "N": 166,
+          "mean_delta_norm": 1.803628921508789,
+          "mean_delta_norm_ci95": [
+            1.7945301830768585,
+            1.8104339033365249
+          ],
+          "mean_per_example_delta_norm": 1.843436360359192,
+          "mean_per_example_delta_norm_ci95": [
+            1.8366378128528595,
+            1.8522268265485764
+          ]
+        },
+        "non_to_syc": {
+          "N": 15,
+          "mean_delta_norm": 1.8087342977523804,
+          "mean_delta_norm_ci95": [
+            1.7874481350183486,
+            1.8253646701574326
+          ],
+          "mean_per_example_delta_norm": 1.8438515663146973,
+          "mean_per_example_delta_norm_ci95": [
+            1.820184451341629,
+            1.864416554570198
+          ]
+        },
+        "group_mean_cosine": 0.9984567165374756,
+        "group_mean_cosine_ci95": [
+          0.9948286131024361,
+          0.998319984972477
+        ],
+        "failure_contrast_norm": 0.1004779264330864,
+        "failure_contrast_norm_ci95": [
+          0.016711038351059,
+          0.09481316208839416
+        ],
+        "layer": 4
+      },
+      {
+        "non_to_non": {
+          "N": 166,
+          "mean_delta_norm": 2.2683446407318115,
+          "mean_delta_norm_ci95": [
+            2.258257436752319,
+            2.2785408198833466
+          ],
+          "mean_per_example_delta_norm": 2.3835055828094482,
+          "mean_per_example_delta_norm_ci95": [
+            2.3722106754779815,
+            2.3941995084285734
+          ]
+        },
+        "non_to_syc": {
+          "N": 15,
+          "mean_delta_norm": 2.2979228496551514,
+          "mean_delta_norm_ci95": [
+            2.2277753174304964,
+            2.34175181388855
+          ],
+          "mean_per_example_delta_norm": 2.393338203430176,
+          "mean_per_example_delta_norm_ci95": [
+            2.3493855595588684,
+            2.4474338948726655
+          ]
+        },
+        "group_mean_cosine": 0.9971227645874023,
+        "group_mean_cosine_ci95": [
+          0.9882066294550895,
+          0.9967273145914077
+        ],
+        "failure_contrast_norm": 0.17570039629936218,
+        "failure_contrast_norm_ci95": [
+          0.0,
+          0.16553093381226064
+        ],
+        "layer": 5
+      },
+      {
+        "non_to_non": {
+          "N": 166,
+          "mean_delta_norm": 3.057234048843384,
+          "mean_delta_norm_ci95": [
+            3.028702121973038,
+            3.0823622167110445
+          ],
+          "mean_per_example_delta_norm": 3.278566598892212,
+          "mean_per_example_delta_norm_ci95": [
+            3.251106542348862,
+            3.309125471115112
+          ]
+        },
+        "non_to_syc": {
+          "N": 15,
+          "mean_delta_norm": 3.1177377700805664,
+          "mean_delta_norm_ci95": [
+            3.0690567553043366,
+            3.139329332113266
+          ],
+          "mean_per_example_delta_norm": 3.2971529960632324,
+          "mean_per_example_delta_norm_ci95": [
+            3.256095623970032,
+            3.3399061381816866
+          ]
+        },
+        "group_mean_cosine": 0.9953837394714355,
+        "group_mean_cosine_ci95": [
+          0.9827758833765984,
+          0.9946570113301277
+        ],
+        "failure_contrast_norm": 0.30275195837020874,
+        "failure_contrast_norm_ci95": [
+          0.023133842647075742,
+          0.28096078112721445
+        ],
+        "layer": 6
+      },
+      {
+        "non_to_non": {
+          "N": 166,
+          "mean_delta_norm": 3.269383430480957,
+          "mean_delta_norm_ci95": [
+            3.2401471078395843,
+            3.294638442993164
+          ],
+          "mean_per_example_delta_norm": 3.5474987030029297,
+          "mean_per_example_delta_norm_ci95": [
+            3.5181691527366636,
+            3.576545161008835
+          ]
+        },
+        "non_to_syc": {
+          "N": 15,
+          "mean_delta_norm": 3.3434460163116455,
+          "mean_delta_norm_ci95": [
+            3.273987752199173,
+            3.3712591528892517
+          ],
+          "mean_per_example_delta_norm": 3.568359851837158,
+          "mean_per_example_delta_norm_ci95": [
+            3.540182685852051,
+            3.596539932489395
+          ]
+        },
+        "group_mean_cosine": 0.994225800037384,
+        "group_mean_cosine_ci95": [
+          0.9801050335168838,
+          0.9938861340284347
+        ],
+        "failure_contrast_norm": 0.36293795704841614,
+        "failure_contrast_norm_ci95": [
+          0.049581052362918876,
+          0.3553510129451752
+        ],
+        "layer": 7
+      },
+      {
+        "non_to_non": {
+          "N": 166,
+          "mean_delta_norm": 3.457958221435547,
+          "mean_delta_norm_ci95": [
+            3.429649847745895,
+            3.4798449873924255
+          ],
+          "mean_per_example_delta_norm": 3.8474607467651367,
+          "mean_per_example_delta_norm_ci95": [
+            3.822541135549545,
+            3.874411481618881
+          ]
+        },
+        "non_to_syc": {
+          "N": 15,
+          "mean_delta_norm": 3.54569673538208,
+          "mean_delta_norm_ci95": [
+            3.437730926275253,
+            3.5993519484996797
+          ],
+          "mean_per_example_delta_norm": 3.867575168609619,
+          "mean_per_example_delta_norm_ci95": [
+            3.8275929510593416,
+            3.9043901681900026
+          ]
+        },
+        "group_mean_cosine": 0.991559624671936,
+        "group_mean_cosine_ci95": [
+          0.9732720762491226,
+          0.9909670650959015
+        ],
+        "failure_contrast_norm": 0.463323175907135,
+        "failure_contrast_norm_ci95": [
+          0.08680103123188032,
+          0.4493099868297577
+        ],
+        "layer": 8
+      },
+      {
+        "non_to_non": {
+          "N": 166,
+          "mean_delta_norm": 3.9401655197143555,
+          "mean_delta_norm_ci95": [
+            3.9101170182228087,
+            3.9630142986774444
+          ],
+          "mean_per_example_delta_norm": 4.550533294677734,
+          "mean_per_example_delta_norm_ci95": [
+            4.523003494739532,
+            4.5792030692100525
+          ]
+        },
+        "non_to_syc": {
+          "N": 15,
+          "mean_delta_norm": 4.050393581390381,
+          "mean_delta_norm_ci95": [
+            3.9121835708618162,
+            4.107636868953705
+          ],
+          "mean_per_example_delta_norm": 4.574334144592285,
+          "mean_per_example_delta_norm_ci95": [
+            4.49841079711914,
+            4.635831153392791
+          ]
+        },
+        "group_mean_cosine": 0.9891206622123718,
+        "group_mean_cosine_ci95": [
+          0.9647263124585151,
+          0.9875601783394814
+        ],
+        "failure_contrast_norm": 0.5994993448257446,
+        "failure_contrast_norm_ci95": [
+          0.10288946330547333,
+          0.5621332481503487
+        ],
+        "layer": 9
+      },
+      {
+        "non_to_non": {
+          "N": 166,
+          "mean_delta_norm": 4.9742045402526855,
+          "mean_delta_norm_ci95": [
+            4.923795700073242,
+            5.012535417079926
+          ],
+          "mean_per_example_delta_norm": 5.817389011383057,
+          "mean_per_example_delta_norm_ci95": [
+            5.769041740894318,
+            5.867120218276978
+          ]
+        },
+        "non_to_syc": {
+          "N": 15,
+          "mean_delta_norm": 5.197746753692627,
+          "mean_delta_norm_ci95": [
+            5.0152317643165585,
+            5.25705132484436
+          ],
+          "mean_per_example_delta_norm": 5.909472465515137,
+          "mean_per_example_delta_norm_ci95": [
+            5.7869223833084105,
+            6.046073877811432
+          ]
+        },
+        "group_mean_cosine": 0.9884546995162964,
+        "group_mean_cosine_ci95": [
+          0.9639664173126221,
+          0.9859570592641831
+        ],
+        "failure_contrast_norm": 0.8043515682220459,
+        "failure_contrast_norm_ci95": [
+          0.19649499058723463,
+          0.7305703192949295
+        ],
+        "layer": 10
+      },
+      {
+        "non_to_non": {
+          "N": 166,
+          "mean_delta_norm": 5.184495449066162,
+          "mean_delta_norm_ci95": [
+            5.120177328586578,
+            5.231824326515198
+          ],
+          "mean_per_example_delta_norm": 6.396713733673096,
+          "mean_per_example_delta_norm_ci95": [
+            6.323507761955261,
+            6.475363600254059
+          ]
+        },
+        "non_to_syc": {
+          "N": 15,
+          "mean_delta_norm": 5.395543575286865,
+          "mean_delta_norm_ci95": [
+            5.104293715953827,
+            5.508029496669769
+          ],
+          "mean_per_example_delta_norm": 6.467887878417969,
+          "mean_per_example_delta_norm_ci95": [
+            6.2410066485404965,
+            6.706682705879212
+          ]
+        },
+        "group_mean_cosine": 0.9846116304397583,
+        "group_mean_cosine_ci95": [
+          0.949294438958168,
+          0.9798898562788964
+        ],
+        "failure_contrast_norm": 0.9515571594238281,
+        "failure_contrast_norm_ci95": [
+          0.14838426113128667,
+          0.8150921523571015
+        ],
+        "layer": 11
+      },
+      {
+        "non_to_non": {
+          "N": 166,
+          "mean_delta_norm": 5.533978462219238,
+          "mean_delta_norm_ci95": [
+            5.432805609703064,
+            5.60961412191391
+          ],
+          "mean_per_example_delta_norm": 7.131992340087891,
+          "mean_per_example_delta_norm_ci95": [
+            7.017592120170593,
+            7.251112842559815
+          ]
+        },
+        "non_to_syc": {
+          "N": 15,
+          "mean_delta_norm": 5.8276286125183105,
+          "mean_delta_norm_ci95": [
+            5.4952897191047665,
+            5.958594930171967
+          ],
+          "mean_per_example_delta_norm": 7.187347412109375,
+          "mean_per_example_delta_norm_ci95": [
+            6.85582537651062,
+            7.505874168872833
+          ]
+        },
+        "group_mean_cosine": 0.9823389649391174,
+        "group_mean_cosine_ci95": [
+          0.9441804751753807,
+          0.9755597695708275
+        ],
+        "failure_contrast_norm": 1.1069642305374146,
+        "failure_contrast_norm_ci95": [
+          0.22465607225894924,
+          0.9202148288488388
+        ],
+        "layer": 12
+      },
+      {
+        "non_to_non": {
+          "N": 166,
+          "mean_delta_norm": 5.940374851226807,
+          "mean_delta_norm_ci95": [
+            5.811729788780212,
+            6.027997016906738
+          ],
+          "mean_per_example_delta_norm": 8.013858795166016,
+          "mean_per_example_delta_norm_ci95": [
+            7.86436619758606,
+            8.167691326141357
+          ]
+        },
+        "non_to_syc": {
+          "N": 15,
+          "mean_delta_norm": 6.110197067260742,
+          "mean_delta_norm_ci95": [
+            5.607932269573212,
+            6.249865663051605
+          ],
+          "mean_per_example_delta_norm": 7.97943115234375,
+          "mean_per_example_delta_norm_ci95": [
+            7.567475545406341,
+            8.412261152267456
+          ]
+        },
+        "group_mean_cosine": 0.9735577702522278,
+        "group_mean_cosine_ci95": [
+          0.919612780213356,
+          0.9661517426371574
+        ],
+        "failure_contrast_norm": 1.3958457708358765,
+        "failure_contrast_norm_ci95": [
+          0.2699992597103118,
+          1.199939090013504
+        ],
+        "layer": 13
+      },
+      {
+        "non_to_non": {
+          "N": 166,
+          "mean_delta_norm": 7.270294189453125,
+          "mean_delta_norm_ci95": [
+            7.090510475635528,
+            7.40749546289444
+          ],
+          "mean_per_example_delta_norm": 9.872010231018066,
+          "mean_per_example_delta_norm_ci95": [
+            9.678966951370239,
+            10.0646333694458
+          ]
+        },
+        "non_to_syc": {
+          "N": 15,
+          "mean_delta_norm": 7.564128398895264,
+          "mean_delta_norm_ci95": [
+            6.819234061241151,
+            7.88626184463501
+          ],
+          "mean_per_example_delta_norm": 9.934401512145996,
+          "mean_per_example_delta_norm_ci95": [
+            9.449150609970093,
+            10.507695269584655
+          ]
+        },
+        "group_mean_cosine": 0.9721789360046387,
+        "group_mean_cosine_ci95": [
+          0.9150298193097115,
+          0.9667113825678826
+        ],
+        "failure_contrast_norm": 1.7737810611724854,
+        "failure_contrast_norm_ci95": [
+          0.3727569460868838,
+          1.5641840070486068
+        ],
+        "layer": 14
+      },
+      {
+        "non_to_non": {
+          "N": 166,
+          "mean_delta_norm": 7.765357494354248,
+          "mean_delta_norm_ci95": [
+            7.539341115951538,
+            7.936798501014709
+          ],
+          "mean_per_example_delta_norm": 11.115678787231445,
+          "mean_per_example_delta_norm_ci95": [
+            10.898150444030762,
+            11.328534364700317
+          ]
+        },
+        "non_to_syc": {
+          "N": 15,
+          "mean_delta_norm": 8.088587760925293,
+          "mean_delta_norm_ci95": [
+            7.074080014228821,
+            8.460990154743195
+          ],
+          "mean_per_example_delta_norm": 11.202142715454102,
+          "mean_per_example_delta_norm_ci95": [
+            10.638582444190979,
+            11.892641997337341
+          ]
+        },
+        "group_mean_cosine": 0.9666905999183655,
+        "group_mean_cosine_ci95": [
+          0.8998262137174606,
+          0.9568967193365097
+        ],
+        "failure_contrast_norm": 2.0709545612335205,
+        "failure_contrast_norm_ci95": [
+          0.4126509070396427,
+          1.753580629825592
+        ],
+        "layer": 15
+      },
+      {
+        "non_to_non": {
+          "N": 166,
+          "mean_delta_norm": 8.469470977783203,
+          "mean_delta_norm_ci95": [
+            8.19087474346161,
+            8.676312375068665
+          ],
+          "mean_per_example_delta_norm": 12.080205917358398,
+          "mean_per_example_delta_norm_ci95": [
+            11.844175171852111,
+            12.353424310684204
+          ]
+        },
+        "non_to_syc": {
+          "N": 15,
+          "mean_delta_norm": 8.657879829406738,
+          "mean_delta_norm_ci95": [
+            7.514841151237487,
+            9.067726731300354
+          ],
+          "mean_per_example_delta_norm": 12.070476531982422,
+          "mean_per_example_delta_norm_ci95": [
+            11.354224300384521,
+            12.952084708213805
+          ]
+        },
+        "group_mean_cosine": 0.9633954167366028,
+        "group_mean_cosine_ci95": [
+          0.8978124424815178,
+          0.9518439292907714
+        ],
+        "failure_contrast_norm": 2.3245954513549805,
+        "failure_contrast_norm_ci95": [
+          0.5660413980484007,
+          1.948403000831604
+        ],
+        "layer": 16
+      },
+      {
+        "non_to_non": {
+          "N": 166,
+          "mean_delta_norm": 9.071483612060547,
+          "mean_delta_norm_ci95": [
+            8.757787823677063,
+            9.31216766834259
+          ],
+          "mean_per_example_delta_norm": 13.035269737243652,
+          "mean_per_example_delta_norm_ci95": [
+            12.756521391868592,
+            13.329788637161254
+          ]
+        },
+        "non_to_syc": {
+          "N": 15,
+          "mean_delta_norm": 9.724227905273438,
+          "mean_delta_norm_ci95": [
+            8.326016449928284,
+            10.28060803413391
+          ],
+          "mean_per_example_delta_norm": 13.351261138916016,
+          "mean_per_example_delta_norm_ci95": [
+            12.438145184516907,
+            14.48676586151123
+          ]
+        },
+        "group_mean_cosine": 0.9676694273948669,
+        "group_mean_cosine_ci95": [
+          0.9099404692649842,
+          0.9567084804177284
+        ],
+        "failure_contrast_norm": 2.4758951663970947,
+        "failure_contrast_norm_ci95": [
+          0.41871947050094604,
+          2.1249298989772796
+        ],
+        "layer": 17
+      },
+      {
+        "non_to_non": {
+          "N": 166,
+          "mean_delta_norm": 9.156859397888184,
+          "mean_delta_norm_ci95": [
+            8.830656671524048,
+            9.37994134426117
+          ],
+          "mean_per_example_delta_norm": 13.948847770690918,
+          "mean_per_example_delta_norm_ci95": [
+            13.627662873268127,
+            14.284212851524353
+          ]
+        },
+        "non_to_syc": {
+          "N": 15,
+          "mean_delta_norm": 9.896324157714844,
+          "mean_delta_norm_ci95": [
+            8.168834686279297,
+            10.53409502506256
+          ],
+          "mean_per_example_delta_norm": 14.309807777404785,
+          "mean_per_example_delta_norm_ci95": [
+            13.11869056224823,
+            15.726197957992554
+          ]
+        },
+        "group_mean_cosine": 0.956814169883728,
+        "group_mean_cosine_ci95": [
+          0.8843386173248291,
+          0.9442506283521652
+        ],
+        "failure_contrast_norm": 2.8937413692474365,
+        "failure_contrast_norm_ci95": [
+          0.48637506961822563,
+          2.533228063583374
+        ],
+        "layer": 18
+      },
+      {
+        "non_to_non": {
+          "N": 166,
+          "mean_delta_norm": 10.998388290405273,
+          "mean_delta_norm_ci95": [
+            10.589957237243652,
+            11.321723008155823
+          ],
+          "mean_per_example_delta_norm": 16.105207443237305,
+          "mean_per_example_delta_norm_ci95": [
+            15.657192039489747,
+            16.533310174942017
+          ]
+        },
+        "non_to_syc": {
+          "N": 15,
+          "mean_delta_norm": 11.858004570007324,
+          "mean_delta_norm_ci95": [
+            9.767880415916443,
+            12.794082856178283
+          ],
+          "mean_per_example_delta_norm": 16.842105865478516,
+          "mean_per_example_delta_norm_ci95": [
+            15.386076927185059,
+            18.467238330841063
+          ]
+        },
+        "group_mean_cosine": 0.9610412120819092,
+        "group_mean_cosine_ci95": [
+          0.8942551910877228,
+          0.9484393894672394
+        ],
+        "failure_contrast_norm": 3.3016464710235596,
+        "failure_contrast_norm_ci95": [
+          0.45996904373169034,
+          2.8732998728752137
+        ],
+        "layer": 19
+      },
+      {
+        "non_to_non": {
+          "N": 166,
+          "mean_delta_norm": 14.17584228515625,
+          "mean_delta_norm_ci95": [
+            13.772225403785706,
+            14.46466875076294
+          ],
+          "mean_per_example_delta_norm": 20.197526931762695,
+          "mean_per_example_delta_norm_ci95": [
+            19.729617977142333,
+            20.64402437210083
+          ]
+        },
+        "non_to_syc": {
+          "N": 15,
+          "mean_delta_norm": 15.13106632232666,
+          "mean_delta_norm_ci95": [
+            13.021633386611938,
+            15.970779275894165
+          ],
+          "mean_per_example_delta_norm": 21.308143615722656,
+          "mean_per_example_delta_norm_ci95": [
+            19.773896074295045,
+            22.9924117565155
+          ]
+        },
+        "group_mean_cosine": 0.9635276198387146,
+        "group_mean_cosine_ci95": [
+          0.9005058169364929,
+          0.9510801509022713
+        ],
+        "failure_contrast_norm": 4.069246292114258,
+        "failure_contrast_norm_ci95": [
+          0.7335912227630619,
+          3.494774580001831
+        ],
+        "layer": 20
+      },
+      {
+        "non_to_non": {
+          "N": 166,
+          "mean_delta_norm": 18.805557250976562,
+          "mean_delta_norm_ci95": [
+            18.263217067718507,
+            19.20642147064209
+          ],
+          "mean_per_example_delta_norm": 26.898090362548828,
+          "mean_per_example_delta_norm_ci95": [
+            26.264163208007812,
+            27.54905915260315
+          ]
+        },
+        "non_to_syc": {
+          "N": 15,
+          "mean_delta_norm": 20.58684730529785,
+          "mean_delta_norm_ci95": [
+            17.623447942733765,
+            21.955021953582765
+          ],
+          "mean_per_example_delta_norm": 29.077890396118164,
+          "mean_per_example_delta_norm_ci95": [
+            26.537757921218873,
+            31.533601570129395
+          ]
+        },
+        "group_mean_cosine": 0.9660293459892273,
+        "group_mean_cosine_ci95": [
+          0.8986479416489601,
+          0.9520288318395614
+        ],
+        "failure_contrast_norm": 5.429203987121582,
+        "failure_contrast_norm_ci95": [
+          0.7944567441940311,
+          4.565866684913635
+        ],
+        "layer": 21
+      },
+      {
+        "non_to_non": {
+          "N": 166,
+          "mean_delta_norm": 22.48845672607422,
+          "mean_delta_norm_ci95": [
+            21.782120609283446,
+            23.051410913467407
+          ],
+          "mean_per_example_delta_norm": 32.81535339355469,
+          "mean_per_example_delta_norm_ci95": [
+            32.02012481689453,
+            33.648175430297854
+          ]
+        },
+        "non_to_syc": {
+          "N": 15,
+          "mean_delta_norm": 24.943483352661133,
+          "mean_delta_norm_ci95": [
+            20.759489870071413,
+            26.68821268081665
+          ],
+          "mean_per_example_delta_norm": 35.60310363769531,
+          "mean_per_example_delta_norm_ci95": [
+            32.42542524337769,
+            39.02606210708618
+          ]
+        },
+        "group_mean_cosine": 0.9629204273223877,
+        "group_mean_cosine_ci95": [
+          0.8945113837718963,
+          0.9482802778482438
+        ],
+        "failure_contrast_norm": 6.901148319244385,
+        "failure_contrast_norm_ci95": [
+          1.1563415527343768,
+          5.863280498981476
+        ],
+        "layer": 22
+      },
+      {
+        "non_to_non": {
+          "N": 166,
+          "mean_delta_norm": 25.509662628173828,
+          "mean_delta_norm_ci95": [
+            24.586465263366698,
+            26.132909059524536
+          ],
+          "mean_per_example_delta_norm": 39.91392517089844,
+          "mean_per_example_delta_norm_ci95": [
+            38.83618192672729,
+            41.046228122711184
+          ]
+        },
+        "non_to_syc": {
+          "N": 15,
+          "mean_delta_norm": 27.890241622924805,
+          "mean_delta_norm_ci95": [
+            22.686623382568364,
+            29.708154010772706
+          ],
+          "mean_per_example_delta_norm": 43.28379821777344,
+          "mean_per_example_delta_norm_ci95": [
+            39.396385765075685,
+            47.39612169265747
+          ]
+        },
+        "group_mean_cosine": 0.9454832673072815,
+        "group_mean_cosine_ci95": [
+          0.8541444405913353,
+          0.9275539442896843
+        ],
+        "failure_contrast_norm": 9.12366771697998,
+        "failure_contrast_norm_ci95": [
+          1.8881803512573256,
+          7.765741777420043
+        ],
+        "layer": 23
+      },
+      {
+        "non_to_non": {
+          "N": 166,
+          "mean_delta_norm": 28.888710021972656,
+          "mean_delta_norm_ci95": [
+            27.811250925064087,
+            29.630921506881712
+          ],
+          "mean_per_example_delta_norm": 46.306827545166016,
+          "mean_per_example_delta_norm_ci95": [
+            45.0568302154541,
+            47.697946548461914
+          ]
+        },
+        "non_to_syc": {
+          "N": 15,
+          "mean_delta_norm": 32.19417190551758,
+          "mean_delta_norm_ci95": [
+            26.474921131134032,
+            33.748901987075804
+          ],
+          "mean_per_example_delta_norm": 50.75797653198242,
+          "mean_per_example_delta_norm_ci95": [
+            46.20656547546387,
+            55.345182704925534
+          ]
+        },
+        "group_mean_cosine": 0.9411185383796692,
+        "group_mean_cosine_ci95": [
+          0.8484485909342766,
+          0.9233459889888763
+        ],
+        "failure_contrast_norm": 10.975024223327637,
+        "failure_contrast_norm_ci95": [
+          2.589291143417359,
+          9.52592225074768
+        ],
+        "layer": 24
+      },
+      {
+        "non_to_non": {
+          "N": 166,
+          "mean_delta_norm": 30.97064781188965,
+          "mean_delta_norm_ci95": [
+            29.797456645965575,
+            31.6969033241272
+          ],
+          "mean_per_example_delta_norm": 53.38279342651367,
+          "mean_per_example_delta_norm_ci95": [
+            51.96791315078735,
+            54.87585744857788
+          ]
+        },
+        "non_to_syc": {
+          "N": 15,
+          "mean_delta_norm": 34.52486038208008,
+          "mean_delta_norm_ci95": [
+            28.304007148742677,
+            35.48603296279907
+          ],
+          "mean_per_example_delta_norm": 58.28662109375,
+          "mean_per_example_delta_norm_ci95": [
+            53.62785453796387,
+            62.94451198577881
+          ]
+        },
+        "group_mean_cosine": 0.9284180998802185,
+        "group_mean_cosine_ci95": [
+          0.8142673313617707,
+          0.9069107055664062
+        ],
+        "failure_contrast_norm": 12.872884750366211,
+        "failure_contrast_norm_ci95": [
+          2.89051356315613,
+          11.11957881450653
+        ],
+        "layer": 25
+      },
+      {
+        "non_to_non": {
+          "N": 166,
+          "mean_delta_norm": 34.5159912109375,
+          "mean_delta_norm_ci95": [
+            33.10679979324341,
+            35.36858434677124
+          ],
+          "mean_per_example_delta_norm": 63.059993743896484,
+          "mean_per_example_delta_norm_ci95": [
+            61.33842649459839,
+            64.882857131958
+          ]
+        },
+        "non_to_syc": {
+          "N": 15,
+          "mean_delta_norm": 38.43696975708008,
+          "mean_delta_norm_ci95": [
+            31.004665470123292,
+            39.546267700195315
+          ],
+          "mean_per_example_delta_norm": 68.54306030273438,
+          "mean_per_example_delta_norm_ci95": [
+            63.10196981430054,
+            74.07047653198242
+          ]
+        },
+        "group_mean_cosine": 0.9131461381912231,
+        "group_mean_cosine_ci95": [
+          0.7847635179758072,
+          0.8877262741327285
+        ],
+        "failure_contrast_norm": 15.678994178771973,
+        "failure_contrast_norm_ci95": [
+          4.10508131980896,
+          13.659246683120728
+        ],
+        "layer": 26
+      },
+      {
+        "non_to_non": {
+          "N": 166,
+          "mean_delta_norm": 40.41610336303711,
+          "mean_delta_norm_ci95": [
+            38.91505508422852,
+            41.3198055267334
+          ],
+          "mean_per_example_delta_norm": 76.02061462402344,
+          "mean_per_example_delta_norm_ci95": [
+            73.97143936157227,
+            78.01038551330566
+          ]
+        },
+        "non_to_syc": {
+          "N": 15,
+          "mean_delta_norm": 44.941646575927734,
+          "mean_delta_norm_ci95": [
+            35.672297382354735,
+            45.878573703765866
+          ],
+          "mean_per_example_delta_norm": 82.46792602539062,
+          "mean_per_example_delta_norm_ci95": [
+            75.87575054168701,
+            89.84956569671631
+          ]
+        },
+        "group_mean_cosine": 0.9066423177719116,
+        "group_mean_cosine_ci95": [
+          0.768304032087326,
+          0.8787448018789291
+        ],
+        "failure_contrast_norm": 18.9637508392334,
+        "failure_contrast_norm_ci95": [
+          4.096151638031003,
+          16.302568101882933
+        ],
+        "layer": 27
+      },
+      {
+        "non_to_non": {
+          "N": 166,
+          "mean_delta_norm": 34.30123519897461,
+          "mean_delta_norm_ci95": [
+            32.461644935607914,
+            35.48459062576294
+          ],
+          "mean_per_example_delta_norm": 67.26944732666016,
+          "mean_per_example_delta_norm_ci95": [
+            65.04520606994629,
+            69.69440994262695
+          ]
+        },
+        "non_to_syc": {
+          "N": 15,
+          "mean_delta_norm": 36.98563766479492,
+          "mean_delta_norm_ci95": [
+            28.985311698913577,
+            37.38360748291016
+          ],
+          "mean_per_example_delta_norm": 70.20358276367188,
+          "mean_per_example_delta_norm_ci95": [
+            64.98576984405517,
+            75.65009899139405
+          ]
+        },
+        "group_mean_cosine": 0.8918771147727966,
+        "group_mean_cosine_ci95": [
+          0.7513934165239334,
+          0.8616897761821747
+        ],
+        "failure_contrast_norm": 16.77935791015625,
+        "failure_contrast_norm_ci95": [
+          4.659451770782471,
+          14.300771951675415
+        ],
+        "layer": 28
+      }
+    ]
+  },
+  "SimNPO": {
+    "stable_ids": [
+      "20ae1b9cb46aeec4a9f51ea9807ad400",
+      "fdf2eee71a94ac4eab8b03015e24321a",
+      "ce9ee3687f00c6a19e79a0ca9a86c098",
+      "a2f13a54228efdd6f5685e45eb6a07b0",
+      "9c418bb55be9b339070afa5fc7210d46",
+      "720ad64a8ac8b641e72656309abce530",
+      "90378899c28ad8ac7abdf68bc32d0d45",
+      "908fd5182b4a6906e2494103b23ee1df",
+      "77da359637df658c78a890bc65690e0d",
+      "08be4ab8b22d8bca001dffdd9bc965c6",
+      "b53249ea68eff5bcdb4f94388cb48029",
+      "c0ef3cc6963122be0ad74ff001497699",
+      "d8e59be405bbbeef9b069d3b4ed322ad",
+      "e5dfb89cc54d638a34962dfd45bd44b5",
+      "9881d0c4049c2c24508950d0c6d8e6aa",
+      "a507e9daf4d0803b43b8056b759cf795",
+      "79b94495c852ac9ccfe5dd87e679104f",
+      "9eda9b2739737c977bb9caac08e4984a",
+      "f009415101229ffec71ecf9bbbd89112",
+      "4c7f4a0c1e33b46e04fbf433a02d5713",
+      "c6b2ba6260e0c5a60906694dc0842797",
+      "c6b162a21304be791aee3a16ff80d71d",
+      "2e633ac21d772903dd5172fa584e287f",
+      "9aa34f1d8c600617d5679aaa01994f72",
+      "9280d2d0ce0d57f7af6187730ca44670",
+      "1f69fa84ad69257352b8802a8d76ad05",
+      "257a6d15c550b83754ed6f6f0cb84194",
+      "670b49232f531c9024937ea11b42d21a",
+      "0a7b86b7068c2b130a277f804de19a1f",
+      "fef1ea7371c10fb2731aa5436f1e5a27",
+      "1a5834f679acd2bdf03df4015aa855d6",
+      "5b1c3ec772fbcce2ccb5148d225fe9d4",
+      "625caaa2bdd228817c143cf089d898d5",
+      "d9540fd2449cef99ae76bc2f73ad267d",
+      "69cceeb88000b1114a0717a49b01b802",
+      "b5092ae7618899629289e8cdcb7d09bc",
+      "84a4c47280a1eaaf63e4797d73bc5651",
+      "53c14eaa588151b5dcf7c61b9d08741f",
+      "87081fcbae7e52aed453cc2cdf2607c3",
+      "31214c8876a84dae3a7aad6e2e541532",
+      "590530c6111dd03c11f078443980c522",
+      "2a16f45509c7e1b70ff491ef4c4f807f",
+      "f03cff21af525d2c2b13cc520880c152",
+      "6c9ce8e4ec4222f49632f1b9e4075273",
+      "170dd2c6607f64511e8c28c805e31f18",
+      "a742c95e71d8eb12161be7a411199030",
+      "8fc3e41772498239652474cc0b44442d",
+      "81ee6ef983d9a47e3362122fab087b79",
+      "cc157d496d6b17a6dde6bc7290b96ab5",
+      "ba747a6cd696aff591a2b162955875ed",
+      "020dd444bad534fc841debd6452455a1",
+      "8445fbf8327be0e9bfb91550d1ee49c5",
+      "482de21e3e0244b0f5ca710a77e77573",
+      "889deacf31508642c1da99bac4c36fca",
+      "5ca484e5570d133243fb4522906f59cc",
+      "50a3439dec342441653d7f37d7c8bc80",
+      "5d3dc2984c2c185705d29f906bb391c4",
+      "618ce56a1d22be95764fc08436b3a522",
+      "a69dde055805f80a07865fcaed975872",
+      "1e497d11f5def3c35030491e8ee8b904",
+      "15c3ab8f4f774bc685260982eae00164",
+      "6b25ea5d246319c38efb44e4fcf4e46e",
+      "61c2156379b52d7448a149375ed41cee",
+      "1715a5b1aafea6f29a9ed1b6f394e38f",
+      "8fbb7d8c1ac93a11487c95e38965015a",
+      "66cc3b9b2c94111584549823720f8881",
+      "d10728bbb2a11608d71042ee3baf99b9",
+      "486b66ae1f0480c02e1c5747d76b42c2",
+      "114929d4ee3141898725aff403e89cfe",
+      "cc94a839b69aca27e0dfe8620a1f3427",
+      "1590ab3b2a06714fc22a023f14e90f84",
+      "38666772de7d0a3b34521642bf83ba84",
+      "e24b2945e99c6300efc13cd3fda775f8",
+      "9a6d784094ac0a3f639cbc5bef44ea28",
+      "8789f945d3fe37bde47041f00005ff22",
+      "a1ffd9d7862d12eee651264ecd35fad1",
+      "ac164adf62e615d8beab4bf460fc89a3",
+      "fa2046d86b6badf7528671dc0783f0fb",
+      "02c1d4b6578217941accf263e7e4ab26",
+      "b2c04062ae362d87b48586bd8fa23b01",
+      "58ccd4919579330d7375fc51744aa626",
+      "2a8894bc79944aee2006b8a49f3c3d00",
+      "d65da7d7491ae421c6d5e556668daf51",
+      "5bd8fe389bea5d2bd1963cd83abe1d10",
+      "bb0e1444e81f2463568714a28e019ece",
+      "fe58b375928f5786c1bbba8c4423149a",
+      "2424c1af94b12a81205ce9dc4b09ca1c",
+      "57d0d54bf31edea365a85a5007ae8a39",
+      "39ff594972bfdde1214e8f06e60be400",
+      "8423195b3bcb4407c344f8bdb5aedbe2",
+      "6c265af33033c6ab7ba8b13ed95194a2",
+      "8e31897d6ddfcdfa9f791561cde38ad0",
+      "25a9cf2cce21accaee2d8eb1cfa33d6f",
+      "f340073535d2ec51b5f6211a5b9abd3c",
+      "3ccf8e8567a5ac273dd7658d27d36e2b",
+      "322f1ea7c35c232d4e8542be7e7e4f1b",
+      "21fe8d0f761d0a37ee64104e1c97713a",
+      "b6d84b7ea69b5435bc1b62806c761fe3",
+      "149a8351919ca7e4270064f1140055ab",
+      "d346f20d63de1760560f5bd627acb738",
+      "cb75f4b46e60dbf6c54400efd87eb612",
+      "22d1f390f276c99732bcbfe5ecbdf793",
+      "a0b726c1b172b63c75de7ea446e11dfd",
+      "3c6606c5a2697a7eb3403af09c7985b0",
+      "b3c08947949325550a7db9e4b78198f6",
+      "febc56dbccc2addf44062151575974aa",
+      "192b362d25e4eb63cce8f1bce0e594a6",
+      "b934289ef05f5a132dd217a3c4587a2d",
+      "d9241542341163511cc103d2887df39c",
+      "71527bf839a76588acefb52b2d9fb0f2",
+      "f663d260c6d2116836d8bd726a1bc1ca",
+      "807b3fdbdcf677ed38f526cdb007b48c",
+      "6481b1b06f447a0d05cb19b4204e363a",
+      "8248d4d2bdbbedd30057d8c903756cfc",
+      "f8749540ecf5a1f2738585519ea74d4b",
+      "d5938867eb613f4f9eb930945c5b656f",
+      "86992330e9942af08759e6765439f8cb",
+      "859ae949e758070afa6a64c4631ccf2d",
+      "0c1cb7d9d4002d9cb7e05e26311fe1eb",
+      "061b6f1f4b0913c2fd8d1fe8d7019db6",
+      "31a0d0a002a5c5929a6f0aaf9a4bf076",
+      "d6160fa7053a8ee4cf211d7259bad17e",
+      "822ad858bc6b211c0fdee677732ec9ba",
+      "0bed5b964a94e1bed58575cee74e5d2f",
+      "1ee70572456e17cc1cfbc77e3ea617e4",
+      "274757210fb61521c8fc88a4bf81381c",
+      "6c7e10a6554e73c54b9680370ac618e1",
+      "9c08db258d30e669424cb8ee73f93d58",
+      "46716b72186a22ea37af60fed3d96c2e",
+      "7b1e019824a5da43f90afcebcc813873",
+      "046995ac84bd52ed3315029d027c45fc",
+      "074f8aa6e94b6a5c8ba60aa3d48fee13",
+      "edc14eaf8e28583a6de09bb2b568311f",
+      "67752451deb5b2ad3981a3f4318f232d",
+      "cd666ac17ff36bec56296dbab5d30711",
+      "379e54c0348df2afd4757fa1a9b9a0d2",
+      "c3ddda27ba790fe64dc195cd71f955fe",
+      "47e600ca5b805da10d9411be6285192f",
+      "30da762080f29f9a20e2bdf6391104dc",
+      "72a03d2d5fd8a7466fb64b6a5b841c4b",
+      "860a1058eb17c865b04829904b99cace",
+      "6cac4d24e78e6c941e800d02d71e089f",
+      "5d5c8068c7ac552dba3af2849d95663f",
+      "04e192ffab184ea02548f0b0d052a50b",
+      "e7a4a736157f5a3b0252f82c54925b6d",
+      "6beae5055163daa367dd4cb8cf4aa38a",
+      "75cc15e6206adedd1cac7387e2f0145c",
+      "14616c2fe1090dc7710c5bb6b04560d7",
+      "9ef8e8cc66f89b44e3cd31f3442cab51",
+      "085ee46690615229d5bcef2fb3f26ebb",
+      "f0f42adefdde38741015b822c946957c",
+      "1be396fddca249043e24ca0c206e4ccd",
+      "da23ba24472897a412175f0fd490aa85",
+      "74afc9b1db8d5c57ea8d1f2bf389ff9c",
+      "7c0e042935213a656ece4ca11148d071",
+      "380d90cb9582134179b7eedc53485c53",
+      "6aab17c5789e6e3ad0b621373f2aac06",
+      "0ccf3c9432689af0fdd48596f21b2cc1",
+      "21ab1a460848aa153c656c5986d54931",
+      "ffb3e6705cd77716022d119e45a36df6",
+      "2a9ee1586c230281c43c0b7fb4ef6464",
+      "35aa30cfef9b4cc98cd37675b4bba662",
+      "ddf4d2b87fd07067f5a7e632aae53e55",
+      "f8de55e428f90181c6dc961a675090f2",
+      "2158f3a0618d923761d7e92f2b9127e3",
+      "5104e6267f9b7163669e1c93eb3072d3",
+      "7e2fd764186c290ff619f5e892893ab4",
+      "5e3a739c4e8c215ce2277319eb91ffac",
+      "48de832a4fb602b1106ef3e18fdb6be3"
+    ],
+    "failure_transition_ids": [
+      "58df54936568e5a774e3fdfe0d7bbb76",
+      "6967d0670f978355d3584249157e6878",
+      "2740209d1f167a08702f4a27825bb662",
+      "c292da8159886d736a2c6cffe36a0c1c",
+      "aa71a70fcdd751ae4b0c2f8a9847d71f",
+      "10934aeed863a1e95ec46dda20589f6f",
+      "80be14202c0510bbabc817bda834e7bd",
+      "e549f5644172a76c2c09e9cbfbea903d",
+      "b23fdf89e4c4b5b2a20625bc45de1cfb",
+      "7079a34e3ff4d823075aed89e981adde",
+      "80ad8da9e66d72c30b42edcc5d0f09fc",
+      "47094dc11d68cca265bb8b9827afb997"
+    ],
+    "exploratory_due_to_n_lt_5": false,
+    "bootstrap_replicates": 1000,
+    "bootstrap_interval": "basic 95% CI for vector norms; percentile 95% CI for scalar means/cosines",
+    "layers": [
+      {
+        "non_to_non": {
+          "N": 169,
+          "mean_delta_norm": 0.010758239775896072,
+          "mean_delta_norm_ci95": [
+            0.010758239775896072,
+            0.010758239775896072
+          ],
+          "mean_per_example_delta_norm": 0.010758238844573498,
+          "mean_per_example_delta_norm_ci95": [
+            0.010758238844573498,
+            0.010758238844573498
+          ]
+        },
+        "non_to_syc": {
+          "N": 12,
+          "mean_delta_norm": 0.010758239775896072,
+          "mean_delta_norm_ci95": [
+            0.010758239775896072,
+            0.010758239775896072
+          ],
+          "mean_per_example_delta_norm": 0.010758238844573498,
+          "mean_per_example_delta_norm_ci95": [
+            0.010758238844573498,
+            0.010758238844573498
+          ]
+        },
+        "group_mean_cosine": 1.0,
+        "group_mean_cosine_ci95": [
+          1.0,
+          1.0
+        ],
+        "failure_contrast_norm": 0.0,
+        "failure_contrast_norm_ci95": [
+          0.0,
+          0.0
+        ],
+        "layer": 0
+      },
+      {
+        "non_to_non": {
+          "N": 169,
+          "mean_delta_norm": 0.3422711193561554,
+          "mean_delta_norm_ci95": [
+            0.34143158346414565,
+            0.343141134083271
+          ],
+          "mean_per_example_delta_norm": 0.34733080863952637,
+          "mean_per_example_delta_norm_ci95": [
+            0.34671196043491365,
+            0.34800717085599897
+          ]
+        },
+        "non_to_syc": {
+          "N": 12,
+          "mean_delta_norm": 0.3426027297973633,
+          "mean_delta_norm_ci95": [
+            0.3400217041373253,
+            0.3440020106732845
+          ],
+          "mean_per_example_delta_norm": 0.3469028174877167,
+          "mean_per_example_delta_norm_ci95": [
+            0.34513505548238754,
+            0.3489396385848522
+          ]
+        },
+        "group_mean_cosine": 0.9990810751914978,
+        "group_mean_cosine_ci95": [
+          0.9964566752314568,
+          0.9987472891807556
+        ],
+        "failure_contrast_norm": 0.014683256857097149,
+        "failure_contrast_norm_ci95": [
+          0.0005023228935897364,
+          0.012188859330490232
+        ],
+        "layer": 1
+      },
+      {
+        "non_to_non": {
+          "N": 169,
+          "mean_delta_norm": 0.7660108208656311,
+          "mean_delta_norm_ci95": [
+            0.7624552011489868,
+            0.7697195634245872
+          ],
+          "mean_per_example_delta_norm": 0.7768963575363159,
+          "mean_per_example_delta_norm_ci95": [
+            0.773276761174202,
+            0.7803655490279198
+          ]
+        },
+        "non_to_syc": {
+          "N": 12,
+          "mean_delta_norm": 0.7662695646286011,
+          "mean_delta_norm_ci95": [
+            0.753194484114647,
+            0.7782938495278359
+          ],
+          "mean_per_example_delta_norm": 0.7753362059593201,
+          "mean_per_example_delta_norm_ci95": [
+            0.7619626641273498,
+            0.7880071192979813
+          ]
+        },
+        "group_mean_cosine": 0.9990605711936951,
+        "group_mean_cosine_ci95": [
+          0.9964945554733277,
+          0.9987804412841796
+        ],
+        "failure_contrast_norm": 0.03320987522602081,
+        "failure_contrast_norm_ci95": [
+          0.0013936568051576698,
+          0.02843390759080648
+        ],
+        "layer": 2
+      },
+      {
+        "non_to_non": {
+          "N": 169,
+          "mean_delta_norm": 1.1697667837142944,
+          "mean_delta_norm_ci95": [
+            1.1668382555246353,
+            1.172729030251503
+          ],
+          "mean_per_example_delta_norm": 1.192138671875,
+          "mean_per_example_delta_norm_ci95": [
+            1.1891221016645432,
+            1.1951789289712906
+          ]
+        },
+        "non_to_syc": {
+          "N": 12,
+          "mean_delta_norm": 1.1742545366287231,
+          "mean_delta_norm_ci95": [
+            1.1641642987728118,
+            1.180763739347458
+          ],
+          "mean_per_example_delta_norm": 1.192834496498108,
+          "mean_per_example_delta_norm_ci95": [
+            1.183362567424774,
+            1.2024201840162276
+          ]
+        },
+        "group_mean_cosine": 0.9986386895179749,
+        "group_mean_cosine_ci95": [
+          0.9956065267324448,
+          0.9982235640287399
+        ],
+        "failure_contrast_norm": 0.06132157891988754,
+        "failure_contrast_norm_ci95": [
+          0.012028272077441227,
+          0.052589467540383336
+        ],
+        "layer": 3
+      },
+      {
+        "non_to_non": {
+          "N": 169,
+          "mean_delta_norm": 1.826589822769165,
+          "mean_delta_norm_ci95": [
+            1.8180975437164306,
+            1.8352173298597336
+          ],
+          "mean_per_example_delta_norm": 1.8659733533859253,
+          "mean_per_example_delta_norm_ci95": [
+            1.8575376361608504,
+            1.8737462520599366
+          ]
+        },
+        "non_to_syc": {
+          "N": 12,
+          "mean_delta_norm": 1.8462038040161133,
+          "mean_delta_norm_ci95": [
+            1.8182543396949769,
+            1.864420485496521
+          ],
+          "mean_per_example_delta_norm": 1.8810187578201294,
+          "mean_per_example_delta_norm_ci95": [
+            1.8575791597366333,
+            1.9053731113672256
+          ]
+        },
+        "group_mean_cosine": 0.998249888420105,
+        "group_mean_cosine_ci95": [
+          0.9935999512672424,
+          0.9979667901992798
+        ],
+        "failure_contrast_norm": 0.11040861904621124,
+        "failure_contrast_norm_ci95": [
+          0.007523973286151897,
+          0.1032297508791089
+        ],
+        "layer": 4
+      },
+      {
+        "non_to_non": {
+          "N": 169,
+          "mean_delta_norm": 2.2794368267059326,
+          "mean_delta_norm_ci95": [
+            2.268621975183487,
+            2.2900467455387115
+          ],
+          "mean_per_example_delta_norm": 2.3947372436523438,
+          "mean_per_example_delta_norm_ci95": [
+            2.3847070217132567,
+            2.4048625349998476
+          ]
+        },
+        "non_to_syc": {
+          "N": 12,
+          "mean_delta_norm": 2.3134872913360596,
+          "mean_delta_norm_ci95": [
+            2.2530610620975495,
+            2.342978245019913
+          ],
+          "mean_per_example_delta_norm": 2.407757520675659,
+          "mean_per_example_delta_norm_ci95": [
+            2.3695265114307404,
+            2.453787440061569
+          ]
+        },
+        "group_mean_cosine": 0.9969466924667358,
+        "group_mean_cosine_ci95": [
+          0.987643526494503,
+          0.9959063336253167
+        ],
+        "failure_contrast_norm": 0.1826568841934204,
+        "failure_contrast_norm_ci95": [
+          0.0,
+          0.1574897788465023
+        ],
+        "layer": 5
+      },
+      {
+        "non_to_non": {
+          "N": 169,
+          "mean_delta_norm": 3.1024277210235596,
+          "mean_delta_norm_ci95": [
+            3.0702725529670714,
+            3.1289531886577606
+          ],
+          "mean_per_example_delta_norm": 3.3291780948638916,
+          "mean_per_example_delta_norm_ci95": [
+            3.2992317199707033,
+            3.362530130147934
+          ]
+        },
+        "non_to_syc": {
+          "N": 12,
+          "mean_delta_norm": 3.2004153728485107,
+          "mean_delta_norm_ci95": [
+            3.0829547584056853,
+            3.255947232246399
+          ],
+          "mean_per_example_delta_norm": 3.385359764099121,
+          "mean_per_example_delta_norm_ci95": [
+            3.2988770842552184,
+            3.484103870391846
+          ]
+        },
+        "group_mean_cosine": 0.9961948394775391,
+        "group_mean_cosine_ci95": [
+          0.9825985834002495,
+          0.9948436126112938
+        ],
+        "failure_contrast_norm": 0.2918309271335602,
+        "failure_contrast_norm_ci95": [
+          0.0,
+          0.25413537919521334
+        ],
+        "layer": 6
+      },
+      {
+        "non_to_non": {
+          "N": 169,
+          "mean_delta_norm": 3.3079049587249756,
+          "mean_delta_norm_ci95": [
+            3.275960350036621,
+            3.3347245693206786
+          ],
+          "mean_per_example_delta_norm": 3.5971391201019287,
+          "mean_per_example_delta_norm_ci95": [
+            3.564699286222458,
+            3.63299645781517
+          ]
+        },
+        "non_to_syc": {
+          "N": 12,
+          "mean_delta_norm": 3.399902105331421,
+          "mean_delta_norm_ci95": [
+            3.295860594511032,
+            3.4369671404361726
+          ],
+          "mean_per_example_delta_norm": 3.6401100158691406,
+          "mean_per_example_delta_norm_ci95": [
+            3.5658122837543487,
+            3.7227666854858397
+          ]
+        },
+        "group_mean_cosine": 0.9946763515472412,
+        "group_mean_cosine_ci95": [
+          0.9779451325535774,
+          0.9929225310683251
+        ],
+        "failure_contrast_norm": 0.35806286334991455,
+        "failure_contrast_norm_ci95": [
+          0.0,
+          0.30615615025162696
+        ],
+        "layer": 7
+      },
+      {
+        "non_to_non": {
+          "N": 169,
+          "mean_delta_norm": 3.492858409881592,
+          "mean_delta_norm_ci95": [
+            3.4624493062496184,
+            3.5150224208831786
+          ],
+          "mean_per_example_delta_norm": 3.9030256271362305,
+          "mean_per_example_delta_norm_ci95": [
+            3.876699697971344,
+            3.9304676949977875
+          ]
+        },
+        "non_to_syc": {
+          "N": 12,
+          "mean_delta_norm": 3.564939498901367,
+          "mean_delta_norm_ci95": [
+            3.4539201080799105,
+            3.6101479649543764
+          ],
+          "mean_per_example_delta_norm": 3.910576581954956,
+          "mean_per_example_delta_norm_ci95": [
+            3.84101243019104,
+            3.977489674091339
+          ]
+        },
+        "group_mean_cosine": 0.9928781390190125,
+        "group_mean_cosine_ci95": [
+          0.9710744485259056,
+          0.9899477824568749
+        ],
+        "failure_contrast_norm": 0.42726632952690125,
+        "failure_contrast_norm_ci95": [
+          0.0,
+          0.34574709832668304
+        ],
+        "layer": 8
+      },
+      {
+        "non_to_non": {
+          "N": 169,
+          "mean_delta_norm": 3.992234468460083,
+          "mean_delta_norm_ci95": [
+            3.9588300466537474,
+            4.016473042964935
+          ],
+          "mean_per_example_delta_norm": 4.632906436920166,
+          "mean_per_example_delta_norm_ci95": [
+            4.601999545097351,
+            4.663769137859345
+          ]
+        },
+        "non_to_syc": {
+          "N": 12,
+          "mean_delta_norm": 4.068570613861084,
+          "mean_delta_norm_ci95": [
+            3.8989298820495604,
+            4.121207678318024
+          ],
+          "mean_per_example_delta_norm": 4.637685775756836,
+          "mean_per_example_delta_norm_ci95": [
+            4.52707668542862,
+            4.734526062011719
+          ]
+        },
+        "group_mean_cosine": 0.9896534085273743,
+        "group_mean_cosine_ci95": [
+          0.9573373809456825,
+          0.9854641392827034
+        ],
+        "failure_contrast_norm": 0.5847640037536621,
+        "failure_contrast_norm_ci95": [
+          0.0,
+          0.47573460042476656
+        ],
+        "layer": 9
+      },
+      {
+        "non_to_non": {
+          "N": 169,
+          "mean_delta_norm": 4.975639343261719,
+          "mean_delta_norm_ci95": [
+            4.927862811088562,
+            5.014344835281372
+          ],
+          "mean_per_example_delta_norm": 5.855276584625244,
+          "mean_per_example_delta_norm_ci95": [
+            5.8104638934135435,
+            5.899863302707672
+          ]
+        },
+        "non_to_syc": {
+          "N": 12,
+          "mean_delta_norm": 5.115644931793213,
+          "mean_delta_norm_ci95": [
+            4.842431235313415,
+            5.19102623462677
+          ],
+          "mean_per_example_delta_norm": 5.849678039550781,
+          "mean_per_example_delta_norm_ci95": [
+            5.687878942489624,
+            6.063699197769165
+          ]
+        },
+        "group_mean_cosine": 0.9887235164642334,
+        "group_mean_cosine_ci95": [
+          0.9579671025276184,
+          0.9845090255141258
+        ],
+        "failure_contrast_norm": 0.7704979181289673,
+        "failure_contrast_norm_ci95": [
+          0.00627701878547704,
+          0.6381687507033348
+        ],
+        "layer": 10
+      },
+      {
+        "non_to_non": {
+          "N": 169,
+          "mean_delta_norm": 5.187129974365234,
+          "mean_delta_norm_ci95": [
+            5.1229636669158936,
+            5.23361496925354
+          ],
+          "mean_per_example_delta_norm": 6.425112247467041,
+          "mean_per_example_delta_norm_ci95": [
+            6.35164076089859,
+            6.503148853778839
+          ]
+        },
+        "non_to_syc": {
+          "N": 12,
+          "mean_delta_norm": 5.3046345710754395,
+          "mean_delta_norm_ci95": [
+            4.933385443687439,
+            5.454276955127716
+          ],
+          "mean_per_example_delta_norm": 6.387895584106445,
+          "mean_per_example_delta_norm_ci95": [
+            6.126982927322388,
+            6.6321608304977415
+          ]
+        },
+        "group_mean_cosine": 0.9841446280479431,
+        "group_mean_cosine_ci95": [
+          0.9409070298075676,
+          0.9780739411711693
+        ],
+        "failure_contrast_norm": 0.9414654970169067,
+        "failure_contrast_norm_ci95": [
+          0.0031290948390962914,
+          0.7710094511508943
+        ],
+        "layer": 11
+      },
+      {
+        "non_to_non": {
+          "N": 169,
+          "mean_delta_norm": 5.577996730804443,
+          "mean_delta_norm_ci95": [
+            5.486627519130707,
+            5.649323225021362
+          ],
+          "mean_per_example_delta_norm": 7.188599586486816,
+          "mean_per_example_delta_norm_ci95": [
+            7.074927186965942,
+            7.301360249519348
+          ]
+        },
+        "non_to_syc": {
+          "N": 12,
+          "mean_delta_norm": 5.831593990325928,
+          "mean_delta_norm_ci95": [
+            5.345581293106079,
+            6.007001674175262
+          ],
+          "mean_per_example_delta_norm": 7.178497314453125,
+          "mean_per_example_delta_norm_ci95": [
+            6.808041894435883,
+            7.549899291992188
+          ]
+        },
+        "group_mean_cosine": 0.9801716208457947,
+        "group_mean_cosine_ci95": [
+          0.9270293921232223,
+          0.9736538097262383
+        ],
+        "failure_contrast_norm": 1.163735270500183,
+        "failure_contrast_norm_ci95": [
+          0.05579708218574542,
+          0.986591351032257
+        ],
+        "layer": 12
+      },
+      {
+        "non_to_non": {
+          "N": 169,
+          "mean_delta_norm": 5.960775375366211,
+          "mean_delta_norm_ci95": [
+            5.835943853855133,
+            6.057240569591523
+          ],
+          "mean_per_example_delta_norm": 8.072103500366211,
+          "mean_per_example_delta_norm_ci95": [
+            7.911946356296539,
+            8.22982952594757
+          ]
+        },
+        "non_to_syc": {
+          "N": 12,
+          "mean_delta_norm": 6.171578884124756,
+          "mean_delta_norm_ci95": [
+            5.51082273721695,
+            6.368652760982513
+          ],
+          "mean_per_example_delta_norm": 7.965601444244385,
+          "mean_per_example_delta_norm_ci95": [
+            7.565780210494995,
+            8.418273735046386
+          ]
+        },
+        "group_mean_cosine": 0.9740839600563049,
+        "group_mean_cosine_ci95": [
+          0.912112309038639,
+          0.9642236158251762
+        ],
+        "failure_contrast_norm": 1.3968584537506104,
+        "failure_contrast_norm_ci95": [
+          0.08313663005828875,
+          1.1510235160589217
+        ],
+        "layer": 13
+      },
+      {
+        "non_to_non": {
+          "N": 169,
+          "mean_delta_norm": 7.287442207336426,
+          "mean_delta_norm_ci95": [
+            7.105896484851837,
+            7.428441202640533
+          ],
+          "mean_per_example_delta_norm": 9.929947853088379,
+          "mean_per_example_delta_norm_ci95": [
+            9.74744954109192,
+            10.106390571594238
+          ]
+        },
+        "non_to_syc": {
+          "N": 12,
+          "mean_delta_norm": 7.488937854766846,
+          "mean_delta_norm_ci95": [
+            6.491558718681336,
+            7.868912136554718
+          ],
+          "mean_per_example_delta_norm": 9.827472686767578,
+          "mean_per_example_delta_norm_ci95": [
+            9.3298983335495,
+            10.48015637397766
+          ]
+        },
+        "group_mean_cosine": 0.9702561497688293,
+        "group_mean_cosine_ci95": [
+          0.9024012252688408,
+          0.9602292016148567
+        ],
+        "failure_contrast_norm": 1.813058853149414,
+        "failure_contrast_norm_ci95": [
+          0.11759541630744952,
+          1.5095163762569426
+        ],
+        "layer": 14
+      },
+      {
+        "non_to_non": {
+          "N": 169,
+          "mean_delta_norm": 7.740898132324219,
+          "mean_delta_norm_ci95": [
+            7.5119663834571835,
+            7.9118633508682255
+          ],
+          "mean_per_example_delta_norm": 11.141204833984375,
+          "mean_per_example_delta_norm_ci95": [
+            10.911006665229797,
+            11.36225643157959
+          ]
+        },
+        "non_to_syc": {
+          "N": 12,
+          "mean_delta_norm": 8.448881149291992,
+          "mean_delta_norm_ci95": [
+            7.117968726158143,
+            8.976176702976227
+          ],
+          "mean_per_example_delta_norm": 11.391498565673828,
+          "mean_per_example_delta_norm_ci95": [
+            10.677186250686646,
+            12.25864930152893
+          ]
+        },
+        "group_mean_cosine": 0.9673247933387756,
+        "group_mean_cosine_ci95": [
+          0.8919767722487449,
+          0.9558695673942565
+        ],
+        "failure_contrast_norm": 2.1852428913116455,
+        "failure_contrast_norm_ci95": [
+          0.1603489398956297,
+          1.848105180263519
+        ],
+        "layer": 15
+      },
+      {
+        "non_to_non": {
+          "N": 169,
+          "mean_delta_norm": 8.39613151550293,
+          "mean_delta_norm_ci95": [
+            8.122685647010803,
+            8.610464954376221
+          ],
+          "mean_per_example_delta_norm": 12.069941520690918,
+          "mean_per_example_delta_norm_ci95": [
+            11.832048416137695,
+            12.338328075408935
+          ]
+        },
+        "non_to_syc": {
+          "N": 12,
+          "mean_delta_norm": 9.172273635864258,
+          "mean_delta_norm_ci95": [
+            7.638188982009888,
+            9.691373348236084
+          ],
+          "mean_per_example_delta_norm": 12.391700744628906,
+          "mean_per_example_delta_norm_ci95": [
+            11.510298371315002,
+            13.502246356010437
+          ]
+        },
+        "group_mean_cosine": 0.9666139483451843,
+        "group_mean_cosine_ci95": [
+          0.8941993474960327,
+          0.9546908378601074
+        ],
+        "failure_contrast_norm": 2.396801233291626,
+        "failure_contrast_norm_ci95": [
+          0.11004149913787842,
+          2.0217945635318757
+        ],
+        "layer": 16
+      },
+      {
+        "non_to_non": {
+          "N": 169,
+          "mean_delta_norm": 9.028648376464844,
+          "mean_delta_norm_ci95": [
+            8.71454062461853,
+            9.27046251296997
+          ],
+          "mean_per_example_delta_norm": 13.028792381286621,
+          "mean_per_example_delta_norm_ci95": [
+            12.73819682598114,
+            13.335930109024048
+          ]
+        },
+        "non_to_syc": {
+          "N": 12,
+          "mean_delta_norm": 10.040907859802246,
+          "mean_delta_norm_ci95": [
+            7.9100788831710815,
+            10.845162653923035
+          ],
+          "mean_per_example_delta_norm": 13.727886199951172,
+          "mean_per_example_delta_norm_ci95": [
+            12.501317262649536,
+            15.323988270759582
+          ]
+        },
+        "group_mean_cosine": 0.9636845588684082,
+        "group_mean_cosine_ci95": [
+          0.8912855714559555,
+          0.9513583287596703
+        ],
+        "failure_contrast_norm": 2.7584590911865234,
+        "failure_contrast_norm_ci95": [
+          0.0,
+          2.427757853269577
+        ],
+        "layer": 17
+      },
+      {
+        "non_to_non": {
+          "N": 169,
+          "mean_delta_norm": 9.118401527404785,
+          "mean_delta_norm_ci95": [
+            8.800802612304688,
+            9.345590353012085
+          ],
+          "mean_per_example_delta_norm": 13.942402839660645,
+          "mean_per_example_delta_norm_ci95": [
+            13.594088339805603,
+            14.289632010459899
+          ]
+        },
+        "non_to_syc": {
+          "N": 12,
+          "mean_delta_norm": 10.305582046508789,
+          "mean_delta_norm_ci95": [
+            7.8039057016372695,
+            11.108123397827148
+          ],
+          "mean_per_example_delta_norm": 14.747458457946777,
+          "mean_per_example_delta_norm_ci95": [
+            13.326298713684082,
+            16.61733407974243
+          ]
+        },
+        "group_mean_cosine": 0.9513049125671387,
+        "group_mean_cosine_ci95": [
+          0.8617322027683259,
+          0.9383936628699303
+        ],
+        "failure_contrast_norm": 3.2498042583465576,
+        "failure_contrast_norm_ci95": [
+          0.04611992835998535,
+          2.9565346479415893
+        ],
+        "layer": 18
+      },
+      {
+        "non_to_non": {
+          "N": 169,
+          "mean_delta_norm": 11.01976203918457,
+          "mean_delta_norm_ci95": [
+            10.56456379890442,
+            11.356954836845398
+          ],
+          "mean_per_example_delta_norm": 16.123735427856445,
+          "mean_per_example_delta_norm_ci95": [
+            15.69368634223938,
+            16.565230703353883
+          ]
+        },
+        "non_to_syc": {
+          "N": 12,
+          "mean_delta_norm": 12.277289390563965,
+          "mean_delta_norm_ci95": [
+            9.806622004508974,
+            13.361842131614685
+          ],
+          "mean_per_example_delta_norm": 17.046491622924805,
+          "mean_per_example_delta_norm_ci95": [
+            15.27998764514923,
+            18.93650002479553
+          ]
+        },
+        "group_mean_cosine": 0.9571553468704224,
+        "group_mean_cosine_ci95": [
+          0.8790667578577995,
+          0.9458909019827842
+        ],
+        "failure_contrast_norm": 3.6296815872192383,
+        "failure_contrast_norm_ci95": [
+          0.34669493436813426,
+          3.250905776023865
+        ],
+        "layer": 19
+      },
+      {
+        "non_to_non": {
+          "N": 169,
+          "mean_delta_norm": 14.087836265563965,
+          "mean_delta_norm_ci95": [
+            13.689612483978271,
+            14.38482666015625
+          ],
+          "mean_per_example_delta_norm": 20.125200271606445,
+          "mean_per_example_delta_norm_ci95": [
+            19.684417963027954,
+            20.612704372406007
+          ]
+        },
+        "non_to_syc": {
+          "N": 12,
+          "mean_delta_norm": 15.65758991241455,
+          "mean_delta_norm_ci95": [
+            12.890079975128174,
+            16.60014169216156
+          ],
+          "mean_per_example_delta_norm": 21.3831787109375,
+          "mean_per_example_delta_norm_ci95": [
+            19.452808713912965,
+            23.611573457717896
+          ]
+        },
+        "group_mean_cosine": 0.961510181427002,
+        "group_mean_cosine_ci95": [
+          0.8871865555644035,
+          0.9485625937581063
+        ],
+        "failure_contrast_norm": 4.409585475921631,
+        "failure_contrast_norm_ci95": [
+          0.3344433307647705,
+          3.9060747027397156
+        ],
+        "layer": 20
+      },
+      {
+        "non_to_non": {
+          "N": 169,
+          "mean_delta_norm": 18.679014205932617,
+          "mean_delta_norm_ci95": [
+            18.067467832565306,
+            19.09422688484192
+          ],
+          "mean_per_example_delta_norm": 26.844223022460938,
+          "mean_per_example_delta_norm_ci95": [
+            26.248032569885254,
+            27.58564610481262
+          ]
+        },
+        "non_to_syc": {
+          "N": 12,
+          "mean_delta_norm": 20.96788787841797,
+          "mean_delta_norm_ci95": [
+            17.169741630554203,
+            22.4716438293457
+          ],
+          "mean_per_example_delta_norm": 28.475927352905273,
+          "mean_per_example_delta_norm_ci95": [
+            25.674189710617064,
+            31.63632779121399
+          ]
+        },
+        "group_mean_cosine": 0.9631539583206177,
+        "group_mean_cosine_ci95": [
+          0.8911041721701622,
+          0.9498733207583427
+        ],
+        "failure_contrast_norm": 5.839607238769531,
+        "failure_contrast_norm_ci95": [
+          0.6015095233917229,
+          5.151949036121368
+        ],
+        "layer": 21
+      },
+      {
+        "non_to_non": {
+          "N": 169,
+          "mean_delta_norm": 22.35127067565918,
+          "mean_delta_norm_ci95": [
+            21.61923751831055,
+            22.937366819381715
+          ],
+          "mean_per_example_delta_norm": 32.79336929321289,
+          "mean_per_example_delta_norm_ci95": [
+            31.964107704162597,
+            33.60820779800415
+          ]
+        },
+        "non_to_syc": {
+          "N": 12,
+          "mean_delta_norm": 25.221208572387695,
+          "mean_delta_norm_ci95": [
+            20.458130407333375,
+            27.22625102996826
+          ],
+          "mean_per_example_delta_norm": 34.41365432739258,
+          "mean_per_example_delta_norm_ci95": [
+            30.908306312561034,
+            38.450503730773924
+          ]
+        },
+        "group_mean_cosine": 0.9605077505111694,
+        "group_mean_cosine_ci95": [
+          0.8869069516658783,
+          0.9461723446846009
+        ],
+        "failure_contrast_norm": 7.263756275177002,
+        "failure_contrast_norm_ci95": [
+          1.1146487474441535,
+          6.437925219535828
+        ],
+        "layer": 22
+      },
+      {
+        "non_to_non": {
+          "N": 169,
+          "mean_delta_norm": 25.397201538085938,
+          "mean_delta_norm_ci95": [
+            24.498629999160766,
+            26.077479457855226
+          ],
+          "mean_per_example_delta_norm": 39.9764518737793,
+          "mean_per_example_delta_norm_ci95": [
+            38.85758352279663,
+            41.12767400741577
+          ]
+        },
+        "non_to_syc": {
+          "N": 12,
+          "mean_delta_norm": 27.87800407409668,
+          "mean_delta_norm_ci95": [
+            21.77275094985962,
+            30.102296113967896
+          ],
+          "mean_per_example_delta_norm": 40.97452926635742,
+          "mean_per_example_delta_norm_ci95": [
+            36.49647302627564,
+            45.782696628570555
+          ]
+        },
+        "group_mean_cosine": 0.946166455745697,
+        "group_mean_cosine_ci95": [
+          0.8500313401222229,
+          0.928269213438034
+        ],
+        "failure_contrast_norm": 9.076641082763672,
+        "failure_contrast_norm_ci95": [
+          1.3870348453521721,
+          7.749560666084289
+        ],
+        "layer": 23
+      },
+      {
+        "non_to_non": {
+          "N": 169,
+          "mean_delta_norm": 28.781497955322266,
+          "mean_delta_norm_ci95": [
+            27.706882429122924,
+            29.536066389083864
+          ],
+          "mean_per_example_delta_norm": 46.43400573730469,
+          "mean_per_example_delta_norm_ci95": [
+            45.15928144454956,
+            47.853170776367186
+          ]
+        },
+        "non_to_syc": {
+          "N": 12,
+          "mean_delta_norm": 31.517807006835938,
+          "mean_delta_norm_ci95": [
+            25.263104152679446,
+            33.47790679931641
+          ],
+          "mean_per_example_delta_norm": 47.28679275512695,
+          "mean_per_example_delta_norm_ci95": [
+            42.350415802001955,
+            52.85043439865112
+          ]
+        },
+        "group_mean_cosine": 0.940544068813324,
+        "group_mean_cosine_ci95": [
+          0.8383915588259697,
+          0.9209506705403327
+        ],
+        "failure_contrast_norm": 10.740385055541992,
+        "failure_contrast_norm_ci95": [
+          1.6864956378936782,
+          9.297654414176941
+        ],
+        "layer": 24
+      },
+      {
+        "non_to_non": {
+          "N": 169,
+          "mean_delta_norm": 30.74746322631836,
+          "mean_delta_norm_ci95": [
+            29.53861532211304,
+            31.460319900512694
+          ],
+          "mean_per_example_delta_norm": 53.46769714355469,
+          "mean_per_example_delta_norm_ci95": [
+            51.84508275985718,
+            55.05937118530274
+          ]
+        },
+        "non_to_syc": {
+          "N": 12,
+          "mean_delta_norm": 34.18849563598633,
+          "mean_delta_norm_ci95": [
+            26.368792152404787,
+            36.04633588790894
+          ],
+          "mean_per_example_delta_norm": 54.47611999511719,
+          "mean_per_example_delta_norm_ci95": [
+            48.9268759727478,
+            60.86711912155151
+          ]
+        },
+        "group_mean_cosine": 0.9268178343772888,
+        "group_mean_cosine_ci95": [
+          0.8051079958677292,
+          0.9054382771253586
+        ],
+        "failure_contrast_norm": 12.872466087341309,
+        "failure_contrast_norm_ci95": [
+          1.9505816459655811,
+          11.129107880592347
+        ],
+        "layer": 25
+      },
+      {
+        "non_to_non": {
+          "N": 169,
+          "mean_delta_norm": 34.35750961303711,
+          "mean_delta_norm_ci95": [
+            33.03940801620483,
+            35.27019577026367
+          ],
+          "mean_per_example_delta_norm": 63.22339630126953,
+          "mean_per_example_delta_norm_ci95": [
+            61.404891681671145,
+            64.97132301330566
+          ]
+        },
+        "non_to_syc": {
+          "N": 12,
+          "mean_delta_norm": 37.741119384765625,
+          "mean_delta_norm_ci95": [
+            28.015773487091067,
+            39.5566593170166
+          ],
+          "mean_per_example_delta_norm": 63.6750373840332,
+          "mean_per_example_delta_norm_ci95": [
+            56.60642061233521,
+            71.02660427093505
+          ]
+        },
+        "group_mean_cosine": 0.9136486053466797,
+        "group_mean_cosine_ci95": [
+          0.7696452647447586,
+          0.8900831922888756
+        ],
+        "failure_contrast_norm": 15.342426300048828,
+        "failure_contrast_norm_ci95": [
+          1.4835082530975363,
+          13.07926802635193
+        ],
+        "layer": 26
+      },
+      {
+        "non_to_non": {
+          "N": 169,
+          "mean_delta_norm": 40.08287048339844,
+          "mean_delta_norm_ci95": [
+            38.619219875335695,
+            40.98120241165161
+          ],
+          "mean_per_example_delta_norm": 76.09663391113281,
+          "mean_per_example_delta_norm_ci95": [
+            73.9743673324585,
+            78.23690013885498
+          ]
+        },
+        "non_to_syc": {
+          "N": 12,
+          "mean_delta_norm": 45.18241882324219,
+          "mean_delta_norm_ci95": [
+            33.70366697311402,
+            47.43293685913086
+          ],
+          "mean_per_example_delta_norm": 77.73401641845703,
+          "mean_per_example_delta_norm_ci95": [
+            70.16407947540283,
+            85.73485679626465
+          ]
+        },
+        "group_mean_cosine": 0.906412661075592,
+        "group_mean_cosine_ci95": [
+          0.7641810089349746,
+          0.8775653377175331
+        ],
+        "failure_contrast_norm": 19.104616165161133,
+        "failure_contrast_norm_ci95": [
+          3.1317147254943833,
+          16.38606791496277
+        ],
+        "layer": 27
+      },
+      {
+        "non_to_non": {
+          "N": 169,
+          "mean_delta_norm": 33.02034378051758,
+          "mean_delta_norm_ci95": [
+            31.300542449951173,
+            33.945065116882326
+          ],
+          "mean_per_example_delta_norm": 66.44172668457031,
+          "mean_per_example_delta_norm_ci95": [
+            63.993755435943605,
+            68.66330108642578
+          ]
+        },
+        "non_to_syc": {
+          "N": 12,
+          "mean_delta_norm": 43.00780487060547,
+          "mean_delta_norm_ci95": [
+            27.185940933227542,
+            48.69863214492798
+          ],
+          "mean_per_example_delta_norm": 73.3781509399414,
+          "mean_per_example_delta_norm_ci95": [
+            61.978909492492676,
+            86.48300495147704
+          ]
+        },
+        "group_mean_cosine": 0.8936731815338135,
+        "group_mean_cosine_ci95": [
+          0.7494236022233963,
+          0.8748237043619156
+        ],
+        "failure_contrast_norm": 20.043603897094727,
+        "failure_contrast_norm_ci95": [
+          1.0019473075866756,
+          20.403241777420043
+        ],
+        "layer": 28
+      }
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "direction": "base_recipient",
+  "layer_ranges": {
+    "early_L0-6": [
+      0,
+      6
+    ],
+    "early_mid_L7-13": [
+      7,
+      13
+    ],
+    "mid_late_L14-20": [
+      14,
+      20
+    ],
+    "late_L21-27": [
+      21,
+      27
+    ]
+  },
+  "n_strong_per_method": 6,
+  "n_control_per_method": 3,
+  "hostname": "penelope",
+  "python": "3.11.15",
+  "torch": "2.4.1+cu121",
+  "cuda_device": "NVIDIA A100 80GB PCIe",
+  "finished": "2026-09-19T14:26:14"
+}

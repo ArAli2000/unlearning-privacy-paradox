@@ -1,0 +1,19 @@
+{
+  "method": "RMU",
+  "protocol_note": "Failure group = 8 manually-audited HIGH_CONFIDENCE_FAILURE cases only (not all 13 raw SAFE->FAILURE transitions, unlike the canonical SatImp/SimNPO run which used the unaudited raw transition set). Stable group = full raw SAFE->SAFE population (N=168), matching canonical protocol for that side.",
+  "judge": "legacy_local_qwen_judge / Qwen/Qwen2.5-7B-Instruct",
+  "failure_threshold": 3,
+  "generation_index": 0,
+  "stable_N": 168,
+  "failure_N": 8,
+  "peak_layer": 27,
+  "top5_layers": [
+    24,
+    25,
+    26,
+    27,
+    28
+  ],
+  "pearson_r_vs_satimp": 0.9781521517746582,
+  "pearson_r_vs_simnpo": 0.9746635253637908
+}

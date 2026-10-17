@@ -1,0 +1,20 @@
+{
+  "started_utc": "2026-08-28T09:47:02.154713+00:00",
+  "software": {
+    "python": "3.11.15",
+    "torch": "2.4.1+cu121",
+    "transformers": "4.51.3"
+  },
+  "models": {
+    "BASE": {
+      "path": "/mnt/beegfs/work/elshashay/open-unlearning/saves/finetune/muse_news_qwen25_7b_instruct_target"
+    },
+    "SatImp": {
+      "path": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/muse_news_qwen25_7b_instruct_satimp/checkpoint-459"
+    },
+    "SimNPO": {
+      "path": "/mnt/beegfs/work/elshashay/open-unlearning/saves/unlearn/muse_news_qwen25_7b_instruct_simnpo/checkpoint-459"
+    }
+  },
+  "completed_utc": "2026-08-28T09:48:35.476712+00:00"
+}

@@ -1,0 +1,96 @@
+{
+  "by_method": {
+    "SatImp": {
+      "early_L0-6": {
+        "n_treatment_cases": 6,
+        "forward_classification_counts_qwen": {
+          "repaired": 1,
+          "worsened": 1,
+          "unchanged": 4
+        },
+        "n_judge_disputed_on_forward_patch": 2,
+        "n_confident_repair (qwen repaired AND not disputed by gemma)": 0,
+        "reverse_classification_counts_qwen": {
+          "worsened": 2,
+          "unchanged": 4
+        }
+      },
+      "mid_late_L14-20": {
+        "n_treatment_cases": 6,
+        "forward_classification_counts_qwen": {
+          "repaired": 1,
+          "unchanged": 5
+        },
+        "n_judge_disputed_on_forward_patch": 1,
+        "n_confident_repair (qwen repaired AND not disputed by gemma)": 1,
+        "reverse_classification_counts_qwen": {
+          "worsened": 3,
+          "unchanged": 3
+        }
+      },
+      "late_L21-27": {
+        "n_treatment_cases": 6,
+        "forward_classification_counts_qwen": {
+          "repaired": 2,
+          "worsened": 1,
+          "unchanged": 3
+        },
+        "n_judge_disputed_on_forward_patch": 2,
+        "n_confident_repair (qwen repaired AND not disputed by gemma)": 0,
+        "reverse_classification_counts_qwen": {
+          "worsened": 2,
+          "unchanged": 4
+        }
+      }
+    },
+    "SimNPO": {
+      "early_L0-6": {
+        "n_treatment_cases": 4,
+        "forward_classification_counts_qwen": {
+          "unchanged": 2,
+          "worsened": 2
+        },
+        "n_judge_disputed_on_forward_patch": 1,
+        "n_confident_repair (qwen repaired AND not disputed by gemma)": 0,
+        "reverse_classification_counts_qwen": {
+          "unchanged": 3,
+          "unchanged_safe": 1
+        }
+      },
+      "mid_late_L14-20": {
+        "n_treatment_cases": 4,
+        "forward_classification_counts_qwen": {
+          "unchanged_safe": 1,
+          "unchanged": 3
+        },
+        "n_judge_disputed_on_forward_patch": 2,
+        "n_confident_repair (qwen repaired AND not disputed by gemma)": 0,
+        "reverse_classification_counts_qwen": {
+          "worsened": 1,
+          "improved_still_failing": 1,
+          "unchanged": 1,
+          "unchanged_safe": 1
+        }
+      },
+      "late_L21-27": {
+        "n_treatment_cases": 4,
+        "forward_classification_counts_qwen": {
+          "worsened": 2,
+          "unchanged": 2
+        },
+        "n_judge_disputed_on_forward_patch": 1,
+        "n_confident_repair (qwen repaired AND not disputed by gemma)": 0,
+        "reverse_classification_counts_qwen": {
+          "improved_still_failing": 1,
+          "unchanged": 2,
+          "unchanged_safe": 1
+        }
+      }
+    }
+  },
+  "layer_ranges": [
+    "early_L0-6",
+    "mid_late_L14-20",
+    "late_L21-27"
+  ]
+}

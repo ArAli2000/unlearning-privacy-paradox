@@ -1,0 +1,21 @@
+{
+  "layer_ranges": {
+    "mid_late_L14-20": [
+      14,
+      20
+    ],
+    "late_L21-27": [
+      21,
+      27
+    ]
+  },
+  "continuations": "safe=clean_selection.json base_response; sycophantic=clean_selection.json unlearned_response (same texts as the clean teacher-forced Phase-9 result)",
+  "patch_position": "single prompt-end position only (last token of each condition's own effective prompt); NOT full-sequence, because with-memory/no-memory prompts differ in length",
+  "donor_source": "already-extracted prompt_end hidden-state tensors (no live donor forward pass needed)",
+  "models": [
+    "SatImp",
+    "SimNPO",
+    "BASE (control)"
+  ],
+  "n_treatment_cases": 10
+}

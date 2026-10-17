@@ -1,0 +1,27 @@
+{
+  "direction": "base_recipient",
+  "layer_ranges": {
+    "early_L0-6": [
+      0,
+      6
+    ],
+    "early_mid_L7-13": [
+      7,
+      13
+    ],
+    "mid_late_L14-20": [
+      14,
+      20
+    ],
+    "late_L21-27": [
+      21,
+      27
+    ]
+  },
+  "selection_source": "manual_transition_audit.csv (HIGH_CONFIDENCE_FAILURE only) + matched SAFE_TO_SAFE controls",
+  "hostname": "penelope",
+  "python": "3.11.15",
+  "torch": "2.4.1+cu121",
+  "cuda_device": "NVIDIA A100 80GB PCIe",
+  "finished": "2026-09-19T16:02:47"
+}

@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "configuration": "hybrid_gemma_qwen.json",
+  "requested_model": "google/gemma-4-31b-it:free",
+  "successful_pairs_generated": 0,
+  "smoke_artifact_created": false,
+  "failed_requests": [
+    {
+      "attempt": 1,
+      "http_status": 429,
+      "provider_name": "Google AI Studio",
+      "provider_error_code": "429",
+      "limit_source": "upstream_provider_shared_pool",
+      "is_byok": false
+    },
+    {
+      "attempt": 2,
+      "http_status": 429,
+      "provider_name": "Google AI Studio",
+      "provider_error_code": "429",
+      "limit_source": "upstream_provider_shared_pool",
+      "is_byok": false
+    }
+  ],
+  "note": "Both approved smoke requests failed before a response was generated; the runner therefore created no smoke artifact or response-level provenance."
+}

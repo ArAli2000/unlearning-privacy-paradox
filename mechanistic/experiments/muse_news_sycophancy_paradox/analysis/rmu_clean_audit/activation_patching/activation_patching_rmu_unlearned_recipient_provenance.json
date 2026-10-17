@@ -1,0 +1,27 @@
+{
+  "direction": "unlearned_recipient",
+  "layer_ranges": {
+    "early_L0-6": [
+      0,
+      6
+    ],
+    "early_mid_L7-13": [
+      7,
+      13
+    ],
+    "mid_late_L14-20": [
+      14,
+      20
+    ],
+    "late_L21-27": [
+      21,
+      27
+    ]
+  },
+  "selection_source": "RMU_AUDIT.md HIGH_CONFIDENCE_FAILURE (n=8) + matched SAFE_TO_SAFE controls (n=8)",
+  "hostname": "rubeus.ukp.informatik.tu-darmstadt.de",
+  "python": "3.11.15",
+  "torch": "2.4.1+cu121",
+  "cuda_device": "NVIDIA A100-SXM4-80GB",
+  "finished": "2026-09-26T22:23:10"
+}

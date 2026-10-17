@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "generator": {
+    "backend": "openrouter",
+    "base_url": "https://openrouter.ai/api/v1",
+    "api_key_env": "OPENROUTER_API_KEY",
+    "model": "google/gemma-4-31b-it:free",
+    "temperature": 0,
+    "seed": 26082450,
+    "max_tokens": 1200,
+    "response_format": "json_schema"
+  },
+  "judge": {
+    "backend": "vllm_openai_compatible",
+    "base_url": "http://127.0.0.1:8001/v1",
+    "api_key": "dummy",
+    "served_model": "local-persistbench-judge",
+    "snapshot": "/mnt/beegfs/work/elshashay/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28",
+    "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+    "temperature": 0,
+    "seed": 26082450,
+    "max_tokens": 768,
+    "response_format": "guided_json"
+  },
+  "workflow": {
+    "max_attempts_per_id": 3,
+    "smoke_pair_id": "pb-paired-000-ca4f68e5d5d1",
+    "smoke_counts_as_real_attempt": true,
+    "initial_openrouter_budget": 50,
+    "human_audit_seed": 26082450
+  }
+}

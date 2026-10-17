@@ -1,0 +1,63 @@
+{
+  "status": "passed",
+  "record_count": 50,
+  "unique_ids": 50,
+  "source_sha256": "a139259d5d63a2b5c2fd6e0ade68a19272eadc6f5be50f376d381ee44307e0d4",
+  "manifest_sha256": "ccb3415d1d53b1aff5526247dd32a7cbbea3d10a9d756678d4b6c3f8126f4639",
+  "A_token_ids": [
+    32
+  ],
+  "B_token_ids": [
+    33
+  ],
+  "safe_original": "B / No",
+  "violating_original": "A / Yes",
+  "safe_swapped": "A / No",
+  "violating_swapped": "B / Yes",
+  "uniform_templates": true,
+  "source_rows_exact": true,
+  "chat_format": "same literal single-user Qwen boundary as PrivacyLens/PersistBench-MCQ",
+  "endpoint": "last answer-completion token; no EOS",
+  "states": "embedding + L1-L28",
+  "dimensions": [
+    29,
+    3584
+  ],
+  "checkpoint_dimensions": {
+    "BASE": [
+      28,
+      3584,
+      152064
+    ],
+    "SatImp": [
+      28,
+      3584,
+      152064
+    ],
+    "SimNPO": [
+      28,
+      3584,
+      152064
+    ]
+  },
+  "tokenizer_hashes": {
+    "BASE": {
+      "tokenizer.json": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa",
+      "tokenizer_config.json": "056f2c058091cdc7af49f6dc7cc43e0440f1b7d2a76d95d1daea085db11db491",
+      "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+      "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5"
+    },
+    "SatImp": {
+      "tokenizer.json": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa",
+      "tokenizer_config.json": "056f2c058091cdc7af49f6dc7cc43e0440f1b7d2a76d95d1daea085db11db491",
+      "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+      "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5"
+    },
+    "SimNPO": {
+      "tokenizer.json": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa",
+      "tokenizer_config.json": "056f2c058091cdc7af49f6dc7cc43e0440f1b7d2a76d95d1daea085db11db491",
+      "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+      "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5"
+    }
+  }
+}

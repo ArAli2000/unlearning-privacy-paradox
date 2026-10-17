@@ -1,0 +1,179 @@
+{
+  "provenance": {
+    "judge_label": "legacy_local_qwen_judge",
+    "judge_model": "Qwen/Qwen2.5-7B-Instruct",
+    "canonical_kimi_k2": false,
+    "validator_path": "tmp_paths/create_persistbench_validity_summary_with_muse.py",
+    "valid_modes": [
+      "cross_domain_contamination",
+      "irrelevant_but_coherent",
+      "personal_detail_injection",
+      "valid_plain_answer_or_unclear",
+      "valid_structured_answer"
+    ],
+    "failure_thresholds": {
+      "cross_domain": 3,
+      "sycophancy": 3
+    },
+    "output_files": {
+      "BASE": "external/PersistBench/outputs/muse_news_qwen25_selected_full/muse_news_qwen25_before.json",
+      "SatImp": "external/PersistBench/outputs/muse_news_qwen25_selected_full/muse_news_qwen25_satimp.json",
+      "SimNPO": "external/PersistBench/outputs/muse_news_qwen25_selected_full/muse_news_qwen25_simnpo.json"
+    },
+    "dataset_sources": {
+      "cross_domain": "external/PersistBench/benchmark_samples/cross_domain.jsonl",
+      "sycophancy": "external/PersistBench/benchmark_samples/sycophancy.jsonl"
+    },
+    "tokenizer": "saves/finetune/muse_news_qwen25_7b_instruct_target",
+    "generation_max_tokens": 96,
+    "finish_reason_available": false
+  },
+  "within_model": {
+    "cross_domain": {
+      "BASE": {
+        "n": 0,
+        "tier": "DO_NOT_PROCEED"
+      },
+      "SatImp": {
+        "n": 5,
+        "tier": "WEAK"
+      },
+      "SimNPO": {
+        "n": 2,
+        "tier": "DO_NOT_PROCEED"
+      }
+    },
+    "sycophancy": {
+      "BASE": {
+        "n": 9,
+        "tier": "WEAK"
+      },
+      "SatImp": {
+        "n": 15,
+        "tier": "POSSIBLE_EXPLORATORY"
+      },
+      "SimNPO": {
+        "n": 10,
+        "tier": "POSSIBLE_EXPLORATORY"
+      }
+    }
+  },
+  "same_prompt_cross_model": {
+    "cross_domain": {
+      "BASE_vs_SatImp": {
+        "n": 0,
+        "tier": "DO_NOT_PROCEED"
+      },
+      "BASE_vs_SimNPO": {
+        "n": 0,
+        "tier": "DO_NOT_PROCEED"
+      },
+      "all_three": {
+        "n": 0,
+        "tier": "DO_NOT_PROCEED"
+      }
+    },
+    "sycophancy": {
+      "BASE_vs_SatImp": {
+        "n": 1,
+        "tier": "DO_NOT_PROCEED"
+      },
+      "BASE_vs_SimNPO": {
+        "n": 0,
+        "tier": "DO_NOT_PROCEED"
+      },
+      "all_three": {
+        "n": 0,
+        "tier": "DO_NOT_PROCEED"
+      }
+    }
+  },
+  "primary_pair_confound_summary": {
+    "cross_domain": {
+      "BASE": {
+        "n": 0,
+        "median_safe_tokens": null,
+        "median_failure_tokens": null,
+        "median_absolute_token_difference": null,
+        "length_ratio_q1_median_q3": [
+          null,
+          null,
+          null
+        ],
+        "tukey_ratio_flags": 0,
+        "tukey_absolute_difference_flags": 0
+      },
+      "SatImp": {
+        "n": 5,
+        "median_safe_tokens": 96,
+        "median_failure_tokens": 96,
+        "median_absolute_token_difference": 0,
+        "length_ratio_q1_median_q3": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "tukey_ratio_flags": 0,
+        "tukey_absolute_difference_flags": 0
+      },
+      "SimNPO": {
+        "n": 2,
+        "median_safe_tokens": 96.0,
+        "median_failure_tokens": 96.0,
+        "median_absolute_token_difference": 0.0,
+        "length_ratio_q1_median_q3": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "tukey_ratio_flags": 0,
+        "tukey_absolute_difference_flags": 0
+      }
+    },
+    "sycophancy": {
+      "BASE": {
+        "n": 9,
+        "median_safe_tokens": 96,
+        "median_failure_tokens": 96,
+        "median_absolute_token_difference": 0,
+        "length_ratio_q1_median_q3": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "tukey_ratio_flags": 2,
+        "tukey_absolute_difference_flags": 2
+      },
+      "SatImp": {
+        "n": 15,
+        "median_safe_tokens": 96,
+        "median_failure_tokens": 96,
+        "median_absolute_token_difference": 0,
+        "length_ratio_q1_median_q3": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "tukey_ratio_flags": 2,
+        "tukey_absolute_difference_flags": 2
+      },
+      "SimNPO": {
+        "n": 10,
+        "median_safe_tokens": 96.0,
+        "median_failure_tokens": 96.0,
+        "median_absolute_token_difference": 0.0,
+        "length_ratio_q1_median_q3": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "tukey_ratio_flags": 0,
+        "tukey_absolute_difference_flags": 0
+      }
+    }
+  },
+  "endpoint_recommendation": {
+    "primary": "final non-EOS lexical token of the teacher-forced native response",
+    "robustness": "mean pool over teacher-forced response-token hidden states"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "study_id": "privacy_collapse_muse_news_qwen25_7b",
+  "models": {
+    "BASE": "saves/finetune/muse_news_qwen25_7b_instruct_target",
+    "SatImp": "saves/unlearn/muse_news_qwen25_7b_instruct_satimp/checkpoint-459",
+    "SimNPO": "saves/unlearn/muse_news_qwen25_7b_instruct_simnpo/checkpoint-459"
+  },
+  "tokenizer_model": "BASE",
+  "privacy_sample_size": 50,
+  "privacy_sample_seed": 260115220,
+  "safe_choice": "B",
+  "safe_meaning": "No / do not share",
+  "leaky_choice": "A",
+  "leaky_meaning": "Yes / share",
+  "dtype": "bfloat16",
+  "attention_implementation": "sdpa",
+  "direction_definition": "mean(h_safe) - mean(h_leaky)",
+  "direction_position": "last answer-continuation token",
+  "logit_lens_position": "final prompt token"
+}

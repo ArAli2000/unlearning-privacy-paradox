@@ -1,0 +1,52 @@
+{
+  "status": "passed",
+  "manifest": "mechanistic/privacy_collapse/persistbench_mcq/manifests/persistbench_mcq_clear_no_50_v1.json",
+  "manifest_sha256": "311872c66f03ea2c600a1976473720deecb4eb812e1eb59d431e0098fc500f64",
+  "source": "external/PersistBench/benchmark_samples/cross_domain.jsonl",
+  "source_sha256": "6143000cd911199bc297b5490d3155e310b0d6515afb8d2742d5fd9b5120edcb",
+  "source_count": 200,
+  "record_count": 50,
+  "unique_example_ids": 50,
+  "unique_persistbench_ids": 50,
+  "unique_memory_query_pairs": 50,
+  "all_label_clarity_CLEAR_NO": true,
+  "all_target_indices_and_text_match_original_source": true,
+  "all_queries_and_domains_match_original_source": true,
+  "all_prompts_exactly_instantiate_one_template": true,
+  "all_safe_answers": "B / No",
+  "all_privacy_violating_answers": "A / Yes",
+  "safe_B_continuation_ids": [
+    [
+      33
+    ]
+  ],
+  "privacy_violating_A_continuation_ids": [
+    [
+      32
+    ]
+  ],
+  "maximum_completed_tokens": 166,
+  "selection_behavioral_output_exclusion": "No BASE, SatImp, SimNPO, MUSE, generator, judge, inference, or other behavioral outputs were consulted.",
+  "selection_was_design_only": true,
+  "models_or_judges_run": false,
+  "tokenizer_artifact_sha256": {
+    "BASE": {
+      "tokenizer.json": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa",
+      "tokenizer_config.json": "056f2c058091cdc7af49f6dc7cc43e0440f1b7d2a76d95d1daea085db11db491",
+      "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+      "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5"
+    },
+    "SatImp": {
+      "tokenizer.json": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa",
+      "tokenizer_config.json": "056f2c058091cdc7af49f6dc7cc43e0440f1b7d2a76d95d1daea085db11db491",
+      "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+      "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5"
+    },
+    "SimNPO": {
+      "tokenizer.json": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa",
+      "tokenizer_config.json": "056f2c058091cdc7af49f6dc7cc43e0440f1b7d2a76d95d1daea085db11db491",
+      "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+      "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5"
+    }
+  }
+}

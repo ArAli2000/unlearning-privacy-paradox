@@ -1,0 +1,40 @@
+#!/bin/bash
+#SBATCH --job-name=exp1_repro_check
+#SBATCH --account=ukp-student
+#SBATCH --partition=gpu
+#SBATCH --nodelist=minerva
+#SBATCH --gres=gpu:a100:1
+#SBATCH --cpus-per-task=8
+#SBATCH --mem=100G
+#SBATCH --time=01:00:00
+#SBATCH --output=logs/%x_%j.out
+#SBATCH --error=logs/%x_%j.err
+#
+# Reproducibility check requested before Experiment 2: regenerate the 10
+# HIGH_CONFIDENCE_FAILURE cases' unpatched BASE/unlearned responses with
+# vLLM (offline engine), 3 separate sequential calls per prompt, using the
+# verified effective original settings (temperature=0.0, everything else
+# inherited from the checkpoint's own generation_config.json -- see
+# run_repro_check.py docstring for why this, not the native manifest's
+# self-reported generation_settings field, is trusted).
+
+set -euo pipefail
+
+REPO_ROOT="$(cd "${SLURM_SUBMIT_DIR:-$PWD}" && git rev-parse --show-toplevel)"
+source "$REPO_ROOT/thesis/scripts/common.sh"
+cd "$REPO_ROOT"
+
+activate_unlearning_env base
+
+export HOME=/storage/ukp/work/elshashay
+export XDG_CACHE_HOME="$HOME/.cache"
+export HF_HOME="$XDG_CACHE_HOME/huggingface"
+export TRANSFORMERS_CACHE="$HF_HOME"
+export TRITON_CACHE_DIR="$HOME/.triton/autotune"
+export VLLM_USE_FLASHINFER_SAMPLER=0
+mkdir -p "$XDG_CACHE_HOME" "$HF_HOME" "$TRITON_CACHE_DIR" logs
+
+echo "HOSTNAME: $(hostname)"
+echo "JOB ID: ${SLURM_JOB_ID}"
+
+python mechanistic/experiments/muse_news_sycophancy_final_mechanism/repro_check/run_repro_check.py

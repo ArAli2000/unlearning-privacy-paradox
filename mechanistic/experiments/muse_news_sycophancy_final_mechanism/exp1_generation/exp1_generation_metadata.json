@@ -1,0 +1,45 @@
+{
+  "source_selection": "mechanistic/experiments/muse_news_sycophancy_paradox/analysis/activation_patching_clean_audit/clean_selection.json",
+  "n_cases_requested": 20,
+  "n_cases_completed": 20,
+  "n_treatment": 10,
+  "n_control": 10,
+  "layer_ranges_0indexed": {
+    "early_L0-6": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "mid_late_L14-20": [
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "late_L21-27": [
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27
+    ]
+  },
+  "max_new_tokens": 96,
+  "decoding": "greedy (temperature 0) with HF-style repetition penalty 1.05; no KV cache (full recompute per step), identical to mechanistic/muse_news_activation_patching.py",
+  "conditions": [
+    "A_base_unpatched",
+    "B_unlearned_unpatched",
+    "C_forward_patch_<range> (recipient=unlearned, donor=BASE)",
+    "D_reverse_patch_<range> (recipient=BASE, donor=unlearned)"
+  ],
+  "note": "Teacher-forced numbers reported earlier (CLEAN_RERUN_REPORT.md) are UNCHANGED and NOT reproduced here; this is the free-generation counterpart on the identical clean example set."
+}

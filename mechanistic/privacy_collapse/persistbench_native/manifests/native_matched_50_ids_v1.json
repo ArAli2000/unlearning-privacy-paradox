@@ -1,0 +1,362 @@
+{
+  "schema_version": 1,
+  "name": "Native PersistBench matched MCQ subset IDs",
+  "record_count": 50,
+  "source_manifest": "manifests/native_cross_domain_200_v1.json",
+  "mcq_manifest": "mechanistic/privacy_collapse/persistbench_mcq/manifests/persistbench_mcq_clear_no_50_v1.json",
+  "mcq_manifest_sha256": "311872c66f03ea2c600a1976473720deecb4eb812e1eb59d431e0098fc500f64",
+  "persistbench_ids": [
+    "cfa39f05ad858e281944c163b6122942",
+    "63a8e58a034d128e6c6829c161469201",
+    "4b6e09e65b665a5cab9e6ff3609bfe3d",
+    "aaf609937a6b4ce37f873fa599f89fda",
+    "0b5f1198674c6dd27f0334bf21e8edc5",
+    "1973009c00bb27b98ab3389639ae7dd6",
+    "e71c558ea111e3f8b1adfbb85b89e44d",
+    "ca4f68e5d5d1bb137a9945fef60342cf",
+    "f4eee11b813d17114d47e9d64ad2ddd6",
+    "e9a5946ad76a28ec77e9761a56b051c6",
+    "14e9fc6b5a8163d846149b1459a308e4",
+    "1bca49e1b440eb65cc72b1dfcfb2f041",
+    "65d887c1a690106485563b809066bc31",
+    "532673fe680a1d2cfb33c1ea30883426",
+    "423917b4e4366f47485e2be7d77f08dc",
+    "cda672613fffd26d5d55784b81cb5cbe",
+    "45113b6162909f98ea597bd8fa6ff8d3",
+    "4f95fcff1ab18298f111cfb5d0848f42",
+    "d75dbf84413d1b80722757b6f3386963",
+    "4a5e9ff70dea59d3cbd47f4df21cef91",
+    "7e92e3c8159a42cad50a5e90383a0eb8",
+    "6e768bd7c5a6abc1473cd6c1160652ee",
+    "24d6b048eef29df9db5ef1d67c21dc18",
+    "231bfad0e4acf86192137fd1a5a1603d",
+    "02e4052c25f70772a5f47e606e411a7e",
+    "69b1e41eef0e9e491422e2660b5cceab",
+    "5087455babe704acb5ef420ab7ca9c9e",
+    "4b6394bbd2e06a1a07149a5f47601259",
+    "3b8dce2fbefd197bad75dbec3ecfbe03",
+    "992f973d17f5756f9c37c3d862caf21a",
+    "677d3ed52f50a9c0073468c5acfc3fbd",
+    "9396cdf8273825ff44d94204a41df637",
+    "c7e2c674a21ce297ad7adb3e2711f08a",
+    "d0d2ebe28da350fb8656a057c7f72868",
+    "c922615342eb7ea0ede1799b8aa1c084",
+    "60680a6322be754170204d1cc4c03d07",
+    "9080b80ef6814af687f78e0eff8fd2d3",
+    "babb1bcb23e55aea39e2d315c8d1a861",
+    "07b90e77bda9f66bac9de05b040bf4c6",
+    "e5023c04e6139824623963b81cc19dbf",
+    "208fb30997f6cfe3449f04f5e4148257",
+    "3d0f96ebb310b53049029c80a14df34b",
+    "c90aa1e043adde4280f8c61a82f997fe",
+    "b73fe28a685d40d3765e7f2b62a74dbb",
+    "ed1cd09903830d82de8fb1fa08742a41",
+    "c1df20373c442601c2268a2c9fc476f2",
+    "ff97a8afe4738c2da94d28a7e7d55ec1",
+    "fd2687f7d5d0b586699204ae5a4bc161",
+    "109e139ca9a1aae17bc5cb1dce58f907",
+    "9afea2c3a788bcb313b34e5c1225a1b0"
+  ],
+  "records": [
+    {
+      "matched_order": 0,
+      "persistbench_id": "cfa39f05ad858e281944c163b6122942",
+      "native_source_index": 5,
+      "native_prompt_sha256": "907cb8c610b4462d06d0fcdadf307c0e5ea71a402af03695f286000052462362"
+    },
+    {
+      "matched_order": 1,
+      "persistbench_id": "63a8e58a034d128e6c6829c161469201",
+      "native_source_index": 6,
+      "native_prompt_sha256": "8e223e98b839cd8dcfa151c7e9cb46b403a5e1d4e6ccb916599c7d8470370ab4"
+    },
+    {
+      "matched_order": 2,
+      "persistbench_id": "4b6e09e65b665a5cab9e6ff3609bfe3d",
+      "native_source_index": 9,
+      "native_prompt_sha256": "f24f961cab448ea4d00becfd771a0985fe930e40fd1966cae362b89f078631c5"
+    },
+    {
+      "matched_order": 3,
+      "persistbench_id": "aaf609937a6b4ce37f873fa599f89fda",
+      "native_source_index": 11,
+      "native_prompt_sha256": "008398c0386522c1b04900b6147da53366a5bd7b290220efe2b74db3df8c0775"
+    },
+    {
+      "matched_order": 4,
+      "persistbench_id": "0b5f1198674c6dd27f0334bf21e8edc5",
+      "native_source_index": 15,
+      "native_prompt_sha256": "49ec3a102e4c88459e3fb40bd10a309878afa246dc23ab349377ab923ae6ac20"
+    },
+    {
+      "matched_order": 5,
+      "persistbench_id": "1973009c00bb27b98ab3389639ae7dd6",
+      "native_source_index": 16,
+      "native_prompt_sha256": "1156ea0921934875f1007b6956473bdb72f057165b285c481ba369ca2a295fdc"
+    },
+    {
+      "matched_order": 6,
+      "persistbench_id": "e71c558ea111e3f8b1adfbb85b89e44d",
+      "native_source_index": 17,
+      "native_prompt_sha256": "46a1e7db17d072dccfa029dbd7f1939fbb8b7ec5d2d0dedce3fda1b9d41f96b7"
+    },
+    {
+      "matched_order": 7,
+      "persistbench_id": "ca4f68e5d5d1bb137a9945fef60342cf",
+      "native_source_index": 25,
+      "native_prompt_sha256": "2bdb8d9f36ad14b74e53a7769a2b6bea25e44eef4b67082ed5687a80e640af18"
+    },
+    {
+      "matched_order": 8,
+      "persistbench_id": "f4eee11b813d17114d47e9d64ad2ddd6",
+      "native_source_index": 28,
+      "native_prompt_sha256": "ff39f700cd6c0f3ae0b67f4dc3a37cb69863207ccd779b22af20a639e1097e13"
+    },
+    {
+      "matched_order": 9,
+      "persistbench_id": "e9a5946ad76a28ec77e9761a56b051c6",
+      "native_source_index": 29,
+      "native_prompt_sha256": "a9fc4544c86cef0559b5ceba1b660b486e1418e6b6f3fb7766a58fef5c13d754"
+    },
+    {
+      "matched_order": 10,
+      "persistbench_id": "14e9fc6b5a8163d846149b1459a308e4",
+      "native_source_index": 31,
+      "native_prompt_sha256": "83b62dcbbef27e72d2d2d837687aec209d4858360ec882981242e33a81c9d596"
+    },
+    {
+      "matched_order": 11,
+      "persistbench_id": "1bca49e1b440eb65cc72b1dfcfb2f041",
+      "native_source_index": 38,
+      "native_prompt_sha256": "fea4b503095c472ef6c7bc6378a394d23ea9df4a22a0792fecc7b345357226df"
+    },
+    {
+      "matched_order": 12,
+      "persistbench_id": "65d887c1a690106485563b809066bc31",
+      "native_source_index": 42,
+      "native_prompt_sha256": "7bcf7beab5d5e780c67150a9377c3bd572ae7252c759f688a2a2128b5ea993a1"
+    },
+    {
+      "matched_order": 13,
+      "persistbench_id": "532673fe680a1d2cfb33c1ea30883426",
+      "native_source_index": 45,
+      "native_prompt_sha256": "db1d6281c8ef11f598b5ec0c6cc9d556c3559d8bd0dfe0746f82adcd88790b26"
+    },
+    {
+      "matched_order": 14,
+      "persistbench_id": "423917b4e4366f47485e2be7d77f08dc",
+      "native_source_index": 48,
+      "native_prompt_sha256": "570bd26831b648da66c18346d2d52e235ae92bdf1e7801e038b6b9173da8e6df"
+    },
+    {
+      "matched_order": 15,
+      "persistbench_id": "cda672613fffd26d5d55784b81cb5cbe",
+      "native_source_index": 51,
+      "native_prompt_sha256": "7652bb2ac162ac51c032df338c84340a5a4153345c22c6e87e52e5ea842c6009"
+    },
+    {
+      "matched_order": 16,
+      "persistbench_id": "45113b6162909f98ea597bd8fa6ff8d3",
+      "native_source_index": 54,
+      "native_prompt_sha256": "0a0d4c27129a37b2719a9694164c7394f99b0fece65787d67b475bc7989d8a1e"
+    },
+    {
+      "matched_order": 17,
+      "persistbench_id": "4f95fcff1ab18298f111cfb5d0848f42",
+      "native_source_index": 57,
+      "native_prompt_sha256": "750614a826c7c86a2476fd0677472cc26a257d940da49c5455e0ec1c1f748853"
+    },
+    {
+      "matched_order": 18,
+      "persistbench_id": "d75dbf84413d1b80722757b6f3386963",
+      "native_source_index": 59,
+      "native_prompt_sha256": "a250c3fb98371bfff77764b809633bab4d8894c8cebd7118c57c54dc9c941e9e"
+    },
+    {
+      "matched_order": 19,
+      "persistbench_id": "4a5e9ff70dea59d3cbd47f4df21cef91",
+      "native_source_index": 60,
+      "native_prompt_sha256": "05a5ad0b845f31ac51524b7bd5a186dbd8de3b8d747f8e97f5477ebaec0fcc33"
+    },
+    {
+      "matched_order": 20,
+      "persistbench_id": "7e92e3c8159a42cad50a5e90383a0eb8",
+      "native_source_index": 61,
+      "native_prompt_sha256": "840816d4b4af500a7245c86c455c21f92fe61eb7df08c5892eb073378ce983a7"
+    },
+    {
+      "matched_order": 21,
+      "persistbench_id": "6e768bd7c5a6abc1473cd6c1160652ee",
+      "native_source_index": 62,
+      "native_prompt_sha256": "9272169fe986fffd9c8e5fab59fc0e66d61e3f773ee03364c4c41bb0ed3bbc0f"
+    },
+    {
+      "matched_order": 22,
+      "persistbench_id": "24d6b048eef29df9db5ef1d67c21dc18",
+      "native_source_index": 63,
+      "native_prompt_sha256": "c52f241d08035c70479a62c7f0f9267345d7035cad24e4a190316400acc68ee6"
+    },
+    {
+      "matched_order": 23,
+      "persistbench_id": "231bfad0e4acf86192137fd1a5a1603d",
+      "native_source_index": 68,
+      "native_prompt_sha256": "983a7b18ef7c7fddb2fc16814cda8292ed5bcc8d5a6fd725e7861421cc2ad5fe"
+    },
+    {
+      "matched_order": 24,
+      "persistbench_id": "02e4052c25f70772a5f47e606e411a7e",
+      "native_source_index": 84,
+      "native_prompt_sha256": "495170e223584836f2ffa24648dbd3db0f3f99e1a368cba759a8bdcedd931153"
+    },
+    {
+      "matched_order": 25,
+      "persistbench_id": "69b1e41eef0e9e491422e2660b5cceab",
+      "native_source_index": 86,
+      "native_prompt_sha256": "56874380212be0cda6c1757fc5f07138bcafc637d69b655c6781339a11265c74"
+    },
+    {
+      "matched_order": 26,
+      "persistbench_id": "5087455babe704acb5ef420ab7ca9c9e",
+      "native_source_index": 87,
+      "native_prompt_sha256": "438d8c402c80c15fc2cd97bf9d6957cfbbd4adb9b46d519ec0309793b09eeaf7"
+    },
+    {
+      "matched_order": 27,
+      "persistbench_id": "4b6394bbd2e06a1a07149a5f47601259",
+      "native_source_index": 94,
+      "native_prompt_sha256": "f5f122279deacbd819e35dbd278976f38ceb97bce09a8661e6dd0fa697075a8a"
+    },
+    {
+      "matched_order": 28,
+      "persistbench_id": "3b8dce2fbefd197bad75dbec3ecfbe03",
+      "native_source_index": 100,
+      "native_prompt_sha256": "965a946d1c244e1e29810fc541e36ac5c76cd32784b7dc8f44cbc869151a02fb"
+    },
+    {
+      "matched_order": 29,
+      "persistbench_id": "992f973d17f5756f9c37c3d862caf21a",
+      "native_source_index": 102,
+      "native_prompt_sha256": "9ea7fb9379fb46691a692c6519c9f11dfd04097991fc8f2eaf4a205c8d9a03e3"
+    },
+    {
+      "matched_order": 30,
+      "persistbench_id": "677d3ed52f50a9c0073468c5acfc3fbd",
+      "native_source_index": 108,
+      "native_prompt_sha256": "d74cad433ee2ba78644ea31118c1e745de523e557e7717e5a4a1588d938aebdd"
+    },
+    {
+      "matched_order": 31,
+      "persistbench_id": "9396cdf8273825ff44d94204a41df637",
+      "native_source_index": 111,
+      "native_prompt_sha256": "bd147fb186e0eb7b19355004daea30c643177f09c4a72f2bdff9fb69a1e29caa"
+    },
+    {
+      "matched_order": 32,
+      "persistbench_id": "c7e2c674a21ce297ad7adb3e2711f08a",
+      "native_source_index": 112,
+      "native_prompt_sha256": "2079c5f5cc590f5dfb58386f017408a83c90178d1af17492079759c2dc96b824"
+    },
+    {
+      "matched_order": 33,
+      "persistbench_id": "d0d2ebe28da350fb8656a057c7f72868",
+      "native_source_index": 119,
+      "native_prompt_sha256": "761391f454452a7814a5f8843e31c56d73a99e664781a8c531d00d3045ec4201"
+    },
+    {
+      "matched_order": 34,
+      "persistbench_id": "c922615342eb7ea0ede1799b8aa1c084",
+      "native_source_index": 126,
+      "native_prompt_sha256": "3c1c89de6e412064eb549f0d3b7e7bd9a75b2a9e02e4416c24cb01384e6203a8"
+    },
+    {
+      "matched_order": 35,
+      "persistbench_id": "60680a6322be754170204d1cc4c03d07",
+      "native_source_index": 131,
+      "native_prompt_sha256": "14a13ff2fd3bb6bd404f751197f06a8553c68116fb39fa8397b0252c1211b3c0"
+    },
+    {
+      "matched_order": 36,
+      "persistbench_id": "9080b80ef6814af687f78e0eff8fd2d3",
+      "native_source_index": 135,
+      "native_prompt_sha256": "8cfe50eaa11929efe16892eeac5a822d2248e1f66c247b3b2f9e795efac93ab3"
+    },
+    {
+      "matched_order": 37,
+      "persistbench_id": "babb1bcb23e55aea39e2d315c8d1a861",
+      "native_source_index": 138,
+      "native_prompt_sha256": "ad3e3ef8770ad8b16aa16b20a7ef1879aa0e9af355637f260c583a5f9a0e0f2e"
+    },
+    {
+      "matched_order": 38,
+      "persistbench_id": "07b90e77bda9f66bac9de05b040bf4c6",
+      "native_source_index": 140,
+      "native_prompt_sha256": "966efb18326c24f285e7d965b817c711651acc11ccd71bd083c3a95995e28567"
+    },
+    {
+      "matched_order": 39,
+      "persistbench_id": "e5023c04e6139824623963b81cc19dbf",
+      "native_source_index": 145,
+      "native_prompt_sha256": "b5b3ec61374400e7c4c50f2d25b7a43c14b9d81a52582d9e6480e0e824aadf24"
+    },
+    {
+      "matched_order": 40,
+      "persistbench_id": "208fb30997f6cfe3449f04f5e4148257",
+      "native_source_index": 146,
+      "native_prompt_sha256": "d64f6aabe055f17d57700e97b69cb76627fd02cfad9e79f6a38afba610a05a5d"
+    },
+    {
+      "matched_order": 41,
+      "persistbench_id": "3d0f96ebb310b53049029c80a14df34b",
+      "native_source_index": 148,
+      "native_prompt_sha256": "3775bfcef7a5e264c4d66931e179a46d9d7d97b684bd14510e6e1501513dddc5"
+    },
+    {
+      "matched_order": 42,
+      "persistbench_id": "c90aa1e043adde4280f8c61a82f997fe",
+      "native_source_index": 149,
+      "native_prompt_sha256": "c41edcb88803d68f8ddf6bd235cca7b9f8e3899fcc44beaccb4cb26ace0ee0d5"
+    },
+    {
+      "matched_order": 43,
+      "persistbench_id": "b73fe28a685d40d3765e7f2b62a74dbb",
+      "native_source_index": 151,
+      "native_prompt_sha256": "b63e43b13eca7ebdb9549074231251dd4508d486484cd3f087131d77f2a998d1"
+    },
+    {
+      "matched_order": 44,
+      "persistbench_id": "ed1cd09903830d82de8fb1fa08742a41",
+      "native_source_index": 154,
+      "native_prompt_sha256": "ad4a0b882bfda3061320b7586352372b464a9a7328d862409e853f547db29c14"
+    },
+    {
+      "matched_order": 45,
+      "persistbench_id": "c1df20373c442601c2268a2c9fc476f2",
+      "native_source_index": 155,
+      "native_prompt_sha256": "ba21c106d857197e8c1ba93ebcd89868be93ab3b62bb5264bd8ec24737620541"
+    },
+    {
+      "matched_order": 46,
+      "persistbench_id": "ff97a8afe4738c2da94d28a7e7d55ec1",
+      "native_source_index": 156,
+      "native_prompt_sha256": "495a8bba4cf01d5ac01518cb8a5d1cb6d326dd4cfd8d01bf644c06246ee10d73"
+    },
+    {
+      "matched_order": 47,
+      "persistbench_id": "fd2687f7d5d0b586699204ae5a4bc161",
+      "native_source_index": 162,
+      "native_prompt_sha256": "e5c4b9ca85b87e2b77ae6d1f9d37190aba3c5f1a87f5653161efec20a55b12bf"
+    },
+    {
+      "matched_order": 48,
+      "persistbench_id": "109e139ca9a1aae17bc5cb1dce58f907",
+      "native_source_index": 194,
+      "native_prompt_sha256": "335a8a4c70c87b9c1141de4db24b80200332dc4f7ebfcbc5dc25dbff75bcbca4"
+    },
+    {
+      "matched_order": 49,
+      "persistbench_id": "9afea2c3a788bcb313b34e5c1225a1b0",
+      "native_source_index": 198,
+      "native_prompt_sha256": "501f202dd175d74c86dadb324c8395bcfbcba4cb99b66efecc09748689eb4d0a"
+    }
+  ]
+}

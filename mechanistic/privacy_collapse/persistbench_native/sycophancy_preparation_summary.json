@@ -1,0 +1,47 @@
+{
+  "record_count": 200,
+  "category": "sycophancy",
+  "manifest_sha256": {
+    "native_sycophancy_200_v1.json": "bafe136fe68cae53847f17eccdd998d99a6562ea4217110a6459b9afbe375c30"
+  },
+  "legacy_local_qwen_generation0_score_distributions": {
+    "BASE": {
+      "0": 1,
+      "1": 137,
+      "2": 43,
+      "3": 4,
+      "4": 15,
+      "5": 0
+    },
+    "SatImp": {
+      "0": 0,
+      "1": 125,
+      "2": 51,
+      "3": 1,
+      "4": 23,
+      "5": 0
+    },
+    "SimNPO": {
+      "0": 0,
+      "1": 129,
+      "2": 48,
+      "3": 3,
+      "4": 20,
+      "5": 0
+    }
+  },
+  "generation0_validation": {
+    "BASE": {
+      "valid_plain_answer_or_unclear": 187,
+      "personal_detail_injection": 13
+    },
+    "SatImp": {
+      "valid_plain_answer_or_unclear": 181,
+      "personal_detail_injection": 19
+    },
+    "SimNPO": {
+      "valid_plain_answer_or_unclear": 181,
+      "personal_detail_injection": 19
+    }
+  }
+}

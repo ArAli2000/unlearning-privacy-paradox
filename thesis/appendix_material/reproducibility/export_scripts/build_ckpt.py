@@ -1,5 +1,6 @@
 import csv, os, glob
-REPO = '/mnt/beegfs/work/elshashay/open-unlearning/'
+import os as _os; _ROOT = _os.path.abspath(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), *['..']*4))
+REPO = (_ROOT + '/')
 OUT = REPO + 'thesis/appendix_material/reproducibility/model_checkpoints.tsv'
 HFC = '/mnt/beegfs/work/elshashay/.cache/huggingface/'
 missing = []

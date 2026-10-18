@@ -10,7 +10,7 @@
 #SBATCH --error=logs/pb_patch_test_%j.err
 
 set -euo pipefail
-PROJECT_ROOT=/mnt/beegfs/work/elshashay/open-unlearning
+PROJECT_ROOT="${PROJECT_ROOT:-${SLURM_SUBMIT_DIR:-$PWD}}"
 cd "$PROJECT_ROOT"
 mkdir -p logs
 export XDG_CACHE_HOME=/storage/ukp/work/elshashay/.cache

@@ -14,7 +14,8 @@ from fractions import Fraction
 from pathlib import Path
 
 sys.dont_write_bytecode = True
-R = Path('/mnt/beegfs/work/elshashay/open-unlearning')
+import os as _os; _ROOT = _os.path.abspath(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), *['..']*4))
+R = Path(_ROOT)
 H = R / 'thesis/analysis/final_thesis_handoff_20261016'
 FA = R / 'thesis/analysis/muse_qwen_fullprompt_complete_20261016'
 TA = R / 'thesis/analysis/truncated_replication_20261016_v2'

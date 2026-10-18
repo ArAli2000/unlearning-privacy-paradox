@@ -9,7 +9,7 @@
 #SBATCH --time=01:00:00
 
 set -euo pipefail
-REPO=/mnt/beegfs/work/elshashay/open-unlearning
+REPO="${REPO:-${SLURM_SUBMIT_DIR:-$PWD}}"
 PYTHON=/mnt/beegfs/work/elshashay/miniconda3/bin/python
 VLLM=/mnt/beegfs/work/elshashay/miniconda3/bin/vllm
 SNAPSHOT="$REPO/mechanistic/privacy_collapse/persistbench/model_cache/models--mistralai--Mistral-7B-Instruct-v0.3/snapshots/c170c708c41dac9275d15a8fff4eca08d52bab71"

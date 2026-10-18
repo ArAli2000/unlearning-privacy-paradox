@@ -17,7 +17,7 @@
 
 set -euo pipefail
 
-export REPO_ROOT=/mnt/beegfs/work/elshashay/open-unlearning   # sbatch copies this script, so no relative lookup
+export REPO_ROOT="${REPO_ROOT:-${SLURM_SUBMIT_DIR:-$PWD}}"   # sbatch copies this script, so submit from the repository root
 source "$REPO_ROOT/thesis/scripts/common.sh"
 REPO="$REPO_ROOT"
 cd "$REPO"

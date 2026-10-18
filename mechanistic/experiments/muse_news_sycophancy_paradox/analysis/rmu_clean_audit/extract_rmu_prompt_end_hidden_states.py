@@ -18,7 +18,8 @@ import torch
 import transformers
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
-ROOT = Path("/mnt/beegfs/work/elshashay/open-unlearning")
+import os as _os; _ROOT = _os.path.abspath(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), *['..']*5))
+ROOT = Path(_ROOT)
 NATIVE = ROOT / "mechanistic/privacy_collapse/persistbench_native"
 MANIFEST = NATIVE / "manifests/native_sycophancy_200_v1.json"
 HERE = Path(__file__).resolve().parent

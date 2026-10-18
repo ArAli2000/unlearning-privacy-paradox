@@ -1,5 +1,6 @@
 import csv
-R = '/mnt/beegfs/work/elshashay/open-unlearning/thesis/appendix_material/'
+import os as _os; _ROOT = _os.path.abspath(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), *['..']*4))
+R = (_ROOT + '/thesis/appendix_material/')
 
 
 def w(path, header, rows):

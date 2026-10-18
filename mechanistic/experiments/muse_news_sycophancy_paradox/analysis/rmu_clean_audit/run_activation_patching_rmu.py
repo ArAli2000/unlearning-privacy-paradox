@@ -20,7 +20,8 @@ import pandas as pd
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
-ROOT = Path("/mnt/beegfs/work/elshashay/open-unlearning")
+import os as _os; _ROOT = _os.path.abspath(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), *['..']*5))
+ROOT = Path(_ROOT)
 HERE = Path(__file__).resolve().parent
 SELECTION = HERE / "clean_selection.json"
 NATIVE_MANIFEST = (

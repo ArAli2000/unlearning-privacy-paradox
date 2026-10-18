@@ -22,7 +22,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import torch
 
-ROOT = Path("/mnt/beegfs/work/elshashay/open-unlearning")
+import os as _os; _ROOT = _os.path.abspath(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), *['..']*5))
+ROOT = Path(_ROOT)
 HERE = Path(__file__).resolve().parent
 NATIVE = ROOT / "mechanistic/privacy_collapse/persistbench_native"
 NATIVE_MANIFEST = NATIVE / "manifests/native_sycophancy_200_v1.json"

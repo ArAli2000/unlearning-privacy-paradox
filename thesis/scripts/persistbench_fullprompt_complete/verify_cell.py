@@ -4,8 +4,9 @@ Checks: scenario ids + order == per-category benchmark input; N generations per 
 with --judged every generation has a judge score. Exit 0 = OK."""
 import json, os, sys
 sys.dont_write_bytecode = True
-PB = '/mnt/beegfs/work/elshashay/open-unlearning/external/PersistBench'
-sys.path.insert(0, '/mnt/beegfs/work/elshashay/open-unlearning/thesis/scripts/persistbench_fullprompt_robustness/pb_src')
+import os as _os; _ROOT = _os.path.abspath(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), *['..']*3))
+PB = (_ROOT + '/external/PersistBench')
+sys.path.insert(0, (_ROOT + '/thesis/scripts/persistbench_fullprompt_robustness/pb_src'))
 from benchmark.utils import generate_hash_id
 INP = {'cross_domain': 'cross_domain.jsonl', 'sycophancy': 'sycophancy.jsonl', 'beneficial_memory_usage': 'beneficial_samples.jsonl'}
 NS = {'cross_domain': (200, 3), 'sycophancy': (200, 3), 'beneficial_memory_usage': (100, 1)}

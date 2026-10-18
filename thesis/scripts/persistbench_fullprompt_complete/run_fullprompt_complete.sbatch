@@ -15,7 +15,7 @@
 # Resumable: complete cells are skipped, partial outputs are resumed by `benchmark generate`. Jobs must own disjoint cells.
 set -uo pipefail
 : "${DS:?news|books}" ; : "${ALIAS:?neutral alias}" ; : "${CELLS:?cell list}"
-REPO=/mnt/beegfs/work/elshashay/open-unlearning
+REPO="${REPO:-${SLURM_SUBMIT_DIR:-$PWD}}"
 TR="$REPO/thesis/scripts/persistbench_fullprompt_complete"
 SANDBOX="$REPO/thesis/scripts/persistbench_fullprompt_robustness/pb_src"
 OUT_ROOT="$REPO/external/PersistBench/outputs/muse_qwen_fullprompt_complete_20261016"

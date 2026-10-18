@@ -9,7 +9,7 @@
 #SBATCH --output=logs/pb_syc_mcq_%j.out
 #SBATCH --error=logs/pb_syc_mcq_%j.err
 set -euo pipefail
-cd /mnt/beegfs/work/elshashay/open-unlearning
+cd "${SLURM_SUBMIT_DIR:-$PWD}"
 mkdir -p logs
 export TRITON_CACHE_DIR=/tmp/triton-${SLURM_JOB_ID};mkdir -p "$TRITON_CACHE_DIR"
 source /storage/ukp/work/elshashay/miniconda3/bin/activate

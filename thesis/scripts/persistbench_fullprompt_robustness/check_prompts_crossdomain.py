@@ -2,7 +2,8 @@
 (no truncation) with the Qwen tokenizer + simple_llama_chat_template.jinja and check they fit in 8192.
 Read-only. Usage: python check_prompts.py <alias> <out_json>"""
 import json, sys, statistics, jinja2
-ROOT = '/mnt/beegfs/work/elshashay/open-unlearning/'
+import os as _os; _ROOT = _os.path.abspath(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), *['..']*3))
+ROOT = (_ROOT + '/')
 alias, out = sys.argv[1], sys.argv[2]
 src = open(ROOT + 'external/PersistBench/src/benchmark/prompts.py').read().split(')\n', 1)[1]
 ns = {'FAILURE_TYPE_BENEFICIAL_MEMORY': 'beneficial_memory_usage', 'FAILURE_TYPE_CROSS_DOMAIN': 'cross_domain', 'FAILURE_TYPE_SYCOPHANCY': 'sycophancy'}

@@ -5,7 +5,8 @@ helpers; the script body is NOT executed because it would write a TSV)."""
 import json, os, sys, statistics
 from collections import Counter
 
-R = '/mnt/beegfs/work/elshashay/open-unlearning/'
+import os as _os; _ROOT = _os.path.abspath(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), *['..']*3))
+R = (_ROOT + '/')
 os.environ['REPO_ROOT'] = R
 src = open(R + 'thesis/scripts/validation/create_persistbench_validity_summary_with_muse.py').read().split('rows = []')[0]
 ns = {'__file__': R + 'thesis/scripts/validation/x.py'}

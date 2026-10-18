@@ -11,7 +11,7 @@
 
 set -euo pipefail
 
-cd /mnt/beegfs/work/elshashay/open-unlearning
+cd "${SLURM_SUBMIT_DIR:-$PWD}"
 mkdir -p logs
 export TRITON_CACHE_DIR=/tmp/triton-${SLURM_JOB_ID}
 mkdir -p "$TRITON_CACHE_DIR"

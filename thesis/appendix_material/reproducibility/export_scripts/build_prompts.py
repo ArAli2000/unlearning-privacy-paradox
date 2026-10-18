@@ -1,6 +1,7 @@
 """Builds thesis/appendix_material/prompts/*. Reads source files only."""
 import ast, re, sys
-R = '/mnt/beegfs/work/elshashay/open-unlearning/'
+import os as _os; _ROOT = _os.path.abspath(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), *['..']*4))
+R = (_ROOT + '/')
 OUT = R + 'thesis/appendix_material/prompts/'
 BEGIN = '=== BEGIN EXACT TEXT (everything between the BEGIN/END marker lines is verbatim; markers are not part of it; in rendered sections a single formatting newline precedes the END marker) ==='
 END = '=== END EXACT TEXT ==='

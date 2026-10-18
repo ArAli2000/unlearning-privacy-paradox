@@ -6,7 +6,8 @@ import csv, glob, json, os, re, sys
 from pathlib import Path
 
 sys.dont_write_bytecode = True
-R = Path('/mnt/beegfs/work/elshashay/open-unlearning')
+import os as _os; _ROOT = _os.path.abspath(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), *['..']*4))
+R = Path(_ROOT)
 H = R / 'thesis/analysis/final_thesis_handoff_20261016'
 DB = json.load(open(H / 'scripts/_tofu_hashes.json'))
 SU = R / 'saves/unlearn'

@@ -73,40 +73,50 @@ def add_proxy_scores(metrics, baseline_model_utility=None):
     model_utility = float(_get_metric(metrics, "model_utility"))
     forget_q_a_gibberish = float(_get_metric(metrics, "forget_Q_A_gibberish"))
 
-    mem_proxy = _harmonic_mean([
-        1.0 - extraction_strength,
-        1.0 - exact_memorization,
-        1.0 - forget_q_a_prob,
-        1.0 - forget_truth_ratio,
-    ])
+    mem_proxy = _harmonic_mean(
+        [
+            1.0 - extraction_strength,
+            1.0 - exact_memorization,
+            1.0 - forget_q_a_prob,
+            1.0 - forget_truth_ratio,
+        ]
+    )
 
-    privacy_proxy = _harmonic_mean([
-        mia_loss,
-        mia_zlib,
-        mia_min_k,
-        mia_min_k_plus_plus,
-    ])
+    privacy_proxy = _harmonic_mean(
+        [
+            mia_loss,
+            mia_zlib,
+            mia_min_k,
+            mia_min_k_plus_plus,
+        ]
+    )
 
     if baseline_model_utility is not None and baseline_model_utility > 0:
         scaled_model_utility = min(model_utility / baseline_model_utility, 1.0)
     else:
         scaled_model_utility = model_utility
 
-    utility_proxy = _harmonic_mean([
-        scaled_model_utility,
-        forget_q_a_gibberish,
-    ])
+    utility_proxy = _harmonic_mean(
+        [
+            scaled_model_utility,
+            forget_q_a_gibberish,
+        ]
+    )
 
-    agg_proxy = _harmonic_mean([
-        mem_proxy,
-        privacy_proxy,
-        utility_proxy,
-    ])
+    agg_proxy = _harmonic_mean(
+        [
+            mem_proxy,
+            privacy_proxy,
+            utility_proxy,
+        ]
+    )
 
-    selection_proxy = _harmonic_mean([
-        mem_proxy,
-        utility_proxy,
-    ])
+    selection_proxy = _harmonic_mean(
+        [
+            mem_proxy,
+            utility_proxy,
+        ]
+    )
 
     _set_proxy_metric(metrics, "Mem_proxy", mem_proxy)
     _set_proxy_metric(metrics, "Privacy_proxy", privacy_proxy)
@@ -159,10 +169,13 @@ class FinetuneTrainer(Trainer):
                     "tokenizer": self.processing_class,
                 }
                 eval_metrics.update(evaluator.evaluate(**eval_args))
+
             # Aggregate checkpoint-selection metric for MUSE runs (higher is better),
             # so the HF Trainer can keep the best checkpoint.
             def _bestagg_float_metric(_name, _default=None):
-                _v = eval_metrics.get(_name, eval_metrics.get(f"eval_{_name}", _default))
+                _v = eval_metrics.get(
+                    _name, eval_metrics.get(f"eval_{_name}", _default)
+                )
                 try:
                     return float(_v)
                 except Exception:
@@ -173,13 +186,20 @@ class FinetuneTrainer(Trainer):
             _forget_verb = _bestagg_float_metric("forget_verbmem_ROUGE")
             _extract = _bestagg_float_metric("extraction_strength")
 
-            if all(v is not None for v in [_retain, _forget_know, _forget_verb, _extract]):
+            if all(
+                v is not None for v in [_retain, _forget_know, _forget_verb, _extract]
+            ):
                 _utility_proxy = max(0.0, min(1.0, _retain))
                 _memory_proxy = 1.0 - ((_forget_know + _forget_verb + _extract) / 3.0)
                 _memory_proxy = max(0.0, min(1.0, _memory_proxy))
 
                 if _utility_proxy + _memory_proxy > 0:
-                    _best_agg = 2.0 * _utility_proxy * _memory_proxy / (_utility_proxy + _memory_proxy)
+                    _best_agg = (
+                        2.0
+                        * _utility_proxy
+                        * _memory_proxy
+                        / (_utility_proxy + _memory_proxy)
+                    )
                 else:
                     _best_agg = 0.0
 
@@ -188,8 +208,13 @@ class FinetuneTrainer(Trainer):
             if not hasattr(self, "_proxy_baseline_model_utility"):
                 self._proxy_baseline_model_utility = None
 
-            if self._proxy_baseline_model_utility is None and _get_metric(eval_metrics, "model_utility") is not None:
-                self._proxy_baseline_model_utility = float(_get_metric(eval_metrics, "model_utility"))
+            if (
+                self._proxy_baseline_model_utility is None
+                and _get_metric(eval_metrics, "model_utility") is not None
+            ):
+                self._proxy_baseline_model_utility = float(
+                    _get_metric(eval_metrics, "model_utility")
+                )
 
             eval_metrics = add_proxy_scores(
                 eval_metrics,

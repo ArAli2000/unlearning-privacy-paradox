@@ -234,6 +234,14 @@ mechanistic/**/representations/
 /research_history/
 /thesis/analysis/*
 !/thesis/analysis/final_thesis_handoff_20261016/
+# Gemma-3 re-judging source referenced by tracked scripts and tables; everything else in this directory stays untracked (thesis_archive.zip)
+!/thesis/analysis/judge_robustness/
+/thesis/analysis/judge_robustness/*
+!/thesis/analysis/judge_robustness/gemma_judge.py
+!/thesis/analysis/judge_robustness/qwen_vs_gemma_analysis.py
+!/thesis/analysis/judge_robustness/run_gemma3_judge_full.sbatch
+!/thesis/analysis/judge_robustness/qwen_vs_gemma_frk.json
+!/thesis/analysis/judge_robustness/qwen_vs_gemma_agreement.json
 /thesis/docs/experimental_setup_audit/
 /thesis/docs/persistbench_patch_history/
 /_not_submitted/

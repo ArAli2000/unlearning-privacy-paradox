@@ -1,0 +1,87 @@
+{
+  "overall": {
+    "cross_domain": {
+      "n": 9000,
+      "exact_match_rate": 0.6226,
+      "within_1_rate": 0.6563,
+      "cohens_kappa_unweighted": 0.2527,
+      "cohens_kappa_linear_weighted": 0.2644
+    },
+    "sycophancy": {
+      "n": 9000,
+      "exact_match_rate": 0.3827,
+      "within_1_rate": 0.5176,
+      "cohens_kappa_unweighted": 0.1511,
+      "cohens_kappa_linear_weighted": 0.1552
+    },
+    "beneficial_memory_usage": {
+      "n": 1500,
+      "exact_match_rate": 0.666,
+      "within_1_rate": 0.9867,
+      "cohens_kappa_unweighted": 0.4921,
+      "cohens_kappa_linear_weighted": 0.5704
+    }
+  },
+  "by_track": {
+    "muse_news": {
+      "cross_domain": {
+        "n": 3000,
+        "exact_match_rate": 0.629,
+        "cohens_kappa_unweighted": 0.153,
+        "cohens_kappa_linear_weighted": 0.1266
+      },
+      "sycophancy": {
+        "n": 3000,
+        "exact_match_rate": 0.3717,
+        "cohens_kappa_unweighted": 0.1091,
+        "cohens_kappa_linear_weighted": 0.1113
+      },
+      "beneficial_memory_usage": {
+        "n": 500,
+        "exact_match_rate": 0.672,
+        "cohens_kappa_unweighted": 0.3669,
+        "cohens_kappa_linear_weighted": 0.3781
+      }
+    },
+    "muse_books_llama2": {
+      "cross_domain": {
+        "n": 3000,
+        "exact_match_rate": 0.5823,
+        "cohens_kappa_unweighted": 0.2767,
+        "cohens_kappa_linear_weighted": 0.2838
+      },
+      "sycophancy": {
+        "n": 3000,
+        "exact_match_rate": 0.38,
+        "cohens_kappa_unweighted": 0.1804,
+        "cohens_kappa_linear_weighted": 0.156
+      },
+      "beneficial_memory_usage": {
+        "n": 500,
+        "exact_match_rate": 0.688,
+        "cohens_kappa_unweighted": 0.2844,
+        "cohens_kappa_linear_weighted": 0.3114
+      }
+    },
+    "muse_books_qwen25": {
+      "cross_domain": {
+        "n": 3000,
+        "exact_match_rate": 0.6563,
+        "cohens_kappa_unweighted": 0.1853,
+        "cohens_kappa_linear_weighted": 0.191
+      },
+      "sycophancy": {
+        "n": 3000,
+        "exact_match_rate": 0.3963,
+        "cohens_kappa_unweighted": 0.1059,
+        "cohens_kappa_linear_weighted": 0.1168
+      },
+      "beneficial_memory_usage": {
+        "n": 500,
+        "exact_match_rate": 0.638,
+        "cohens_kappa_unweighted": 0.341,
+        "cohens_kappa_linear_weighted": 0.3663
+      }
+    }
+  }
+}

@@ -18,13 +18,13 @@ cd "$REPO"
 
 activate_unlearning_env
 
-export HF_HOME=/storage/ukp/work/elshashay/.cache/huggingface
-export TRANSFORMERS_CACHE=/storage/ukp/work/elshashay/.cache/huggingface
-export CUDA_HOME=/nfs/cuda/cuda-12.2
+export HF_HOME="${HF_HOME:-${XDG_CACHE_HOME:-$HOME/.cache}/huggingface}"
+export TRANSFORMERS_CACHE="${TRANSFORMERS_CACHE:-${HF_HOME:-${XDG_CACHE_HOME:-$HOME/.cache}/huggingface}}"
+export CUDA_HOME="${CUDA_HOME:-/nfs/cuda/cuda-12.2}"  # cluster default; override for your CUDA toolkit
 export TOKENIZERS_PARALLELISM=false
 export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
 
-MANIFEST="saves/final_muse_news_qwen25_7b_instruct_selection/SELECTED_MODEL_PATHS.tsv"
+MANIFEST="$REPO_ROOT/thesis/manifests/selection/muse_news_qwen25_7b_instruct_SELECTED_MODEL_PATHS.tsv"  # tracked copy; byte-identical to the original saves/final_muse_news_qwen25_7b_instruct_selection/SELECTED_MODEL_PATHS.tsv
 TOKENIZER_PATH="saves/finetune/muse_news_qwen25_7b_instruct_target"
 
 # skip header, select line by array id

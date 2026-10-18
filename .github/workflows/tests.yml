@@ -4,11 +4,15 @@ on:
   push:
     paths:
       - "**.py"
+      - "**.sh"
+      - "**.sbatch"
       - "requirements.txt"
       - ".github/workflows/*.yml"
   pull_request:
     paths:
       - "**.py"
+      - "**.sh"
+      - "**.sbatch"
       - "requirements.txt"
       - ".github/workflows/*.yml"
 
@@ -49,6 +53,9 @@ jobs:
 
       - name: Check Quality
         run: make quality
+
+      - name: Repository integrity check
+        run: python thesis/scripts/validation/check_repo_integrity.py
 
       # - name: Test with pytest
       #   run: |

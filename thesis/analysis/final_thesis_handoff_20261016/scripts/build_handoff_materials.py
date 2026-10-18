@@ -160,15 +160,20 @@ tsv(H / 'final_generation_configs.tsv', ['setting', 'parameter', 'value', 'statu
 chk('config inventory: every row carries one of the three status labels', all(r[3] in (EXP, INH, INF) for r in CFG), f'{len(CFG)} rows')
 
 # 8. checkpoints
-mc = rtsv(AM / 'reproducibility/model_checkpoints.tsv'); HFC = Path('/storage/ukp/work/elshashay/.cache/huggingface/hub')
+mc = rtsv(AM / 'reproducibility/model_checkpoints.tsv'); HF_CACHE_ROOT = Path(os.environ['HF_CACHE_ROOT']) if os.environ.get('HF_CACHE_ROOT') else sys.exit('set HF_CACHE_ROOT to the Hugging Face cache directory that holds the models--* folders')
+HFC = HF_CACHE_ROOT / 'hub'  # placeholder HF_CACHE in the tables = HF_CACHE_ROOT; CHECKPOINT_STORAGE = repository root
 def exists(path):
     if path.startswith('n/a'): return None
+    if path.startswith('HF_CACHE/'): return (HF_CACHE_ROOT / path[len('HF_CACHE/'):]).exists()
+    if path.startswith('CHECKPOINT_STORAGE/'): return (R / path[len('CHECKPOINT_STORAGE/'):]).exists()
     if path.startswith('/'): return Path(path).exists()
     if (R / path).exists(): return True
     if re.fullmatch(r'[\w.-]+/[\w.-]+', path): return (HFC / ('models--' + path.replace('/', '--'))).exists()
     return False
 def real(path):
-    if path.startswith('/') or (R / path).exists(): return str((R / path).resolve()) if not path.startswith('/') else str(Path(path).resolve())
+    if path.startswith(('HF_CACHE/', 'CHECKPOINT_STORAGE/')): return path
+    if (R / path).exists(): return 'CHECKPOINT_STORAGE/' + str((R / path).resolve().relative_to(R.resolve()))
+    if path.startswith('/'): return str(Path(path).resolve())
     return path
 lists = {}
 for f in ('muse_news_qwen25', 'muse_books_qwen25', 'muse_books_llama2'):
@@ -181,7 +186,7 @@ for r in mc:
     path = tgt if sel.startswith('n/a') else sel; m = re.search(r'checkpoint-(\d+)', path)
     ex_t, ex_s = exists(tgt), exists(sel)
     exists_all = all(x is not False for x in (ex_t, ex_s)) and (ex_s if ex_s is not None else ex_t)
-    if ds.startswith('TOFU'): loaded = 'run directory top-level weights (NOT the checkpoint-N subdirectory); not byte-compared with the selected checkpoint (audit note)' if not sel.startswith('n/a') else 'start model (TOFU-finetuned target)'
+    if ds.startswith('TOFU'): loaded = 'run directory top-level weights (NOT the checkpoint-N subdirectory); byte-identical to the selected checkpoint (SHA-256; see TOFU_WEIGHT_PROVENANCE.md)' if not sel.startswith('n/a') else 'start model (TOFU-finetuned target)'
     elif 'Llama-2' in model: loaded = 'selected checkpoint directory' if not sel.startswith('n/a') else 'official muse-bench target (HF hub id)'
     else: loaded = 'selected checkpoint directory' if not sel.startswith('n/a') else 'fine-tuned target directory'
     used = ('original truncated (A100); truncated replication (H200); complete full prompt (H200)' if 'Qwen2.5-7B' in model and ds.startswith('MUSE') else
@@ -345,7 +350,7 @@ A('\n## Source-document caveats (facts about existing documents)\n')
 A('- `thesis/appendix_material/tables/{fullprompt_robustness,persistbench_frk_complete,generation_validity_complete}.tsv` and the validity-gate rule list in `thesis/appendix_material/README.md` were built with the **v1** classifier (per that README). Only `fullprompt_robustness.tsv` was numerically compared here: 4 of its News cells differ from v2 (listed in `integrity_check.txt`; e.g. SatImp full-prompt FR@3 15.58 with N = 199 under v1 vs 15.50 with N = 200 under v2). Do not take numbers from these three tables; use the handoff tables.')
 A('- `thesis/appendix_material/configs/generation_configurations.tsv` still describes the full-prompt run as "MUSE-News only, 4 conditions, beneficial memory not run"; superseded by `final_generation_configs.tsv`.')
 A('- `prompts/persistbench_generator_exact.txt` header names only the News neutral alias `muse_news_qwen25`; the Books full-prompt runs used `muse_books_qwen25`.')
-A('- TOFU behavioural evaluations loaded each run directory\'s top-level weights; the selected `checkpoint-N` is recorded in the manifests, but the two were not byte-compared (audited-table note). No selection was changed.')
+A('- '+"TOFU behavioural evaluations loaded each run directory's top-level weights (PersistBench on both models and PrivacyLens on Llama-3.1) or `checkpoint-104` directly (PrivacyLens on TOFU Qwen2.5-7B); the selected `checkpoint-N` is recorded in the manifests. An earlier version of this note said the top-level weights and the selected checkpoint had not been byte-compared. That was checked afterwards: for all 8 TOFU unlearned conditions every weight shard of the run directory is byte-identical (SHA-256) to the selected checkpoint. See `TOFU_WEIGHT_PROVENANCE.md` in this directory. No selection was changed.")
 A('- MUSE-News Llama-2 is the official-target "Track A" setting, labelled SUPERSEDED in `thesis/appendix_material/README.md`; it was nevertheless included in the truncated replication as setting C (`research_history/04_muse_track_a/manifests/muse_news_persistbench_models.tsv`).')
 (H / 'THESIS_FACTS.md').write_text('\n'.join(LF) + '\n')
 

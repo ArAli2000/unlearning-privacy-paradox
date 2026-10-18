@@ -17,9 +17,9 @@ cd "$REPO_ROOT"
 
 activate_unlearning_env
 
-export HF_HOME=/storage/ukp/work/elshashay/.cache/huggingface
+export HF_HOME="${HF_HOME:-${XDG_CACHE_HOME:-$HOME/.cache}/huggingface}"
 export TRANSFORMERS_CACHE=$HF_HOME
-export CUDA_HOME=/nfs/cuda/cuda-12.2
+export CUDA_HOME="${CUDA_HOME:-/nfs/cuda/cuda-12.2}"  # cluster default; override for your CUDA toolkit
 export TOKENIZERS_PARALLELISM=false
 export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
 

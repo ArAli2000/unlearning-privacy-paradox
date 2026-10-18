@@ -23,7 +23,7 @@ cd "$REPO_ROOT"
 
 activate_unlearning_env base
 
-export HOME=/storage/ukp/work/elshashay
+export HOME="${UNLEARNING_HOME:-$HOME}"
 export XDG_CACHE_HOME="$HOME/.cache"
 export HF_HOME="$XDG_CACHE_HOME/huggingface"
 export TRANSFORMERS_CACHE="$HF_HOME"
@@ -34,10 +34,19 @@ export VLLM_USAGE_STATS_DIR="$HOME/.cache/vllm/usage"
 export VLLM_USE_FLASHINFER_SAMPLER=0
 mkdir -p "$XDG_CACHE_HOME" "$HF_HOME" "$HF_DATASETS_CACHE" "$TRITON_CACHE_DIR" "$FLASHINFER_WORKSPACE_DIR" "$VLLM_USAGE_STATS_DIR"
 
-GEMMA_LOCAL_PATH="/storage/ukp/shared/shared_model_weights/models--google--gemma-3-12b-it"
-if [ ! -f "${GEMMA_LOCAL_PATH}/config.json" ]; then
-  echo "ERROR: verified local Gemma-3 path not found: ${GEMMA_LOCAL_PATH}" >&2
-  exit 1
+# Model: the public google/gemma-3-12b-it at revision 96b6f1eccf38110c56df3a15bffe176da04bfd80 (a gated Hugging Face model: accept its licence,
+# set HF_TOKEN), or a local snapshot of that revision given in GEMMA_LOCAL_PATH. The reported runs served a local snapshot of this same
+# revision from an institutional shared directory (/storage/ukp/shared/shared_model_weights/models--google--gemma-3-12b-it), which is not usable elsewhere.
+GEMMA_MODEL_ID="google/gemma-3-12b-it"
+GEMMA_REVISION="96b6f1eccf38110c56df3a15bffe176da04bfd80"
+if [ -n "${GEMMA_LOCAL_PATH:-}" ]; then
+  if [ ! -f "${GEMMA_LOCAL_PATH}/config.json" ]; then
+    echo "ERROR: GEMMA_LOCAL_PATH has no config.json: ${GEMMA_LOCAL_PATH}" >&2
+    exit 1
+  fi
+  GEMMA_SERVE_ARGS=("${GEMMA_LOCAL_PATH}")
+else
+  GEMMA_SERVE_ARGS=("${GEMMA_MODEL_ID}" --revision "${GEMMA_REVISION}")
 fi
 
 EXP_DIR="mechanistic/experiments/muse_news_sycophancy_final_mechanism"
@@ -58,7 +67,7 @@ PORT=8002
 JOB_TAG="${SLURM_JOB_ID:-manual}"
 
 echo "Starting Gemma-3 judge server on port ${PORT}..."
-vllm serve "${GEMMA_LOCAL_PATH}" \
+vllm serve "${GEMMA_SERVE_ARGS[@]}" \
   --served-model-name gemma3-judge \
   --host 127.0.0.1 \
   --port "$PORT" \

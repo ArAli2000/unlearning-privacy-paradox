@@ -1,0 +1,52 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite it as below, and cite OpenUnlearning, TOFU and MUSE, on which it builds."
+type: software
+title: "Unlearning Privacy Paradox: Code and Reproducibility Materials"
+authors:
+  - family-names: Elshashay
+    given-names: Aly
+    affiliation: "Technical University of Darmstadt"
+repository-code: "https://github.com/ArAli2000/unlearning-privacy-paradox"
+license: MIT
+version: 1.0.0
+date-released: 2026-10-18
+references:
+  - type: article
+    title: "OpenUnlearning: Accelerating LLM Unlearning via Unified Benchmarking of Methods and Metrics"
+    authors:
+      - {family-names: Dorna, given-names: Vineeth}
+      - {family-names: Mekala, given-names: Anmol}
+      - {family-names: Zhao, given-names: Wenlong}
+      - {family-names: McCallum, given-names: Andrew}
+      - {family-names: Lipton, given-names: Zachary C}
+      - {family-names: Kolter, given-names: J Zico}
+      - {family-names: Maini, given-names: Pratyush}
+    journal: "arXiv preprint arXiv:2506.12618"
+    year: 2025
+    url: "https://arxiv.org/abs/2506.12618"
+  - type: conference-paper
+    title: "TOFU: A Task of Fictitious Unlearning for LLMs"
+    authors:
+      - {family-names: Maini, given-names: Pratyush}
+      - {family-names: Feng, given-names: Zhili}
+      - {family-names: Schwarzschild, given-names: Avi}
+      - {family-names: Lipton, given-names: Zachary Chase}
+      - {family-names: Kolter, given-names: J Zico}
+    collection-title: "First Conference on Language Modeling"
+    year: 2024
+  - type: article
+    title: "MUSE: Machine Unlearning Six-Way Evaluation for Language Models"
+    authors:
+      - {family-names: Shi, given-names: Weijia}
+      - {family-names: Lee, given-names: Jaechan}
+      - {family-names: Huang, given-names: Yangsibo}
+      - {family-names: Malladi, given-names: Sadhika}
+      - {family-names: Zhao, given-names: Jieyu}
+      - {family-names: Holtzman, given-names: Ari}
+      - {family-names: Liu, given-names: Daogao}
+      - {family-names: Zettlemoyer, given-names: Luke}
+      - {family-names: Smith, given-names: Noah A.}
+      - {family-names: Zhang, given-names: Chiyuan}
+    journal: "arXiv preprint arXiv:2407.06460"
+    year: 2024
+    url: "https://arxiv.org/abs/2407.06460"

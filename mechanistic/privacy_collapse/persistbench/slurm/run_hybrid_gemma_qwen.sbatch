@@ -10,10 +10,12 @@
 
 set -euo pipefail
 REPO="${REPO:-${SLURM_SUBMIT_DIR:-$PWD}}"
-JUDGE=/mnt/beegfs/work/elshashay/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28
+JUDGE="${JUDGE:?set JUDGE to a local snapshot directory of Qwen/Qwen2.5-7B-Instruct, revision a09a35458c702b33eeacc393d103063234e8bc28}"
 CONFIG="$REPO/mechanistic/privacy_collapse/persistbench/configs/hybrid_gemma_qwen.json"
-PYTHON=/mnt/beegfs/work/elshashay/miniconda3/bin/python
-VLLM=/mnt/beegfs/work/elshashay/miniconda3/bin/vllm
+source "${PROJECT_ROOT:-${SLURM_SUBMIT_DIR:-$PWD}}/thesis/scripts/common.sh"
+activate_unlearning_env base
+PYTHON="${PYTHON:-python}"
+VLLM="${VLLM:-vllm}"
 cd "$REPO"
 mkdir -p logs
 test -n "${OPENROUTER_API_KEY:-}" || { echo "OPENROUTER_API_KEY is not set"; exit 2; }

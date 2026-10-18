@@ -28,12 +28,12 @@ if command -v module >/dev/null 2>&1; then
   module load cuda/12.2 || module load cuda/12.1 || true
 fi
 
-export CUDA_HOME=/nfs/cuda/cuda-12.2
+export CUDA_HOME="${CUDA_HOME:-/nfs/cuda/cuda-12.2}"  # cluster default; override for your CUDA toolkit
 export CUDA_PATH=$CUDA_HOME
 export PATH=$CUDA_HOME/bin:$PATH
 export LD_LIBRARY_PATH=$CUDA_HOME/lib64:${LD_LIBRARY_PATH:-}
 
-export HOME=/storage/ukp/work/elshashay
+export HOME="${UNLEARNING_HOME:-$HOME}"
 export HF_HOME=$HOME/.cache/huggingface
 export TRANSFORMERS_CACHE=$HF_HOME
 export HF_DATASETS_CACHE=$HF_HOME/datasets

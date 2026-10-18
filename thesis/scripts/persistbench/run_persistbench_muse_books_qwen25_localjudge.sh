@@ -19,7 +19,7 @@ cd "$PBENCH"
 
 activate_unlearning_env base
 
-export HOME=/storage/ukp/work/elshashay
+export HOME="${UNLEARNING_HOME:-$HOME}"
 export XDG_CACHE_HOME=$HOME/.cache
 export HF_HOME=$HOME/.cache/huggingface
 export TRANSFORMERS_CACHE=$HF_HOME
@@ -32,7 +32,7 @@ mkdir -p "$XDG_CACHE_HOME" "$HF_HOME" "$HF_DATASETS_CACHE" "$TRITON_CACHE_DIR" "
 
 
 # Use writable directories on compute nodes.
-export HOME="/storage/ukp/work/elshashay"
+export HOME="${UNLEARNING_HOME:-$HOME}"
 export XDG_CACHE_HOME="$HOME/.cache"
 export HF_HOME="$XDG_CACHE_HOME/huggingface"
 export TRANSFORMERS_CACHE="$HF_HOME"
@@ -46,9 +46,9 @@ mkdir -p \
     "$FLASHINFER_WORKSPACE_DIR"
 
 
-export HF_HOME=/storage/ukp/work/elshashay/.cache/huggingface
+export HF_HOME="${HF_HOME:-${XDG_CACHE_HOME:-$HOME/.cache}/huggingface}"
 export TRANSFORMERS_CACHE="$HF_HOME"
-export CUDA_HOME=/nfs/cuda/cuda-12.2
+export CUDA_HOME="${CUDA_HOME:-/nfs/cuda/cuda-12.2}"  # cluster default; override for your CUDA toolkit
 
 # Avoid the FlashInfer sampling problem encountered previously.
 export VLLM_USE_FLASHINFER_SAMPLER=0

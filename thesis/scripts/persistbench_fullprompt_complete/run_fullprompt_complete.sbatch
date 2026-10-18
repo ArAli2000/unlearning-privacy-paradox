@@ -31,10 +31,10 @@ cd "$REPO"
 source "$REPO/thesis/scripts/common.sh"
 activate_unlearning_env base
 if command -v module >/dev/null 2>&1; then module load cuda/12.2 || module load cuda/12.1 || true; fi
-export CUDA_HOME=/nfs/cuda/cuda-12.2 CUDA_PATH=/nfs/cuda/cuda-12.2
+export CUDA_HOME="${CUDA_HOME:-/nfs/cuda/cuda-12.2}"; export CUDA_PATH="${CUDA_PATH:-$CUDA_HOME}"  # cluster default; override for your CUDA toolkit
 export PATH=$CUDA_HOME/bin:$PATH
 export LD_LIBRARY_PATH=$CUDA_HOME/lib64:${LD_LIBRARY_PATH:-}
-export HOME=/storage/ukp/work/elshashay
+export HOME="${UNLEARNING_HOME:-$HOME}"
 export HF_HOME=$HOME/.cache/huggingface TRANSFORMERS_CACHE=$HOME/.cache/huggingface HF_DATASETS_CACHE=$HOME/.cache/huggingface/datasets
 export TOKENIZERS_PARALLELISM=false PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
 export NVCC_PREPEND_FLAGS="-allow-unsupported-compiler ${NVCC_PREPEND_FLAGS:-}"

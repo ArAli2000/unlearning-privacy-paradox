@@ -14,8 +14,8 @@ cd "${SLURM_SUBMIT_DIR:-$PWD}"
 mkdir -p logs
 export TRITON_CACHE_DIR=/tmp/triton-${SLURM_JOB_ID}
 mkdir -p "$TRITON_CACHE_DIR"
-source /storage/ukp/work/elshashay/miniconda3/bin/activate
-conda activate unlearning
+source "${PROJECT_ROOT:-${SLURM_SUBMIT_DIR:-$PWD}}/thesis/scripts/common.sh"
+activate_unlearning_env
 module load cuda/12.2 || true
 
 python mechanistic/privacy_collapse/persistbench_mcq/validate_static.py

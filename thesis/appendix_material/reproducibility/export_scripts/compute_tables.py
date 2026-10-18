@@ -1,23 +1,59 @@
 #!/usr/bin/env python3
 """Recompute the appendix behavioural tables from existing PersistBench outputs (read-only).
 
-Run:  PYTHONDONTWRITEBYTECODE=1 python3 -B compute_tables.py [OUT_DIR]
+Run:  PYTHONDONTWRITEBYTECODE=1 python3 -B compute_tables.py [--check-inputs] [--artifact-root PATH] [OUT_DIR]
+      Works from any working directory; the repository root is derived from this file's location.
+      --artifact-root PATH  read the PersistBench inputs (the files that live under external/PersistBench/ on the original
+                            cluster: outputs/... and outputs_gemma3_judge/...) from PATH/outputs/... and PATH/outputs_gemma3_judge/...
+                            instead (also settable as PERSISTBENCH_ARTIFACT_ROOT). Nothing is copied into the submodule. With the option,
+                            only PATH is used for those inputs: no fallback to external/PersistBench. Without it, the original cluster
+                            layout is used.
 Reads : external/PersistBench/outputs*/..., thesis/scripts/validation/create_persistbench_validity_summary_with_muse.py
         (only the part before "rows = []" is exec'd), stored result tables for cross-checks.
 Writes: <OUT_DIR>/*.tsv (default: thesis/appendix_material/tables). No model is loaded.
+
+Most inputs are experiment artifacts that are NOT tracked in git (raw PersistBench generations/judgments, Gemma re-judging,
+stored judge-robustness JSONs, a presentation table). Before computing anything the script checks that every input exists and,
+if one is missing, stops with exit code 2 and a list of the missing artifacts (nothing is written, nothing is substituted).
+`--check-inputs` only reports the status of every input (exit 0 if all present, 2 otherwise).
+Every input is either tracked in Git or comes from the external artifact package (see thesis/appendix_material/reproducibility/artifact_manifest_external.tsv).
 """
-import csv, json, os, re, sys
+import csv, json, os, re, subprocess, sys
 from collections import Counter
 from math import comb
 from pathlib import Path
 
 R = Path(__file__).resolve().parents[4]  # repo root (thesis/appendix_material/reproducibility/export_scripts/<this file>)
-OUT = Path(sys.argv[1]) if len(sys.argv) > 1 else R / 'thesis/appendix_material/tables'
+_argv = sys.argv[1:]
+ARTIFACT_ROOT = None
+if '--artifact-root' in _argv:
+    _i = _argv.index('--artifact-root')
+    if _i + 1 >= len(_argv):
+        sys.exit('--artifact-root needs a path')
+    ARTIFACT_ROOT = Path(_argv[_i + 1])
+    del _argv[_i:_i + 2]
+elif os.environ.get('PERSISTBENCH_ARTIFACT_ROOT'):
+    ARTIFACT_ROOT = Path(os.environ['PERSISTBENCH_ARTIFACT_ROOT'])
+_ARGS = [a for a in _argv if not a.startswith('--')]
+CHECK_ONLY = '--check-inputs' in _argv
+PB_PREFIX = 'external/PersistBench/'
+# Stored cross-check inputs: the label is the historical name that the tracked tables print; the file is read from its canonical tracked location.
+STORED_FILE = {
+    'presentation_figures_final/persistbench_all_methods_all_corpora.csv': 'thesis/appendix_material/reproducibility/stored_inputs/persistbench_all_methods_all_corpora.csv',
+    'mechanistic/outputs/muse_books_weekly_update_analysis/persistbench_fr_at_k.csv': 'thesis/appendix_material/reproducibility/stored_inputs/persistbench_fr_at_k_muse_books_qwen25.csv',
+}
+
+
+def resolve(rel):
+    """actual file for a logical input path"""
+    rel = STORED_FILE.get(rel, rel)
+    if rel.startswith(PB_PREFIX) and ARTIFACT_ROOT is not None:
+        return ARTIFACT_ROOT / rel[len(PB_PREFIX):]
+    return R / rel
+
+
+OUT = Path(_ARGS[0]) if _ARGS else R / 'thesis/appendix_material/tables'
 os.environ['REPO_ROOT'] = str(R)
-src = (R / 'thesis/scripts/validation/create_persistbench_validity_summary_with_muse.py').read_text().split('rows = []')[0]
-ns = {'__file__': str(R / 'thesis/scripts/validation/x.py')}
-exec(src, ns)
-classify, get_entries, get_gens, get_response = (ns[k] for k in ('classify', 'get_entries', 'get_gens', 'get_response'))
 VALID = {"valid_structured_answer", "valid_plain_answer_or_unclear", "personal_detail_injection", "cross_domain_contamination", "irrelevant_but_coherent"}
 WEB_TERMS = ["skip to content", "github", "toggle navigation", "comments feed", "techie delight", "sign in", "pull requests", "repository",
              "ace your coding interview", "(button) product"]
@@ -34,13 +70,80 @@ for c, k in METHODS: DATASETS.append(('TOFU', 'Qwen2.5-7B-Instruct', c, f'{PB}fi
 for c, k in METHODS: DATASETS.append(('TOFU', 'Llama-3.1-8B-Instruct', c, f'{PB}final_tofu_persistbench_localjudge/llama31_8b_{TOFU_M[c]}_localjudge.json'))
 
 
+FP = {'sycophancy': (PB + 'muse_news_qwen25_fullprompt_robustness/muse_news_qwen25_%s_fullprompt.json', PB + 'muse_news_qwen25_fullprompt_robustness/analysis_results.json'),
+      'cross_domain': (PB + 'muse_news_qwen25_fullprompt_robustness_crossdomain/muse_news_qwen25_%s_fullprompt_crossdomain.json', PB + 'muse_news_qwen25_fullprompt_robustness_crossdomain/analysis_results.json')}
+CONDK = [('Target', 'before'), ('RMU', 'rmu'), ('SatImp', 'satimp'), ('SimNPO', 'simnpo')]
+
+
+# ---- input preflight -------------------------------------------------------------------------------------------------
+VALIDITY = 'thesis/scripts/validation/create_persistbench_validity_summary_with_muse.py'
+JR = 'thesis/analysis/judge_robustness/'
+INPUTS = [(VALIDITY, 'classifier source', 'tracked source file')]
+INPUTS += [(path, 'raw judged output', 'PersistBench generation + local-judge output of the evaluated checkpoint (thesis/scripts/persistbench/*.sh; TOFU: archived launchers)')
+           for _, _, _, path in DATASETS]
+for _cat, (_pat, _ar) in FP.items():
+    INPUTS += [(_pat % k, 'raw judged output (full-prompt run)', 'thesis/scripts/persistbench_fullprompt_robustness/*.sh and persistbench_fullprompt_complete/')
+               for _, k in CONDK]
+    INPUTS.append((_ar, 'stored analysis (cross-checked by assertion)', 'written by thesis/scripts/persistbench_fullprompt_robustness/analyze_fullprompt*.py'))
+INPUTS += [(f'external/PersistBench/outputs_gemma3_judge/muse_news/muse_news_qwen25_{k}.gemma3.json', 'raw Gemma-3-12B re-judged output',
+            'Gemma re-judging of the MUSE-News outputs (gemma_judge.py, see thesis_archive.zip: thesis/analysis/judge_robustness/)') for _, k in METHODS]
+INPUTS += [(JR + 'qwen_vs_gemma_frk.json', 'stored judge-robustness result (table source and cross-check)', 'tracked result file (output of qwen_vs_gemma_analysis.py; byte-identical to the copy in thesis_archive.zip)'),
+           (JR + 'qwen_vs_gemma_agreement.json', 'stored judge-agreement result (table source)', 'tracked result file (output of qwen_vs_gemma_analysis.py; byte-identical to the copy in thesis_archive.zip)'),
+           ('presentation_figures_final/persistbench_all_methods_all_corpora.csv', 'stored FR@K table (cross-check)', 'tracked stored input (original file, see stored_inputs/README.md)'),
+           ('mechanistic/outputs/muse_books_weekly_update_analysis/persistbench_fr_at_k.csv', 'stored FR@K table (cross-check)', 'tracked stored input (original file, see stored_inputs/README.md)'),
+           ('mechanistic/privacy_collapse/persistbench_native/analysis/muse_news_category_comparison_validated.csv', 'stored FR@K table (cross-check)', 'tracked table')]
+
+
+def _tracked(rel):
+    if rel.startswith(PB_PREFIX) and ARTIFACT_ROOT is not None:
+        return 'external'
+    rel = STORED_FILE.get(rel, rel)
+    try:
+        r = subprocess.run(['git', '-C', str(R), 'ls-files', '--error-unmatch', rel], capture_output=True, text=True)
+        return r.returncode == 0
+    except OSError:
+        return None
+
+
+def preflight():
+    seen, rows = set(), []
+    for rel, role, source in INPUTS:
+        if rel in seen:
+            continue
+        seen.add(rel)
+        rows.append((rel, role, source, resolve(rel).is_file(), _tracked(rel)))
+    missing = [r for r in rows if not r[3]]
+    if CHECK_ONLY:
+        for rel, role, source, ok, trk in rows:
+            print(f"{'present' if ok else 'MISSING'}\t{'external' if trk == 'external' else 'tracked' if trk else 'untracked' if trk is False else '?'}\t{rel}\t{'declared-tracked' if source.startswith('tracked') else ''}\t{STORED_FILE.get(rel, rel)}")
+    if missing:
+        where = f'the repository ({R}) and the artifact root ({ARTIFACT_ROOT})' if ARTIFACT_ROOT else f'the repository ({R}); no --artifact-root was given'
+        print(f'ERROR: {len(missing)} of {len(rows)} required input files are missing from {where}.', file=sys.stderr)
+        print('compute_tables.py cannot regenerate the tables with these inputs; nothing was written.', file=sys.stderr)
+        for rel, role, source, ok, trk in missing:
+            print(f'  MISSING {rel}\n          role: {role}\n          source: {source}', file=sys.stderr)
+        print('Obtain the external artifact package and pass its root with --artifact-root (see README.md, "What can be verified from this repository").', file=sys.stderr)
+        sys.exit(2)
+    if CHECK_ONLY:
+        print(f'all {len(rows)} inputs present')
+        sys.exit(0)
+
+
+preflight()
+
+src = (R / 'thesis/scripts/validation/create_persistbench_validity_summary_with_muse.py').read_text().split('rows = []')[0]
+ns = {'__file__': str(R / 'thesis/scripts/validation/x.py')}
+exec(src, ns)
+classify, get_entries, get_gens, get_response = (ns[k] for k in ('classify', 'get_entries', 'get_gens', 'get_response'))
+
+
 def cat_of(e):
     ft = e.get('failure_type') or e.get('leakage_type', 'cross_domain')
     return 'beneficial_memory_usage' if ft == 'positive_memory_usage' else ft
 
 
 def load(path):
-    d = json.load(open(R / path))
+    d = json.load(open(resolve(path)))
     out = {c: {} for c in CATS}
     for eid, e in get_entries(d).items():
         gens = []
@@ -110,7 +213,7 @@ def stored():
     csvp = 'presentation_figures_final/persistbench_all_methods_all_corpora.csv'
     ds = {'MUSE-News': ('MUSE-News', 'Qwen2.5-7B-Instruct'), 'MUSE-Books': ('MUSE-Books', 'Qwen2.5-7B-Instruct'), 'TOFU-full': ('TOFU', 'Qwen2.5-7B-Instruct')}
     mm = {'BASE': 'Target'}
-    for r in csv.DictReader(open(R / csvp)):
+    for r in csv.DictReader(open(resolve(csvp))):
         d, m = ds[r['corpus']]
         cat = 'beneficial_memory_usage' if r['category'] == 'beneficial_memory' else r['category']
         S[(d, m, mm.get(r['method'], r['method']), cat, 'official')] = ({1: float(r['fr1']), 2: float(r['fr2']), 3: float(r['fr3'])}, csvp)
@@ -122,11 +225,11 @@ def stored():
                 key = (*tm[t], 'Target' if meth == 'BASE' else meth, cat, 'official')
                 S.setdefault(key, ({k: vals.get(f'FR@{k}') for k in (1, 2, 3)}, 'thesis/analysis/judge_robustness/qwen_vs_gemma_frk.json'))
     p = 'mechanistic/outputs/muse_books_weekly_update_analysis/persistbench_fr_at_k.csv'
-    for r in csv.DictReader(open(R / p)):
+    for r in csv.DictReader(open(resolve(p))):
         key = ('MUSE-Books', 'Qwen2.5-7B-Instruct', 'Target' if r['model'] == 'BASE' else r['model'], r['category'], 'valid')
         S.setdefault(key, ({}, p))[0][int(r['k'])] = float(r['rate_pct'])
     p = 'mechanistic/privacy_collapse/persistbench_native/analysis/muse_news_category_comparison_validated.csv'
-    for r in csv.DictReader(open(R / p)):
+    for r in csv.DictReader(open(resolve(p))):
         if r['view'] != 'validated-clean':
             continue
         key = ('MUSE-News', 'Qwen2.5-7B-Instruct', 'Target' if r['model'] == 'BASE' else r['model'], r['category'], 'valid')
@@ -220,9 +323,6 @@ for (d, m, c), row in res.items():
 tsv('generation_validity_complete.tsv', VH, rows)
 
 # fullprompt_robustness.tsv
-FP = {'sycophancy': (PB + 'muse_news_qwen25_fullprompt_robustness/muse_news_qwen25_%s_fullprompt.json', PB + 'muse_news_qwen25_fullprompt_robustness/analysis_results.json'),
-      'cross_domain': (PB + 'muse_news_qwen25_fullprompt_robustness_crossdomain/muse_news_qwen25_%s_fullprompt_crossdomain.json', PB + 'muse_news_qwen25_fullprompt_robustness_crossdomain/analysis_results.json')}
-CONDK = [('Target', 'before'), ('RMU', 'rmu'), ('SatImp', 'satimp'), ('SimNPO', 'simnpo')]
 
 
 def status(gens, k=3):
@@ -252,7 +352,7 @@ RH = ['Prompt regime tested', 'Category', 'Condition', 'Original FR@3', 'Origina
       'Source artifact', 'Provenance', 'Notes']
 rows = []
 for cat, (pat, ar) in FP.items():
-    stored_ar = json.load(open(R / ar))
+    stored_ar = json.load(open(resolve(ar)))
     orig = {k: res[('MUSE-News', 'Qwen2.5-7B-Instruct', c)]['raw'][cat] for c, k in CONDK}
     new = {k: load(pat % k)[cat] for c, k in CONDK}
     fo_t, fn_t = frk(orig['before'], cat, 3, True), frk(new['before'], cat, 3, True)
@@ -323,7 +423,7 @@ def kappa(pairs):
 
 
 def judged(path):
-    d = json.load(open(R / path))
+    d = json.load(open(resolve(path)))
     out = {}
     for eid, e in get_entries(d).items():
         if cat_of(e) == 'sycophancy':

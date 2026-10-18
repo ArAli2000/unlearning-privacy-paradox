@@ -14,7 +14,7 @@ set -euo pipefail
 source "$(dirname "${BASH_SOURCE[0]}")/../common.sh"
 cd "$REPO_ROOT"
 
-export HOME=/storage/ukp/work/elshashay
+export HOME="${UNLEARNING_HOME:-$HOME}"
 export XDG_CACHE_HOME=$HOME/.cache
 export HF_HOME=$HOME/.cache/huggingface
 export TRANSFORMERS_CACHE=$HF_HOME
@@ -25,9 +25,9 @@ mkdir -p "$TRITON_CACHE_DIR" "$HF_HOME" "$HF_DATASETS_CACHE"
 
 activate_unlearning_env
 
-export HF_HOME=/storage/ukp/work/elshashay/.cache/huggingface
-export TRANSFORMERS_CACHE=/storage/ukp/work/elshashay/.cache/huggingface
-export CUDA_HOME=/nfs/cuda/cuda-12.2
+export HF_HOME="${HF_HOME:-${XDG_CACHE_HOME:-$HOME/.cache}/huggingface}"
+export TRANSFORMERS_CACHE="${TRANSFORMERS_CACHE:-${HF_HOME:-${XDG_CACHE_HOME:-$HOME/.cache}/huggingface}}"
+export CUDA_HOME="${CUDA_HOME:-/nfs/cuda/cuda-12.2}"  # cluster default; override for your CUDA toolkit
 export TOKENIZERS_PARALLELISM=false
 export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
 

@@ -16,7 +16,7 @@ source "$(dirname "${BASH_SOURCE[0]}")/../common.sh"
 cd "$REPO_ROOT"
 mkdir -p logs
 
-export HOME=/storage/ukp/work/elshashay
+export HOME="${UNLEARNING_HOME:-$HOME}"
 export XDG_CACHE_HOME=$HOME/.cache
 export TRITON_CACHE_DIR=$HOME/.triton/autotune
 export HF_HOME=$HOME/.cache/huggingface
@@ -27,7 +27,7 @@ export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
 
 module load cuda/12.2 || true
 
-export CUDA_HOME=/nfs/cuda/cuda-12.2
+export CUDA_HOME="${CUDA_HOME:-/nfs/cuda/cuda-12.2}"  # cluster default; override for your CUDA toolkit
 export PATH=$CUDA_HOME/bin:$PATH
 export LD_LIBRARY_PATH=$CUDA_HOME/lib64:${LD_LIBRARY_PATH:-}
 
@@ -69,7 +69,7 @@ echo "Node: $(hostname)"
 echo "Date: $(date)"
 echo "======================================================"
 
-python scripts/eval_privacylens_mcq_forced_choice.py \
+python "$REPO_ROOT/thesis/scripts/privacylens/eval_privacylens_mcq_forced_choice.py" \
   --input-path "$INPUT_PATH" \
   --output-path "${OUT_DIR}/privacy_mcq_forced_choice_all493.json" \
   --model-path "$MODEL_PATH" \

@@ -9,11 +9,11 @@
 #SBATCH --output=logs/mech_pb_lens_%j.out
 #SBATCH --error=logs/mech_pb_lens_%j.err
 set -euo pipefail
-cd /storage/ukp/work/elshashay/open-unlearning
-source /storage/ukp/work/elshashay/miniconda3/bin/activate
-conda activate unlearning
+cd "${SLURM_SUBMIT_DIR:-$PWD}"
+source "${PROJECT_ROOT:-${SLURM_SUBMIT_DIR:-$PWD}}/thesis/scripts/common.sh"
+activate_unlearning_env
 module load cuda/12.2 || true
-export CUDA_HOME=/nfs/cuda/cuda-12.2
+export CUDA_HOME="${CUDA_HOME:-/nfs/cuda/cuda-12.2}"  # cluster default; override for your CUDA toolkit
 export LD_LIBRARY_PATH="$CUDA_HOME/lib64:${LD_LIBRARY_PATH:-}"
 echo "HOSTNAME: $(hostname)"; echo "JOB ID: ${SLURM_JOB_ID}"
 python mechanistic/persistbench/recompute_single_case_logit_lens.py

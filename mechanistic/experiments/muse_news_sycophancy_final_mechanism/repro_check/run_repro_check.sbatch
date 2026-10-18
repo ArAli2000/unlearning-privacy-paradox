@@ -23,7 +23,7 @@ cd "$REPO_ROOT"
 
 activate_unlearning_env base
 
-export HOME=/storage/ukp/work/elshashay
+export HOME="${UNLEARNING_HOME:-$HOME}"
 export XDG_CACHE_HOME="$HOME/.cache"
 export HF_HOME="$XDG_CACHE_HOME/huggingface"
 export TRANSFORMERS_CACHE="$HF_HOME"

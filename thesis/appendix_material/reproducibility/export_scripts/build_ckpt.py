@@ -1,8 +1,13 @@
-import csv, os, glob
+import csv, os, glob, sys
 import os as _os; _ROOT = _os.path.abspath(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), *['..']*4))
 REPO = (_ROOT + '/')
 OUT = REPO + 'thesis/appendix_material/reproducibility/model_checkpoints.tsv'
-HFC = '/mnt/beegfs/work/elshashay/.cache/huggingface/'
+# Locations are configurable; the table prints the placeholders CHECKPOINT_STORAGE (default: the repository root) and HF_CACHE.
+HFC = os.environ.get('HF_CACHE_ROOT')  # directory that contains the models--* folders of the Hugging Face cache
+if not HFC:
+    sys.exit('set HF_CACHE_ROOT to the Hugging Face cache directory that holds the models--* folders')
+HFC = HFC.rstrip('/') + '/'
+CKPT = os.environ.get('CHECKPOINT_STORAGE', REPO).rstrip('/') + '/'
 missing = []
 
 
@@ -16,7 +21,12 @@ def ex(p):
         if not ok:
             missing.append(p)
         return 'HF hub id; local cache ' + ('present' if ok else 'ABSENT')
-    full = p if p.startswith('/') else REPO + p
+    if p.startswith('HF_CACHE/'):
+        full = HFC + p[len('HF_CACHE/'):]
+    elif p.startswith('CHECKPOINT_STORAGE/'):
+        full = CKPT + p[len('CHECKPOINT_STORAGE/'):]
+    else:
+        full = p if p.startswith('/') else REPO + p
     ok = os.path.exists(full)
     if not ok:
         missing.append(p)
@@ -101,9 +111,9 @@ for c, k in METH:
         'thesis/docs/experimental_setup_audit/selected_checkpoints.tsv; research_history/02_model_method_scaling/manifests/qwen25_7b_persistbench_models.tsv (lists the run directory); run-dir BEST_CHECKPOINT.txt',
         [f'external/PersistBench/outputs/final_tofu_persistbench_localjudge/{TQL[k]}_localjudge.json', f'outputs/privacylens_qwen_tofufull_methods/{TQL[k]}/privacy_mcq_all493.json'],
         'none (no Gemma re-judge for TOFU)',
-        'Behavioral evals loaded the run directory (top-level weights) listed in the model list; the selected checkpoint (Selection_proxy argmax) is checkpoint-104 per trainer_state best_global_step and BEST_CHECKPOINT.txt. Top-level weights were not byte-compared with the checkpoint directory.' if k != 'before' else 'TOFU-finetuned local copy of Qwen/Qwen2.5-7B-Instruct.')
+        'Behavioral evals loaded the run directory (top-level weights) listed in the model list; the selected checkpoint (Selection_proxy argmax) is checkpoint-104 per trainer_state best_global_step and BEST_CHECKPOINT.txt. Top-level weights were later verified byte-identical (SHA-256 of every weight shard) to the checkpoint directory; see thesis/analysis/final_thesis_handoff_20261016/TOFU_WEIGHT_PROVENANCE.md.' if k != 'before' else 'TOFU-finetuned local copy of Qwen/Qwen2.5-7B-Instruct.')
 # TOFU Llama-3.1-8B
-T = '/mnt/beegfs/work/elshashay/.cache/huggingface/models--open-unlearning--tofu_Llama-3.1-8B-Instruct_full/snapshots/1a5c5b1a557f8c99bdadecd5168ebd03f640b00e'
+T = 'HF_CACHE/models--open-unlearning--tofu_Llama-3.1-8B-Instruct_full/snapshots/1a5c5b1a557f8c99bdadecd5168ebd03f640b00e'
 TL = {'rmu': 65, 'satimp': 52, 'simnpo': 120, 'wga': 117}
 TLL = {'before': 'llama31_8b_tofufull_before', 'rmu': 'llama31_8b_after_rmu_from_tofufull', 'wga': 'llama31_8b_after_wga_from_tofufull', 'satimp': 'llama31_8b_after_satimp_from_tofufull', 'simnpo': 'llama31_8b_after_simnpo_from_tofufull'}
 PLL = dict(TLL, satimp='llama31_8b_after_satimp_from_tofull')  # sic: the PrivacyLens output directory has the typo "from_tofull"
@@ -111,7 +121,7 @@ for c, k in METH:
     d = 'simnpo' if k == 'simnpo' else k
     sel = 'n/a (Target)' if k == 'before' else f'saves/unlearn/proper_llama31_8b_{k}_from_tofufull_aggproxy_savebest/checkpoint-{TL[k]}'
     notes = 'open-unlearning/tofu_Llama-3.1-8B-Instruct_full (HF snapshot 1a5c5b1a557f...).' if k == 'before' else (
-        'Behavioral evals loaded the run directory (top-level weights) listed in research_history/02_model_method_scaling/manifests/llama31_8b_privacylens_models.tsv; selection criterion per audit: Agg_proxy for RMU/SatImp/WGA, Selection_proxy for SimNPO. '
+        'Behavioral evals loaded the run directory (top-level weights) listed in research_history/02_model_method_scaling/manifests/llama31_8b_privacylens_models.tsv; selection criterion per audit: Agg_proxy for RMU/SatImp/WGA, Selection_proxy for SimNPO.'
         + ('SatImp selected ckpt ~ start model (little forgetting). PrivacyLens output directory name contains the typo "from_tofull".' if k == 'satimp' else 'SimNPO selected checkpoint is the last step (120), close to the start model; trainer_state best_model_checkpoint records ...simnpo_from_tofufull_selectionproxy_savebest/checkpoint-120 while the directory on disk is named ...aggproxy_savebest (name mismatch, same step).' if k == 'simnpo' else ''))
     add('TOFU (forget10/retain90)', 'Llama-3.1-8B-Instruct (TOFU-finetuned start; stage B2)', c, T, sel,
         'thesis/docs/experimental_setup_audit/selected_checkpoints.tsv; research_history/02_model_method_scaling/manifests/llama31_8b_privacylens_models.tsv; research_history/02_model_method_scaling/manifests/llama31_8b_tofufull_path.txt',

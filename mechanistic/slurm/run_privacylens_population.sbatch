@@ -12,21 +12,21 @@
 set -euo pipefail
 set --
 
-PROJECT_ROOT=/storage/ukp/work/elshashay/open-unlearning
-export XDG_CACHE_HOME=/storage/ukp/work/elshashay/.cache
-export TRITON_CACHE_DIR=/storage/ukp/work/elshashay/.triton/autotune
-export HF_HOME=/storage/ukp/work/elshashay/.cache/huggingface
+PROJECT_ROOT="${PROJECT_ROOT:-${SLURM_SUBMIT_DIR:-$PWD}}"
+export XDG_CACHE_HOME="${XDG_CACHE_HOME:-$HOME/.cache}"
+export TRITON_CACHE_DIR="${TRITON_CACHE_DIR:-$HOME/.triton/autotune}"
+export HF_HOME="${HF_HOME:-${XDG_CACHE_HOME:-$HOME/.cache}/huggingface}"
 export TRANSFORMERS_CACHE="$HF_HOME"
 mkdir -p "$PROJECT_ROOT/logs" "$TRITON_CACHE_DIR" "$HF_HOME"
 
 module load cuda/12.2 || true
-export CUDA_HOME=/nfs/cuda/cuda-12.2
+export CUDA_HOME="${CUDA_HOME:-/nfs/cuda/cuda-12.2}"  # cluster default; override for your CUDA toolkit
 export PATH="$CUDA_HOME/bin:$PATH"
 export LD_LIBRARY_PATH="$CUDA_HOME/lib64:${LD_LIBRARY_PATH:-}"
 
 cd "$PROJECT_ROOT"
-source /storage/ukp/work/elshashay/miniconda3/bin/activate
-conda activate unlearning
+source "${PROJECT_ROOT:-${SLURM_SUBMIT_DIR:-$PWD}}/thesis/scripts/common.sh"
+activate_unlearning_env
 
 echo "HOSTNAME: $(hostname)"
 echo "JOB ID: ${SLURM_JOB_ID:-unset}"

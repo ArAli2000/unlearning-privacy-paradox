@@ -9,8 +9,10 @@
 #SBATCH --time=01:00:00
 set -euo pipefail
 REPO="${REPO:-${SLURM_SUBMIT_DIR:-$PWD}}"
-PYTHON=/mnt/beegfs/work/elshashay/miniconda3/bin/python
-VLLM=/mnt/beegfs/work/elshashay/miniconda3/bin/vllm
+source "${PROJECT_ROOT:-${SLURM_SUBMIT_DIR:-$PWD}}/thesis/scripts/common.sh"
+activate_unlearning_env base
+PYTHON="${PYTHON:-python}"
+VLLM="${VLLM:-vllm}"
 SNAPSHOT="$REPO/mechanistic/privacy_collapse/persistbench/model_cache/models--mistralai--Mistral-7B-Instruct-v0.3/snapshots/c170c708c41dac9275d15a8fff4eca08d52bab71"
 CONFIG="$REPO/mechanistic/privacy_collapse/persistbench/configs/local_mistral_qwen.json"
 SERVER_LOG="$REPO/logs/pb_mistral_rewrite3_${SLURM_JOB_ID}_server.log"

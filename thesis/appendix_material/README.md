@@ -2,7 +2,20 @@
 
 Prompts, configuration tables and result tables for the methodology chapter and the appendix. Everything here was built from existing repository files (sources, configs, logs, frozen result JSONs, stored summary tables). The only recomputation is arithmetic on stored judge scores (`reproducibility/export_scripts/compute_tables.py`).
 
-Directories mentioned below as being in `thesis_archive.zip` (`research_history/`, `thesis/analysis/judge_robustness/`, `thesis/docs/experimental_setup_audit/`) are not in the tracked tree.
+Directories mentioned below as being in `thesis_archive.zip` (`research_history/`, `thesis/docs/experimental_setup_audit/`, and all of `thesis/analysis/judge_robustness/` except `gemma_judge.py`, `qwen_vs_gemma_analysis.py`, `run_gemma3_judge_full.sbatch` and the two stored result files `qwen_vs_gemma_frk.json` and `qwen_vs_gemma_agreement.json`, which are tracked) are not in the tracked tree.
+
+## Path placeholders and original cluster locations
+
+In `reproducibility/model_checkpoints.tsv` and `thesis/analysis/final_thesis_handoff_20261016/final_model_checkpoints.tsv`, `CHECKPOINT_STORAGE/` stands for the directory that held the checkpoints (the repository root on the original cluster, so `CHECKPOINT_STORAGE/saves/...` is the repository-relative `saves/...`) and `HF_CACHE/` for the Hugging Face cache directory that holds the `models--*` folders. The absolute paths of the original cluster, which contained the author's account name, were replaced by these placeholders; model identifiers, methods, selected steps and all numbers are unchanged. The generating scripts (`export_scripts/build_ckpt.py`, `thesis/analysis/final_thesis_handoff_20261016/scripts/build_handoff_materials.py`) read the real locations from `HF_CACHE_ROOT` (required) and `CHECKPOINT_STORAGE` (optional, default the repository root), so regeneration does not restore the private paths. Where a note says `/storage/ukp/work/...`, it names the original cluster's storage area as historical provenance; it is not a path that exists elsewhere.
+
+## Portability changes to imported launchers
+
+`thesis/analysis/judge_robustness/run_gemma3_judge_full.sbatch` is the launcher of the Gemma-3-12B re-judging (imported unchanged in substance from `thesis_archive.zip`). Only portability changes were made; the judge model, vLLM arguments (`--dtype bfloat16`, `--gpu-memory-utilization 0.90`, `--max-model-len 16384`), `gemma_judge.py` arguments (`--concurrency 8`), the 15 input/output file lists, partition, GPU type, memory and time limit are as in the run:
+
+- Removed the personal SLURM account directive and the fixed compute node (`--nodelist`). Provide an account with `sbatch --account=<ACCOUNT> thesis/analysis/judge_robustness/run_gemma3_judge_full.sbatch` (and `--nodelist=<NODE>` if needed).
+- Replaced the hardcoded personal `HOME` with `GEMMA_JUDGE_HOME` (default: the current `$HOME`), the shared model path with `GEMMA_LOCAL_PATH` (optional; if unset, vLLM downloads the public model `google/gemma-3-12b-it` at revision `96b6f1eccf38110c56df3a15bffe176da04bfd80`, a gated Hugging Face model that needs an accepted licence and `HF_TOKEN`; the reported runs served a local snapshot of this same revision from an institutional directory, which is no longer a default) and the port with `GEMMA_JUDGE_PORT` (default 8002). `REPO_ROOT` can be set in the environment; otherwise it is taken from the submit directory.
+- Added `mkdir -p logs` for the vLLM server log. SLURM needs `logs/` to exist before the job starts, so create it first.
+- `gemma_judge.py` differs from the archived copy in one respect: the institutional snapshot path is no longer a constant. The provenance field `gemma_local_path` of newly written outputs holds the value of `GEMMA_LOCAL_PATH`, or a note that the public hub model was used; the revision field is unchanged. No scoring, prompt or schema code was touched. The 15 existing Gemma output files keep the original path in their provenance block.
 
 ## Provenance labels
 
